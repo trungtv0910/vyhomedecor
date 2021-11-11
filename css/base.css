@@ -1,0 +1,76 @@
+:root{
+    --primary-color: #333;
+    --text-color: #555;
+    --text-brighter:#888;
+    --hover-color: #e34444;
+    --white-color: #fff;
+    --bacground-color: #f5f5f5;
+    --header__top-height:40px;
+    --border-color: #ccc;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6;
+    font-family: helvetica;
+}
+.mt-30{
+    margin-top: 30px;
+}
+@keyframes showList{
+    from{
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes shine{
+    100%{
+        left: 125%;
+    }
+}
+@keyframes fadeInZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.8,0.8);
+    }
+    to{
+        transform: scale(1,1);
+        opacity: 1;
+    }
+}
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform:translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes iconRun{
+    0%{right: -3px;}
+    20%{right: 3px;}
+    40%{right: -3px;}
+    60%{right: 3px;}
+    80%{right: -3px;}
+    100%{right: 3px;}
+}

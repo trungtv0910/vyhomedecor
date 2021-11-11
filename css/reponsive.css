@@ -1,0 +1,103 @@
+/* Mobile & Tablet */
+@media (max-width: 1023px){
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .header__nav{
+        padding: 12px 0;
+    }
+    @keyframes fadeIn {
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    .menu-moblie{
+        display: block;
+    }
+    .most-view__item{
+        margin-bottom: 16px;
+    }
+    .posts{
+        margin-bottom: 16px;
+    }
+    .header__promotion-link{
+        justify-content: center;
+    }
+    .nav-mobile__item:last-child{
+        border-bottom: none;
+    }
+}
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__info-tablet{
+        justify-content: space-between;
+    }
+    .highlights__item-sub {
+        margin-top: 15px;
+    }
+    .highlights__item-top-link{
+        margin-bottom: 16px;
+    }
+}
+/* Mobile */
+@media (max-width: 739px){
+    .hide-on-mobile{
+        display: none;
+    }
+    .products__category-item:last-child{
+        display: none;
+    }
+    .main{
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    .header__top{
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .header__logo-img{
+        display: flex;
+        margin: 0 auto 8px;
+    }
+    .nav-moiblie__list{
+        min-width: 60%;
+    }
+    .highlights__item-top-link{
+        margin-top: 16px;
+    }
+    .highlights__item-sub {
+        margin-top: unset;
+    }
+    .highlights__item-sub-link-2{
+        margin-top: 16px;
+    }
+    .products__category-item{
+        padding: 0 8px;
+    }
+    .products__item{
+        margin-bottom: 16px;
+    }
+    .highlights__item-sub-link-1{
+        margin-top: 16px;
+    }
+    .footer__info{
+        padding: 0 16px;
+    }
+    .footer__info-list{
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    .nav-mobile__link{
+        padding: 6px;
+        font-size: 1.8rem;
+    }
+    .footer-copyright{
+        flex-direction: column;
+    }
+    .footer-copyright__text{
+        font-size: 1.6rem;
+        margin-bottom: 16px;
+    }
+}
