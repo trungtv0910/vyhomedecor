@@ -1,0 +1,136 @@
+.shoppingCart{
+    margin: 0 auto;
+    width: 100%;
+    color: #666;
+}
+.tieude{
+    width: 100%;
+    min-height: 10px;
+}
+.tieude h3{
+    color: black;
+}
+.cart{
+    width: 100%;
+    min-height: 100px;
+}
+.cart table{
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 1vw;
+    border-collapse: collapse;
+}
+.cart table th{
+    padding: 15px 0;
+    border: solid 1px #ccc;
+    color: black;
+}
+.cart table td{
+    padding: 20px 0;
+    border: solid 1px #ccc;
+}
+.cart table td a{
+    text-decoration: none;
+    color: #666;
+}
+.cart table td a:hover{
+    color: red;
+}
+.cart table td img{
+    width: 70%;
+}
+.cart table th:nth-child(1) {
+    background-color: #f5f5f5;
+    width: 10%;
+}
+.cart table th:nth-child(2) {
+    background-color: #f5f5f5;
+    width: 10%;
+}
+.cart table th:nth-child(3) {
+    background-color: #f5f5f5;
+    width: 30%;
+}
+.cart table th:nth-child(4) {
+    background-color: #f5f5f5;
+    width: 20%;
+}
+.cart table th:nth-child(5) {
+    background-color: #f5f5f5;
+    width: 20%;
+}
+.cart table th:nth-child(6) {
+    background-color: #f5f5f5;
+    width: 10%;
+}
+.bill{
+    margin-top: 20px;
+    width: 60%;
+    border: solid 2px rgb(199, 6, 6);
+    min-height: 350px;
+    font-size: 1vw;
+}
+.tong-gio-hang{
+    width: 90%;
+    border-bottom: solid 1px #ccc;
+    min-height: 60px;
+    margin: 0 auto;
+}
+.tieu-de h4{
+    color: black;
+}
+.Subtotal{
+    width: 40%;
+    float: left;
+}
+.gia{
+    width: 60%;
+    float: left;
+}
+.shipping{
+    width: 90%;
+    border-bottom: solid 1px #ccc;
+    min-height: 130px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.shipping1{
+    width: 40%;
+    float: left;
+}
+.ship{
+    width: 60%;
+    float: left;
+    line-height: 25px;
+    font-size: 1.1vw;
+}
+.ship a{
+    text-decoration: none;
+    color: #666;
+}
+.ship a:hover{
+    color: rgb(199, 6, 6);
+}
+.total{
+    width: 90%;
+    min-height: 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.total1{
+    width: 40%;
+    float: left;
+}
+.total input[type="submit"]{
+    padding: 10px;
+    border: solid 1px #ccc;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.total input[type="submit"]:hover{
+    background-color: rgb(199, 6, 6);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+

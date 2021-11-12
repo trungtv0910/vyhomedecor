@@ -1,0 +1,114 @@
+.checkout{
+    margin: 0 auto;
+    width: 100%;
+}
+.billing-details{
+    width: 100%;
+    min-height: 700px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+}
+.from-thong-tin{
+    width: 90%;
+    margin: 0 auto;
+    min-height: 300px;
+}
+.title{
+    width: 90%;
+    border-bottom: solid 1px #ccc;
+}
+.thong-tin{
+    margin-top: 10px;
+    width: 50%;
+    color: #666;
+    line-height: 24px;
+    float: left;
+}
+.thong-tin input[type="text"]{
+    padding: 5px 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.ghi-chu{
+    width: 40%;
+    float: left;
+    margin-top: 10px;
+    color: #666;
+    line-height: 24px;
+}
+.ghi-chu input[type="text"]{
+    padding: 8px 50px;
+    border: 1px solid #ccc;
+}
+.your-oder{
+    width: 90%;
+    margin: 0 auto;
+}
+.bill{
+    margin-top: 20px;
+    width: 100%;
+    min-height: 350px;
+    font-size: 1vw;
+}
+.sp{
+    width: 90%;
+    border-bottom: solid 1px #ccc;
+    min-height: 30px;
+}
+.tong-gio-hang{
+    width: 90%;
+    border-bottom: solid 1px #ccc;
+    min-height: 30px;
+    margin-top: 10px;
+}
+.Subtotal{
+    width: 40%;
+    float: left;
+}
+.gia{
+    width: 60%;
+    float: left;
+}
+.shipping{
+    width: 90%;
+    border-bottom: solid 1px #ccc;
+    min-height: 130px;
+    margin-top: 5px;
+}
+.shipping1{
+    width: 40%;
+    float: left;
+}
+.ship{
+    width: 60%;
+    float: left;
+    line-height: 25px;
+    font-size: 1.1vw;
+}
+.ship a{
+    text-decoration: none;
+    color: #666;
+}
+.ship a:hover{
+    color: rgb(199, 6, 6);
+}
+.total{
+    width: 90%;
+    min-height: 10px;
+    margin-top: 5px;
+}
+.total1{
+    width: 40%;
+    float: left;
+}
+.total input[type="submit"]{
+    padding: 10px;
+    border: solid 1px #ccc;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.total input[type="submit"]:hover{
+    background-color: rgb(199, 6, 6);
+    color: rgb(255, 255, 255);
+    border: none;
+}

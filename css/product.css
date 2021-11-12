@@ -1,0 +1,275 @@
+.product{
+    margin: 0 auto;
+    width: 100%;
+}
+.mr{
+    margin-right: 2%;
+}
+@font-face {
+    font-family: myfont;
+    src: url(../Poppins/Poppins-BlackItalic.ttf);
+  }
+.content-1{
+    min-height: 670px;
+    width: 100%;
+}
+.box-trai{
+    min-height: 530px;
+    width: 35%;
+    float: left;
+}
+.img{
+    width: 100%;
+    min-height: 520px;
+    border: 1px solid #ccc;
+}
+.img img{
+    left: 20px;
+    width: 97%;
+}
+.show-anh{
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.img-sp{
+    width: 22.3%;
+    border: solid 1px #ccc;
+    float: left;
+}
+.img-sp img{
+    width: 100%;
+}
+.img-sp:hover{
+    border: solid 1px red;
+}
+.box-phai{
+    min-height: 530px;
+    width: 60%;
+    font-family: myfont;
+    font-size: 1vw;
+    float: left;
+}
+.title{
+    min-height: 100px;
+    color: #666;
+    border-bottom: solid 1px #ccc;
+}
+.title h1{
+    margin: 0;
+}
+/*css hình sao*/
+div.stars {
+    width: 200px;
+    display: inline-block;
+  }
+  
+  input.star { display: none; }
+  
+  label.star {
+    float: left;
+    padding: 2px ;
+    font-size: 10px;
+    color: #444;
+    transition: all .2s;
+    color: #FD4;
+  }
+  
+  input.star:checked ~ label.star:before {
+    content: '\f005';
+    color: #FD4;
+    transition: all .25s;
+  }
+  
+  input.star-5:checked ~ label.star:before {
+    color: #FE7;
+  }
+  
+  input.star-1:checked ~ label.star:before { color: #F62; }
+  
+  label.star:before {
+    content: '\f006';
+    font-family: FontAwesome;
+  }
+
+  /*end*/
+.stars a{
+    text-decoration: none;
+    padding-left: 3px;
+    color: #888;
+}
+.stars a:hover{
+    color: red;
+}
+strong{
+    margin-top: 5px;
+    color: black;
+}
+.size{
+    margin-top: 15px;
+    width: 100%;
+    min-height: 145px;
+    border-bottom: solid #ccc 1px;
+    font-size: 1.1vw;
+    line-height: 23px;
+}
+.color{
+    margin-top: 10px;
+    width: 100%;
+    min-height: 200px;
+}
+.kich-thuoc{
+    padding: 10px 5px;
+    text-align: center;
+    width: 50px;
+    float: left;
+    border: solid 1px #ccc;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+.kich-thuoc a{
+    text-decoration: none;
+    color: #666;
+}
+.kich-thuoc:hover{
+    border: 1px solid red;
+}
+.thong-tin{
+    width: 100%;
+    float: left;
+}
+.mua-hang{
+    width: 100%;
+    margin-top: 5px;
+}
+.mua-hang input[type="submit"]{
+    padding: 15px 20px;
+    background-color: rgb(202, 26, 26);
+    border: none;
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+    font-size: 1vw;
+}
+.mua-hang input[type="submit"]:hover{
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+}
+/* css content-2*/
+.content-2{
+    width: 100%;
+    min-height: 600px;
+}
+.top-yeu-thich{
+    width: 28%;
+    float: left;
+    border: solid 1px #ccc;
+}
+.tieu-de{
+    color: black;
+    min-height: 20px;
+    margin: 0 auto;
+    width: 80%;
+    border-bottom: solid 1px #ccc;
+}
+.sanpham{
+    width: 80%;
+    color: black;
+    min-height: 120px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.sanpham-img{
+    border: solid 1px #ccc;
+    width: 40%;
+    min-height: 50px;
+    text-align: left;
+    float: left;
+}
+.sanpham-img img{
+    width: 100%;
+}
+.addCart{
+    width: 50%;
+    float: right;
+    line-height: 25px;
+}
+.addCart a{
+    text-decoration: none;
+    font-size: 1vw;
+    color: #666;
+}
+.addCart a:hover{
+    color: red;
+}
+.from-binhluan{
+    border: solid 1px #ccc;
+    float: right;
+    width: 70%;
+}
+.from{
+    width: 90%;
+    margin: 0 auto;
+}
+.reveiws{
+    min-height: 40px;
+    border-bottom: solid 1px #ccc;
+}
+.nguoi-reveiws{
+    margin: 0 auto;
+    margin-top: 20px;
+    min-height: 140px;
+}
+.binhluan{
+    width: 90%;
+    min-height: 90px;
+}
+.noi-dung-bl{
+    min-height: 80px;
+    margin-top: 20px;
+}
+.anh{
+    width: 10%;
+    border: 1px solid #ccc;
+    float: left;
+    min-height: 55px;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 5px;
+}
+.bl{
+    font-size: 1vw;
+    width: 88%;
+    border: 1px solid #ccc;
+    min-height: 80px;
+    float: right;
+    border-radius: 5px;
+}
+.bl strong{
+    padding-left: 3px;
+}
+.bl p{
+    padding-left: 10px;
+}
+.addemail{
+    width: 90%;
+    min-height: 50px;
+}
+.binh-luan{
+    width: 90%;
+}
+.binh-luan input[type="submit"]{
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(202, 26, 26);
+    border-radius: 5px;
+    border: none;
+}
+.binh-luan input[type="submit"]:hover{
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+}
+
+
+
