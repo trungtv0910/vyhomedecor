@@ -28,12 +28,12 @@
     width: 97%;
 }
 .show-anh{
-    width: 98%;
+    width: 99%;
     margin: 0 auto;
     margin-top: 10px;
 }
 .img-sp{
-    width: 22.3%;
+    width: 23%;
     border: solid 1px #ccc;
     float: left;
 }
@@ -51,7 +51,7 @@
     float: left;
 }
 .title{
-    min-height: 100px;
+    min-height: 80px;
     color: #666;
     border-bottom: solid 1px #ccc;
 }
@@ -116,7 +116,7 @@ strong{
 .color{
     margin-top: 10px;
     width: 100%;
-    min-height: 200px;
+    min-height: 150px;
 }
 .kich-thuoc{
     padding: 10px 5px;
@@ -143,7 +143,7 @@ strong{
     margin-top: 5px;
 }
 .mua-hang input[type="submit"]{
-    padding: 15px 20px;
+    padding: 13px 20px;
     background-color: rgb(202, 26, 26);
     border: none;
     color: rgb(255, 255, 255);
@@ -158,24 +158,26 @@ strong{
 /* css content-2*/
 .content-2{
     width: 100%;
-    min-height: 600px;
+    min-height: 700px;
 }
 .top-yeu-thich{
     width: 28%;
     float: left;
     border: solid 1px #ccc;
+    min-height: 660px;
 }
 .tieu-de{
     color: black;
-    min-height: 20px;
+    min-height: 40px;
     margin: 0 auto;
     width: 80%;
     border-bottom: solid 1px #ccc;
+    padding-top: 10px;
 }
 .sanpham{
     width: 80%;
     color: black;
-    min-height: 120px;
+    min-height: 130px;
     margin: 0 auto;
     margin-top: 15px;
 }
@@ -206,6 +208,7 @@ strong{
     border: solid 1px #ccc;
     float: right;
     width: 70%;
+    min-height: 500px;
 }
 .from{
     width: 90%;
@@ -214,11 +217,12 @@ strong{
 .reveiws{
     min-height: 40px;
     border-bottom: solid 1px #ccc;
+    padding-top: 10px;
 }
 .nguoi-reveiws{
     margin: 0 auto;
     margin-top: 20px;
-    min-height: 140px;
+    min-height: 200px;
 }
 .binhluan{
     width: 90%;
@@ -250,6 +254,7 @@ strong{
 }
 .bl p{
     padding-left: 10px;
+    padding-top: 5px;
 }
 .addemail{
     width: 90%;
