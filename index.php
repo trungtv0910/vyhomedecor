@@ -1,10 +1,14 @@
 <?php 
-include 'include/header.php';
+include 'view/header.php';
 ?>
 
+<?php 
+if(isset($_GET['act'])== "act"){
 
+}
 
+?>
 
 <?php 
-include 'include/footer.php';
+include 'view/footer.php';
 ?>
