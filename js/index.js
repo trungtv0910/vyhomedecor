@@ -20,14 +20,14 @@ function showSlides(n) {
     dots[slideIndex-1].className += " active";
 }
 
-var aElements = document.links;
-for(var i = 0; i < aElements.length; ++i){
-    aElements[i].onclick = function(e) {
-        if(!e.target.href.startsWith('#')){
-            e.preventDefault();
-        }
-    }
-}
+// var aElements = document.links;
+// for(var i = 0; i < aElements.length; ++i){
+//     aElements[i].onclick = function(e) {
+//         if(!e.target.href.startsWith('#')){
+//             e.preventDefault();
+//         }
+//     }
+// }
 
 
 // Model

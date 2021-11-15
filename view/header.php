@@ -114,7 +114,7 @@
                     <div class="row header__info-all header__info-tablet">
                         <div class="col l-3 m-3 c-12">
                             <div class="header__logo">
-                                <a href="index.html"><img src="./images/logo/logo.png" alt="" class="header__logo-img"></a>
+                                <a href="index.php"><img src="./images/logo/logo.png" alt="" class="header__logo-img"></a>
                             </div>
                         </div>
                         <div class="col l-3 m-3 c-4">
@@ -156,7 +156,7 @@
                 <div class="header__nav">
                     <ul class="header__nav-list hide-on-mobile-tablet">
                         <li class="header__nav-item header__nav-link-dad">
-                            <a href="#" class="header__nav-link header__nav-link-icon"><i class="fas fa-home"></i></a>
+                            <a href="index.php" class="header__nav-link header__nav-link-icon"><i class="fas fa-home"></i></a>
                         </li>
                         <li class="header__nav-item">
                             <a href="#" class="header__nav-link">Giới thiệu</a>
