@@ -58,31 +58,31 @@
                             <?php
                                 foreach ($listcustomer as $customer) {
                                     extract($customer);
-                                    echo '
+                                    ?>
                                     <tr>
-                                    <td><i class="fas fa-barcode">'.$custId.'</td>
+                                    <td><i class="fas fa-barcode"><?=$custId?></td>
                                     <td>
                                         <div class="reply_img text-center">
                                            <img width="50" src="img_tam/anhavatar.png" alt="">
                                         </div>
-                                        <i class="ni ni-single-02">'.$custName.'
+                                        <i class="ni ni-single-02"><?=$custName?>
                                     </td>
                                     <td>
-                                    '.$username.' 
+                                    <?=$username?> 
                                     </td>
-                                    <td><i class="ni ni-email-83"></i> '.$email.' </td>
-                                    <td><i class="fas fa-phone"></i> '.$phone.'</td>
-                                    <td>'.$address.'</td>
-                                    <td><span class="text-seccess">'.$status.'</span></td>
+                                    <td><i class="ni ni-email-83"></i> <?=$email?> </td>
+                                    <td><i class="fas fa-phone"></i> <?=$phone?></td>
+                                    <td><?=$address?></td>
+                                    <td><span class="text-seccess"><?=$status?></span></td>
                                     <td>
-                                       '.$role.'
+                                       <?=$role?>
                                     </td>
                                     <td><a class="btn  btn-primary" href="index.php?act=customer&edit"><span class="icon text-white-50"><i class="far fa-edit"></i></span></a>
                                     
-                                        <a class="btn btn_xoa btn-danger" onclick="return confirm("Bạn có chắc xóa khách hàng này")" href="index.php?act=customer&delete"><span class="icon text-white-50"><i class="fas fa-trash"></i></span></a>
+                                        <a class="btn btn_xoa btn-danger" onclick="return confirm('Bạn có chắc xóa khách hàng này')" href="index.php?act=customer&delete=<?=$custId ?>"><span class="icon text-white-50"><i class="fas fa-trash"></i></span></a>
                                     </td>
-                                </tr>';
-                                }
+                                </tr>
+                             <?php  }
                                  
                             ?>
                         </tbody>

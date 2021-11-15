@@ -1,5 +1,6 @@
 <?php include_once 'inc_admin/header.php';
       include '../model/customer.php';
+      include_once '../model/pdo.php';
 ?>
 
 <?php
@@ -57,6 +58,7 @@ if (isset($_GET['act'])) {
             break;
         case 'customer': {
                 if (isset($_GET['list'])) {
+                    $listcustomer=loadAll_customer();
                     include 'customer/list.php';
                 } else if (isset($_GET['add'])) {
                     include 'customer/add.php';
@@ -67,11 +69,7 @@ if (isset($_GET['act'])) {
                 }
             }
             break;
-        case 'customer&list': {
-                 $listcustomer=loadall_customer();
-                 include "customer/list.php";
-                 break;
-        }
+       
         case 'statistical': {
                 if (isset($_GET['chart'])) {
                     include 'statistical/chart.php';

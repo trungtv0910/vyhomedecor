@@ -1,6 +1,7 @@
 <?php
-function loadall_customer(){
-        $sql="select * from tbl_customer order by id desc";
+include_once 'pdo.php';
+function loadAll_customer(){
+        $sql="SELECT * FROM tbl_customer order by custId DESC";
         $listcustomer=pdo_query($sql);
         return $listcustomer;
     }
