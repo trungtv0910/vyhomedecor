@@ -1,5 +1,5 @@
 <?php 
-    include 'view/header.php';
+    include_once 'view/header.php';
     include_once 'model/pdo.php';
     include_once 'model/account_model.php';
 ?>
@@ -17,12 +17,10 @@
                         echo '<pre>';
                         print_r($_SESSION);
                         echo '</pre>';
-                        // include_once 'view/home.php';
                       echo '<script>window.location="index.php" </script>';
-
                     }else 
                     {
-                        echo '<script>alert("Sai tên mật khẩu hoặc tài khoản!")</script>';
+                    echo "<script>Swal.fire({icon: 'error', title: 'Đăng nhập thất bại',text: 'Bạn nhập sai mật khẩu hoặc tài khoản!' })</script>";
                            include_once 'view/home.php';
                     }
             

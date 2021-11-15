@@ -29,7 +29,7 @@ function init()
     }
 }
 function checkLogout(){
-    session_destroy();
+   return session_destroy();
     // echo '<script>alert("xin"); </script>';
 }
 

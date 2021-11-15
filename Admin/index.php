@@ -78,8 +78,9 @@ if (isset($_GET['act'])) {
                 }
             }
             break;
-        case 'category4': {
-                include 'category/list.php';
+        case 'logout': {
+            echo '<script>window.location="http://localhost/vyhomedecor/index.php" </script>';
+            checkLogout();
             }
             break;
         default:

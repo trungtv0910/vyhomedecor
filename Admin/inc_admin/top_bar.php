@@ -1,3 +1,14 @@
+<?php
+include_once '../model/pdo.php';
+include_once '../model/account_model.php';
+
+
+
+?>
+
+
+
+
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
     <!-- Sidebar Toggle (Topbar) -->
@@ -136,8 +147,14 @@
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Trần Văn Trung</span>
+                <?php
+                     if (isset($account)){   
+                 ?> 
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=$account['custName'] ?></span>
                 <img class="img-profile rounded-circle" src="../images/avatar.png">
+                <?php }
+                
+                ?>
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -179,7 +196,7 @@
                 <div class="modal-body">Chọn "Đăng Xuất" để rời trang.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ bỏ</button>
-                    <a class="btn btn-danger" href="login.html">Đăng Xuất</a>
+                    <a class="btn btn-danger" href="index.php?act=logout">Đăng Xuất</a>
                 </div>
             </div>
         </div>

@@ -1,7 +1,20 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include_once '../model/pdo.php';
+include_once '../model/account_model.php';
+init();
 
+                 
+if (isset($_SESSION['login']['login']) == true && $_SESSION['login']['role']==1 ) {
+    $account= $_SESSION['login'];
+}else{
+    echo '<script>window.location="../view/404.php" </script>';
+}
+    
+
+?>
 <head>
 
     <meta charset="utf-8">

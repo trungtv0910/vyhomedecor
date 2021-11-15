@@ -21,6 +21,7 @@ init();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -78,10 +79,8 @@ init();
                         // echo '<pre>';
                         // print_r($_SESSION['login']);
                         // echo '</pre>';
-                        if (isset($_SESSION['login']['login']) == true) {
+                        if (isset($_SESSION['login']['login']) == true ) {
                            $account= $_SESSION['login'];
-
-
                         ?>
                             <ul class="header__top-right-list hide-on-mobile">
 
@@ -97,6 +96,15 @@ init();
                                     <i class="header__top-right-icon far fa-check-square"></i>
                                     <a href="#" class="header__top-right-link">Giỏ hàng</a>
                                 </li>
+                                <?php
+                                if( $account['role']==1){
+                                ?>
+                                <li class="header__top-right-item">
+                         
+                                    <i class="header__top-right-icon far fas fa-users-cog"></i>
+                                    <a href="admin/index.php" class="header__top-right-link">Quản trị Admin</a>
+                                </li>
+                                <?php } ?>
                                 <li class="header__top-right-item ">
                                     <i class="header__top-right-icon fas fa-sign-in-alt"></i>
                                     <a href="index.php?act=logout"  class="header__top-right-link">Đăng xuất</a>
