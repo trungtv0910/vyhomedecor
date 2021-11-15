@@ -1,6 +1,7 @@
 <?php 
     include 'view/header.php';
     include_once 'model/pdo.php';
+    include_once 'model/account_model.php';
 ?>
 
 <?php 
@@ -9,13 +10,29 @@
         switch ($path){
             case "login":{
                 if(isset($_POST['login'])){
-                    echo $username=$_POST['username'];
-                    echo $password =$_POST['password'];
+                    $username=$_POST['username'];
+                    $password =$_POST['password'];
+                    $res= checkLogin($username,$password);
+                    if($res==1){
+                        echo '<pre>';
+                        print_r($_SESSION);
+                        echo '</pre>';
+                        // include_once 'view/home.php';
+                      echo '<script>window.location="index.php" </script>';
 
-
+                    }else 
+                    {
+                        echo '<script>alert("Sai tên mật khẩu hoặc tài khoản!")</script>';
+                           include_once 'view/home.php';
+                    }
+            
                 }
 
 
+            }break;
+            case "logout" : {
+                checkLogout();
+                echo '<script>window.location="index.php" </script>';
             }break;
             case "product":{
                 include 'view/product.php';
@@ -30,6 +47,9 @@
         }
     }else{
         include 'view/home.php';
+        echo '<pre>';
+        print_r($_SESSION);
+        echo '</pre>';
     }
 ?>
 

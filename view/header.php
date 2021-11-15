@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include_once 'model/pdo.php';
+include_once 'model/account_model.php';
+init();
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="main">
         <header class="header">
@@ -67,48 +74,103 @@
                                 </ul>
                             </li>
                         </ul>
-                        <ul class="header__top-right-list hide-on-mobile">
-                            <!-- <li class="header__top-right-item">
+                        <?php
+                        // echo '<pre>';
+                        // print_r($_SESSION['login']);
+                        // echo '</pre>';
+                        if (isset($_SESSION['login']['login']) == true) {
+                           $account= $_SESSION['login'];
+
+
+                        ?>
+                            <ul class="header__top-right-list hide-on-mobile">
+
+                                <li class="header__top-right-item">
                                 <i class="header__top-right-icon far fa-user"></i>
-                                <a href="#" class="header__top-right-link">Tài khoản của tôi</a>
-                            </li> -->
-                            <li class="header__top-right-item">
-                                <i class="header__top-right-icon far fa-heart"></i>
-                                <a href="#" class="header__top-right-link">Yêu thích</a>
+                                <a href="#" class="header__top-right-link">Xin chào: <?= $account['custName']  ?></a>
                             </li>
-                            <li class="header__top-right-item">
-                                <i class="header__top-right-icon far fa-check-square"></i>
-                                <a href="#" class="header__top-right-link">Giỏ hàng</a>
-                            </li>
-                            <li class="header__top-right-item js-login">
-                                <i class="header__top-right-icon fas fa-sign-in-alt"></i>
-                                <a href="#" class="header__top-right-link">Đăng nhập</a>
-                            </li>
-                        </ul>
-                        <div class="mobile-top-nav l-0 m-0">
-                            <i class="mobile-top-nav__icon fas fa-anchor"></i>
-                            <ul class="moblie-top-nav__list">
-                                <li class="moblie-top-nav__item">
-                                    <i class="moblie-top-nav__icon far fa-user"></i>
-                                    <a href="#" class="moblie-top-nav__link">Tài khoản của tôi</a>
+                                <li class="header__top-right-item">
+                                    <i class="header__top-right-icon far fa-heart"></i>
+                                    <a href="#" class="header__top-right-link">Yêu thích</a>
                                 </li>
-                                <li class="moblie-top-nav__item">
-                                    <i class="moblie-top-nav__icon far fa-heart"></i>
-                                    <a href="#" class="moblie-top-nav__link">Yêu thích</a>
+                                <li class="header__top-right-item">
+                                    <i class="header__top-right-icon far fa-check-square"></i>
+                                    <a href="#" class="header__top-right-link">Giỏ hàng</a>
                                 </li>
-                                <li class="moblie-top-nav__item">
-                                    <i class="moblie-top-nav__icon far fa-check-square"></i>
-                                    <a href="#" class="moblie-top-nav__link">Giỏ hàng</a>
-                                </li>
-                                <li class="moblie-top-nav__item js-login-mb">
-                                    <i class="moblie-top-nav__icon fas fa-sign-in-alt"></i>
-                                    <a href="#" class="moblie-top-nav__link">Đăng nhập</a>
+                                <li class="header__top-right-item ">
+                                    <i class="header__top-right-icon fas fa-sign-in-alt"></i>
+                                    <a href="index.php?act=logout"  class="header__top-right-link">Đăng xuất</a>
                                 </li>
                             </ul>
-                        </div>
+                            <div class="mobile-top-nav l-0 m-0">
+                                <i class="mobile-top-nav__icon fas fa-anchor"></i>
+                                <ul class="moblie-top-nav__list">
+                                    <li class="moblie-top-nav__item">
+                                        <i class="moblie-top-nav__icon far fa-user"></i>
+                                        <a href="#" class="moblie-top-nav__link">Xin chào: <?= $account['custName']  ?></a>
+                                    </li>
+                                    <li class="moblie-top-nav__item">
+                                        <i class="moblie-top-nav__icon far fa-heart"></i>
+                                        <a href="#" class="moblie-top-nav__link">Yêu thích</a>
+                                    </li>
+                                    <li class="moblie-top-nav__item">
+                                        <i class="moblie-top-nav__icon far fa-check-square"></i>
+                                        <a href="#" class="moblie-top-nav__link">Giỏ hàng</a>
+                                    </li>
+                                    <li class="moblie-top-nav__item js-login-mb">
+                                        <i class="moblie-top-nav__icon fas fa-sign-in-alt"></i>
+                                        <a href="checkLogout()" class="moblie-top-nav__link">Đăng Xuất</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        <?php
+                        } else { ?>
+                            <ul class="header__top-right-list hide-on-mobile">
+
+                                <!-- <li class="header__top-right-item">
+                            <i class="header__top-right-icon far fa-user"></i>
+                            <a href="#" class="header__top-right-link">Tài khoản của tôi</a>
+                        </li> -->
+                                <!-- <li class="header__top-right-item">
+                                    <i class="header__top-right-icon far fa-heart"></i>
+                                    <a href="#" class="header__top-right-link">Yêu thích</a>
+                                </li>
+                                <li class="header__top-right-item">
+                                    <i class="header__top-right-icon far fa-check-square"></i>
+                                    <a href="#" class="header__top-right-link">Giỏ hàng</a>
+                                </li> -->
+                                <li class="header__top-right-item js-login">
+                                    <i class="header__top-right-icon fas fa-sign-in-alt"></i>
+                                    <a href="#" class="header__top-right-link">Đăng nhập</a>
+                                </li>
+                            </ul>
+                            <div class="mobile-top-nav l-0 m-0">
+                                <i class="mobile-top-nav__icon fas fa-anchor"></i>
+                                <ul class="moblie-top-nav__list">
+                                    <!-- <li class="moblie-top-nav__item">
+                                        <i class="moblie-top-nav__icon far fa-user"></i>
+                                        <a href="#" class="moblie-top-nav__link">Tài khoản của tôi</a>
+                                    </li>
+                                    <li class="moblie-top-nav__item">
+                                        <i class="moblie-top-nav__icon far fa-heart"></i>
+                                        <a href="#" class="moblie-top-nav__link">Yêu thích</a>
+                                    </li>
+                                    <li class="moblie-top-nav__item">
+                                        <i class="moblie-top-nav__icon far fa-check-square"></i>
+                                        <a href="#" class="moblie-top-nav__link">Giỏ hàng</a>
+                                    </li> -->
+                                    <li class="moblie-top-nav__item js-login-mb">
+                                        <i class="moblie-top-nav__icon fas fa-sign-in-alt"></i>
+                                        <a href="#" class="moblie-top-nav__link">Đăng nhập</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="grid wide">
                 <div class="header__info">
                     <div class="row header__info-all header__info-tablet">
@@ -149,7 +211,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>    
+                        </div>
                     </div>
                 </div>
                 <!-- Header Nav -->
@@ -301,7 +363,7 @@
                                     <a href="#" class="header__nav-full-link-info">Furniture chest</a>
                                     <span class="header__nav-full-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ornare urna. Suspendisse a lobortis ex, at efficitur</span>
                                 </ul>
-                                </div>
+                            </div>
                         </li>
                         <li class="header__nav-item header__nav-link-dad">
                             <a href="#" class="header__nav-link">Liên hệ</a>
@@ -314,10 +376,10 @@
                         </li>
                     </ul>
                     <label for="nav-mobile-input" class="menu-moblie">
-                        <i class="menu-moblie__icon fas fa-bars"></i>                       
+                        <i class="menu-moblie__icon fas fa-bars"></i>
                     </label>
                     <input type="checkbox" hidden id="nav-mobile-input" class="nav-mobile__input">
-                    <label for="nav-mobile-input" class="nav-mobile__overlay"></label>                  
+                    <label for="nav-mobile-input" class="nav-mobile__overlay"></label>
                     <ul class="nav-moiblie__list">
                         <li class="nav-mobile__item">
                             <a href="#" class="nav-mobile__link">Trang chủ</a>
@@ -340,7 +402,7 @@
                     </ul>
                     <div class="header__nav-control">
                         <div class="header__nav-control-search">
-                            <i class="header__nav-control-search-icon fas fa-search"></i>  
+                            <i class="header__nav-control-search-icon fas fa-search"></i>
                             <div class="header__nav-control-search-container">
                                 <input type="text" class="header__nav-control-search-input" placeholder="Bạn muốn tìm kiếm gì ...">
                                 <div class="header__nav-control-search-btn">SEARCH</div>
@@ -350,7 +412,7 @@
                             <i class="header__nav-control-cart-ion fas fa-shopping-cart"></i>
                             <p class="header__nav-control-cart-about">
                                 <span class="header__nav-control-cart-quantity">0</span>
-                                ( items ) 
+                                ( items )
                             </p>
                             <ul class="header__nav-control-cart-list header__nav-control-cart-list--no-item">
                                 <li class="header__nav-control-cart-item">
@@ -361,6 +423,6 @@
                     </div>
                 </div>
             </div>
-                      
+
         </header>
         <div class="container">

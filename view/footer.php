@@ -104,11 +104,7 @@
 </footer>
 </div>
 
-<form action="index.php?act=login" method="post">
-    <input type="text">
-    <input type="submit" name="login">
 
-</form>
 
 
 
