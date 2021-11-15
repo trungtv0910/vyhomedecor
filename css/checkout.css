@@ -1,6 +1,11 @@
 .checkout{
     margin: 0 auto;
     width: 100%;
+    margin-bottom: 30px;
+}
+.checkout h1{
+    padding: 10px 0;
+    color: rgb(0, 0, 0);
 }
 .billing-details{
     width: 100%;
@@ -16,6 +21,11 @@
 .title{
     width: 90%;
     border-bottom: solid 1px #ccc;
+    min-height: 40px;
+    margin-top: 10px;
+}
+.title h2{
+    color: black;
 }
 .thong-tin{
     margin-top: 10px;
@@ -43,6 +53,8 @@
 .your-oder{
     width: 90%;
     margin: 0 auto;
+    color: #666;
+    
 }
 .bill{
     margin-top: 20px;
@@ -64,6 +76,7 @@
 .Subtotal{
     width: 40%;
     float: left;
+    color: black;
 }
 .gia{
     width: 60%;
@@ -78,6 +91,7 @@
 .shipping1{
     width: 40%;
     float: left;
+    color: black;
 }
 .ship{
     width: 60%;
@@ -99,6 +113,7 @@
 }
 .total1{
     width: 40%;
+    color: black;
     float: left;
 }
 .total input[type="submit"]{

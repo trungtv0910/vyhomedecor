@@ -7,7 +7,8 @@
     width: 100%;
     min-height: 10px;
 }
-.tieude h3{
+.tieude h1{
+    padding: 10px 0;
     color: black;
 }
 .cart{
@@ -68,8 +69,9 @@
     margin-top: 20px;
     width: 60%;
     border: solid 2px rgb(199, 6, 6);
-    min-height: 470px;
+    min-height: 350px;
     font-size: 1vw;
+    margin-bottom: 30px;
 }
 .tong-gio-hang{
     width: 90%;
@@ -78,8 +80,7 @@
     margin: 0 auto;
 }
 .tieu-de{
-    min-height: 30px;
-    width: 100%;
+    min-height: 40px;
     border-bottom: #ccc solid 1px;
 }
 .tieu-de h4{
@@ -87,10 +88,13 @@
     padding: 10px 0;
 }
 .Subtotal{
+    margin-top: 10px;
     width: 40%;
     float: left;
+    color: black;
 }
 .gia{
+    margin-top: 10px;
     width: 60%;
     float: left;
 }
@@ -104,6 +108,7 @@
 .shipping1{
     width: 40%;
     float: left;
+    color: black;
 }
 .ship{
     width: 60%;
@@ -127,6 +132,7 @@
 .total1{
     width: 40%;
     float: left;
+    color: black;
 }
 .total input[type="submit"]{
     padding: 10px;
