@@ -44,9 +44,9 @@
                         <div class="col l-2-4 m-4 c-12">
                             <div class="products__item">
                                 <div class="products__item-link">
-                                    <img src="./images/productList/sp1.jpg" class="products__item-img">
+                                  <a href="index.php?act=product">  <img src="./images/productList/sp1.jpg" class="products__item-img"></a>
                                     <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
+                                        <a href="index.php?act=product" class="products__item-link-hover-add">
                                             <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
                                             Thêm vào giỏ hàng
                                         </a>
