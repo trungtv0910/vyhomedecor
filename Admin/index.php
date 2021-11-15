@@ -1,4 +1,7 @@
-<?php include_once 'inc_admin/header.php' ?>
+<?php include_once 'inc_admin/header.php';
+      include '../model/customer.php';
+?>
+
 <?php
 if (isset($_GET['act'])) {
     $path = $_GET['act'];
@@ -64,10 +67,11 @@ if (isset($_GET['act'])) {
                 }
             }
             break;
-        case 'customer&list':
+        case 'customer&list': {
                  $listcustomer=loadall_customer();
                  include "customer/list.php";
                  break;
+        }
         case 'statistical': {
                 if (isset($_GET['chart'])) {
                     include 'statistical/chart.php';
