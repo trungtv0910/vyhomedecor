@@ -64,6 +64,10 @@ if (isset($_GET['act'])) {
                 }
             }
             break;
+        case 'customer&list':
+                 $listcustomer=loadall_customer();
+                 include "customer/list.php";
+                 break;
         case 'statistical': {
                 if (isset($_GET['chart'])) {
                     include 'statistical/chart.php';
