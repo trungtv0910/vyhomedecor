@@ -10,7 +10,7 @@ init();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0">
-    <title>HomeDecor</title>
+    <title>Test</title>
     <link rel="icon" href="./images/logo/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/product.css">
     <link rel="stylesheet" href="./css/grid.css">
