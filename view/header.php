@@ -77,7 +77,7 @@ init();
                         </ul>
                         <?php
                       
-                        if (isset($_SESSION['login']['login']) == true ) {
+                        if (isset($_SESSION['login']['login']) == true) {
                            $account= $_SESSION['login'];
                         ?>
                             <ul class="header__top-right-list hide-on-mobile">
@@ -130,7 +130,9 @@ init();
                                 </ul>
                             </div>
                         <?php
-                        } else { ?>
+                        } else { 
+                            
+                            ?>
                             <ul class="header__top-right-list hide-on-mobile">
 
                                 <!-- <li class="header__top-right-item">

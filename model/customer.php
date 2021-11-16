@@ -16,10 +16,16 @@ function loadOne_customer($custId)
 }
 
 function insert_customer($data){
-    echo $custName =$data['custName'];
-    echo $phone =$data['phone'];
-    echo $address =$data['address'];
-    echo $role =$data['role'];
+    $custId=$data['custId'];
+    $custName =$data['custName'];
+    $phone =$data['phone'];
+    $address =$data['address'];
+    $status =$data['status'];
+    $role =$data['role'];
+    $sql="UPDATE tbl_customer SET custName='$custName', phone='$phone' ,address='$address' ,role =$role ,status =$status where custId = $custId";
+    $res = pdo_execute($sql);
+    return $res;
+    
 }
 
 

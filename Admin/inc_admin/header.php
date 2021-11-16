@@ -7,8 +7,9 @@ include_once '../model/account_model.php';
 init();
 
                  
-if (isset($_SESSION['login']['login']) == true && $_SESSION['login']['role']==1 ) {
+if (isset($_SESSION['login']['login']) == true && $_SESSION['login']['role']==1 && $_SESSION['login']['status']==1 ) {
     $account= $_SESSION['login'];
+  
 }else{
     echo '<script>window.location="../view/404.php" </script>';
 }

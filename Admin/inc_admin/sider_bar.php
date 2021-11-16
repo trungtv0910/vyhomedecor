@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-customer bg-gradient-primary sidebar sidebar-dark accordion " id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand align-items-center border_bottom" href="index.php">
+    <a class="sidebar-brand align-items-center border_bottom" href="../index.php">
       <div class="logo_hed"><img class="logo_hed"  src="../images/logo/no-img2.png" alt=""></div>
     </a>
     <!-- Nav Item - Dashboard -->

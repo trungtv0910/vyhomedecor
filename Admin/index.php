@@ -68,8 +68,11 @@ if (isset($_GET['act'])) {
                     $oneCustomer=loadOne_customer($custId);
                     include 'customer/edit.php';
                 }else if(isset($_GET['update'])){
-                    insert_customer($_POST);
-           
+                        if( insert_customer($_POST)==true){
+                           include 'customer/success.php';
+                        }else{
+                            include 'customer/error.php';
+                        }
                 } else {
                     include 'customer/list.php';
                 }
