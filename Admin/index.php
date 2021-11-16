@@ -1,6 +1,7 @@
 <?php include_once 'inc_admin/header.php';
       include '../model/customer.php';
       include_once '../model/pdo.php';
+      include_once '../model/global.php';
 ?>
 
 <?php
@@ -63,7 +64,12 @@ if (isset($_GET['act'])) {
                 } else if (isset($_GET['add'])) {
                     include 'customer/add.php';
                 } else if (isset($_GET['edit'])) {
+                    $custId=$_GET['edit'];
+                    $oneCustomer=loadOne_customer($custId);
                     include 'customer/edit.php';
+                }else if(isset($_GET['update'])){
+                    insert_customer($_POST);
+           
                 } else {
                     include 'customer/list.php';
                 }

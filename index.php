@@ -2,6 +2,7 @@
     include_once 'view/header.php';
     include_once 'model/pdo.php';
     include_once 'model/account_model.php';
+    include_once 'model/global.php';
 ?>
 
 <?php 
@@ -14,9 +15,7 @@
                     $password =$_POST['password'];
                     $res= checkLogin($username,$password);
                     if($res==1){
-                        echo '<pre>';
-                        print_r($_SESSION);
-                        echo '</pre>';
+                    
                       echo '<script>window.location="index.php" </script>';
                     }else 
                     {
@@ -45,9 +44,7 @@
         }
     }else{
         include 'view/home.php';
-        echo '<pre>';
-        print_r($_SESSION);
-        echo '</pre>';
+       
     }
 ?>
 

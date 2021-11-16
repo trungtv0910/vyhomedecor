@@ -76,9 +76,7 @@ init();
                             </li>
                         </ul>
                         <?php
-                        // echo '<pre>';
-                        // print_r($_SESSION['login']);
-                        // echo '</pre>';
+                      
                         if (isset($_SESSION['login']['login']) == true ) {
                            $account= $_SESSION['login'];
                         ?>
