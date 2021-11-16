@@ -83,30 +83,36 @@ init();
                             <ul class="header__top-right-list hide-on-mobile">
 
                                 <li class="header__top-right-item">
-                                <i class="header__top-right-icon far fa-user"></i>
-                                <a href="#" class="header__top-right-link">Xin chào: <?= $account['custName']  ?></a>
-                            </li>
-                                <li class="header__top-right-item">
-                                    <i class="header__top-right-icon far fa-heart"></i>
-                                    <a href="#" class="header__top-right-link">Yêu thích</a>
+                                    <i class="header__top-right-icon far fa-user"></i>
+                                    <a href="#" class="header__top-right-link">Xin chào: <?= $account['custName']  ?></a> 
+                                    <ul class="account-control__list">
+                                        <li class="account-control__item">
+                                            <i class="header__top-right-icon fas fa-user"></i>
+                                            <a href="#" class="header__top-right-link">Cập nhật tài khoản</a>
+                                        </li>
+                                        <li class="account-control__item">
+                                            <i class="header__top-right-icon fas fa-user-lock"></i>
+                                            <a href="#" class="header__top-right-link">Đổi mật khẩu</a>
+                                        </li>
+                                        <li class="account-control__item">
+                                            <i class="header__top-right-icon fas fa-box"></i>
+                                            <a href="#" class="header__top-right-link">Đơn hàng của tôi</a>
+                                        </li> 
+                                        <?php
+                                        if( $account['role']==1){
+                                        ?>
+                                        <li class="account-control__item">
+                                            <i class="header__top-right-icon far fas fa-users-cog"></i>
+                                            <a href="admin/index.php" class="header__top-right-link">Quản trị Admin</a>
+                                        </li>
+                                        <?php } ?>
+                                        <li class="account-control__item ">
+                                            <i class="header__top-right-icon fas fa-sign-in-alt"></i>
+                                            <a href="index.php?act=logout"  class="header__top-right-link">Đăng xuất</a>
+                                        </li>
+                                    </ul>                        
                                 </li>
-                                <li class="header__top-right-item">
-                                    <i class="header__top-right-icon far fa-check-square"></i>
-                                    <a href="#" class="header__top-right-link">Giỏ hàng</a>
-                                </li>
-                                <?php
-                                if( $account['role']==1){
-                                ?>
-                                <li class="header__top-right-item">
-                         
-                                    <i class="header__top-right-icon far fas fa-users-cog"></i>
-                                    <a href="admin/index.php" class="header__top-right-link">Quản trị Admin</a>
-                                </li>
-                                <?php } ?>
-                                <li class="header__top-right-item ">
-                                    <i class="header__top-right-icon fas fa-sign-in-alt"></i>
-                                    <a href="index.php?act=logout"  class="header__top-right-link">Đăng xuất</a>
-                                </li>
+                                                
                             </ul>
                             <div class="mobile-top-nav l-0 m-0">
                                 <i class="mobile-top-nav__icon fas fa-anchor"></i>

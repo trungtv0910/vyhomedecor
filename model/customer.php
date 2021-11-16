@@ -15,7 +15,7 @@ function loadOne_customer($custId)
    return $res;
 }
 
-function insert_customer($data){
+function update_customer($data){
     $custId=$data['custId'];
     $custName =$data['custName'];
     $phone =$data['phone'];
@@ -24,8 +24,12 @@ function insert_customer($data){
     $role =$data['role'];
     $sql="UPDATE tbl_customer SET custName='$custName', phone='$phone' ,address='$address' ,role =$role ,status =$status where custId = $custId";
     $res = pdo_execute($sql);
-    return $res;
-    
+    return $res; 
+}
+
+function add_customer($email, $custName, $username, $password){
+    $sql="insert into tbl_customer(email, custName, username, password) values ('$email', '$custName', '$username', '$password')";
+    pdo_execute($sql);
 }
 
 function delete_customer($custId){

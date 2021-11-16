@@ -40,6 +40,9 @@
     .highlights__item-top-link{
         margin-bottom: 16px;
     }
+    .account-control__list{
+        right: 20%;
+    }
 }
 /* Mobile */
 @media (max-width: 739px){
