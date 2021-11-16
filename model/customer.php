@@ -28,6 +28,10 @@ function insert_customer($data){
     
 }
 
+function delete_customer($custId){
+    $sql="DELETE FROM tbl_customer where custId=$custId";
+    pdo_execute($sql);
+}
 
 
 

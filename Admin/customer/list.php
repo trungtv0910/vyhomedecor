@@ -73,9 +73,21 @@
                                     <td><i class="ni ni-email-83"></i> <?=$email?> </td>
                                     <td><i class="fas fa-phone"></i> <?=$phone?></td>
                                     <td><?=$address?></td>
-                                    <td><span class="text-seccess"><?=$status?></span></td>
+                                    <td><span class="text-seccess"><?php
+                                           if($status==0){
+                                               echo 'Khoá';
+                                           }else{
+                                               echo 'Hoạt động';
+                                           }
+                                       ?></span></td>
                                     <td>
-                                       <?=$role?>
+                                       <?php
+                                           if($role==1){
+                                               echo 'Quản Trị Viên';
+                                           }else{
+                                               echo 'Thành Viên';
+                                           }
+                                       ?>
                                     </td>
                                     <td><a class="btn  btn-primary" href="index.php?act=customer&edit=<?=$custId ?>"><span class="icon text-white-50"><i class="far fa-edit"></i></span></a>
                                     

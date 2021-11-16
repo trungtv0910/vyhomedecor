@@ -61,7 +61,11 @@ if (isset($_GET['act'])) {
                 if (isset($_GET['list'])) {
                     $listcustomer=loadAll_customer();
                     include 'customer/list.php';
-                } else if (isset($_GET['add'])) {
+                } else if(isset($_GET['delete'])){
+                        delete_customer($_GET['delete']);
+                        $listcustomer=loadAll_customer();
+                    include 'customer/list.php';
+                }else if (isset($_GET['add'])) {
                     include 'customer/add.php';
                 } else if (isset($_GET['edit'])) {
                     $custId=$_GET['edit'];
