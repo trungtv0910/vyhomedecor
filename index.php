@@ -3,6 +3,7 @@
     include_once 'model/pdo.php';
     include_once 'model/account_model.php';
     include_once 'model/global.php';
+    include_once 'model/customer.php';
 ?>
 
 <?php 
@@ -23,6 +24,32 @@
                            include_once 'view/home.php';
                     }
             
+                }
+
+
+            }break;
+            case "register":{
+                if(isset($_POST['register'])){
+                    $email = $_POST['email'];
+                    $custName = $_POST['name'];
+                    $password = $_POST['password'];
+                    $passwordCheck = $_POST['passwordCheck'];
+                    $username = $_POST['username'];
+                    if($password == $passwordCheck){
+                        add_customer($email, $custName, $username, $password);
+                        echo "<script>
+                                Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Đăng ký thành công',
+                                showConfirmButton: false,
+                                timer: 1500})
+                            </script>";
+                           include_once 'view/home.php';
+                    }else{
+                        echo "<script>Swal.fire({icon: 'error', title: 'Nhập lại mật khẩu không chính xác !'})</script>";
+                        include_once 'view/home.php';
+                    }
                 }
 
 

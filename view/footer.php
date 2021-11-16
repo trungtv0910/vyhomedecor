@@ -131,16 +131,18 @@
                 </form>
             </div>
             <div class="model-body-form ">
-                <form action="" method="post">
+                <form action="index.php?act=register" method="post">
                     <label for="enter-email" class="model-label"><i class="fas fa-envelope"></i> Email</label>
-                    <input type="email" class="model-input" id="enter-email" required>
+                    <input type="email" name="email" class="model-input" id="enter-email" required>
+                    <label for="enter-name" class="model-label"><i class="fas fa-user"></i> Họ và Tên</label>
+                    <input type="text" name="name" class="model-input" id="enter-name" required>
                     <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Tên đăng nhâp</label>
-                    <input type="text" class="model-input" id="enter-user" required>
+                    <input type="text" name="username" class="model-input" id="enter-user" required>
                     <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu</label>
-                    <input type="password" class="model-input" id="enter-pass" required>
+                    <input type="password" name="password" class="model-input" id="enter-pass" required>
                     <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Nhập lại mật khẩu</label>
-                    <input type="password" class="model-input" id="enter-pass" required>
-                    <input type="submit" name="" class="model-btn model-btn-regester" value="Đăng ký">
+                    <input type="password" name="passwordCheck" class="model-input" id="enter-pass" required>
+                    <input type="submit" name="register" class="model-btn model-btn-regester" value="Đăng ký">
                 </form>
             </div>
 
