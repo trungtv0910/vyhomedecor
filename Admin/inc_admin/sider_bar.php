@@ -78,7 +78,7 @@
         <div id="collapseCustomer" class="collapse" aria-labelledby="headingCategory" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Quản Lý Khách Hàng:</h6>
-                <a class="collapse-item" href="index.php?act=customer&add">Thêm Tài Khoản</a>
+                <!-- <a class="collapse-item" href="index.php?act=customer&add">Thêm Tài Khoản</a> -->
                 <a class="collapse-item" href="index.php?act=customer&list">Danh Sách Khách Hàng</a>
 
 

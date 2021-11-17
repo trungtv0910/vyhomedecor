@@ -115,7 +115,7 @@ border-radius: 5px;
 }
 
 .reply_img {
-    width: 10%;
+    /* width: 10%; */
 }
 
 .reply_img img {
@@ -158,3 +158,12 @@ border-radius: 5px;
     /* font-size: 12px; */
 }
 .text-end{text-align: end;}
+.fa-green {
+    color: green;
+    box-shadow: rgb(62, 136, 13) 0px 20px 30px -10px;
+}
+
+.fa-red {
+    color: red;
+    box-shadow: rgb(216, 0, 0) 0px 20px 30px -10px;
+}

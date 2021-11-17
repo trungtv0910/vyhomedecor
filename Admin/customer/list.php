@@ -29,7 +29,7 @@
                         <h3 class="mb-0">Quản Lý Khách Hàng</h3>
                     </div>
                     <div class="col text-right">
-                        <a href="index.php?act=customer&add" class="btn btn-sm btn-primary">Thêm Khách Hàng</a>
+                        <!-- <a href="index.php?act=customer&add" class="btn btn-sm btn-primary">Thêm Khách Hàng</a> -->
                         <span>
                          
                         </span>
@@ -61,11 +61,11 @@
                                     ?>
                                     <tr>
                                     <td><i class="fas fa-barcode"><?=$custId?></td>
-                                    <td>
+                                    <td class="text-center">
                                         <div class="reply_img text-center">
                                            <img width="50" src="img_tam/anhavatar.png" alt="">
                                         </div>
-                                        <i class="ni ni-single-02"><?=$custName?>
+                                        <?=$custName?>
                                     </td>
                                     <td>
                                     <?=$username?> 
@@ -75,17 +75,18 @@
                                     <td><?=$address?></td>
                                     <td><span class="text-seccess"><?php
                                            if($status==0){
-                                               echo 'Khoá';
+                                               echo " <i class='fas fa-circle fa-red'></i> Khoá ";
                                            }else{
-                                               echo 'Hoạt động';
+                                               echo "<i class='fas fa-circle fa-green'></i> Hoạt động  ";
                                            }
                                        ?></span></td>
                                     <td>
                                        <?php
                                            if($role==1){
-                                               echo 'Quản Trị Viên';
+                                            echo '<div style="font-size:100% ;color:#fff" class="badge bg-warning rounded-pill">Admin</div>';
+                                               
                                            }else{
-                                               echo 'Thành Viên';
+                                            echo '<div style="font-size:100% ;color:#fff" class="badge bg-primary text-white rounded-pill">Thành viên</div>';
                                            }
                                        ?>
                                     </td>
