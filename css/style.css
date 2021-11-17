@@ -153,7 +153,7 @@
     display: none;
     position: absolute;
     top: 100%;
-    right: 4%;
+    right: 0;
     background-color: var(--bacground-color);
     list-style: none;
     width: 180px;
@@ -169,6 +169,44 @@
     color: var(--hover-color);
 }
 
+
+
+
+/* Edit cusotmer */
+.changepass,
+.edit-customer{
+    position: fixed;
+    top: var(--header__top-height);
+    right: 20px;
+    width: 400px;
+    background-color: var(--bacground-color);
+    padding: 24px 16px 16px;
+    border-radius: 2px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); 
+    transform: translateX(110%);
+    transition: all 0.3s linear;
+}
+.edit-customer__control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+.edit-customer__heading{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+.changepass__close,
+.edit-customer__close{
+    display: block;
+    font-size: 2.2rem;
+    padding: 0 4px;
+}
+.edit-customer__close:hover{
+    color: var(--hover-color);
+    cursor: pointer;
+}
 /* header__languge */
 .header__currency:hover .header__currency-list,
 .header__language:hover .header__language-list{
@@ -1500,6 +1538,7 @@
     width: 100%;
 }
 .model-label{
+    font-size: 1.3rem;
     display: block;
     padding: 8px 0;
 }
@@ -1511,7 +1550,7 @@
 .model-btn{
     margin-top:  32px;
     margin-bottom: 16px;
-    padding: 18px;
+    padding: 16px;
     border: none;
     background-color: #009688;
     font-size: 1.6rem;
@@ -1533,4 +1572,12 @@
 }
 .model-body-form.active{
     display: block;
+}
+.model-control-right{
+    display: flex;
+    flex-direction: column;
+}
+.model-control-right .forgot-pass{
+    font-size: 1.6rem;
+    text-transform: unset;
 }

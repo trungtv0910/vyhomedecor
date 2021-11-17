@@ -1,60 +1,83 @@
-var slideIndex = 1;
-showSlides(slideIndex);
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+var $ = document.querySelector.bind(document)
+var $$ = document.querySelectorAll.bind(document)
+
+// slider
+var slides = $$(".highlights__slider-img");
+if(slides) {
+    var dots = $$(".highlight__slider-control-btn");
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        var i;
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace("active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+}
+// Edit customer
+var openEditCustomer = $('.edit-customer__open')
+if(openEditCustomer) {
+    var editCustomer = $('.edit-customer')
+    openEditCustomer.onclick = function() {
+        editCustomer.style.transform = 'translateX(0)'
+    }
+    $('.edit-customer__close').onclick = function() {
+        editCustomer.style.transform = 'translateX(110%)'
+    } 
 }
 
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("highlights__slider-img");
-    var dots = document.getElementsByClassName("highlight__slider-control-btn");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+// Changepass
+var openChangePass = $('.changepass__open')
+if(openChangePass) {
+    var changePass = $('.changepass')
+    openChangePass.onclick = function() {
+        changePass.style.transform = 'translateX(0)';
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace("active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    $('.changepass__close').onclick = function() {
+        changePass.style.transform = 'translateX(110%)';
+    } 
 }
-
-// var aElements = document.links;
-// for(var i = 0; i < aElements.length; ++i){
-//     aElements[i].onclick = function(e) {
-//         if(!e.target.href.startsWith('#')){
-//             e.preventDefault();
-//         }
-//     }
-// }
 
 
 // Model
-var $ = document.querySelector.bind(document);
-var $$ = document.querySelectorAll.bind(document);
-$('.js-login').onclick = function() {
-    $('.model').style.display = 'flex';
-}
-$('.js-login-mb').onclick = function() {
-    $('.model').style.display = 'flex';
-}
-$('.model-overlay').onclick = function() {
-    $('.model').style.display = 'none';
-}
-
-
-
 var modelControls = $$('.model-control')
-var modelForms = $$('.model-body-form')
-modelControls.forEach((modelControl, index) => {
-    const modelForm = modelForms[index]
-    
-    modelControl.onclick = function() {
-        $('.model-control.active').classList.remove('active')
-        $('.model-body-form.active').classList.remove('active')
-
-        this.classList.add('active')
-        modelForm.classList.add('active');
+if(modelControls) {
+    $('.js-login').onclick = function() {
+        $('.model').style.display = 'flex';
     }
-})
+    $('.js-login-mb').onclick = function() {
+        $('.model').style.display = 'flex';
+    }
+    $('.model-overlay').onclick = function() {
+        $('.model').style.display = 'none';
+    }
+    var modelForms = $$('.model-body-form')
+    modelControls.forEach((modelControl, index) => {
+        const modelForm = modelForms[index]
+        
+        modelControl.onclick = function() {
+            $('.model-control.active').classList.remove('active')
+            $('.model-body-form.active').classList.remove('active')
+    
+            this.classList.add('active')
+            modelForm.classList.add('active');
+        }
+    })
+}
+
+  
+
+
+
+
+

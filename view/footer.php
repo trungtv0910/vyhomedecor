@@ -115,7 +115,10 @@
         <!-- <form action="" method="post"> -->
         <div class="model-header">
             <a href="#" class="model-control active">Đăng nhập</a>
-            <a href="#" class="model-control">Đăng ký</a>
+            <div class="model-control-right">
+                <a href="#" class="model-control">Đăng ký</a>
+                <a href="#" class="model-control forgot-pass">Quên mật khẩu ?</a>
+            </div>
         </div>
 
         <div class="model-body">
@@ -123,14 +126,13 @@
             <div class="model-body-form active">
                 <form action="index.php?act=login" method="post">
                     <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Tên đăng nhâp</label>
-                    <input type="text" name="username" class="model-input" id="enter-user">
+                    <input type="text" name="username" class="model-input" id="enter-user" required>
                     <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu</label>
-                    <input type="password" name ="password" class="model-input" id="enter-pass">
+                    <input type="password" name ="password" class="model-input" id="enter-pass" required>
                     <input type="submit" name="login" class="model-btn model-btn-login" value="Đăng nhập">
-                    <!-- <input type="submit" name="login" value="dn"> -->
                 </form>
             </div>
-            <div class="model-body-form ">
+            <div class="model-body-form">
                 <form action="index.php?act=register" method="post">
                     <label for="enter-email" class="model-label"><i class="fas fa-envelope"></i> Email</label>
                     <input type="email" name="email" class="model-input" id="enter-email" required>
@@ -145,7 +147,14 @@
                     <input type="submit" name="register" class="model-btn model-btn-regester" value="Đăng ký">
                 </form>
             </div>
-
+            <div class="model-body-form">
+                <form action="index.php?act=login" method="post">
+                    <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Nhập địa chỉ email của bạn</label>
+                    <input type="email" name="username" class="model-input" id="enter-user" required>
+                    <input type="submit" name="login" class="model-btn model-btn-login" value="Gửi">
+                </form>
+            </div>
+            
         </div>
 
         <!-- </form> -->

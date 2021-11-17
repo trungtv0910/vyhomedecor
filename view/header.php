@@ -81,16 +81,18 @@ init();
                            $account= $_SESSION['login'];
                         ?>
                             <ul class="header__top-right-list hide-on-mobile">
+                                
+                            
 
                                 <li class="header__top-right-item">
-                                    <i class="header__top-right-icon far fa-user"></i>
+                                    <i class="header__top-right-icon fas fa-user"></i>
                                     <a href="#" class="header__top-right-link">Xin chào: <?= $account['custName']  ?></a> 
                                     <ul class="account-control__list">
-                                        <li class="account-control__item">
+                                        <li class="account-control__item edit-customer__open">
                                             <i class="header__top-right-icon fas fa-user"></i>
                                             <a href="#" class="header__top-right-link">Cập nhật tài khoản</a>
                                         </li>
-                                        <li class="account-control__item">
+                                        <li class="account-control__item changepass__open">
                                             <i class="header__top-right-icon fas fa-user-lock"></i>
                                             <a href="#" class="header__top-right-link">Đổi mật khẩu</a>
                                         </li>
@@ -112,6 +114,39 @@ init();
                                         </li>
                                     </ul>                        
                                 </li>
+                                <div class="edit-customer">
+                                    <form action="index.php?act=edit-customer" method="post">
+                                        <div class="edit-customer__control">
+                                            <h4 class="edit-customer__heading">cập nhật tài khoản</h4>
+                                            <span class="edit-customer__close"><i class="fas fa-times"></i></span>
+                                        </div>
+                                        <label for="enter-name" class="model-label"><i class="fas fa-user"></i> Họ và Tên</label>
+                                        <input type="text" name="custName" class="model-input" id="enter-name">
+                                        <label for="enter-phone" class="model-label"><i class="fas fa-phone"></i> Số điện thoại</label>
+                                        <input type="text" name ="phone" class="model-input" id="enter-phone">
+                                        <label for="enter-email" class="model-label"><i class="fas fa-envelope"></i> Email</label>
+                                        <input type="text" name ="email" class="model-input" id="enter-email">
+                                        <label for="enter-address" class="model-label"><i class="fas fa-address-card"></i> Địa chỉ</label>
+                                        <input type="text" name ="address" class="model-input" id="enter-address">
+
+                                        <input type="submit" name="edit-customer" class="model-btn model-btn-login" value="Cập nhật">
+                                    </form>
+                                </div>
+                                <div class="changepass">
+                                    <form action="index.php?act=changepass" method="post">
+                                        <div class="edit-customer__control">
+                                            <h4 class="edit-customer__heading">Đổi mật khẩu</h4>
+                                            <span class="changepass__close"><i class="fas fa-times"></i></span>
+                                        </div>
+                                        <label for="enter-email" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu mới</label>
+                                        <input type="text" name ="passwword" class="model-input" id="enter-email">
+                                        <label for="enter-address" class="model-label"><i class="fas fa-unlock-alt"></i> Nhập lại mật khẩu mới</label>
+                                        <input type="passwword" name ="passwwordCheck" class="model-input" id="enter-address">
+
+                                        <input type="submit" name="changepass" class="model-btn model-btn-login" value="Đổi mật khẩu">
+                                    </form>
+                                </div>
+                                
                                                 
                             </ul>
                             <div class="mobile-top-nav l-0 m-0">
@@ -437,6 +472,7 @@ init();
                     </div>
                 </div>
             </div>
+            
 
         </header>
         <div class="container">
