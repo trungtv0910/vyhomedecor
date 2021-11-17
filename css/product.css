@@ -142,18 +142,22 @@ strong{
     width: 100%;
     margin-top: 5px;
 }
+.binh-luan input[type="submit"],
 .mua-hang input[type="submit"]{
-    padding: 13px 20px;
-    background-color: rgb(202, 26, 26);
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
     border: none;
-    color: rgb(255, 255, 255);
-    border-radius: 3px;
+    color: var(--white-color);
+    border-radius: 2px;
     font-size: 1vw;
+    transition: all 0.3s linear;
+    outline: none;
 }
+.binh-luan input[type="submit"]:hover,
 .mua-hang input[type="submit"]:hover{
-    color: black;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
+    color: var(--white-color);
+    background-color: var(--hover-color);
 }
 /* css content-2*/
 .content-2{
@@ -261,18 +265,6 @@ strong{
 }
 .binh-luan{
     width: 90%;
-}
-.binh-luan input[type="submit"]{
-    padding: 10px 20px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(202, 26, 26);
-    border-radius: 5px;
-    border: none;
-}
-.binh-luan input[type="submit"]:hover{
-    color: black;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
 }
 
 

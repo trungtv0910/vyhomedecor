@@ -68,7 +68,7 @@
                                 Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Đổi mật khẩu thành công thành công',
+                                title: 'Đổi mật khẩu thành công',
                                 showConfirmButton: false,
                                 timer: 1500})
                             </script>";
