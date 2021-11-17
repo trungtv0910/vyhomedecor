@@ -47,7 +47,7 @@
     min-height: 530px;
     width: 60%;
     font-family: myfont;
-    font-size: 1vw;
+    font-size: 1rem;
     float: left;
 }
 .title{
@@ -110,7 +110,7 @@ strong{
     width: 100%;
     min-height: 145px;
     border-bottom: solid #ccc 1px;
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 23px;
 }
 .color{
@@ -171,7 +171,7 @@ strong{
     min-height: 660px;
 }
 .tieu-de{
-    color: black;
+    color: #333;
     min-height: 40px;
     margin: 0 auto;
     width: 80%;
@@ -200,9 +200,13 @@ strong{
     float: right;
     line-height: 25px;
 }
+.addCart strong{
+    font-size: 1.4rem;
+}
 .addCart a{
     text-decoration: none;
-    color: #666;
+    color: #333;
+    font-size: 1.4rem;
 }
 .addCart a:hover{
     color: red;
@@ -221,6 +225,9 @@ strong{
     min-height: 40px;
     border-bottom: solid 1px #ccc;
     padding-top: 10px;
+}
+.reveiws h2{
+    color: #333;
 }
 .nguoi-reveiws{
     margin: 0 auto;
@@ -254,6 +261,7 @@ strong{
 }
 .bl strong{
     padding-left: 3px;
+    color: #333;
 }
 .bl p{
     padding-left: 10px;
@@ -262,9 +270,11 @@ strong{
 .addemail{
     width: 90%;
     min-height: 50px;
+    font-size: 1.2rem;
 }
 .binh-luan{
     width: 90%;
+    font-size: 1.4rem;
 }
 
 
