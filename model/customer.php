@@ -36,7 +36,17 @@ function delete_customer($custId){
     $sql="DELETE FROM tbl_customer where custId=$custId";
     pdo_execute($sql);
 }
+function edit_customer($custId, $username, $password, $custName, $phone, $email, $address) {
+    $sql="UPDATE tbl_customer SET username = '$username', password =  '$password',  custName = '$custName', phone = '$phone', email = '$email', address = '$address' where custId = $custId";
+    $res = pdo_execute($sql);
+    return $res; 
+}
 
+function update_password($custId, $password) {
+    $sql="UPDATE tbl_customer SET password = '$password' where custId = $custId";
+    $res = pdo_execute($sql);
+    return $res; 
+}
 
 
 

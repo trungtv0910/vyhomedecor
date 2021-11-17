@@ -2,8 +2,9 @@ var $ = document.querySelector.bind(document)
 var $$ = document.querySelectorAll.bind(document)
 
 // slider
-var slides = $$(".highlights__slider-img");
-if(slides) {
+var slider = $('.highlight__slider')
+if(slider) {
+    var slides = $$(".highlights__slider-img");
     var dots = $$(".highlight__slider-control-btn");
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -24,6 +25,7 @@ if(slides) {
         dots[slideIndex-1].className += " active";
     }
 }
+
 // Edit customer
 var openEditCustomer = $('.edit-customer__open')
 if(openEditCustomer) {
@@ -74,6 +76,8 @@ if(modelControls) {
         }
     })
 }
+
+
 
   
 

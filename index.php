@@ -54,6 +54,54 @@
 
 
             }break;
+
+            case "change-pass":{
+                if(isset($_POST['changepass']) && ($_POST['changepass'])){
+                    $custId = $_POST['custId'];
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $passwordCheck = $_POST['passwordCheck'];
+                    if($password == $passwordCheck){
+                        update_password($custId, $password);
+                        $_SESSION['login'] = checkLogin($username,$password);
+                        echo "<script>
+                                Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Đổi mật khẩu thành công thành công',
+                                showConfirmButton: false,
+                                timer: 1500})
+                            </script>";
+                           include_once 'view/home.php';
+                    }else{
+                        echo "<script>Swal.fire({icon: 'error', title: 'Nhập lại mật khẩu không chính xác !'})</script>";
+                        include_once 'view/home.php';
+                    }
+                }
+            }break;
+
+            case "edit-customer":{
+                if(isset($_POST['edit-customer']) && ($_POST['edit-customer'])){ 
+                    $custId = $_POST['custId'];
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $custName = $_POST['custName'];
+                    $phone = $_POST['phone'];
+                    $email = $_POST['email'];
+                    $address = $_POST['address'];
+                    edit_customer($custId, $username, $password, $custName, $phone, $email, $address);
+                    $_SESSION['login'] = checkLogin($username,$password);
+                    echo "<script>
+                                Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Cập nhật thành công',
+                                showConfirmButton: false,
+                                timer: 1500})
+                            </script>";
+                    include_once 'view/home.php';
+                }
+            }break;
             case "logout" : {
                 checkLogout();
                 echo '<script>window.location="index.php" </script>';

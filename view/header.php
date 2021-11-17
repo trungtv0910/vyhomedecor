@@ -121,27 +121,32 @@ init();
                                             <span class="edit-customer__close"><i class="fas fa-times"></i></span>
                                         </div>
                                         <label for="enter-name" class="model-label"><i class="fas fa-user"></i> Họ và Tên</label>
-                                        <input type="text" name="custName" class="model-input" id="enter-name">
+                                        <input type="text" name="custName" class="model-input" id="enter-name" value="<?= $account['custName'] ?>">
                                         <label for="enter-phone" class="model-label"><i class="fas fa-phone"></i> Số điện thoại</label>
-                                        <input type="text" name ="phone" class="model-input" id="enter-phone">
+                                        <input type="text" name ="phone" class="model-input" id="enter-phone" value="<?= $account['phone'] ?>">
                                         <label for="enter-email" class="model-label"><i class="fas fa-envelope"></i> Email</label>
-                                        <input type="text" name ="email" class="model-input" id="enter-email">
+                                        <input type="text" name ="email" class="model-input" id="enter-email" value="<?= $account['email'] ?>">
                                         <label for="enter-address" class="model-label"><i class="fas fa-address-card"></i> Địa chỉ</label>
-                                        <input type="text" name ="address" class="model-input" id="enter-address">
+                                        <input type="text" name ="address" class="model-input" id="enter-address" value="<?= $account['address'] ?>">
+                                        <input type="hidden" name="custId" value="<?= $account['custId'] ?>">
+                                        <input type="hidden" name="username" value="<?= $account['username'] ?>">    
+                                        <input type="hidden" name="password" value="<?= $account['password'] ?>">
 
                                         <input type="submit" name="edit-customer" class="model-btn model-btn-login" value="Cập nhật">
                                     </form>
                                 </div>
                                 <div class="changepass">
-                                    <form action="index.php?act=changepass" method="post">
+                                    <form action="index.php?act=change-pass" method="post">
                                         <div class="edit-customer__control">
                                             <h4 class="edit-customer__heading">Đổi mật khẩu</h4>
                                             <span class="changepass__close"><i class="fas fa-times"></i></span>
                                         </div>
                                         <label for="enter-email" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu mới</label>
-                                        <input type="text" name ="passwword" class="model-input" id="enter-email">
+                                        <input type="password" name ="password" class="model-input" id="enter-email">
                                         <label for="enter-address" class="model-label"><i class="fas fa-unlock-alt"></i> Nhập lại mật khẩu mới</label>
-                                        <input type="passwword" name ="passwwordCheck" class="model-input" id="enter-address">
+                                        <input type="password" name ="passwordCheck" class="model-input" id="enter-address">
+                                        <input type="hidden" name="custId" value="<?= $account['custId'] ?>">
+                                        <input type="hidden" name="username" value="<?= $account['username'] ?>">    
 
                                         <input type="submit" name="changepass" class="model-btn model-btn-login" value="Đổi mật khẩu">
                                     </form>
