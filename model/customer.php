@@ -28,7 +28,7 @@ function update_customer($data){
 }
 
 function add_customer($email, $custName, $username, $password){
-    $sql="insert into tbl_customer(email, custName, username, password,status) values ('$email', '$custName', '$username', '$password','1')";
+    $sql="insert into tbl_customer(email, custName, username, password,status,role) values ('$email', '$custName', '$username', '$password','1','0')";
     pdo_execute($sql);
 }
 
