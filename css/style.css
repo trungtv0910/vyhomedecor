@@ -203,6 +203,7 @@
     font-size: 2.2rem;
     padding: 0 4px;
 }
+.changepass__close:hover,
 .edit-customer__close:hover{
     color: var(--hover-color);
     cursor: pointer;
