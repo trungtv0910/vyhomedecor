@@ -115,7 +115,7 @@ border-radius: 5px;
 }
 
 .reply_img {
-    /* width: 10%; */
+    width: 100%;
 }
 
 .reply_img img {
