@@ -105,12 +105,7 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn-danger btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Split Button Danger</span>
-                                    </a>
+ 
 
 
 </div>
