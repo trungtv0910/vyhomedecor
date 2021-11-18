@@ -3,6 +3,7 @@
       include_once '../model/pdo.php';
       include_once '../model/global.php';
       include_once '../model/product_model.php';
+      include_once '../model/category.php';
 ?>
 
 <?php
@@ -11,6 +12,7 @@ if (isset($_GET['act'])) {
     switch ($path) {
         case 'category': {
                 if (isset($_GET['list'])) {
+                    $listcategory = loadAll_category();
                     include 'category/list.php';
                 } else if (isset($_GET['add'])) {
                     include 'category/add.php';

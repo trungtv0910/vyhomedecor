@@ -17,7 +17,7 @@
             <div id="collapseCategory" class="collapse" aria-labelledby="headingCategory" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Quản Lý Danh Mục:</h6>
-                <a class="collapse-item" href="index.php?act=category&add">Thêm Sản Danh Mục</a>
+                <a class="collapse-item" href="index.php?act=category&add">Thêm Danh Mục</a>
                 <a class="collapse-item" href="index.php?act=category&list">Danh Sách Danh Mục</a>
 
             </div>
