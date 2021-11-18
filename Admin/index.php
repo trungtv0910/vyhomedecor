@@ -18,13 +18,13 @@ if (isset($_GET['act'])) {
                     $catName=$_POST['catName'];
                     insert_category($catName);
                     include 'category/add.php';
-                } else if (isset($_GET['edit'])) {
-                    include 'category/edit.php';
                 }else if(isset($_GET['listChild'])){
                     include 'category/listChild.php';
+                }else if (isset($_GET['edit'])) {
+                    include 'category/edit.php';
                 }else {
                     include 'category/list.php';
-                }
+                }`
             }
             break;
         case 'product': {

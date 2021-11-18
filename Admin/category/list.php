@@ -45,7 +45,7 @@
                             </td>
                             <td><a href="" class="btn btn-light btn-icon-split"> <span class="icon text-white-50"><i class="far fa-plus-square"></i></span>
                                     <span class="text">Thêm</span></a></td>
-                            <td><a href="index.php?act=category&edit" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
+                            <td><a href="index.php?act=category&listChild" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
                                     <span class="text">Sửa</span></a></td>
                             <td> <a href="" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
                                     <span class="text">Xoá</span></a></td>
