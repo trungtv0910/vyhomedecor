@@ -54,7 +54,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                          
+                          <?php 
+                          foreach($listProduct as $value){
+                              extract($value);
+                          ?>
                             <tr>
                                 <td>123</td>
                                 <td class="sup_parent"><img width="100" src="img_tam/26-120x120.jpg" alt="">
@@ -83,62 +86,9 @@
                                 <td> <a href="" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
                                         <span class="text">Xoá</span></a></td>
                             </tr>
-                            <tr>
-                                <td>123</td>
-                                <td class="sup_parent"><img width="100" src="img_tam/26-120x120.jpg" alt="">
-                                    <!-- sup -->
-                                    <span class=" sup_nomal sup_title rotate-15">Thường</span>
-                                    <!-- end sup -->
-                                </td>
-                                <td class="text-left">Ghế Xoay
-                                    <br>
-                                    <b>Số lượng còn lại:200</b>
-                                    <br>
-                                    <b>Giá Bán: 200.000 <b>VNĐ</b>
-                                </td>
-                                <td class="text-left">
-                                    Phòng Khách
-                                    <br>
-                                    <b>Loại : Bàn Ghế</b>
-                                </td>
-                                <td>Ghế Xoay Danlinh một sản phẩm mới với nhiều lựa chọn màu sắc khách nhau, người sử dụng có thể...</td>
-                                <td>2000 </td>
-                                <td>11/05/2021 </td>
-
-                                <td><a href="index.php?act=product&edit" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
-                                        <span class="text">Sửa</span></a>
-                                </td>
-                                <td> <a href="" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
-                                        <span class="text">Xoá</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>123</td>
-                                <td class="sup_parent"><img width="100" src="img_tam/26-120x120.jpg" alt="">
-                                    <!-- sup -->
-                                    <span class=" sup_new sup_title rotate-15">new</span>
-                                    <!-- end sup -->
-                                </td>
-                                <td class="text-left">Ghế Xoay
-                                    <br>
-                                    <b>Số lượng còn lại:200</b>
-                                    <br>
-                                    <b>Giá Bán: 200.000 <b>VNĐ</b>
-                                </td>
-                                <td class="text-left">
-                                    Phòng Khách
-                                    <br>
-                                    <b>Loại : Bàn Ghế</b>
-                                </td>
-                                <td>Ghế Xoay Danlinh một sản phẩm mới với nhiều lựa chọn màu sắc khách nhau, người sử dụng có thể...</td>
-                                <td>2000 </td>
-                                <td>11/05/2021 </td>
-
-                                <td><a href="index.php?act=product&edit" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
-                                        <span class="text">Sửa</span></a>
-                                </td>
-                                <td> <a href="" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
-                                        <span class="text">Xoá</span></a></td>
-                            </tr>
+                          <?php
+                          }
+                          ?>
                         </tbody>
                     </table>
                 </form>
