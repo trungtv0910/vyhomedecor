@@ -5,7 +5,7 @@
 }
 .checkout h1{
     padding: 10px 0;
-    color: rgb(0, 0, 0);
+    color: #333;
 }
 .billing-details{
     width: 100%;
@@ -25,14 +25,15 @@
     margin-top: 10px;
 }
 .title h2{
-    color: black;
+    color: #333;
 }
 .thong-tin{
     margin-top: 10px;
     width: 50%;
-    color: #666;
-    line-height: 24px;
+    color: #333;
+    line-height: 30px;
     float: left;
+    font-size: 1.4rem;
 }
 .thong-tin input[type="text"]{
     padding: 5px 100px;
@@ -43,8 +44,9 @@
     width: 40%;
     float: left;
     margin-top: 10px;
-    color: #666;
+    color: #333;
     line-height: 24px;
+    font-size: 1.4rem;
 }
 .ghi-chu input[type="text"]{
     padding: 8px 50px;
@@ -54,7 +56,6 @@
     width: 90%;
     margin: 0 auto;
     color: #666;
-    
 }
 .bill{
     margin-top: 20px;
@@ -76,7 +77,7 @@
 .Subtotal{
     width: 40%;
     float: left;
-    color: black;
+    color: #333;
 }
 .gia{
     width: 60%;
@@ -91,13 +92,13 @@
 .shipping1{
     width: 40%;
     float: left;
-    color: black;
+    color: #333;
 }
 .ship{
     width: 60%;
     float: left;
     line-height: 25px;
-    font-size: 1.1vw;
+    font-size: 1.4rem;
 }
 .ship a{
     text-decoration: none;
@@ -113,17 +114,21 @@
 }
 .total1{
     width: 40%;
-    color: black;
+    color: #333;
     float: left;
 }
 .total input[type="submit"]{
-    padding: 10px;
-    border: solid 1px #ccc;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--white-color);
+    border-radius: 2px;
+    font-size: 1.4rem;
+    transition: all 0.3s linear;
+    outline: none;
 }
 .total input[type="submit"]:hover{
-    background-color: rgb(199, 6, 6);
-    color: rgb(255, 255, 255);
-    border: none;
+    color: var(--white-color);
+    background-color: var(--hover-color);
 }

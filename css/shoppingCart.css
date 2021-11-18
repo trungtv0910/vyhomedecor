@@ -9,7 +9,7 @@
 }
 .tieude h1{
     padding: 10px 0;
-    color: black;
+    color: #333;
 }
 .cart{
     width: 100%;
@@ -19,13 +19,13 @@
     width: 100%;
     border: none;
     text-align: center;
-    font-size: 1vw;
+    font-size: 1.3rem;
     border-collapse: collapse;
 }
 .cart table th{
     padding: 15px 0;
     border: solid 1px #ccc;
-    color: black;
+    color: #333;
 }
 .cart table td{
     padding: 20px 0;
@@ -70,7 +70,7 @@
     width: 60%;
     border: solid 2px rgb(199, 6, 6);
     min-height: 350px;
-    font-size: 1vw;
+    font-size: 1.4rem;
     margin-bottom: 30px;
 }
 .tong-gio-hang{
@@ -84,14 +84,14 @@
     border-bottom: #ccc solid 1px;
 }
 .tieu-de h4{
-    color: rgb(0, 0, 0);
+    color: #333;
     padding: 10px 0;
 }
 .Subtotal{
     margin-top: 10px;
     width: 40%;
     float: left;
-    color: black;
+    color: #333;
 }
 .gia{
     margin-top: 10px;
@@ -108,17 +108,17 @@
 .shipping1{
     width: 40%;
     float: left;
-    color: black;
+    color: #333;
 }
 .ship{
     width: 60%;
     float: left;
     line-height: 25px;
-    font-size: 1.1vw;
+    font-size: 1.4rem;
 }
 .ship a{
     text-decoration: none;
-    color: #666;
+    color: #333;
 }
 .ship a:hover{
     color: rgb(199, 6, 6);
@@ -132,17 +132,21 @@
 .total1{
     width: 40%;
     float: left;
-    color: black;
+    color: #333;
 }
 .total input[type="submit"]{
-    padding: 10px;
-    border: solid 1px #ccc;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--white-color);
+    border-radius: 2px;
+    font-size: 1.4rem;
+    transition: all 0.3s linear;
+    outline: none;
 }
 .total input[type="submit"]:hover{
-    background-color: rgb(199, 6, 6);
-    color: rgb(255, 255, 255);
-    border: none;
+    color: var(--white-color);
+    background-color: var(--hover-color);
 }
 

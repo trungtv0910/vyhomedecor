@@ -150,7 +150,7 @@
             <div class="model-body-form">
                 <form action="index.php?act=forget-pass" method="post">
                     <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Nhập địa chỉ email của bạn</label>
-                    <input type="email" name="username" class="model-input" id="enter-user" required>
+                    <input type="email" name="email" class="model-input" id="enter-user" required>
                     <input type="submit" name="forget-pass" class="model-btn model-btn-login" value="Gửi">
                 </form>
             </div>
