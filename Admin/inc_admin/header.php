@@ -36,6 +36,7 @@ if (isset($_SESSION['login']['login']) == true && $_SESSION['login']['role']==1 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     <link href="../css/admin.css" rel="stylesheet">
+    <script src="../js/jquery.js"></script>
   
 
 </head>

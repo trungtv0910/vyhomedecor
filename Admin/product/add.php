@@ -55,12 +55,14 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputCategory">Danh mục</label>
                                
-                                <select class="form-select" aria-label="Default select example" name="cateId">
-                                    <option selected="" disabled="">--Chọn Danh --</option>
-                                    <option value="administrator">Administrator</option>
-                                    <option value="registered">Registered</option>
-                                    <option value="edtior">Editor</option>
-                                    <option value="guest">Guest</option>
+                                <select class="form-select"  id="cateId" aria-label="Default select example" name="cateId">
+                                <option selected="" disabled="">--Chọn Danh --</option>
+                                  <?php 
+                                  foreach($listCate as $value){
+                                  ?>
+                                    <option value="<?=$value['cateId'] ?>"><?=$value['cateName'] ?></option>
+                                    <?php } ?>
+                                  
                                 </select>
                             </div>
                             <!-- Form Group (last name)-->
@@ -128,3 +130,17 @@
        
     </div>
 </div> <!-- form-->
+
+<script>
+   $(document).ready(function() {
+        $('#cateId').change(function() {
+            var Id = $(this).val();
+            // $.get("model_ajax/catChild.php", {
+            //     catId: Id
+            // }, function(data) {
+            //     $('#catChild').html(data);
+            // })
+                console.log(Id);
+        });
+    });
+</script>
