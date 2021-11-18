@@ -1,18 +1,21 @@
 <?php
 
-
-
-
+include_once 'model/category.php';
+include_once 'model/product_model.php';
+$listcategory = loadAll_category();
 include_once 'view/header.php';
 include_once 'model/pdo.php';
 include_once 'model/account_model.php';
 include_once 'model/global.php';
 include_once 'model/customer.php';
-include_once 'model/category.php';
-include_once 'model/product_model.php';
+
+
 ?>
 
 <?php
+
+  
+  
 if (isset($_GET['act'])) {
     $path = $_GET['act'];
     switch ($path) {
@@ -151,7 +154,7 @@ if (isset($_GET['act'])) {
             break;
     }
 } else {
-    $listcategory = loadAll_category();
+ 
     include 'view/home.php';
 }
 ?>

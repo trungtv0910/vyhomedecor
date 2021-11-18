@@ -4,6 +4,7 @@
 include_once 'model/pdo.php';
 include_once 'model/account_model.php';
 init();
+
 ?>
 
 <head>
