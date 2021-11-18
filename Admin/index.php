@@ -47,7 +47,10 @@ if (isset($_GET['act'])) {
                     include 'product/add.php';
                 } else if (isset($_GET['edit'])) {
                     include 'product/edit.php';
-                } else {
+                } else if (isset($_POST['insertProduct'])) {
+                    insert_product($_POST,$_FILES);
+                } 
+                else {
                     include 'product/list.php';
                 }
             }
