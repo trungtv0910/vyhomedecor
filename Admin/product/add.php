@@ -23,7 +23,7 @@
 
 </header>
 <div class="form">
-    <form method="post" action="index.php?act=product" enctype="multipart/form-data">
+    <form method="POST" action="index.php?act=product" enctype="multipart/form-data">
         <div class="row">
 
             <!-- Form Group (username)-->
@@ -32,14 +32,14 @@
                 <div class="card mb-4 mb-xl-0">
                     <div class="card-header">Ảnh sản phẩm</div>
                     <div class="card-body text-center">
-                        
+
                         <!-- <img class="img-account-profile rounded-circle mb-2" src="" alt=""> -->
-                      
-                        <input type="file" class="btn btn-secondary btn-icon-split" name="image">
+
+                        <input type="file" name="image">
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
 
+                        class="btn btn-secondary btn-icon-split"
 
-                      
                         <!-- Profile picture upload button-->
                         <button class="btn btn-primary" type="button">Upload new image</button>
                     </div>
@@ -53,7 +53,7 @@
 
                         <div class="mb-3">
                             <label class="small mb-1" for="inputprodname">Tên sản phẩm</label>
-                            <input class="form-control" id="inputprodname" type="text" placeholder="Nhập tên sản phẩm" name="prodName" >
+                            <input class="form-control" id="inputprodname" type="text" placeholder="Nhập tên sản phẩm" name="prodName">
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
@@ -124,7 +124,7 @@
                             <textarea class="lh-base form-control" type="text" name="prodDesc" placeholder="Nhập vào mô tả sản phẩm..." rows="4"></textarea>
                         </div>
                         <!-- Form Row-->
-
+                        <!-- <input type="file" name="anh"> -->
                         <!-- Save changes button-->
                         <button class="btn btn-primary" name="insertProduct" type="submit">Đăng sản phẩm</button>
 
