@@ -3,7 +3,11 @@
       include_once '../model/pdo.php';
       include_once '../model/global.php';
       include_once '../model/product_model.php';
+
+      include_once '../lib/format.php';
+
       include_once '../model/category.php';
+
 ?>
 
 <?php

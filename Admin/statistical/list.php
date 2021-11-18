@@ -5,7 +5,9 @@
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col ">
-                        <h3 class="mb-0">Thống Kê Sản Phẩm Theo Danh Mục</h3>
+                    <h4 class="page-header-title">
+                        Thống kê sản phẩm theo danh mục
+                    </h4>
                     </div>
                     <div class="col text-end">
                         <a href="index.php?act=statistical&chart"> <button class="btn btn-success float_right">Biểu Đồ Chart</button></a>

@@ -1,5 +1,25 @@
+<header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+   
+        <div class="page-header-content px-4 ">
+            <div class="row align-items-center justify-content-between pt-3">
+                <div class="col-auto mb-3">
+                    <h4 class="page-header-title">
+                        Bảng Tin
+                    </h4>
+                </div>
+                <div class="col-12 col-xl-auto mb-3">
+                    <!-- <a class="btn btn-sm btn-light text-primary" href="user-management-list.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left me-1">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        Thêm sản phẩm
+                    </a> -->
+                </div>
+            </div>
+        </div>
 
-<h4 class="card-title text-uppercase text-muted mb-0">Bảng Tin </h4>
+</header>
 
 <div class="row">
     <div class="col-xl-3 col-md-6">

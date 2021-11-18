@@ -12,7 +12,9 @@
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col ">
-                        <h3 class="mb-0">Tất Cả Sản Phẩm</h3>
+                    <h4 class="page-header-title">
+                        Danh sách sản phẩm
+                    </h4>
                     </div>
                     <div class="col">
                         <a href="index.php?act=product&add"> <button class="btn btn-success float_right">Thêm Sản Phẩm</button></a>
@@ -46,7 +48,7 @@
                                 <th>Danh Mục</th>
                                 <th width="20%">Mô tả</th>
                                 <th>Lượt xem</th>
-                                <th>Ngày nhập</th>
+                                <th width="10%">Ngày nhập</th>
                                 <th width="7%">sửa</th>
                                 <th width="7%">Xoá</th>
                                 <!-- <th width="10%">Tùy chọn</th> -->
@@ -60,10 +62,10 @@
                           ?>
                             <tr>
                                 <td>123</td>
-                                <td class="sup_parent"><img width="100" src="img_tam/26-120x120.jpg" alt="">
+                                <td class="sup_parent"><img width="100" src="<?=BASE_URL ?><?=$image ?>" alt="">
                                     <!-- sup -->
                                     <?php if($type==0){
-                                        echo ' <span class=" sup_normal sup_title rotate-15">Thường</span>';
+                                        echo ' <span class=" sup_nomal sup_title rotate-15">Thường</span>';
                                     }else if($type==1){
                                         echo ' <span class=" sup_bestsale sup_title rotate-15">Bán Chạy</span>';
                                     }else{
@@ -72,22 +74,26 @@
                                    
                                     <!-- end sup -->
                                 </td>
-                                <td class="text-left">Ghế Xoay
+                                <td class="text-left"><?=$prodName ?>
                                     <br>
-                                    <b>Số lượng còn lại:200</b>
+                                    <b>Số lượng còn lại: <?=$quantity ?></b>
                                     <br>
-                                    <b>Giá Bán: 200.000 <b>VNĐ</b>
+                                    <b>Giá Bán: <?=number_format($price,0,',','.')?> <b>VNĐ</b>
                                 </td>
                                 <td class="text-left">
-                                    Phòng Khách
+                                    <?=$cateName ?>
                                     <br>
-                                    <b>Loại : Bàn Ghế</b>
+                                    <b>Loại : <?=$cateChildName ?></b>
                                 </td>
-                                <td>Ghế Xoay Danlinh một sản phẩm mới với nhiều lựa chọn màu sắc khách nhau, người sử dụng có thể...</td>
-                                <td>2000 </td>
-                                <td>11/05/2021 </td>
+                                <td><?= textShorten($prodDesc,  100) ?></td>
+                                <td><?=$quantity ?></td>
+                                <td><?= 
+                                formatDate($dateInput);
+                                
+                                    // $dateInput 
+                                ?></td>
 
-                                <td><a href="index.php?act=product&edit" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
+                                <td><a href="index.php?act=product&edit=<?=$prodId ?>" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
                                         <span class="text">Sửa</span></a>
                                 </td>
                                 <td> <a href="" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>

@@ -1,4 +1,4 @@
-<br>
+
 <style>
     th,
     td {
@@ -26,7 +26,9 @@
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="mb-0">Quản Lý Khách Hàng</h3>
+                    <h4 class="page-header-title">
+                        Quản lý khách hàng
+                    </h4>
                     </div>
                     <div class="col text-right">
                         <!-- <a href="index.php?act=customer&add" class="btn btn-sm btn-primary">Thêm Khách Hàng</a> -->
