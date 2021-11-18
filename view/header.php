@@ -278,32 +278,40 @@ init();
                             <a href="#" class="header__nav-link">Giới thiệu</a>
                         </li>
                         <li class="header__nav-item">
-                            <a href="#" class="header__nav-link ">Danh Mục Sản Phẩm</a>
+                            <a href="index.php?act=category" class="header__nav-link ">Danh Mục Sản Phẩm</a>
                             <div class="header__nav-full furniture">
-                                <ul class="header__nav-full-list">
-                                    <h3 class="header__nav-full-heading">TABLE</h3>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Kitchen & Dining Room Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Folding Table</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Living Room Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Sofa Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">End Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Coffee Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Home Office Desks</a>
-                                    </li>
-                                </ul>
+                            <?php
+                                foreach ($listcategory as $category) {
+                                    extract($category);
+                            ?>
+                                    <ul class="header__nav-full-list">
+                                        <h3 class="header__nav-full-heading"><?=$cateName?></h3>
+                                        <li class="header__nav-full-item">
+                                            <a href="#" class="header__nav-full-link">Kitchen & Dining Room Tables</a>
+                                        </li>
+                                        <li class="header__nav-full-item">
+                                            <a href="#" class="header__nav-full-link">Folding Table</a>
+                                        </li>
+                                        <li class="header__nav-full-item">
+                                            <a href="#" class="header__nav-full-link">Living Room Tables</a>
+                                        </li>
+                                        <li class="header__nav-full-item">
+                                            <a href="#" class="header__nav-full-link">Sofa Tables</a>
+                                        </li>
+                                        <li class="header__nav-full-item">
+                                            <a href="#" class="header__nav-full-link">End Tables</a>
+                                        </li>
+                                        <li class="header__nav-full-item">
+                                            <a href="#" class="header__nav-full-link">Coffee Tables</a>
+                                        </li>
+                                        <li class="header__nav-full-item">
+                                            <a href="#" class="header__nav-full-link">Home Office Desks</a>
+                                        </li>
+                                    </ul>
+                            <?php
+                                }
+                            ?>
+                                    
                                 <!-- <ul class="header__nav-full-list">
                                     <h3 class="header__nav-full-heading">TABLE</h3>
                                     <li class="header__nav-full-item">
@@ -477,7 +485,6 @@ init();
                     </div>
                 </div>
             </div>
-            
-
         </header>
         <div class="container">
+        

@@ -19,7 +19,7 @@ function loadOne_customer($custId)
 }
 
 function update_customer($data){
-    $custId=$data['custId'];`
+    $custId=$data['custId'];
     $custName =$data['custName'];
     $phone =$data['phone'];
     $address =$data['address'];

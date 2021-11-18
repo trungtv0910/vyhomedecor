@@ -8,6 +8,8 @@ include_once 'model/pdo.php';
 include_once 'model/account_model.php';
 include_once 'model/global.php';
 include_once 'model/customer.php';
+include_once 'model/category.php';
+
 
 ?>
 
@@ -133,6 +135,7 @@ if (isset($_GET['act'])) {
                 }
             }
             break;
+            
         case "logout": {
                 checkLogout();
                 echo '<script>window.location="index.php" </script>';
@@ -149,6 +152,7 @@ if (isset($_GET['act'])) {
             break;
     }
 } else {
+    $listcategory = loadAll_category();
     include 'view/home.php';
 }
 ?>
