@@ -2,6 +2,7 @@
       include '../model/customer.php';
       include_once '../model/pdo.php';
       include_once '../model/global.php';
+      include_once '../model/product_model.php';
 ?>
 
 <?php
@@ -22,6 +23,7 @@ if (isset($_GET['act'])) {
             break;
         case 'product': {
                 if (isset($_GET['list'])) {
+                    $listProduct =list_Product() ;
                     include 'product/list.php';
                 } else if (isset($_GET['add'])) {
                     include 'product/add.php';
@@ -65,8 +67,6 @@ if (isset($_GET['act'])) {
                         delete_customer($_GET['delete']);
                         $listcustomer=loadAll_customer();
                     include 'customer/list.php';
-                // }else if (isset($_GET['add'])) {
-                //     include 'customer/add.php';
                 } else if (isset($_GET['edit'])) {
                     $custId=$_GET['edit'];
                     $oneCustomer=loadOne_customer($custId);
