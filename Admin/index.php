@@ -33,7 +33,7 @@ if (isset($_GET['act'])) {
                     include 'category/edit.php';
                 }else {
                     include 'category/list.php';
-                }`
+                }
             }
             break;
         case 'product': {
