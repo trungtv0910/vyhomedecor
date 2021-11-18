@@ -13,4 +13,9 @@
         $listcategory_child = pdo_query($sql);
         return $listcategory_child;   
     }
+
+    function insert_category($catName){
+        $sql="INSERT INTO tbl_category(cateName) values('$catName')";
+        pdo_execute($sql);
+    }
 ?>

@@ -12,11 +12,15 @@ if (isset($_GET['act'])) {
         case 'category': {
                 if (isset($_GET['list'])) {
                     include 'category/list.php';
-                } else if (isset($_GET['add'])) {
+                } else if (isset($_GET['addDanhMuc'])) {
+                    $catName=$_POST['catName'];
+                    insert_category($catName);
                     include 'category/add.php';
                 } else if (isset($_GET['edit'])) {
                     include 'category/edit.php';
-                } else {
+                }else if(isset($_GET['listChild'])){
+                    include 'category/listChild.php';
+                }else {
                     include 'category/list.php';
                 }
             }
