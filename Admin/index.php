@@ -14,7 +14,7 @@ if (isset($_GET['act'])) {
                 if (isset($_GET['list'])) {
                     $listcategory = loadAll_category();
                     include 'category/list.php';
-                } else if (isset($_GET['addDanhMuc'])) {
+                } else if (isset($_POST['add'])) {
                     $catName=$_POST['catName'];
                     insert_category($catName);
                     include 'category/add.php';
