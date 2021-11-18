@@ -114,7 +114,7 @@ if (isset($_GET['act'])) {
                         $password=$res['password'];
                         $email=$res['email'];
                         $username=$res['username'];
-                       if(sendEmail($email,$password,$username)==true) {
+                       if(sendEmail($email,$password,$username)==1) {
                         echo "<script>
                         Swal.fire({
                             position: 'top-end',
