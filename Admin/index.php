@@ -3,7 +3,11 @@
       include_once '../model/pdo.php';
       include_once '../model/global.php';
       include_once '../model/product_model.php';
+
+      include_once '../lib/format.php';
+
       include_once '../model/category.php';
+
 ?>
 
 <?php
@@ -14,10 +18,15 @@ if (isset($_GET['act'])) {
                 if (isset($_GET['list'])) {
                     $listcategory = loadAll_category();
                     include 'category/list.php';
-                } else if (isset($_POST['add'])) {
-                    $catName=$_POST['catName'];
-                    insert_category($catName);
+                } else if (isset($_GET['add'])) {
                     include 'category/add.php';
+                }else if (isset($_POST['addCategory'])){
+                        $cateName=$_POST['cateName'];
+                        insert_category($cateName);
+                        $listcategory = loadAll_category();
+                        include 'category/list.php';
+                }else if (isset($_GET['edit'])) {
+                    include 'category/edit.php';
                 }else if(isset($_GET['listChild'])){
                     include 'category/listChild.php';
                 }else if (isset($_GET['edit'])) {

@@ -13,8 +13,8 @@
         return $listcategory_child;   
     }
 
-    function insert_category($catName){
-        $sql="INSERT INTO tbl_category(cateName) values('$catName')";
+    function insert_category($cateName){
+        $sql="INSERT INTO tbl_category(cateName) values('$cateName')";
         pdo_execute($sql);
     }
 ?>

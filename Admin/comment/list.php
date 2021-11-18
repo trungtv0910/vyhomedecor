@@ -21,7 +21,9 @@
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col ">
-                        <h3 class="mb-0">Thống kê Bình luận</h3>
+                    <h4 class="page-header-title">
+                        Quản lý bình luận
+                    </h4>
                     </div>
                     <div class="col">
                         <!-- <a href="index.php?act=product&add"> <button class="btn btn-success float_right">Thêm Sản Phẩm</button></a> -->
