@@ -8,12 +8,7 @@ include_once 'model/pdo.php';
 include_once 'model/account_model.php';
 include_once 'model/global.php';
 include_once 'model/customer.php';
-<<<<<<< HEAD
 include_once 'model/category.php';
-
-=======
-
->>>>>>> fef9a08be57b659f92c7c0668f8fd5ff02dd9e49
 include_once 'model/product_model.php';
 ?>
 
