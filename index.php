@@ -12,9 +12,9 @@ include_once 'model/customer.php';
 include_once 'model/category.php';
 
 =======
-include_once 'model/product_model.php';
->>>>>>> fef9a08be57b659f92c7c0668f8fd5ff02dd9e49
 
+>>>>>>> fef9a08be57b659f92c7c0668f8fd5ff02dd9e49
+include_once 'model/product_model.php';
 ?>
 
 <?php

@@ -62,7 +62,14 @@
                                 <td>123</td>
                                 <td class="sup_parent"><img width="100" src="img_tam/26-120x120.jpg" alt="">
                                     <!-- sup -->
-                                    <span class=" sup_bestsale sup_title rotate-15">Bán Chạy</span>
+                                    <?php if($type==0){
+                                        echo ' <span class=" sup_normal sup_title rotate-15">Thường</span>';
+                                    }else if($type==1){
+                                        echo ' <span class=" sup_bestsale sup_title rotate-15">Bán Chạy</span>';
+                                    }else{
+                                        echo ' <span class=" sup_new sup_title rotate-15">Mới</span>';
+                                    }?>
+                                   
                                     <!-- end sup -->
                                 </td>
                                 <td class="text-left">Ghế Xoay
