@@ -304,7 +304,7 @@ init();
                                         <a href="#" class="header__nav-full-link">Home Office Desks</a>
                                     </li>
                                 </ul>
-                                <ul class="header__nav-full-list">
+                                <!-- <ul class="header__nav-full-list">
                                     <h3 class="header__nav-full-heading">TABLE</h3>
                                     <li class="header__nav-full-item">
                                         <a href="#" class="header__nav-full-link">Living Room Tables</a>
@@ -375,7 +375,7 @@ init();
                                     <li class="header__nav-full-item">
                                         <a href="#" class="header__nav-full-link">Pedestal Tables</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </li>
                         <li class="header__nav-item">

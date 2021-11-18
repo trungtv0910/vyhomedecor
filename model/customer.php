@@ -1,10 +1,10 @@
 <?php
 include_once 'pdo.php';
 function loadAll_customer(){
-        $sql="SELECT * FROM tbl_customer order by custId DESC";
-        $listcustomer=pdo_query($sql);
-        return $listcustomer;
-    }
+    $sql="SELECT * FROM tbl_customer order by custId DESC";
+    $listcustomer=pdo_query($sql);
+    return $listcustomer;
+}
 
 
 
@@ -16,7 +16,7 @@ function loadOne_customer($custId)
 }
 
 function update_customer($data){
-    $custId=$data['custId'];
+    $custId=$data['custId'];`
     $custName =$data['custName'];
     $phone =$data['phone'];
     $address =$data['address'];
