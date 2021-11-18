@@ -7,4 +7,10 @@
        
         return $listcategory;
     }
+
+    function loadAll_categorychild($cateId){
+        $sql = "SELECT * FROM tbl_category_child where cateId = $cateId";
+        $listcategory_child = pdo_query($sql);
+        return $listcategory_child;   
+    }
 ?>

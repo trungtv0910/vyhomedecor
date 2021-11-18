@@ -2,7 +2,6 @@
 
 include_once 'model/category.php';
 include_once 'model/product_model.php';
-$listcategory = loadAll_category();
 include_once 'view/header.php';
 include_once 'model/pdo.php';
 include_once 'model/account_model.php';

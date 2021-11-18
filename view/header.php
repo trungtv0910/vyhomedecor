@@ -3,6 +3,8 @@
 <?php
 include_once 'model/pdo.php';
 include_once 'model/account_model.php';
+include_once 'model/category.php';
+$listcategory = loadAll_category();
 init();
 
 ?>
@@ -284,30 +286,20 @@ init();
                             <?php
                                 foreach ($listcategory as $category) {
                                     extract($category);
+                                    $listcategory_child = loadAll_categorychild($cateId);
                             ?>
                                     <ul class="header__nav-full-list">
                                         <h3 class="header__nav-full-heading"><?=$cateName?></h3>
-                                        <li class="header__nav-full-item">
-                                            <a href="#" class="header__nav-full-link">Kitchen & Dining Room Tables</a>
-                                        </li>
-                                        <li class="header__nav-full-item">
-                                            <a href="#" class="header__nav-full-link">Folding Table</a>
-                                        </li>
-                                        <li class="header__nav-full-item">
-                                            <a href="#" class="header__nav-full-link">Living Room Tables</a>
-                                        </li>
-                                        <li class="header__nav-full-item">
-                                            <a href="#" class="header__nav-full-link">Sofa Tables</a>
-                                        </li>
-                                        <li class="header__nav-full-item">
-                                            <a href="#" class="header__nav-full-link">End Tables</a>
-                                        </li>
-                                        <li class="header__nav-full-item">
-                                            <a href="#" class="header__nav-full-link">Coffee Tables</a>
-                                        </li>
-                                        <li class="header__nav-full-item">
-                                            <a href="#" class="header__nav-full-link">Home Office Desks</a>
-                                        </li>
+                                        <?php
+                                            foreach ($listcategory_child as $category_child) {
+                                                extract($category_child);
+                                        ?>
+                                                <li class="header__nav-full-item">
+                                                    <a href="#" class="header__nav-full-link"><?=$cateChildName?></a>
+                                                </li>
+                                        <?php
+                                            }
+                                        ?>
                                     </ul>
                             <?php
                                 }
