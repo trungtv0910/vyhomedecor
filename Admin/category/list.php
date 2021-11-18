@@ -23,18 +23,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                            foreach ($listcategory as $category) {
+                                extract($category);
+                                $listcategory_child = loadAll_categorychild($cateId);
+                        ?>
                         <tr>
                             <th scope="row">
-                                Phòng khách
+                                <?=$cateName?>
                             </th>
+                            
                             <td class="text-left">
-                                <button class="btn btn-outline-secondary border-bottom-secondary">sofa</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Ghế thư giãn</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Armchair</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Bàn nướcr</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Bàn Console</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Bàn bên</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Tủ tivi</button>
+                            <?php
+                                foreach ($listcategory_child as $category_child) {
+                                    extract($category_child);
+                            ?>
+                                <button class="btn btn-outline-secondary border-bottom-secondary"><?=$cateChildName?></button>
+                            <?php
+                                }
+                            ?>
                             </td>
                             <td><a href="" class="btn btn-light btn-icon-split"> <span class="icon text-white-50"><i class="far fa-plus-square"></i></span>
                                     <span class="text">Thêm</span></a></td>
@@ -43,46 +50,9 @@
                             <td> <a href="" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
                                     <span class="text">Xoá</span></a></td>
                         </tr>
-                        <tr>
-                            <th scope="row">
-                                Phòng Ăn
-                            </th>
-                            <td class="text-left">
-                                <button class="btn btn-outline-secondary border-bottom-secondary">sofa</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Ghế thư giãn</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Armchair</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Bàn nướcr</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Bàn Console</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Bàn bên</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Tủ tivi</button>
-                            </td>
-                            <td><a href="" class="btn btn-light btn-icon-split"> <span class="icon text-white-50"><i class="far fa-plus-square"></i></span>
-                                    <span class="text">Thêm</span></a></td>
-                            <td><a href="index.php?act=category&edit" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
-                                    <span class="text">Sửa</span></a></td>
-                            <td> <a href="" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
-                                    <span class="text">Xoá</span></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                Phòng Ngủ
-                            </th>
-                            <td class="text-left">
-                                <button class="btn btn-outline-secondary border-bottom-secondary">sofa</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Ghế thư giãn</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Armchair</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Bàn nướcr</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Bàn Console</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Bàn bên</button>
-                                <button class="btn btn-outline-secondary border-bottom-secondary">Tủ tivi</button>
-                            </td>
-                            <td><a href="" class="btn btn-light btn-icon-split"> <span class="icon text-white-50"><i class="far fa-plus-square"></i></span>
-                                    <span class="text">Thêm</span></a></td>
-                            <td><a href="index.php?act=category&edit" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
-                                    <span class="text">Sửa</span></a></td>
-                            <td> <a href="" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
-                                    <span class="text">Xoá</span></a></td>
-                        </tr>
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>
