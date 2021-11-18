@@ -19,7 +19,7 @@
                 <h6 class="collapse-header">Quản Lý Danh Mục:</h6>
                 <a class="collapse-item" href="index.php?act=category&add">Thêm Danh Mục</a>
                 <a class="collapse-item" href="index.php?act=category&list">Danh Sách Danh Mục</a>
-
+                <a class="collapse-item" href="index.php?act=category&listChild">Danh Sách Danh Mục Con</a>
             </div>
         </div>   
     </li>

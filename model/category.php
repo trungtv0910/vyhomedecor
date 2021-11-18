@@ -12,9 +12,9 @@
         $listcategory_child = pdo_query($sql);
         return $listcategory_child;   
     }
-    
-    function delete_category($cateId){
-        $sql="DELETE FROM tbl_category where custId=$cateId";
+
+    function insert_category($catName){
+        $sql="INSERT INTO tbl_category(cateName) values('$catName')";
         pdo_execute($sql);
     }
 ?>
