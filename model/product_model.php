@@ -21,7 +21,7 @@ function insert_product($data,$file)
 
     //  echo $image =basename($_FILES['image']['name']);
      $target_dir = "../uploads/";
- $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
      $uploadOk = 1;
      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     //  Check file size
@@ -52,7 +52,9 @@ function insert_product($data,$file)
        }
      }
 
-
+function uploadfile(){
+  $uploadfile = new UploadHandler();
+}
 
 
 
