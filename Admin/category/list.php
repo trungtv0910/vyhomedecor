@@ -35,6 +35,7 @@
                             
                             <td class="text-left">
                             <?php
+                            $i=0;
                                 foreach ($listcategory_child as $category_child) {
                                     extract($category_child);
                             ?>
@@ -50,7 +51,7 @@
                                         for (var i = 0; i < editCategoryChilds.length; i++) {
                                             editCategoryChilds[i].oninput = function() {
                                                 var parentElement = this.parentElement;
-                                                parentElement.action = 'index.php?act=update&cateChild'
+                                                parentElement.action = 'index.php?act=category&updateAll'
                                                 var cateChildName = this.value;
                                                 var cateChildId = this.dataset.id;
                                                 parentElement.querySelector('.cateChildId').value = cateChildId;

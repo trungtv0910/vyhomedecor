@@ -1,12 +1,12 @@
 <?php include_once 'inc_admin/header.php';
-      include '../model/customer.php';
-      include_once '../model/pdo.php';
-      include_once '../model/global.php';
-      include_once '../model/product_model.php';
+include '../model/customer.php';
+include_once '../model/pdo.php';
+include_once '../model/global.php';
+include_once '../model/product_model.php';
 
-      include_once '../lib/format.php';
+include_once '../lib/format.php';
 
-      include_once '../model/category.php';
+include_once '../model/category.php';
 
 ?>
 
@@ -20,44 +20,47 @@ if (isset($_GET['act'])) {
                     include 'category/list.php';
                 } else if (isset($_GET['add'])) {
                     include 'category/add.php';
-                }else if (isset($_POST['addCategory'])){
-                    $cateName=$_POST['cateName'];
+                } else if (isset($_POST['addCategory'])) {
+                    $cateName = $_POST['cateName'];
                     insert_category($cateName);
                     $listcategory = loadAll_category();
                     include 'category/list.php';
-                }else if (isset($_GET['edit'])) {
+                } else if (isset($_GET['edit'])) {
                     include 'category/edit.php';
-                }else if(isset($_POST['updateChild'])){
-                    if(isset($_POST['updateCateChild'])) {
+                } else if (isset($_GET['updateAll'])) {
+                   
                         $cateChildId = $_POST['cateChildId'];
-                        $cateChildName = $_POST['cateChildtName'];
-                        // update_cateChild($cateChildId, $cateChildName);
-                        echo $cateChildId;
-                        echo $cateChildName;
-                    }
-                    include 'caterogy/list.php';
-                }else {
+                        $cateChildName = $_POST['cateChildName'];
+                        update_cateChild($cateChildId, $cateChildName);
+                     
+                        $listcategory = loadAll_category();
+                        include 'category/list.php';
+                
+                }else if(isset($_POST['submita'])){
+                    echo $_POST['ten'];
+                }
+                 else {
+                
+                   $listcategory = loadAll_category();
                     include 'category/list.php';
                 }
             }
             break;
         case 'product': {
-            $listCate= loadAll_category();
-            // $listChildCate=loadAll_categorychild(1);
+                $listCate = loadAll_category();
+                // $listChildCate=loadAll_categorychild(1);
                 if (isset($_GET['list'])) {
-                    $listProduct =list_Product() ;
-                   
+                    $listProduct = list_Product();
+
                     include 'product/list.php';
                 } else if (isset($_GET['add'])) {
-                  
+
                     include 'product/add.php';
                 } else if (isset($_GET['edit'])) {
                     include 'product/edit.php';
                 } else if (isset($_POST['insertProduct'])) {
-                    insert_product($_POST,$_FILES);
-
-                } 
-                else {
+                    insert_product($_POST, $_FILES);
+                } else {
                     include 'product/list.php';
                 }
             }
@@ -75,10 +78,9 @@ if (isset($_GET['act'])) {
         case 'comment': {
                 if (isset($_GET['list'])) {
                     include 'comment/list.php';
-                }else if (isset($_GET['comment_detail'])) {
+                } else if (isset($_GET['comment_detail'])) {
                     include 'comment/comment_detail.php';
-                } 
-                else if (isset($_GET['reply'])) {
+                } else if (isset($_GET['reply'])) {
                     include 'comment/reply.php';
                 } else if (isset($_GET['delete'])) {
                     include 'comment/delete.php';
@@ -89,28 +91,28 @@ if (isset($_GET['act'])) {
             break;
         case 'customer': {
                 if (isset($_GET['list'])) {
-                    $listcustomer=loadAll_customer();
+                    $listcustomer = loadAll_customer();
                     include 'customer/list.php';
-                } else if(isset($_GET['delete'])){
-                        delete_customer($_GET['delete']);
-                        $listcustomer=loadAll_customer();
+                } else if (isset($_GET['delete'])) {
+                    delete_customer($_GET['delete']);
+                    $listcustomer = loadAll_customer();
                     include 'customer/list.php';
                 } else if (isset($_GET['edit'])) {
-                    $custId=$_GET['edit'];
-                    $oneCustomer=loadOne_customer($custId);
+                    $custId = $_GET['edit'];
+                    $oneCustomer = loadOne_customer($custId);
                     include 'customer/edit.php';
-                }else if(isset($_GET['update'])){
-                        if( update_customer($_POST)==true){
-                           include 'customer/success.php';
-                        }else{
-                            include 'customer/error.php';
-                        }
+                } else if (isset($_GET['update'])) {
+                    if (update_customer($_POST) == true) {
+                        include 'customer/success.php';
+                    } else {
+                        include 'customer/error.php';
+                    }
                 } else {
                     include 'customer/list.php';
                 }
             }
             break;
-       
+
         case 'statistical': {
                 if (isset($_GET['chart'])) {
                     include 'statistical/chart.php';
@@ -120,8 +122,8 @@ if (isset($_GET['act'])) {
             }
             break;
         case 'logout': {
-            echo '<script>window.location="http://localhost/vyhomedecor/index.php" </script>';
-            checkLogout();
+                echo '<script>window.location="http://localhost/vyhomedecor/index.php" </script>';
+                checkLogout();
             }
             break;
         default:
