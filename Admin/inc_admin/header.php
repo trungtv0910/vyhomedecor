@@ -38,7 +38,7 @@ if (isset($_SESSION['login']['login']) == true && $_SESSION['login']['role']==1 
     <link href="../css/admin.css" rel="stylesheet">
     <script src="../js/jquery.js"></script>
   
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body id="page-top">

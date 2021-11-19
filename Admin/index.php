@@ -36,8 +36,6 @@ if (isset($_GET['act'])) {
                         $listcategory = loadAll_category();
                         include 'category/list.php';
                 
-                }else if(isset($_POST['submita'])){
-                    echo $_POST['ten'];
                 }
                  else {
                 
@@ -59,7 +57,28 @@ if (isset($_GET['act'])) {
                 } else if (isset($_GET['edit'])) {
                     include 'product/edit.php';
                 } else if (isset($_POST['insertProduct'])) {
-                    insert_product($_POST, $_FILES);
+                    if(insert_product($_POST, $_FILES)){
+                       echo "<script>
+                       Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Sản Phẩm Đã Được Thêm',
+                        showConfirmButton: false,
+                        timer: 2000
+                      })</script>";
+                       
+                    }else{
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Lỗi không thể thêm sản phẩm!',
+                          });
+                        </script>";
+                    }
+                    
+                    $listProduct = list_Product();
+                    include 'product/list.php';
                 } else {
                     include 'product/list.php';
                 }

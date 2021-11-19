@@ -38,13 +38,38 @@
 
                         <!-- <img class="img-account-profile rounded-circle mb-2" src="" alt=""> -->
 
-                        <input type="file"   class="btn btn-secondary btn-icon-split" name="image" id="imageUpdate">
-                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-
-                      
-
+                        <!-- <input type="file"   class="btn btn-secondary btn-icon-split" name="image" id="imageUpdate">
+                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> -->
                         <!-- Profile picture upload button-->
-                        <button class="btn btn-primary" type="button">Upload new image</button>
+                        <!-- <button class="btn btn-primary" type="button">Upload new image</button> -->
+                        <!-- <form action="" method="POST" role="form"> -->
+                       
+                        <label for="">Upload ảnh sản phẩm</label>
+                            <div class="form-group">
+                               
+                                <input id="file" type="file"  name="file" >
+                                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> 
+                            </div>
+                            <!-- <div class="form-group">
+                                <button id="upload" class="btn btn-primary">Upload</button>
+                            </div> -->
+                        <!-- </form> -->
+                        <div class="status"></div>
+
+
+
+                    </div>
+                </div>
+                <div class="card mt-4 mb-xl-0">
+                    <div class="card-header">Tải Lên Nhiều Ảnh </div>
+                    <div class="card-body text-center">
+                            <div class="form-group">
+                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >
+                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >  
+                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >
+                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >
+                            </div>
+                        <!-- <div class="status"></div> -->
                     </div>
                 </div>
             </div>
@@ -56,7 +81,7 @@
 
                         <div class="mb-3">
                             <label class="small mb-1" for="inputprodname">Tên sản phẩm</label>
-                            <input class="form-control" id="inputprodname" type="text" placeholder="Nhập tên sản phẩm" name="prodName">
+                            <input class="form-control" id="inputprodname" type="text" placeholder="Nhập tên sản phẩm" name="prodName" required="">
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
@@ -64,8 +89,8 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputCategory">Danh mục</label>
 
-                                <select class="form-select" id="cateId" aria-label="Default select example" name="cateId">
-                                    <option selected="" disabled="">--Chọn Danh --</option>
+                                <select class="form-select" id="cateId" aria-label="Default select example" name="cateId" required>
+                                    <option value="">--Chọn Danh Mục --</option>
                                     <?php
                                     foreach ($listCate as $value) {
                                     ?>
@@ -77,8 +102,8 @@
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputCategoryChild">Danh mục con</label>
-                                <select class="form-select" id="cateChild" aria-label="Default select example" name="cateChildId">
-                                    <option selected="" disabled="">--Chọn Danh Mục Con--</option>
+                                <select class="form-select" id="cateChild" aria-label="Default select example" name="cateChildId" required>
+                                    <option value="">--Chọn Danh Mục Con--</option>
 
                                 </select>
                             </div>
@@ -124,7 +149,7 @@
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputdes">Mô Tả</label>
-                            <textarea class="lh-base form-control" type="text" name="prodDesc" placeholder="Nhập vào mô tả sản phẩm..." rows="4"></textarea>
+                            <textarea class="lh-base form-control" type="text" name="prodDesc" placeholder="Nhập vào mô tả sản phẩm..." rows="4" required></textarea>
                         </div>
                         <!-- Form Row-->
                         <!-- <input type="file" name="anh"> -->
@@ -151,12 +176,44 @@
 
         });
 
-
-
-
-      
-
-
     });
-   
+</script>
+<script>
+    //xử lý khi có sự kiện click
+    $('#file').change( function () {
+        //Lấy ra files
+        var file_data = $('#file').prop('files')[0];
+        console.log(file_data);
+        //lấy ra kiểu file
+        var type = file_data.type;
+        console.log(type);
+        //Xét kiểu file được upload
+        var match = ["image/gif", "image/png", "image/jpg","image/jpeg"];
+        //kiểm tra kiểu file
+        if (type == match[0] || type == match[1] || type == match[2] || type == match[3]) {
+            //khởi tạo đối tượng form data
+            var form_data = new FormData();
+            //thêm files vào trong form data
+            form_data.append('file', file_data);
+            //sử dụng ajax post
+            $.ajax({
+                url: 'model_ajax/upload_model.php', // gửi đến file upload.php 
+                dataType: 'text',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,
+                type: 'post',
+                success: function (res) {
+                    // $('.status').text(res);
+                    $('.status').html(res);
+                    $('#file').val('');
+                }
+            });
+        } else {
+            $('.status').text('Chỉ được upload file ảnh');
+            $('#file').val('');
+        }
+        return false;
+    });
 </script>
