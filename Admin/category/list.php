@@ -38,10 +38,10 @@
                                 foreach ($listcategory_child as $category_child) {
                                     extract($category_child);
                             ?>
-                                <form action="index.php?act=category&updateChild" method="post">
+                                <form action="" method="post">
                                     <input class="editCategoryChild<?=$cateChildId?> btn btn-outline-secondary border-bottom-secondary" data-id="<?=$cateChildId?>" value="<?=$cateChildName?>"></input>
-                                    <input type="hidden" id="cateChildId" name="cateChildId" value=""/>
-                                    <input type="hidden" id="cateChildName" name="cateChildName" value=""/>
+                                    <input type="hidden" class="cateChildId" name="cateChildId" value=""/>
+                                    <input type="hidden" class="cateChildName" name="cateChildName" value=""/>
                                     <input class="btn btn-success" id="updateCateChild" type="submit" name="updateCateChild" value="Lưu">
                                     <script>
                                         var editCategoryChilds = [];
@@ -49,10 +49,12 @@
                                         editCategoryChilds.push(editCategoryChild);
                                         for (var i = 0; i < editCategoryChilds.length; i++) {
                                             editCategoryChilds[i].oninput = function() {
+                                                var parentElement = this.parentElement;
+                                                parentElement.action = 'index.php?act=update&cateChild'
                                                 var cateChildName = this.value;
                                                 var cateChildId = this.dataset.id;
-                                                document.getElementById('cateChildId').value = cateChildId;
-                                                document.getElementById('cateChildName').value = cateChildName;
+                                                parentElement.querySelector('.cateChildId').value = cateChildId;
+                                                parentElement.querySelector('.cateChildName').value = cateChildName;
                                             }
                                         }
                                     </script>
