@@ -38,7 +38,25 @@
                                 foreach ($listcategory_child as $category_child) {
                                     extract($category_child);
                             ?>
-                                <button class="btn btn-outline-secondary border-bottom-secondary"><?=$cateChildName?></button>
+                                <form action="index.php?act=category&updateChild" method="post">
+                                    <input class="editCategoryChild<?=$cateChildId?> btn btn-outline-secondary border-bottom-secondary" data-id="<?=$cateChildId?>" value="<?=$cateChildName?>"></input>
+                                    <input type="hidden" id="cateChildId" name="cateChildId" value=""/>
+                                    <input type="hidden" id="cateChildName" name="cateChildName" value=""/>
+                                    <input class="btn btn-success" id="updateCateChild" type="submit" name="updateCateChild" value="Lưu">
+                                    <script>
+                                        var editCategoryChilds = [];
+                                        var editCategoryChild = document.querySelector('.editCategoryChild<?=$cateChildId?>')
+                                        editCategoryChilds.push(editCategoryChild);
+                                        for (var i = 0; i < editCategoryChilds.length; i++) {
+                                            editCategoryChilds[i].oninput = function() {
+                                                var cateChildName = this.value;
+                                                var cateChildId = this.dataset.id;
+                                                document.getElementById('cateChildId').value = cateChildId;
+                                                document.getElementById('cateChildName').value = cateChildName;
+                                            }
+                                        }
+                                    </script>
+                                </form>
                             <?php
                                 }
                             ?>
