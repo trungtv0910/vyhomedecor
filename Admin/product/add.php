@@ -1,5 +1,8 @@
 <!-- thêm sản phẩm -->
 <!-- <h2>Thêm Sản Phẩm mới</h2> -->
+
+
+
 <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
 
     <div class="page-header-content px-4 ">
@@ -35,10 +38,10 @@
 
                         <!-- <img class="img-account-profile rounded-circle mb-2" src="" alt=""> -->
 
-                        <input type="file" name="image">
+                        <input type="file"   class="btn btn-secondary btn-icon-split" name="image" id="imageUpdate">
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
 
-                        class="btn btn-secondary btn-icon-split"
+                      
 
                         <!-- Profile picture upload button-->
                         <button class="btn btn-primary" type="button">Upload new image</button>
@@ -147,5 +150,13 @@
             })
 
         });
+
+
+
+
+      
+
+
     });
+   
 </script>

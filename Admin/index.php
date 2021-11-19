@@ -44,6 +44,7 @@ if (isset($_GET['act'])) {
                    
                     include 'product/list.php';
                 } else if (isset($_GET['add'])) {
+                  
                     include 'product/add.php';
                 } else if (isset($_GET['edit'])) {
                     include 'product/edit.php';
