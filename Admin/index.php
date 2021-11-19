@@ -25,22 +25,41 @@ if (isset($_GET['act'])) {
                     insert_category($cateName);
                     $listcategory = loadAll_category();
                     include 'category/list.php';
+                } else if (isset($_GET['addChild'])){
+                    include 'category/addChild.php';
+                }else if (isset($_POST['addCategoryChild'])){
+                    $cateChildName=$_POST['cateChildName'];
+                    $cateId=$_POST['cateId'];
+                    insert_categorychild($cateChildName,$cateId);
+                    $listcategory = loadAll_category();
+                    include 'category/list.php';
+                }else if (isset($_GET['edit'])) {
+                    include 'category/edit.php'
                 } else if (isset($_GET['edit'])) {
+                    $cateId = $_GET['edit'];
+                    $onecategory = loadOne_category($cateId);
                     include 'category/edit.php';
-                } else if (isset($_GET['updateAll'])) {
-                   
-                        $cateChildId = $_POST['cateChildId'];
-                        $cateChildName = $_POST['cateChildName'];
-                        update_cateChild($cateChildId, $cateChildName);
-                     
-                        $listcategory = loadAll_category();
-                        include 'category/list.php';
-                
-                }else if(isset($_POST['submita'])){
-                    echo $_POST['ten'];
-                }
-                 else {
-                
+                } else if (isset($_GET['update'])) {
+                    $cateId = $_POST['cateId'];
+                    $cateName = $_POST['cateName'];
+                    update_category($cateId, $cateName);
+                    $listcategory = loadAll_category();
+                    include 'category/list.php';
+                } else if (isset($_GET['updateCateChild'])) {
+                    $cateChildId = $_POST['cateChildId'];
+                    $cateChildName = $_POST['cateChildName'];
+                    update_cateChild($cateChildId, $cateChildName);
+                    $listcategory = loadAll_category();
+                    include 'category/list.php';
+                } else if (isset($_GET['deleteChild'])) {
+                    delete_cateChild($_GET['deleteChild']);
+                    $listcategory = loadAll_category();
+                    include 'category/list.php';
+                } else if (isset($_GET['delete'])) {
+                    delete_category($_GET['delete']);
+                    $listcategory = loadAll_category();
+                    include 'category/list.php';
+                }else {
                    $listcategory = loadAll_category();
                     include 'category/list.php';
                 }
