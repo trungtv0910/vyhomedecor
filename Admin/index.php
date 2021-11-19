@@ -76,8 +76,13 @@ if (isset($_GET['act'])) {
 
                     include 'product/add.php';
                 } else if (isset($_GET['edit'])) {
+                    $one_product =loadOne_product($_GET['edit']);
+                    $listChildCate=loadAll_categorychild($one_product['cateId']);
                     include 'product/edit.php';
-                } else if (isset($_POST['insertProduct'])) {
+                }else if (isset($_POST['updateProduct'])) {
+                    echo 'trung';
+                
+                }else if (isset($_POST['insertProduct'])) {
                     if(insert_product($_POST, $_FILES)){
                        echo "<script>
                        Swal.fire({

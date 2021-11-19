@@ -117,7 +117,7 @@
                             </div>
                             <!-- Form Group (location)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputLocation">Giá Bán</label>
+                                <label class="small mb-1" for="inputLocation">Giá Bán (VNĐ)</label>
                                 <input class="form-control" id="inputLocation" type="text" placeholder="VD :5.530.000đ" name="price" value="">
                             </div>
                         </div>
