@@ -48,7 +48,6 @@
     
     function delete_cateChild($cateChildId){
         $sql="DELETE FROM tbl_category_child where cateChildId=$cateChildId";
-
         pdo_execute($sql);
     }
 ?>
