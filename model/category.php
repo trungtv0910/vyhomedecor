@@ -17,4 +17,10 @@
         $sql="INSERT INTO tbl_category(cateName) values('$cateName')";
         pdo_execute($sql);
     }
+
+    function update_cateChild($cateChildId, $cateChildName) {
+        $sql="UPDATE tbl_category_child SET cateChildName = '$cateChildName' WHERE cateChildId = $cateChildId";
+        $res = pdo_execute($sql);
+        return $res; 
+    }
 ?>

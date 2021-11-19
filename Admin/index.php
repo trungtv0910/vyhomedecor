@@ -21,16 +21,21 @@ if (isset($_GET['act'])) {
                 } else if (isset($_GET['add'])) {
                     include 'category/add.php';
                 }else if (isset($_POST['addCategory'])){
-                        $cateName=$_POST['cateName'];
-                        insert_category($cateName);
-                        $listcategory = loadAll_category();
-                        include 'category/list.php';
+                    $cateName=$_POST['cateName'];
+                    insert_category($cateName);
+                    $listcategory = loadAll_category();
+                    include 'category/list.php';
                 }else if (isset($_GET['edit'])) {
                     include 'category/edit.php';
-                }else if(isset($_GET['listChild'])){
-                    include 'category/listChild.php';
-                }else if (isset($_GET['edit'])) {
-                    include 'category/edit.php';
+                }else if(isset($_POST['updateChild'])){
+                    if(isset($_POST['updateCateChild'])) {
+                        $cateChildId = $_POST['cateChildId'];
+                        $cateChildName = $_POST['cateChildtName'];
+                        // update_cateChild($cateChildId, $cateChildName);
+                        echo $cateChildId;
+                        echo $cateChildName;
+                    }
+                    include 'caterogy/list.php';
                 }else {
                     include 'category/list.php';
                 }
