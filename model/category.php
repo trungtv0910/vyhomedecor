@@ -34,7 +34,9 @@
 
     function insert_categorychild($cateChildName,$cateId){
         $sql="INSERT INTO tbl_category_child(cateChildName,cateId) values('$cateChildName','$cateId')";
-
+        $res = pdo_execute($sql);
+        return $res; 
+    }
     function update_category($cateId, $cateName) {
         $sql="UPDATE tbl_category SET cateName = '$cateName' WHERE cateId = $cateId";
         $res = pdo_execute($sql);

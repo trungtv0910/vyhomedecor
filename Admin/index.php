@@ -26,15 +26,15 @@ if (isset($_GET['act'])) {
                     $listcategory = loadAll_category();
                     include 'category/list.php';
                 } else if (isset($_GET['addChild'])){
+                    $cateId=$_GET['addChild'];
                     include 'category/addChild.php';
                 }else if (isset($_POST['addCategoryChild'])){
+                    
                     $cateChildName=$_POST['cateChildName'];
                     $cateId=$_POST['cateId'];
                     insert_categorychild($cateChildName,$cateId);
                     $listcategory = loadAll_category();
                     include 'category/list.php';
-                }else if (isset($_GET['edit'])) {
-                    include 'category/edit.php'
                 } else if (isset($_GET['edit'])) {
                     $cateId = $_GET['edit'];
                     $onecategory = loadOne_category($cateId);

@@ -6,8 +6,7 @@
          <div class="form-group">
              <label for="my-input">Tên Danh Mục Con</label>
              <input id="my-input" class="form-control" type="text" name="cateChildName" placeholder="Nhập tên danh mục">
-             <label for="my-input">Loại Hàng</label>
-             <input id="my-input" class="form-control" type="text" name="cateId" placeholder="Nhập tên danh mục">
+             <input id="my-input" class="form-control" type="hidden"  value='<?=$cateId?>' name="cateId" placeholder="Nhập tên danh mục">
 
          </div>
          <!-- submit -->
