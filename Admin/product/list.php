@@ -65,11 +65,11 @@
                                 <td class="sup_parent"><img width="100" src="<?=BASE_URL ?><?=$image ?>" alt="">
                                     <!-- sup -->
                                     <?php if($type==0){
-                                        echo ' <span class=" sup_nomal sup_title rotate-15">Thường</span>';
+                                        echo ' <span class=" sup_new sup_title rotate-15">Thường</span>';
                                     }else if($type==1){
-                                        echo ' <span class=" sup_bestsale sup_title rotate-15">Bán Chạy</span>';
+                                        echo ' <span class=" sup_nomal sup_title rotate-15">Bán Chạy</span>';
                                     }else{
-                                        echo ' <span class=" sup_new sup_title rotate-15">Mới</span>';
+                                        echo ' <span class=" sup_bestsale sup_title rotate-15">Mới</span>';
                                     }?>
                                    
                                     <!-- end sup -->

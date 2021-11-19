@@ -23,61 +23,66 @@
 
 </header>
 <div class="form">
-    <div class="row">
-    <div class="col-xl-4">
-            <!-- Profile picture card-->
-            <div class="card mb-4 mb-xl-0">
-                <div class="card-header">Ảnh sản phẩm</div>
-                <div class="card-body text-center">
-                    <!-- Profile picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="">
-                    <!-- Profile picture help block-->
-                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                    <!-- Profile picture upload button-->
-                    <button class="btn btn-primary" type="button">Upload new image</button>
+    <form method="POST" action="index.php?act=product" enctype="multipart/form-data">
+        <div class="row">
+
+            <!-- Form Group (username)-->
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Ảnh sản phẩm</div>
+                    <div class="card-body text-center">
+
+                        <!-- <img class="img-account-profile rounded-circle mb-2" src="" alt=""> -->
+
+                        <input type="file" name="image">
+                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+
+                        class="btn btn-secondary btn-icon-split"
+
+                        <!-- Profile picture upload button-->
+                        <button class="btn btn-primary" type="button">Upload new image</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-8">
-            <!-- Account details card-->
-            <div class="card mb-4">
-                <div class="card-header">Thông tin sản phẩm</div>
-                <div class="card-body">
-                    <form>
-                        <!-- Form Group (username)-->
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Thông tin sản phẩm</div>
+                    <div class="card-body">
+
                         <div class="mb-3">
                             <label class="small mb-1" for="inputprodname">Tên sản phẩm</label>
-                            <input class="form-control" id="inputprodname" type="text" placeholder="Nhập tên sản phẩm" name="prodName" value="Nhập tên sản phẩm">
+                            <input class="form-control" id="inputprodname" type="text" placeholder="Nhập tên sản phẩm" name="prodName">
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (first name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputCategory">Danh mục</label>
-                               
-                                <select class="form-select" aria-label="Default select example" name="cateId">
+
+                                <select class="form-select" id="cateId" aria-label="Default select example" name="cateId">
                                     <option selected="" disabled="">--Chọn Danh --</option>
-                                    <option value="administrator">Administrator</option>
-                                    <option value="registered">Registered</option>
-                                    <option value="edtior">Editor</option>
-                                    <option value="guest">Guest</option>
+                                    <?php
+                                    foreach ($listCate as $value) {
+                                    ?>
+                                        <option value="<?= $value['cateId'] ?>"><?= $value['cateName'] ?></option>
+                                    <?php } ?>
+
                                 </select>
                             </div>
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputCategoryChild">Danh mục con</label>
-                                <select class="form-select" aria-label="Default select example" name="cateId">
+                                <select class="form-select" id="cateChild" aria-label="Default select example" name="cateChildId">
                                     <option selected="" disabled="">--Chọn Danh Mục Con--</option>
-                                    <option value="administrator">Administrator</option>
-                                    <option value="registered">Registered</option>
-                                    <option value="edtior">Editor</option>
-                                    <option value="guest">Guest</option>
+
                                 </select>
                             </div>
                         </div>
                         <!-- Form Row        -->
                         <div class="row gx-3 mb-3">
-                           
+
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputQuantity">Số lượng</label>
                                 <input class="form-control" id="inputQuantity" type="number" placeholder="Nhập số lượng sản phẩm" name="quantity" value="">
@@ -93,38 +98,54 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputPhone">Khuyến mãi (Chọn chương trình giảm giá cho sản phẩm)</label>
                                 <select class="form-select" aria-label="Default select example" name="discount">
-                                    <option selected="" disabled="">--Chọn Khuyến Mãi--</option>
-                                    <option value="administrator">Administrator</option>
-                                    <option value="registered">Registered</option>
-                                    <option value="edtior">Editor</option>
-                                    <option value="guest">Guest</option>
+                                    <option value="0">--Chọn Khuyến Mãi--</option>
+                                    <option value="0.05">Khuyến Mãi 5%</option>
+                                    <option value="0.1">Khuyến Mãi 10%</option>
+                                    <option value="0.2">Khuyến Mãi 20%</option>
+                                    <option value="0.3">Khuyến Mãi 30%</option>
+                                    <option value="0.4">Khuyến Mãi 40%</option>
+                                    <option value="0.5">Khuyến Mãi 50%</option>
                                 </select>
                             </div>
                             <!-- Form Group (birthday)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputBirthday">Loại sản phẩm</label>
                                 <select class="form-select" aria-label="Default select example" name="type">
-                                    <option selected="" disabled="">--Chọn Loại Sản Phẩm--</option>
-                                    <option value="administrator">Administrator</option>
-                                    <option value="registered">Registered</option>
-                                    <option value="edtior">Editor</option>
-                                    <option value="guest">Guest</option>
+                                    <option value="0">--Chọn Loại Sản Phẩm--</option>
+                                    <option value="0">Mới</option>
+                                    <option value="1">Thường</option>
+                                    <option value="2">Bán chạy</option>
                                 </select>
                             </div>
                         </div>
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
-                            <label class="small mb-1" for="inputEmailAddress">Mô Tả</label>
-                            <textarea class="lh-base form-control" type="text" placeholder="Nhập vào mô tả sản phẩm..." rows="4"></textarea>
+                            <label class="small mb-1" for="inputdes">Mô Tả</label>
+                            <textarea class="lh-base form-control" type="text" name="prodDesc" placeholder="Nhập vào mô tả sản phẩm..." rows="4"></textarea>
                         </div>
                         <!-- Form Row-->
-                        
+                        <!-- <input type="file" name="anh"> -->
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Đăng sản phẩm</button>
-                    </form>
+                        <button class="btn btn-primary" name="insertProduct" type="submit">Đăng sản phẩm</button>
+
+                    </div>
                 </div>
             </div>
+
         </div>
-       
-    </div>
+    </form>
 </div> <!-- form-->
+
+<script>
+    $(document).ready(function() {
+        $('#cateId').change(function() {
+            var Id = $(this).val();
+            $.get("model_ajax/cateChild_model.php", {
+                cateId: Id
+            }, function(data) {
+                $('#cateChild').html(data);
+            })
+
+        });
+    });
+</script>

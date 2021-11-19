@@ -42,14 +42,21 @@ if (isset($_GET['act'])) {
             }
             break;
         case 'product': {
+            $listCate= loadAll_category();
+            // $listChildCate=loadAll_categorychild(1);
                 if (isset($_GET['list'])) {
                     $listProduct =list_Product() ;
+                   
                     include 'product/list.php';
                 } else if (isset($_GET['add'])) {
                     include 'product/add.php';
                 } else if (isset($_GET['edit'])) {
                     include 'product/edit.php';
-                } else {
+                } else if (isset($_POST['insertProduct'])) {
+                    insert_product($_POST,$_FILES);
+
+                } 
+                else {
                     include 'product/list.php';
                 }
             }
