@@ -1,10 +1,43 @@
 <!-- thêm sản phẩm -->
 <!-- <h2>Thêm Sản Phẩm mới</h2> -->
+<style>
+    .img-old,
+    .smallImgOld {
+        position: relative;
+    }
 
+    .deleteImg,
+    .smallDelete {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .smallDelete {
+        padding: 2px 7px;
+        color: white;
+        background-color: red;
+        font-size: 14px;
+        cursor: pointer;
+
+    }
+
+    .list-img {
+        display: flex;
+        padding-left: 0px;
+        flex-direction: row;
+    }
+
+    .list-img li {
+        list-style: none;
+        margin: 5px;
+
+    }
+</style>
 <?php
-echo '<pre>';
-print_r( $one_product);
-echo '</pre>';
+// echo '<pre>';
+// print_r($one_product);
+// echo '</pre>';
 
 ?>
 
@@ -48,14 +81,18 @@ echo '</pre>';
                         <!-- Profile picture upload button-->
                         <!-- <button class="btn btn-primary" type="button">Upload new image</button> -->
                         <!-- <form action="" method="POST" role="form"> -->
-                       
+
                         <label for="">Upload ảnh sản phẩm</label>
-                            <div class="form-group">
-                               
-                                <input id="file" type="file"  name="file" >
-                                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> 
-                            </div>
-                            <!-- <div class="form-group">
+
+
+                        <input id="file" type="file" name="file" style="display:none">
+
+                        <div class="img-old">
+                            <img id="fillUpImg" width="100%" src="<?= BASE_URL ?>uploads/<?= $one_product['image'] ?>" alt="">
+                            <div id="deleteImg" class="deleteImg btn btn-danger">X</div>
+                        </div>
+
+                        <!-- <div class="form-group">
                                 <button id="upload" class="btn btn-primary">Upload</button>
                             </div> -->
                         <!-- </form> -->
@@ -68,12 +105,42 @@ echo '</pre>';
                 <div class="card mt-4 mb-xl-0">
                     <div class="card-header">Tải Lên Nhiều Ảnh </div>
                     <div class="card-body text-center">
-                            <div class="form-group">
-                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >
-                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >  
-                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >
-                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >
-                            </div>
+                        <?php
+
+                        $dataImg = $one_product['imageSmall'];
+                        $dataImg = json_decode($dataImg, true);
+                        // echo '<pre>';
+                        // print_r($dataImg);
+                        // echo '</pre>';
+
+                        ?>
+                        <ul class="list-img">
+                            <?php if (count($dataImg) > 0) { ?>
+                                <input id="dataImg" type="hidden" value='<?= $one_product['imageSmall'] ?>'>
+                                <?php foreach ($dataImg as $value) { ?>
+                                    <li class="smallImgOld">
+                                        <img width="100%" src="<?= BASE_URL ?>uploads/<?= $value['image'] ?>" alt="">
+                                        <div class="smallDelete">X
+                                            <input id="x" class="img" type="hidden" value="<?= $value['id'] ?>">
+                                        </div>
+                                    </li>
+
+                            <?php }
+                            } ?>
+                        </ul>
+                        <?php
+                        // for ($i = 4; $i > count($dataImg); $i--) { 
+                        ?>
+                        <!-- <input type="file" name="image[]"> -->
+                        <?php
+                        // }
+                        ?>
+                        <div class="form-group">
+                            <!-- <input id="smallImage" class="smallImage" type="file" name="images[]">
+                            <input id="smallImage" class="smallImage" type="file" name="images[]"> -->
+                            <!-- <input id="smallImage" class="smallImage" type="file" name="images[]">
+                            <input id="smallImage" class="smallImage" type="file" name="images[]"> -->
+                        </div>
                         <!-- <div class="status"></div> -->
                     </div>
                 </div>
@@ -86,7 +153,9 @@ echo '</pre>';
 
                         <div class="mb-3">
                             <label class="small mb-1" for="inputprodname">Tên sản phẩm</label>
-                            <input class="form-control" id="inputprodname" type="text" placeholder="Nhập tên sản phẩm" name="prodName" required="" value="<?=$one_product['prodName']?>" >
+                            <input type="hidden" id="prodId" name="prodId" value="<?= $one_product['prodId'] ?>">
+                            <input class="form-control" id="inputprodname" type="text" placeholder="Nhập tên sản phẩm" name="prodName" required="" value="<?= $one_product['prodName'] ?>">
+
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
@@ -99,7 +168,7 @@ echo '</pre>';
                                     <?php
                                     foreach ($listCate as $value) {
                                     ?>
-                                        <option <?php echo $value['cateId']==$one_product['cateId']?"Selected":"" ?> value="<?= $value['cateId'] ?>"><?= $value['cateName'] ?></option>
+                                        <option <?php echo $value['cateId'] == $one_product['cateId'] ? "Selected" : "" ?> value="<?= $value['cateId'] ?>"><?= $value['cateName'] ?></option>
                                     <?php } ?>
 
                                 </select>
@@ -107,15 +176,15 @@ echo '</pre>';
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputCategoryChild">Danh mục con</label>
-                                
+
                                 <select class="form-select" id="cateChild" aria-label="Default select example" name="cateChildId" required>
-                                <?php 
-                                foreach ($listChildCate as $value) {
-                                    # code...
-                                
-                                ?>
-                                    <option <?php echo $value['cateChildId']==$one_product['cateChildId']?"Selected":"" ?>  value="<?=$value['cateChildId'] ?>"> <?=$value['cateChildName'] ?></option>
-                                   <?php } ?>
+                                    <?php
+                                    foreach ($listChildCate as $value) {
+                                        # code...
+
+                                    ?>
+                                        <option <?php echo $value['cateChildId'] == $one_product['cateChildId'] ? "Selected" : "" ?> value="<?= $value['cateChildId'] ?>"> <?= $value['cateChildName'] ?></option>
+                                    <?php } ?>
                                 </select>
 
                             </div>
@@ -125,12 +194,12 @@ echo '</pre>';
 
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputQuantity">Số lượng</label>
-                                <input class="form-control" id="inputQuantity" type="number" placeholder="Nhập số lượng sản phẩm" name="quantity" value="<?=$one_product['quantity']?>">
+                                <input class="form-control" id="inputQuantity" type="number" placeholder="Nhập số lượng sản phẩm" name="quantity" value="<?= $one_product['quantity'] ?>">
                             </div>
                             <!-- Form Group (location)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLocation">Giá Bán (VNĐ)</label>
-                                <input class="form-control" id="inputLocation" type="text" placeholder="VD :5.530.000đ" name="price" value="<?=number_format($one_product['price'],0,',','.')?>">
+                                <input class="form-control" id="inputLocation" type="text" placeholder="VD :5.530.000đ" name="price" value="<?= $one_product['price'] ?>">
                             </div>
                         </div>
                         <div class="row gx-3 mb-3">
@@ -138,8 +207,8 @@ echo '</pre>';
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputPhone">Khuyến mãi (Chọn chương trình giảm giá cho sản phẩm)</label>
                                 <select class="form-select" aria-label="Default select example" name="discount">
-                                    
-                                    <option  value="<?=$one_product['discount']?>"><?php echo $one_product['discount']!=0?$one_product['discount']*100 ."%":"Không có khuyến mãi" ?></option>
+
+                                    <option value="<?= $one_product['discount'] ?>"><?php echo $one_product['discount'] != 0 ? $one_product['discount'] * 100 . "%" : "Không có khuyến mãi" ?></option>
 
                                     <option value="0.05">Khuyến Mãi 5%</option>
                                     <option value="0.1">Khuyến Mãi 10%</option>
@@ -153,7 +222,13 @@ echo '</pre>';
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputBirthday">Loại sản phẩm</label>
                                 <select class="form-select" aria-label="Default select example" name="type">
-                                    <option value="<?=$one_product['type'] ?>"><?php if($one_product['type']==0){echo 'Mới';}else if($one_product['type']==1){echo 'Thường';}else{echo "Bán Chạy";} ?></option>
+                                    <option value="<?= $one_product['type'] ?>"><?php if ($one_product['type'] == 0) {
+                                                                                    echo 'Mới';
+                                                                                } else if ($one_product['type'] == 1) {
+                                                                                    echo 'Thường';
+                                                                                } else {
+                                                                                    echo "Bán Chạy";
+                                                                                } ?></option>
                                     <option value="0">Mới</option>
                                     <option value="1">Thường</option>
                                     <option value="2">Bán chạy</option>
@@ -163,7 +238,7 @@ echo '</pre>';
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputdes">Mô Tả</label>
-                            <textarea class="lh-base form-control" type="text" name="prodDesc" placeholder="Nhập vào mô tả sản phẩm..." rows="4" required> <?=$one_product['prodDesc'] ?></textarea>
+                            <textarea class="lh-base form-control" type="text" name="prodDesc" placeholder="Nhập vào mô tả sản phẩm..." rows="4" required> <?= $one_product['prodDesc'] ?></textarea>
                         </div>
                         <!-- Form Row-->
                         <!-- <input type="file" name="anh"> -->
@@ -190,11 +265,34 @@ echo '</pre>';
 
         });
 
+
+
+        // sự kiện click vào nút xoá ảnh chính sản phẩm
+        $("#deleteImg").click(function() {
+
+            $('#fillUpImg')[0].remove();
+            $('#deleteImg').remove();
+            $('#file')[0].style = "display:block";
+        })
+
+        //sự kiện đang edit
+        var x = document.querySelector('.list-img');
+        console.log(x.children.length);
+        if (x.children.length > 0) {
+
+        } else {
+            x.innerHTML = '<li class="smallImage"> <input type="file" name="images[]"></li>';
+
+        }
+
+        //sự kiện click xoá ảnh nhỏ
+
+
     });
 </script>
 <script>
     //xử lý khi có sự kiện click
-    $('#file').change( function () {
+    $('#file').change(function() {
         //Lấy ra files
         var file_data = $('#file').prop('files')[0];
         console.log(file_data);
@@ -202,7 +300,7 @@ echo '</pre>';
         var type = file_data.type;
         console.log(type);
         //Xét kiểu file được upload
-        var match = ["image/gif", "image/png", "image/jpg","image/jpeg"];
+        var match = ["image/gif", "image/png", "image/jpg", "image/jpeg"];
         //kiểm tra kiểu file
         if (type == match[0] || type == match[1] || type == match[2] || type == match[3]) {
             //khởi tạo đối tượng form data
@@ -218,7 +316,7 @@ echo '</pre>';
                 processData: false,
                 data: form_data,
                 type: 'post',
-                success: function (res) {
+                success: function(res) {
                     // $('.status').text(res);
                     $('.status').html(res);
                     $('#file').val('');
@@ -230,4 +328,43 @@ echo '</pre>';
         }
         return false;
     });
+</script>
+<script>
+
+var cacnut=   document.querySelectorAll('.smallDelete');
+
+    cacnut.forEach(item => {
+            item.addEventListener('click', event => {
+                //handle click
+                // console.log(item.children[0].value);
+                // console.log(item.childNodes[1].value);
+                console.log(item);
+                $.ajax({
+                    url: 'model_ajax/deleteSmallImg.php', // gửi đến file upload.php 
+
+                    type: 'POST',
+                    dataType: 'text',
+                    data: {
+                        prodId: $('#prodId').val(),
+                        id: item.children[0].value,
+                        dataImg: $('#dataImg').val()
+
+                    },
+
+                    success: function(res) {
+                        // $('.status').text(res);
+                        //    $('.list-img').remove();
+                        $('#dataImg').remove;
+                        $('.list-img').html(res);
+                        // cacnut=cacnut.length-1;
+                        console.log(cacnut);
+                    }
+                });
+
+
+
+
+            })
+        })
+      
 </script>

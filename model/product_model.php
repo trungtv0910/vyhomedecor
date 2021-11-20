@@ -59,18 +59,37 @@ function insert_product($data,$file)
         {
             return 0;
         }
-        
-            
-        
-
-
-
-
-
-
-
-
-
 }
+function update_product($data,$file){
+       $prodId= $data['prodId'];
+   $prodName =$data['prodName'];
+   $cateId =$data['cateId'];
+  $cateChildId =$data['cateChildId'];
+   $quantity =$data['quantity'];
+   $discount =$data['discount'];
+   $type =$data['type'];
+   $prodDesc =$data['prodDesc'];
+ $price =$data['price'];
+  $sql=0;
+    if(isset($data['image'])){
+        $image =$data['image'];
+       $sql= "UPDATE tbl_product SET prodName='$prodName',prodDesc='$prodDesc',quantity=$quantity,discount=$discount,type=$type ,price =$price,cateId=$cateId,cateChildId=$cateChildId,image='$image' where prodId =$prodId ";
+       
+    }else{
+        // echo 'không có ảnh';
+        $sql= "UPDATE tbl_product SET prodName='$prodName',prodDesc='$prodDesc',quantity=$quantity,discount=$discount,type=$type ,price =$price,cateId=$cateId,cateChildId=$cateChildId where prodId =$prodId ";
+        
+    }
+    if(pdo_execute($sql)==true){
+        return true;
+    }else{
+        return false;
+    }
+return false;
+}
+
+
+
+
 
 ?>

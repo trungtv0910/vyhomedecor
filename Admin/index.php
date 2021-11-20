@@ -80,7 +80,30 @@ if (isset($_GET['act'])) {
                     $listChildCate=loadAll_categorychild($one_product['cateId']);
                     include 'product/edit.php';
                 }else if (isset($_POST['updateProduct'])) {
-                    echo 'trung';
+                    $prodId =$_POST['prodId'];
+                    if(update_product($_POST,$_FILES)==true){
+                        echo "<script>
+                        Swal.fire({
+                         position: 'top-end',
+                         icon: 'success',
+                         title: 'Thay Đổi Thành Công',
+                         showConfirmButton: false,
+                         timer: 2000
+                       })</script>";
+                    }else{
+                        echo "<script>
+                        Swal.fire({
+                         position: 'top-end',
+                         icon: 'error',
+                         title: 'Thay đổi thất Bại',
+                         showConfirmButton: false,
+                         timer: 2000
+                       })</script>";
+                    }
+                    $one_product =loadOne_product($prodId);
+                    $listChildCate=loadAll_categorychild($one_product['cateId']);
+                    include 'product/edit.php';
+                   
                 
                 }else if (isset($_POST['insertProduct'])) {
                     if(insert_product($_POST, $_FILES)){
