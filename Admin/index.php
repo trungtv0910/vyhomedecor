@@ -128,7 +128,11 @@ if (isset($_GET['act'])) {
                     
                     $listProduct = list_Product();
                     include 'product/list.php';
-                } else {
+                }else if(isset($_GET['imageSmall'])){
+                   $prodId =$_GET['imageSmall'];
+                   $one_product =loadOne_product($prodId);
+                    include 'product/editImages.php';    
+                }else {
                     include 'product/list.php';
                 }
             }

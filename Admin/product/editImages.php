@@ -73,44 +73,12 @@
         <div class="row">
 
             <!-- Form Group (username)-->
-            <div class="col-xl-4">
+            <div class="col-xl-8">
                 <!-- Profile picture card-->
-                <div class="card mb-4 mb-xl-0">
-                    <div class="card-header">Ảnh sản phẩm</div>
-                    <div class="card-body text-center">
-
-                        <!-- <img class="img-account-profile rounded-circle mb-2" src="" alt=""> -->
-
-                        <!-- <input type="file"   class="btn btn-secondary btn-icon-split" name="image" id="imageUpdate">
-                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> -->
-                        <!-- Profile picture upload button-->
-                        <!-- <button class="btn btn-primary" type="button">Upload new image</button> -->
-                        <!-- <form action="" method="POST" role="form"> -->
-
-                        <label for="">Upload ảnh sản phẩm</label>
-
-
-                        <input id="file" type="file" name="file" style="display:none">
-
-                        <div class="img-old">
-                            <img id="fillUpImg" width="100%" src="<?= BASE_URL ?>uploads/<?= $one_product['image'] ?>" alt="">
-                            <div id="deleteImg" class="deleteImg btn btn-danger">X</div>
-                        </div>
-
-                        <!-- <div class="form-group">
-                                <button id="upload" class="btn btn-primary">Upload</button>
-                            </div> -->
-                        <!-- </form> -->
-                        <div class="status"></div>
-
-
-
-                    </div>
-                </div>
-                <div class="card mt-4 mb-xl-0">
+            
+                <div class="card mb-xl-0">
                     <div class="card-header">
-                       <div class="float-left">Tải Lên Nhiều Ảnh </div>
-                       <div class="float-right"><a href="index.php?act=product&imageSmall=<?=$one_product['prodId'] ?>">Sửa</a></div>
+                       Tải Lên Nhiều Ảnh 
                     </div>
                     <div class="card-body text-center">
                         <?php
@@ -128,9 +96,9 @@
                                 <?php foreach ($dataImg as $value) { ?>
                                     <li class="smallImgOld">
                                         <img width="100%" src="<?= BASE_URL ?>uploads/<?= $value['image'] ?>" alt="">
-                                        <!-- <div class="smallDelete">X
-                                            <input id="x" class="img" type="hidden" value="<?= $value['id'] ?>">
-                                        </div> -->
+                                      <div class="smallDelete">X 
+                                            <!-- <input id="x" class="img" type="hidden" value="<?= $value['id'] ?>"> -->
+                                        </div> 
                                     </li>
 
                             <?php }
@@ -153,7 +121,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-8">
+            <div class="col-xl-4">
                 <!-- Account details card-->
                 <div class="card mb-4">
                     <div class="card-header">Thông tin sản phẩm</div>
@@ -283,17 +251,7 @@
             $('#file')[0].style = "display:block";
         })
 
-        //sự kiện đang edit
-        var x = document.querySelector('.list-img');
-        // console.log(x.children.length);
-        if (x.children.length > 0) {
-
-        } else {
-            x.innerHTML = '<li class="smallImage"> <input type="file" name="images[]"></li>';
-
-        }
-
-        //sự kiện click xoá ảnh nhỏ
+   
 
 
     });
@@ -336,36 +294,4 @@
         }
         return false;
     });
-</script>
-<script>
-
-  
-// var cacnut=   document.querySelectorAll('.smallDelete');
-//     cacnut.forEach(item => {
-//             item.addEventListener('click', event => {
-//                 //handle click
-//                 // console.log(item.children[0].value);
-//                 // console.log(item.childNodes[1].value);
-//                 console.log(item);
-//                 $.ajax({
-//                     url: 'model_ajax/deleteSmallImg.php', // gửi đến file upload.php 
-//                     type: 'POST',
-//                     dataType: 'text',
-//                     data: {
-//                         prodId: $('#prodId').val(),
-//                         id: item.children[0].value,
-//                         dataImg: $('#dataImg').val()
-//                     },
-//                     success: function(res) {
-//                         // $('.status').text(res);
-//                         //    $('.list-img').remove();
-//                         $('#dataImg').remove;
-//                         $('.list-img').html(res);
-//                         // cacnut=cacnut.length-1;
-//                         console.log(cacnut);
-//                     }
-//                 });
-//             })
-//         })
-      
 </script>
