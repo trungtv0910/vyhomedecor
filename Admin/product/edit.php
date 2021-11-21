@@ -124,13 +124,13 @@
                         ?>
                         <ul class="list-img">
                             <?php if (count($dataImg) > 0) { ?>
-                                <!-- <input id="dataImg" type="hidden" value='<?= $one_product['imageSmall'] ?>'> -->
+                                <input id="dataImg" type="hidden" value='<?= $one_product['imageSmall'] ?>'>
                                 <?php foreach ($dataImg as $value) { ?>
                                     <li class="smallImgOld">
                                         <img width="100%" src="<?= BASE_URL ?>uploads/<?= $value['image'] ?>" alt="">
-                                        <!-- <div class="smallDelete">X
+                                        <div class="smallDelete">X
                                             <input id="x" class="img" type="hidden" value="<?= $value['id'] ?>">
-                                        </div> -->
+                                        </div>
                                     </li>
 
                             <?php }
@@ -339,33 +339,45 @@
 </script>
 <script>
 
-  
-// var cacnut=   document.querySelectorAll('.smallDelete');
-//     cacnut.forEach(item => {
-//             item.addEventListener('click', event => {
-//                 //handle click
-//                 // console.log(item.children[0].value);
-//                 // console.log(item.childNodes[1].value);
-//                 console.log(item);
-//                 $.ajax({
-//                     url: 'model_ajax/deleteSmallImg.php', // gửi đến file upload.php 
-//                     type: 'POST',
-//                     dataType: 'text',
-//                     data: {
-//                         prodId: $('#prodId').val(),
-//                         id: item.children[0].value,
-//                         dataImg: $('#dataImg').val()
-//                     },
-//                     success: function(res) {
-//                         // $('.status').text(res);
-//                         //    $('.list-img').remove();
-//                         $('#dataImg').remove;
-//                         $('.list-img').html(res);
-//                         // cacnut=cacnut.length-1;
-//                         console.log(cacnut);
-//                     }
-//                 });
-//             })
-//         })
+function getDelete() {
+    var cacnuts =  document.querySelectorAll('.smallDelete');
+    return Array.from(cacnuts)
+}
+function deleteItem() {
+    var cacnut = document.querySelectorAll('.smallDelete')
+    cacnut.forEach(item => {
+            item.addEventListener('click', event => {
+                //handle click
+                // console.log(item.children[0].value);
+                // console.log(item.childNodes[1].value);
+                console.log(item);
+                $.ajax({
+                    url: 'model_ajax/deleteSmallImg.php', // gửi đến file upload.php 
+                    type: 'POST',
+                    dataType: 'text',
+                    data: {
+                        prodId: $('#prodId').val(),
+                        id: item.children[0].value,
+                        dataImg: $('#dataImg').val()
+                    },
+                    success: function(res) {
+                        // $('.status').text(res);
+                        //    $('.list-img').remove();
+                        $('#dataImg').remove;
+                        $('.list-img').html(res);
+                        // cacnut=cacnut.length-1;
+                        // console.log(cacnut);
+                        cacnut = getDelete()
+                        // console.log(cacnut);
+                        deleteItem()
+                    }
+                });
+            })
+        })
+}
+function handleDelete(getDelete) {
+    deleteItem()
+}
+handleDelete(getDelete)
       
 </script>
