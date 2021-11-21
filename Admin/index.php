@@ -25,14 +25,14 @@ if (isset($_GET['act'])) {
                     insert_category($cateName);
                     $listcategory = loadAll_category();
                     include 'category/list.php';
-                } else if (isset($_GET['addChild'])){
-                    $cateId=$_GET['addChild'];
+                } else if (isset($_GET['addChild'])) {
+                    $cateId = $_GET['addChild'];
                     include 'category/addChild.php';
-                }else if (isset($_POST['addCategoryChild'])){
-                    
-                    $cateChildName=$_POST['cateChildName'];
-                    $cateId=$_POST['cateId'];
-                    insert_categorychild($cateChildName,$cateId);
+                } else if (isset($_POST['addCategoryChild'])) {
+
+                    $cateChildName = $_POST['cateChildName'];
+                    $cateId = $_POST['cateId'];
+                    insert_categorychild($cateChildName, $cateId);
                     $listcategory = loadAll_category();
                     include 'category/list.php';
                 } else if (isset($_GET['edit'])) {
@@ -59,8 +59,8 @@ if (isset($_GET['act'])) {
                     delete_category($_GET['delete']);
                     $listcategory = loadAll_category();
                     include 'category/list.php';
-                }else {
-                   $listcategory = loadAll_category();
+                } else {
+                    $listcategory = loadAll_category();
                     include 'category/list.php';
                 }
             }
@@ -76,12 +76,12 @@ if (isset($_GET['act'])) {
 
                     include 'product/add.php';
                 } else if (isset($_GET['edit'])) {
-                    $one_product =loadOne_product($_GET['edit']);
-                    $listChildCate=loadAll_categorychild($one_product['cateId']);
+                    $one_product = loadOne_product($_GET['edit']);
+                    $listChildCate = loadAll_categorychild($one_product['cateId']);
                     include 'product/edit.php';
-                }else if (isset($_POST['updateProduct'])) {
-                    $prodId =$_POST['prodId'];
-                    if(update_product($_POST,$_FILES)==true){
+                } else if (isset($_POST['updateProduct'])) {
+                    $prodId = $_POST['prodId'];
+                    if (update_product($_POST, $_FILES) == true) {
                         echo "<script>
                         Swal.fire({
                          position: 'top-end',
@@ -90,7 +90,7 @@ if (isset($_GET['act'])) {
                          showConfirmButton: false,
                          timer: 2000
                        })</script>";
-                    }else{
+                    } else {
                         echo "<script>
                         Swal.fire({
                          position: 'top-end',
@@ -100,14 +100,12 @@ if (isset($_GET['act'])) {
                          timer: 2000
                        })</script>";
                     }
-                    $one_product =loadOne_product($prodId);
-                    $listChildCate=loadAll_categorychild($one_product['cateId']);
+                    $one_product = loadOne_product($prodId);
+                    $listChildCate = loadAll_categorychild($one_product['cateId']);
                     include 'product/edit.php';
-                   
-                
-                }else if (isset($_POST['insertProduct'])) {
-                    if(insert_product($_POST, $_FILES)){
-                       echo "<script>
+                } else if (isset($_POST['insertProduct'])) {
+                    if (insert_product($_POST, $_FILES)) {
+                        echo "<script>
                        Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -115,8 +113,7 @@ if (isset($_GET['act'])) {
                         showConfirmButton: false,
                         timer: 2000
                       })</script>";
-                       
-                    }else{
+                    } else {
                         echo "<script>
                         Swal.fire({
                             icon: 'error',
@@ -125,14 +122,39 @@ if (isset($_GET['act'])) {
                           });
                         </script>";
                     }
-                    
+
                     $listProduct = list_Product();
                     include 'product/list.php';
-                }else if(isset($_GET['imageSmall'])){
-                   $prodId =$_GET['imageSmall'];
-                   $one_product =loadOne_product($prodId);
-                    include 'product/editImages.php';    
+                } else if (isset($_GET['imageSmall'])) {
+
+                    $prodId = $_GET['imageSmall'];
+                    $one_product = loadOne_product($prodId);
+                       if(isset($_GET['deleteImgById'])){
+                             $id= $_GET['deleteImgById'];
+                             $prodId;
+                            $data= $one_product['imageSmall'];
+                            deleteImgById($data,$id,$prodId);
+                            $one_product = loadOne_product($prodId);
+                        }
+                    include 'product/editImages.php';
+                }else if (isset($_POST['update_imgs_product'])) {
+                    $prodId =$_POST['prodId'];
+                    $one_product = loadOne_product($prodId);
+                    $dataOld = $one_product['imageSmall'];
+                    if (upload_ImgSmall($_POST, $_FILES, $dataOld, $prodId)) {
+                       $one_product = loadOne_product($prodId);
+                       include 'product/editImages.php';
+                    } else{
+                        echo 'Có lỗi xãy ra';
+                    }
+                }else if(isset($_GET['delete'])){
+                    $prodId =$_GET['delete'];
+                    delete_product($prodId);
+                    $listProduct = list_Product();
+                    include 'product/list.php';
+                    
                 }else {
+                    $listProduct = list_Product();
                     include 'product/list.php';
                 }
             }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 21, 2021 lúc 05:19 AM
+-- Thời gian đã tạo: Th10 21, 2021 lúc 11:43 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 7.4.22
 
@@ -69,12 +69,11 @@ CREATE TABLE `tbl_category` (
 
 INSERT INTO `tbl_category` (`cateId`, `cateName`) VALUES
 (1, 'Phòng Khách'),
-(2, 'Phòng Ngủ'),
-(3, 'Phòng Ăn'),
+(2, 'Phòng Ăn'),
+(3, 'Phòng Ngủ'),
 (4, 'Phòng Làm Việc'),
 (5, 'Hàng Trang Trí'),
-(6, 'Ngoại Thất'),
-(8, 'ádasdasdwa');
+(6, 'Ngoại Thất');
 
 -- --------------------------------------------------------
 
@@ -94,21 +93,13 @@ CREATE TABLE `tbl_category_child` (
 
 INSERT INTO `tbl_category_child` (`cateChildId`, `cateChildName`, `cateId`) VALUES
 (1, 'Sofa Tròn', 1),
-(2, 'Sofa góc 123', 1),
-(3, 'Ghế thư giãn', 1),
-(4, 'Ghế dài & Đôn', 1),
+(2, 'Kệ/ Tủ Giày', 1),
+(4, 'Ghế & Đôn', 1),
 (5, 'Bàn nước', 1),
-(6, 'Bàn bên', 1),
 (7, 'Bàn Console', 1),
 (8, 'Tủ Tivi', 1),
-(9, 'Bàn ăn113', 2),
-(10, 'Ghế ăn', 2),
-(11, 'Ghế bar', 2),
-(12, 'Tủ ly VIP', 2),
-(13, 'Xe đẩy', 2),
 (14, 'Giường ngủ', 3),
 (15, 'Bàn đầu giường', 3),
-(16, 'tủ áo nhiều màu', 3),
 (17, 'Tủ âm tường', 3),
 (18, 'Tủ hộc kéo', 3),
 (19, 'Bàn trang điểm', 3),
@@ -119,7 +110,12 @@ INSERT INTO `tbl_category_child` (`cateChildId`, `cateChildName`, `cateId`) VALU
 (24, 'Đèn trang trí', 5),
 (25, 'Thảm trang trí', 5),
 (26, 'Gương', 5),
-(27, 'Hoa và Cây', 5);
+(27, 'Hoa và Cây', 5),
+(28, 'Kệ Bếp', 2),
+(29, 'Bàn ăn', 2),
+(30, 'Bàn Ghế', 2),
+(32, 'Thảm Bếp', 2),
+(34, 'Gối Trang Trí', 1);
 
 -- --------------------------------------------------------
 
@@ -193,20 +189,18 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`prodId`, `prodName`, `prodDesc`, `quantity`, `price`, `image`, `imageSmall`, `dateInput`, `view`, `type`, `cateChildId`, `cateId`, `discount`) VALUES
-(1, 'Bàn ăn nhỏ, bàn cafe', 'Màu sắc: Đen/trắng\r\n\r\nKích thước: D70xR70xC75 (cm)\r\n\r\nKhối lượng thực tế: 13kg\r\n\r\nChất liệu:\r\n\r\n- Mặt gỗ Plywood phủ Laminate\r\n\r\n- Chân sắt sơn tĩnh điện\r\n\r\nÝ tưởng thiết kế:\r\n\r\nMột sản phẩm nội thất Nhà ở, căn hộ được ưa chuộng. Bàn chân Honey với giá thành cạnh tranh, chất lượng vật liệu vượt trội, thiết kế tối giản mà thanh lịch sẽ mang lại sự hài lòng cho bạn. \r\n\r\nCác điểm nổi bật:\r\n\r\nPhần mặt bàn làm từ Mặt gỗ Plywood phủ Laminate có khả năng chống ẩm tốt, các đường vân hiên đại.\r\n\r\nPhần chân tháo lắp được làm từ sắt sơn tĩnh điện có khả năng chóng rỉ sét, độ bền hoàn hảo, thuận tiện trong việc di chuyển, tháo rời.\r\n\r\nĐược thiết kế tỉ mỉ đến từng góc độ cho ra bộ khung vững chãi có khả năng chịu lực tốt nhất. ', 123, 2250000, '', '', '2021-11-18', 1000, 1, 11, 4, NULL),
-(2, 'Bàn cafe ', 'Chất liệu:  Beton, thép\r\n\r\nKích thước: Đường kính 60cm, cao 75cm', 300, 3750000, '', '', '2021-11-17', 1000, 0, 9, 6, NULL),
-(3, 'Bàn làm việc', 'Màu sắc:\r\n\r\nChân: Trắng, đen.\r\n\r\nMặt: Trắng, đen, gỗ.\r\n\r\nKích thước: H75 x D120 x W50.\r\n\r\nKhối lượng thực tế: 13kg.\r\n\r\nChất liệu:\r\n\r\nMặt bàn: Gỗ MFC\r\n\r\nChân bàn: Sắt sơn tĩnh điện.\r\n\r\nÝ tưởng thiết kế:\r\n\r\nMột sản phẩm nội thất văn phòng được ưa chuộng. Bàn chân X với giá thành cạnh tranh, chất lượng vật liệu vượt trội, thiết kế tối giản mà thanh lịch sẽ mang lại sự hài lòng cho bạn. \r\n\r\nCác điểm nổi bật:\r\n\r\nPhần chân tháo lắp được làm từ sắt sơn tĩnh điện có khả năng chóng rỉ sét, độ bền hoàn hảo, thuận tiện trong việc di chuyển, tháo rời.\r\n\r\nĐược thiết kế tỉ mỉ đến từng góc độ cho ra bộ khung vững chãi có khả năng chịu lực tốt nhất. \r\n\r\n', 300, 1450000, '', '', '2021-11-17', 1000, 3, 21, 4, NULL),
-(4, 'Bàn làm việc', 'Màu sắc:\r\n\r\nChân: Trắng, đen.\r\n\r\nMặt: Trắng, đen, gỗ.\r\n\r\nKích thước: H75 x D120 x W50.\r\n\r\nKhối lượng thực tế: 13kg.\r\n\r\nChất liệu:\r\n\r\nMặt bàn: Gỗ MFC\r\n\r\nChân bàn: Sắt sơn tĩnh điện.\r\n\r\nÝ tưởng thiết kế:\r\n\r\nMột sản phẩm nội thất văn phòng được ưa chuộng. Bàn chân X với giá thành cạnh tranh, chất lượng vật liệu vượt trội, thiết kế tối giản mà thanh lịch sẽ mang lại sự hài lòng cho bạn. \r\n\r\nCác điểm nổi bật:\r\n\r\nPhần chân tháo lắp được làm từ sắt sơn tĩnh điện có khả năng chóng rỉ sét, độ bền hoàn hảo, thuận tiện trong việc di chuyển, tháo rời.\r\n\r\nĐược thiết kế tỉ mỉ đến từng góc độ cho ra bộ khung vững chãi có khả năng chịu lực tốt nhất. \r\n\r\n', 300, 1450000, '', '', '2021-11-17', 1000, 2, 21, 4, NULL),
-(5, 'Sản Phẩm chức năng 00009123', '   sản phẩm mới', 6, 40000000, 'banan-honey-den-1_4547d64c84af45b3802744814923fa3b_master.jpg', '', '2021-11-19', 0, 0, 6, 1, 0.1),
-(6, 'Bạt nhún', 'OKdasd', 8, 40000000, 'mmh08446_d433170a37474bf39bb9d88ce47d5c92_7fb98648971e48fc836793c3e0b396c5_master.jpg', '', '2021-11-19', 0, 0, 2, 1, 0),
 (7, 'Sản Phẩm Bàn banan honey', 'Bàn Làm việc', 16, 4000000, 'banan-honey-den-3_5c632ea1fc81430e9508d92f85c25c88_149b24fcab3e4790a6387d921ae0af46_master.jpg', '[{\"id\":1,\"image\":\"banan-honey-den-1_a2253f979dd647948629d355dfe8192d_master.jpg\"},{\"id\":2,\"image\":\"banan-honey-den-2_42a7bc0a76c94a309a7a892b1414d5bf_c5db7537aa3742ec8615056f16087c3d_master.jpg\"},{\"id\":3,\"image\":\"banan-honey-den-3_5c632ea1fc81430e9508d92f85c25c88_149b24fcab3e4790a6387d921ae0af46_master.jpg\"},{\"id\":4,\"image\":\"banan-honey-den-1_4547d64c84af45b3802744814923fa3b_master.jpg\"}]', '2021-11-19', 0, 0, 21, 4, 0.1),
-(8, 'Vỏ Chăn', '            Màu sắc: Be nhạt phối xanh rêu\r\n\r\nKích thước sản phẩm: D200x R180cm\r\n\r\nMô tả sản phẩm: Dễ dàng cố định vỏ chăn với 5 - 7 dây buộc với ruột chăn. Dây kéo cao cấp thuận tiện thay đổi vỏ chăn.\r\n\r\nChất liệu: Linen\r\n\r\nHướng dẫn sử dụng:\r\n- Không nên ngâm sản phẩm.\r\n- Không giặt sản phẩm với các loại hoá chất có chất tẩy mạnh.\r\n- Nên giặt bằng tay/giặt máy chế độ nhẹ và nhiệt độ bình thường.\r\n- Nên lật mặt trái sản phẩm, giặt riêng theo màu và bên trong túi giặt.\r\n- Nên phơi sản phẩm ở nơi thoáng mát, tránh ánh nắng trực tiếp.\r\n- Nên sấy khô hoặc ủi với nhiệt độ nhỏ hơn 110 độ C.\r\n- Lưu ý: Không được ủi các sản phẩm chần gòn', 9, 855000, '11__1024x768__b798322985f54db2a844f711d7242d27_master.png', '[{\"id\":1,\"image\":\"12__1024x768__d57227a64d8043768289f7bfbbdc3fde_master.png\"},{\"id\":2,\"image\":\"11__1024x768__b798322985f54db2a844f711d7242d27_master.png\"},{\"id\":3,\"image\":\"xanhreu__1024x768__b0f6fbb537d944f684ac7ea4bf3c1a6d_master.png\"},{\"id\":4,\"image\":\"p1__1024x768__115293c283eb4566831210a00637bfab_master.png\"}]', '2021-11-19', 0, 0, 21, 4, 0.05),
-(9, 'Sản Phẩm chức năng 00009123', 'ok', 2, 40000000, 'banan-honey-den-1_4547d64c84af45b3802744814923fa3b_master.jpg', '[]', '2021-11-19', 0, 0, 23, 4, 0.1),
-(10, 'Bàn Cafe Honny', 'Bàn Cafe đen', 2, 40000000, 'banan-honey-den-3_5c632ea1fc81430e9508d92f85c25c88_149b24fcab3e4790a6387d921ae0af46_master.jpg', '[]', '2021-11-19', 0, 2, 23, 4, 0.1),
-(11, 'Sản Phẩm chức năng 00009123', 'Sản phẩm quá oke', 2, 40000000, '12__1024x768__d57227a64d8043768289f7bfbbdc3fde_master.png', '[]', '2021-11-19', 0, 1, 26, 5, 0.1),
-(12, 'Gối Xám ', '  Gối Xám', 3, 4000000, '11__1024x768__b798322985f54db2a844f711d7242d27_master.png', '[]', '2021-11-19', 0, 2, 13, 2, 0.05),
-(13, 'Áo khoác chống thấm leo núi dã ngoại Rain-Cut cho nam - Đen', 'san phảm mới', 200, 300000, 'banan-honey-den-1_a2253f979dd647948629d355dfe8192d_master.jpg', '[{\"id\":1,\"image\":\"banan-honey-den-1_4547d64c84af45b3802744814923fa3b_master.jpg\"},{\"id\":2,\"image\":\"banan-honey-den-3_5c632ea1fc81430e9508d92f85c25c88_149b24fcab3e4790a6387d921ae0af46_master.jpg\"},{\"id\":3,\"image\":\"12__1024x768__d57227a64d8043768289f7bfbbdc3fde_master.png\"}]', '2021-11-20', 0, 0, 10, 2, 0.1),
-(14, 'voi rừng', '  23123123', 2222, 4995000, '12__1024x768__d57227a64d8043768289f7bfbbdc3fde_master.png', '[]', '2021-11-20', 0, 1, 22, 4, 0.05);
+(11, 'Ra Nệm', ' Kích thước: D50 x R40 x C65 (cm).\r\n\r\nKhối lượng thực tế: 8,5kg.', 2, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png', '[{\"id\":1,\"image\":\"11__1024x768__b798322985f54db2a844f711d7242d27_master.png\"},{\"id\":2,\"image\":\"12__1024x768__d57227a64d8043768289f7bfbbdc3fde_master.png\"},{\"id\":3,\"image\":\"p1__1024x768__115293c283eb4566831210a00637bfab_master.png\"},{\"id\":4,\"image\":\"xanhreu__1024x768__b0f6fbb537d944f684ac7ea4bf3c1a6d_master.png\"}]', '2021-11-19', 0, 2, 20, 3, 0.1),
+(18, 'Sofa băng 2 seaters', 'Kích thước:\r\n\r\nSofa 1m8: D180 x R88 x C87/92 cm\r\n\r\nSofa 2m: D200 x R88 x C87/92 cm\r\n\r\n \r\n\r\nĐiểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn.', 200, 10800000, 'a023_01_9c30702c846747ac89ed9fe6c4984cf8_master.jpg', '[{\"id\":1,\"image\":\"a023_32_78039ce86ced4ba194869982bdb3382b_master.jpg\"},{\"id\":2,\"image\":\"a023_34_231a5a13b7184570bb6e9a320ab38df3_master.jpg\"},{\"id\":3,\"image\":\"a023_37_9c0ea8193aa847cab87a398796b7baaf_master.jpg\"},{\"id\":4,\"image\":\"a023_01_9c30702c846747ac89ed9fe6c4984cf8_master.jpg\"}]', '2021-11-21', 0, 0, 4, 1, 0),
+(19, 'Sofa băng 2 seaters', 'Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn.', 200, 15000000, 'a013_01_b1d607fb63d64ad080076030048ddc6a_master.jpg', '[{\"id\":1,\"image\":\"a013_32_95ee4d41d2a34705a5e704faf2ea3c9b_master.jpg\"},{\"id\":2,\"image\":\"a013_34_095f955546ed4b99a35d25a112a78e2b_master.jpg\"},{\"id\":3,\"image\":\"a013_37_565498802d5140e7abed3bf7ae22922f_master.jpg\"},{\"id\":4,\"image\":\"a013_01_b1d607fb63d64ad080076030048ddc6a_master.jpg\"}]', '2021-11-21', 0, 0, 4, 1, 0),
+(20, 'Kệ giày, treo quần áo, kệ lưu trữ', 'Màu sắc:\r\n\r\nKhung: Trắng, đen.\r\n\r\nMặt: Trắng, đen, gỗ.\r\n\r\nKích thước: D60 x R30 x H160\r\n\r\nKhối lượng thực tế: 10kg.\r\n\r\nChất liệu:\r\n\r\nKhung: Sắt sơn tĩnh điện.\r\n\r\nMặt: Gỗ MDF chống ẩm.', 2170, 1536000, 'dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg', '[{\"id\":1,\"image\":\"dengo_1_5a37360928274cc6ae3d713a1e1aafde_master.jpg\"},{\"id\":2,\"image\":\"dengo_1_07ebe1801bdc497ba3c788da110a1c66_master.jpg\"},{\"id\":3,\"image\":\"dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg\"},{\"id\":4,\"image\":\"dentrang_2_60cba9ab3c64432ba936069e59b1bd38_master.jpg\"}]', '2021-11-21', 0, 2, 2, 1, 0),
+(21, 'Kệ trưng bày', 'Kích thước: D80 x R40 x C163 cm\r\n\r\nChất liệu: Thép sơn tĩnh điện, gỗ MFC phủ Mellamine\r\n\r\nMàu sắc: Đen/Trắng', 200, 2507000, '2_770e04306f87478487e2d330fe004be6_master.png', '[{\"id\":1,\"image\":\"1_51827adcca00489ababc1263f160e608_master.png\"},{\"id\":2,\"image\":\"2_770e04306f87478487e2d330fe004be6_master.png\"},{\"id\":3,\"image\":\"den_02_c501bfe05a534ca08f97c4a6935eb945_master.png\"},{\"id\":4,\"image\":\"den_07_3441f16e43ee42d9a9b41630e19a702e_master.png\"}]', '2021-11-21', 0, 0, 2, 1, 0.05),
+(22, 'Giường 1m6', 'Màu sắc: Xám\r\n\r\nChất liệu: Gỗ thông đỏ, vải polyester\r\n\r\nKích thước : Size 1m6*2m: D214 x R172 x C115 cm', 200, 6230000, 'bed_lullaby_49e1b2eb34eb4e9da55654386ea17556_master.png', '[{\"id\":1,\"image\":\"bed_lullaby_49e1b2eb34eb4e9da55654386ea17556_master.png\"},{\"id\":2,\"image\":\"lullaby_876c0899045e4b78a614498af2cc5021_master.jpg\"}]', '2021-11-21', 0, 0, 14, 3, 0),
+(23, 'Ghế ăn', ' Chất liệu: Khung gỗ tần bì, lưng đan mây thật, nệm bọc vải bố\r\n\r\nKích thước: D45x R55x C83cm\r\n\r\nHướng dẫn sử dụng:\r\n\r\n- Để nơi không ráo, không để sản phẩm rớt nước gây hư hỏng bộ phận điện Vệ sinh bằng khăn ẩm, không dùng hoá chất để lau chùi sản phẩm.\r\n- Không bảo hành cho các sản phẩm hư hỏng trong quá trình quý khách sử dụng do sử dụng không cẩn thận, bảo quản và vệ sinh không đúng cách. Cũng như sản phẩm bị các hao mòn thông thường (như phai mờ, rỉ sét do trầy xước, lỏng ốc vít sau một khoảng thời gian...).', 22, 2760000, 'naunhat-1_b09957e970ea480d95d8c6186f7d34c4_7c20822ae5a941bea0dbf8b578a6aa5d_master.jpg', '[{\"id\":1,\"image\":\"46_426fd81239914e468a209e29967a74bd_master.png\"},{\"id\":2,\"image\":\"naunhat-1_b09957e970ea480d95d8c6186f7d34c4_7c20822ae5a941bea0dbf8b578a6aa5d_master.jpg\"},{\"id\":3,\"image\":\"nice-dark_3_5871cfb7b58d4334928fd149d77e13de_64f0e62150bc4cf182a948221978c181_master.jpg\"},{\"id\":4,\"image\":\"nice-dark_2_b59fdff4a7354f09aaf530f8933a3e2e_master.jpg\"}]', '2021-11-21', 0, 2, 30, 2, 0.05),
+(24, 'Ghế ăn, ghế làm việc', 'Màu sắc: Trắng, đen, chân gỗ\r\n\r\nKích thước: H77/44 x D57 x R49.\r\n\r\nKhối lượng thực tế: 6kg.\r\n\r\nChất liệu: Chân gỗ, mặt ghế bằng nhựa PP cao cấp.', 200, 1152000, 'tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg', '[{\"id\":1,\"image\":\"dengo-2_77ed848ae8be45bca47bc61693a47515_568c3feee43e4fc3971111d5327acf9c_master.jpg\"},{\"id\":2,\"image\":\"tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg\"},{\"id\":3,\"image\":\"tranggo-2_9782fb69e4d44bc9829df4962e7dadba_c3c205c153ed414b9741e6efe80c05ea_master.jpg\"},{\"id\":4,\"image\":\"tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg\"}]', '2021-11-21', 0, 0, 29, 2, 0.05),
+(25, 'Ghế làm việc', 'Màu sắc: Chân đen, mặt xám\r\n\r\nKích thước: D47 x R52 x C86 (cm)\r\n\r\nKhối lượng thực tế: 7.5kg\r\n\r\nChất liệu:\r\n\r\nVải bố bọc nệm\r\n\r\nChân thép sơn tĩnh điện', 100, 1660000, 'xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png', '[{\"id\":1,\"image\":\"xam_6_8334f40d22cf448e9cccfdedc7a5dd81_84fd3039f3c34a5980f1cbb471245a50_master.jpg\"},{\"id\":2,\"image\":\"vahi_fc1717779a6d439fb213f58a1de515ce_master.jpg\"},{\"id\":3,\"image\":\"xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png\"},{\"id\":4,\"image\":\"11_e6d31c1b73604e9283bee86d25e3e3f4_master.png\"}]', '2021-11-21', 0, 2, 22, 4, 0.05),
+(26, 'Bàn làm việc', 'Kích thước: H75 x D120 x R60.\r\n\r\nKhối lượng thực tế: 11,5kg.\r\n\r\nChất liệu:\r\n\r\nMặt bàn: Gỗ MFC.\r\n\r\nChân bàn: Sắt sơn tĩnh điện.', 22, 1547000, 'denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg', '[{\"id\":1,\"image\":\"denden_2_24bb65d6d4d04054b12dc6665b839bdb_master.jpg\"},{\"id\":2,\"image\":\"denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg\"},{\"id\":3,\"image\":\"xamtrang_2_32d0acecafc2416780a0f04233f1af48_6528de879f2145ed846c0385e827dd0c_master.png\"}]', '2021-11-21', 0, 0, 21, 4, 0.1),
+(27, 'Kệ đẩy, bàn góc', 'Màu sắc: Trắng, Đen, Xám nhạt\r\n\r\nKích thước: D50 x R40 x C65 (cm).\r\n\r\nKhối lượng thực tế: 8,5kg.\r\n\r\nChất liệu: Sắt sơn tĩnh điện.', 100, 1431000, 'den_1_c05811e91ae448df995372854aba6291_master.png', '[{\"id\":1,\"image\":\"den_1_c05811e91ae448df995372854aba6291_master.png\"},{\"id\":2,\"image\":\"den_5_2cf2e128226f4535a4d37eee21be0e3f_master.png\"},{\"id\":3,\"image\":\"den_2_018cade37a68419a9bb9009f895a561f_master.png\"},{\"id\":4,\"image\":\"xam_1_3ee73adc805041678bf9c5994b924dda_e4a5540f80b044e0969413f0482dfa2b_master.png\"}]', '2021-11-21', 0, 2, 2, 1, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -279,7 +273,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT cho bảng `tbl_category_child`
 --
 ALTER TABLE `tbl_category_child`
-  MODIFY `cateChildId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `cateChildId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_comment`
@@ -297,7 +291,7 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `prodId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `prodId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

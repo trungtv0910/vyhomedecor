@@ -28,11 +28,11 @@ if(isset($_POST['prodId'])){
         <li class="smallImgOld">
             <img width="100%" src="<?= BASE_URL ?>uploads/<?= $value['image'] ?>" alt="">
                                         <div class="smallDelete" >X
-                                            <input id="x" class="img" type="hidden"  value="<?= $value['id'] ?>">
+                                            <input id="x" class="img" type="hidden"   value="<?= $value['id'] ?>">
                                         </div>
                                     </li>
     <?php }
-    echo ' <input id="dataImg" type="hidden" value='.$dataJson.'>';
+    echo ' <input id="dataImg" type="hidden" value='.$dataJson.' name="imageSmall">';
    
 
 }

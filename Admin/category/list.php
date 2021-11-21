@@ -15,7 +15,9 @@
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="mb-0">Tất Cả Danh Mục</h3>
+                    <h4 class="page-header-title">
+                        Danh Mục
+                    </h4>
                     </div>
                     <div class="col text-right">
                         <a href="index.php?act=category&add" class="btn btn-sm btn-primary">Thêm danh mục</a>

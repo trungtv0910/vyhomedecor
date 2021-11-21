@@ -13,13 +13,13 @@
                 </h4>
             </div>
             <div class="col-12 col-xl-auto mb-3">
-                <!-- <a class="btn btn-sm btn-light text-primary" href="user-management-list.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left me-1">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                        Thêm sản phẩm
-                    </a> -->
+                <a class="btn btn-sm btn-light text-primary" href="index.php?act=product&list">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left me-1">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Danh sách sản phẩm
+                </a>
             </div>
         </div>
     </div>
@@ -28,36 +28,18 @@
 <div class="form">
     <form method="POST" action="index.php?act=product" enctype="multipart/form-data">
         <div class="row">
-
-            <!-- Form Group (username)-->
             <div class="col-xl-4">
                 <!-- Profile picture card-->
                 <div class="card mb-4 mb-xl-0">
                     <div class="card-header">Ảnh sản phẩm</div>
-                    <div class="card-body text-center">
-
-                        <!-- <img class="img-account-profile rounded-circle mb-2" src="" alt=""> -->
-
-                        <!-- <input type="file"   class="btn btn-secondary btn-icon-split" name="image" id="imageUpdate">
-                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> -->
-                        <!-- Profile picture upload button-->
-                        <!-- <button class="btn btn-primary" type="button">Upload new image</button> -->
-                        <!-- <form action="" method="POST" role="form"> -->
-                       
+                    <div class="card-body text-center">      
                         <label for="">Upload ảnh sản phẩm</label>
                             <div class="form-group">
                                
                                 <input id="file" type="file"  name="file" >
                                 <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> 
                             </div>
-                            <!-- <div class="form-group">
-                                <button id="upload" class="btn btn-primary">Upload</button>
-                            </div> -->
-                        <!-- </form> -->
                         <div class="status"></div>
-
-
-
                     </div>
                 </div>
                 <div class="card mt-4 mb-xl-0">

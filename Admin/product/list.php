@@ -1,11 +1,4 @@
-<style>
-    /* .table th:nth-child(1),
-    .table th:nth-child(2) {
-        width: 20px;
-        padding-right: 0px;
-        padding-left: 0px;
-    } */
-</style>
+
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -93,11 +86,13 @@
                                     // $dateInput 
                                 ?></td>
 
-                                <td><a href="index.php?act=product&edit=<?=$prodId ?>" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
-                                        <span class="text">Sửa</span></a>
+                                <td><a href="index.php?act=product&edit=<?=$prodId ?>" class="btn btn-primary btn-icon-split"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
+                                        <!-- <span class="text">Sửa</span> -->
+                                    </a>
                                 </td>
-                                <td> <a href="" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
-                                        <span class="text">Xoá</span></a></td>
+                                <td> <a href="index.php?act=product&delete=<?=$prodId ?>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
+                                        <!-- <span class="text">Xoá</span> -->
+                                    </a></td>
                             </tr>
                           <?php
                           }

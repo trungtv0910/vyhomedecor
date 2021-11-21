@@ -70,16 +70,19 @@ function update_product($data,$file){
    $type =$data['type'];
    $prodDesc =$data['prodDesc'];
  $price =$data['price'];
-  $sql=0;
-    if(isset($data['image'])){
+
+  
+       $sql= "UPDATE tbl_product SET prodName='$prodName',prodDesc='$prodDesc',quantity=$quantity,discount=$discount,type=$type ,price =$price,cateId=$cateId,cateChildId=$cateChildId";
+       if(isset($data['imageSmall'])){
+           $imageSmall =$data['imageSmall'];
+           $sql .=", imageSmall ='$imageSmall' ";
+       }
+       if(isset($data['image'])){
         $image =$data['image'];
-       $sql= "UPDATE tbl_product SET prodName='$prodName',prodDesc='$prodDesc',quantity=$quantity,discount=$discount,type=$type ,price =$price,cateId=$cateId,cateChildId=$cateChildId,image='$image' where prodId =$prodId ";
-       
-    }else{
-        // echo 'không có ảnh';
-        $sql= "UPDATE tbl_product SET prodName='$prodName',prodDesc='$prodDesc',quantity=$quantity,discount=$discount,type=$type ,price =$price,cateId=$cateId,cateChildId=$cateChildId where prodId =$prodId ";
-        
-    }
+        $sql .= ",image='$image' ";
+       }
+        $sql .="  where prodId =$prodId ";
+        // echo $sql;
     if(pdo_execute($sql)==true){
         return true;
     }else{
@@ -88,6 +91,62 @@ function update_product($data,$file){
 return false;
 }
 
+    function  deleteImgById($data,$id,$prodId){
+     $data =json_decode($data,true);     
+    
+
+        $dataImg=array();
+        $temp=0;
+        for($i=0;$i<count($data);$i++){
+            if($id !=$data[$i]['id']){
+                $newArray= array('id'=>$temp++, 'image'=>$data[$i]['image']);
+                array_push($dataImg,$newArray);
+            }
+        }
+        $imageSmall=json_encode($dataImg);
+        $sql ="UPDATE tbl_product SET imageSmall='$imageSmall' where prodId =$prodId";
+        return pdo_execute($sql);
+    }
+
+
+
+
+// hàm up load nhiều ảnh nhỏ
+function upload_ImgSmall($data,$file,$dataOld,$prodId){
+    
+    $dataOld;
+    $dataOld =json_decode($dataOld,true);
+    $path = "../uploads/";
+    if(isset($_FILES['images']['name'])){
+        $newData= $_FILES['images']['name'];
+        
+
+        $temp=count($dataOld);
+        for($i=0; $i<count($newData);$i++){
+            if(!empty($newData[$i])){
+                $temp+=1;
+                
+                $newArray = array('id'=>$temp,'image'=>$newData[$i] );
+                array_push($dataOld,$newArray);
+                move_uploaded_file($_FILES['images']['tmp_name'][$i],$path.$_FILES['images']['name'][$i]);
+            }
+        }
+    }
+    $imageSmall =json_encode($dataOld);
+
+    $sql ="UPDATE tbl_product SET imageSmall='$imageSmall' where prodId =$prodId";
+    if(pdo_execute($sql)){
+        return true;
+    }
+    return false;
+  
+}
+
+function delete_product($prodId)
+{
+  $sql ="DELETE FROM tbl_product Where prodId =$prodId";
+  return pdo_execute($sql);
+}
 
 
 
