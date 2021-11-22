@@ -145,8 +145,19 @@ if (isset($_GET['act'])) {
                 include 'view/product.php';
             }
             break;
-        case "": {
+        case "list-product": {
+            if(isset($_GET['cateId'])){
+                $cateId =$_GET['cateId'];
+               if(isset($_GET['cateChildId'])){
+                    $cateChildId=$_GET['cateChildId'];
+               }else{
+                   $cateChildId=0;
+               }
+                $listproduct = load_product_condition(15,0,$cateId,$cateChildId);
             }
+            include 'view/list-product.php';
+            }
+            break;
         default:
             include 'view/home.php';
             break;

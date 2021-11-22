@@ -291,13 +291,13 @@ init();
                                     $listcategory_child = loadAll_categorychild($cateId);
                             ?>
                                     <ul class="header__nav-full-list">
-                                        <h3 class="header__nav-full-heading"><?=$cateName?></h3>
+                                    <h3 class="header__nav-full-heading"><a href="index.php?act=list-product&cateId=<?=$category['cateId'] ?>" style="text-decoration: none; color:grey"> <?=$cateName?></a></h3>
                                         <?php
                                             foreach ($listcategory_child as $category_child) {
                                                 extract($category_child);
                                         ?>
                                                 <li class="header__nav-full-item">
-                                                    <a href="#" class="header__nav-full-link"><?=$cateChildName?></a>
+                                                    <a href="index.php?act=list-product&cateId=<?=$category['cateId']?>&cateChildId=<?=$category_child['cateChildId']?>" class="header__nav-full-link"><?=$cateChildName?></a>
                                                 </li>
                                         <?php
                                             }

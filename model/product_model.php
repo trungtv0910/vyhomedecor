@@ -6,6 +6,19 @@
         return $listproduct;
     }
 
+    function load_product_condition($limit=10,$type=0,$cateId=0,$cateChildId=0){
+        $sql = "SELECT * FROM tbl_product where 1 ";
+        if($cateId>0){
+            $sql .=" And cateId=$cateId ";
+        }
+        if($cateChildId>0){
+            $sql .=" And cateChildId=$cateChildId ";
+        }
+        $sql .= " order by prodId desc limit $limit";
+        $listproduct = pdo_query($sql);
+        return $listproduct;
+    }
+
     function load_new_product() {
         $sql = "SELECT * FROM tbl_product where 1 order by prodId desc limit 0,1";
         $newproduct = pdo_query($sql);
