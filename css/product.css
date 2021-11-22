@@ -10,7 +10,7 @@
     src: url(../Poppins/Poppins-BlackItalic.ttf);
   }
 .content-1{
-    min-height: 670px;
+    min-height: 560px;
     width: 100%;
 }
 .box-trai{
@@ -28,14 +28,23 @@
     width: 97%;
 }
 .show-anh{
-    width: 99%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 10px;
+    min-height: 200px;
 }
 .img-sp{
-    width: 23%;
+    width: 22%;
     border: solid 1px #ccc;
     float: left;
+    margin-right: 14px;
+  
+}
+.product-img-small:first-child{
+    margin-left: 0;
+}
+.product-img-small:last-child{
+    margin-right: 0;
 }
 .img-sp img{
     width: 100%;
@@ -57,6 +66,16 @@
 }
 .title h1{
     margin: 0;
+    font-size: 2.2rem;
+    color: #333;
+}
+.title del{
+    padding-left: 6px;
+    font-size: 1.2rem;
+}
+.title span{
+    font-size: 2rem;
+    color: #e34444;
 }
 /*css hình sao*/
 div.stars {
@@ -93,18 +112,8 @@ div.stars {
   }
 
   /*end*/
-.stars a{
-    text-decoration: none;
-    padding-left: 3px;
-    color: #888;
-}
-.stars a:hover{
-    color: red;
-}
-strong{
-    margin-top: 5px;
-    color: black;
-}
+
+
 .size{
     margin-top: 15px;
     width: 100%;
@@ -112,35 +121,20 @@ strong{
     border-bottom: solid #ccc 1px;
     font-size: 1.4rem;
     line-height: 23px;
+    color: #333;
 }
-.color{
-    margin-top: 10px;
-    width: 100%;
-    min-height: 150px;
+.size strong{
+    margin-top: 5px;
+    color: #333;
+    font-size: 1.5rem;
 }
-.kich-thuoc{
-    padding: 10px 5px;
-    text-align: center;
-    width: 50px;
-    float: left;
-    border: solid 1px #ccc;
-    margin-right: 5px;
-    border-radius: 3px;
-}
-.kich-thuoc a{
-    text-decoration: none;
+.size span{
     color: #666;
-}
-.kich-thuoc:hover{
-    border: 1px solid red;
-}
-.thong-tin{
-    width: 100%;
-    float: left;
+    font-size: 1.2;
 }
 .mua-hang{
     width: 100%;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 .binh-luan input[type="submit"],
 .mua-hang input[type="submit"]{

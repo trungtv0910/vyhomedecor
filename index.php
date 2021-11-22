@@ -142,7 +142,14 @@ if (isset($_GET['act'])) {
             }
             break;
         case "product": {
+            if(isset($_GET['cateId'])){
+                $cateId=$_GET['cateId'];
+                $loadOne=loadOne_product($prodId);
                 include 'view/product.php';
+            }else{
+                include 'view/product.php';
+            }
+                include 'view/home.php';
             }
             break;
         case "list-product": {

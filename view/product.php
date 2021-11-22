@@ -3,47 +3,44 @@
                 <div class="product">
                     <!--thông tin-->
                     <div class="content-1">
+                        
                         <div class="box-trai mr">
                             <div class="img product-block">
                                 <img src="images/productList/sp3.jpg" alt="">
                             </div>
-                            <div class="show-anh">
-                                <div class="img-sp product-small-block mr">
-                                    <img src="images/productList/sp1.jpg" class="product-img-small">
-                                </div>
-                                <div class="img-sp product-small-block mr">
-                                    <img src="images/productList/sp2.jpg" class="product-img-small">
-                                </div>
-                                <div class="img-sp product-small-block mr">
-                                    <img src="images/productList/sp4.jpg" class="product-img-small">
-                                </div>
-                                <div class="img-sp product-small-block mr">
-                                    <img src="images/productList/sp5.jpg" class="product-img-small">
-                                </div>
-                            </div>
                         </div>
                         <div class="box-phai">
                             <div class="title">
-                                <h1>Modular Modern</h1>
-                                <strong>10.00$</strong>
+                                <h1>Bàn Ăn</h1>
+                                <span>$ 10.00</span>
+                                <del>$ 20.00</del>
                             </div>
+                            
                             <div class="size">
                                 <strong>Kích Thước:</strong><br>
-                                Đường kính 45cm, cao 50cm<br>
+                                <span>Đường kính 45cm, cao 50cm<br>
                                 Đường kính 60cm, cao 45cm<br>
+                                </span>
                                 <strong>Chất liệu: </strong>da cao cấp, chân ghế nhôm không gỉ<br>
                             </div>
-                            <div class="color">
-                                <div class="thong-tin">
-                                   <h4>SIZE</h4> <div class="kich-thuoc"><a href="#">50cm</a></div> <div class="kich-thuoc"><a href="#">75cm</a></div>
+                            <div class="show-anh">
+                                <div class="img-sp product-small-block ">
+                                    <img src="images/productList/sp1.jpg" class="product-img-small">
                                 </div>
-                                <div class="thong-tin">
-                                    <h4>MÀU</h4> <div class="kich-thuoc"><a href="#">Xanh</a></div> <div class="kich-thuoc"><a href="#">Red</a></div> <div class="kich-thuoc"><a href="#">Hồng</a></div> <div class="kich-thuoc"><a href="#">Yellow</a></div>
-                                 </div>
+                                <div class="img-sp product-small-block ">
+                                    <img src="images/productList/sp2.jpg" class="product-img-small">
+                                </div>
+                                <div class="img-sp product-small-block ">
+                                    <img src="images/productList/sp4.jpg" class="product-img-small">
+                                </div>
+                                <div class="img-sp product-small-block ">
+                                    <img src="images/productList/sp5.jpg" class="product-img-small">
+                                </div>
                             </div>
                             <div class="mua-hang">
                                 <input type="submit" value="Thêm vào giỏ hàng" > <input type="submit" value="Mua ngay">
                             </div>
+                        
                         </div>
                     </div> 
                     <!--sản phẩm liên quan và bình luận-->   

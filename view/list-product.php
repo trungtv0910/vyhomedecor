@@ -16,7 +16,7 @@
                 <div class="col l-2-4 m-4 c-12">
                     <div class="products__item">
                         <div class="products__item-link">
-                            <a href="index.php?act=product"> <img src="<?= BASE_URL ?>uploads/<?= $image ?>" class="products__item-img"></a>
+                            <a href="index.php?act=product=<?=$cateId?>"> <img src="<?= BASE_URL ?>uploads/<?= $image ?>" class="products__item-img"></a>
                             <div class="products__item-link-hover">
                                 <a href="index.php?act=product" class="products__item-link-hover-add">
                                     <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>

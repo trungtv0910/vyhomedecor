@@ -86,7 +86,7 @@
                                 <label class="small mb-1" for="inputCategoryChild">Danh mục con</label>
                                 <select class="form-select" id="cateChild" aria-label="Default select example" name="cateChildId" required>
                                     <option value="">--Chọn Danh Mục Con--</option>
-
+                                    
                                 </select>
                             </div>
                         </div>

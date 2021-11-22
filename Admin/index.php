@@ -69,12 +69,25 @@ if (isset($_GET['act'])) {
                 $listCate = loadAll_category();
                 // $listChildCate=loadAll_categorychild(1);
                 if (isset($_GET['list'])) {
-                    $listProduct = list_Product();
 
+                    $listcategory = loadAll_category();
+                    $listProduct = list_Product();
                     include 'product/list.php';
                 } else if (isset($_GET['add'])) {
-
+                    $listcategory = loadAll_category();
+                    $listProduct = list_Product();
                     include 'product/add.php';
+                }else if (isset($_POST['search'])){
+                    $search=$_POST['search'];
+                    if (empty($search)) {
+                        $key_search=$_POST['key_search'];
+                        $id_cat=$_POST['cateId'];
+                    } else {
+                        $key_search='';
+                        $id_cat=0;  
+                    }
+                    $listcategory = loadAll_category();
+                    $listProduct = list_Product();
                 } else if (isset($_GET['edit'])) {
                     $one_product = loadOne_product($_GET['edit']);
                     $listChildCate = loadAll_categorychild($one_product['cateId']);
