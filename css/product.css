@@ -278,4 +278,12 @@ strong{
 }
 
 
+/* Show img */
+.product-small-block {
+    cursor: pointer;
+}
+.product-small-block.active {
+    border: 1px solid var(--hover-color);
+}
+
 
