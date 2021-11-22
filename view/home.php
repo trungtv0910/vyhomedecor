@@ -78,8 +78,14 @@
                                 </div>
                                 <a href="#" class="products__item-name"><?=$prodName?></a>
                                 <div class="products__item-price">
-                                    <span class="products__item-price-old"><?=$price - ($price * $discount)?> VNĐ</span>
-                                    <span class="products__item-price-now"><?=$price?> VNĐ</span>
+                                <?php
+                                    if($discount > 0) {
+                                ?>
+                                    <span class="products__item-price-old"><?=number_format($price - ($price * $discount),0,',','.')?>đ</span>
+                                <?php
+                                    }
+                                ?>
+                                    <span class="products__item-price-now"><?=number_format($price,0,',','.');?>đ</span>
                                 </div>
                                 <span class="products__item-rating">
                                     <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
@@ -91,7 +97,7 @@
                                 <?php
                                     if($discount > 0) {
                                 ?>
-                                <span class="products__item-sale">SALE <?=$discount*100?>%</span>
+                                    <span class="products__item-sale">SALE <?=$discount*100?>%</span>
                                 <?php
                                     }
                                 ?>
@@ -223,8 +229,14 @@
                                 </div>
                                 <a href="#" class="products__item-name"><?=$prodName?></a>
                                 <div class="products__item-price">
-                                    <span class="products__item-price-old"><?=$price - ($price * $discount)?> VNĐ</span>
-                                    <span class="products__item-price-now"><?=$price?> VNĐ</span>
+                                <?php
+                                    if($discount > 0) {
+                                ?>
+                                    <span class="products__item-price-old"><?=number_format($price - ($price * $discount),0,',','.')?>đ</span>
+                                <?php
+                                    }
+                                ?>
+                                    <span class="products__item-price-now"><?=number_format($price,0,',','.');?>đ</span>
                                 </div>
                                 <span class="products__item-rating">
                                     <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
@@ -289,14 +301,14 @@
                                 <div class="most-view__item-info">
                                     <a href="#" class="products__item-name most-view__item-name"><?=$prodName?></a>
                                     <div class="products__item-price">
-                                        <?php
-                                            if($discount > 0) {
-                                        ?>
-                                            <span style="padding-left: 4px;" class="products__item-price-old"><?=$price - ($price * $discount)?> VNĐ</span> <br>
-                                        <?php
-                                            }
-                                        ?>
-                                        <span class="products__item-price-now"><?=$price?> VNĐ</span>
+                                    <?php
+                                    if($discount > 0) {
+                                    ?>
+                                        <span class="products__item-price-old"><?=number_format($price - ($price * $discount),0,',','.')?>đ</span> <br>
+                                    <?php
+                                        }
+                                    ?>
+                                        <span class="products__item-price-now"><?=number_format($price,0,',','.');?>đ</span>
                                     </div>
                                     <span class="products__item-rating">
                                         <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>

@@ -1040,12 +1040,13 @@
     text-decoration: line-through;
     color: var(--text-color);
     font-size: 1.4rem;
+    margin-right: 4px;
 }
 .products__item-price-now{
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin-left: 4px;
+    /* margin-left: 4px; */
     line-height: 1.6rem;
 }
 .products__item-rating{
@@ -1343,19 +1344,24 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
 }
+.most-view__item-img {
+    width: 100%;
+    height: 100%;
+}
 .most-view__item-link{
-    width: 128px;
+    width: 111px;
     height: 128px;
     overflow: hidden;
     transform: scale(1);
     transition: all 0.3s linear;
+    margin-right: 16px;
 }
 .most-view__item-link:hover{
     transform: scale(1.1);
     border: unset;
 }
 .most-view__item-info{
-    margin-left: 24px;
+    /* margin-left: 24px; */
     text-align: left;
 }
 .most-view__item-btn{
