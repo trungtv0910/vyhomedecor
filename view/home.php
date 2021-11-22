@@ -101,7 +101,7 @@
                                     <div class="products__item-link">
                                         <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img">
                                         <div class="products__item-link-hover">
-                                            <a href="#" class="products__item-link-hover-add">
+                                            <a href="" class="products__item-link-hover-add">
                                                 <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
                                                 Thêm vào giỏ hàng
                                             </a>
