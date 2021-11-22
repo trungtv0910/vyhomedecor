@@ -4,7 +4,9 @@
 include_once 'model/pdo.php';
 include_once 'model/account_model.php';
 include_once 'model/category.php';
+include_once 'model/product_model.php';
 $listcategory = loadAll_category();
+$tophighlightsproduct = load_top_highligth();
 init();
 
 ?>
@@ -382,16 +384,23 @@ init();
                         <li class="header__nav-item">
                             <a href="#" class="header__nav-link">Sản Phẩm Nổi Bật</a>
                             <div class="header__nav-full bedroom">
+                                <?php
+                                    foreach ($tophighlightsproduct as $product) {
+                                        extract($product);
+                                ?>
                                 <ul class="header__nav-full-list">
                                     <div class="header__nav-full-hidden">
                                         <a href="#" class="header__nav-full-link-img">
-                                            <img src="http://demo.snstheme.com/wp/simen/wp-content/uploads/2015/12/category-img-1-250x150.png" class="header__nav-full-img">
+                                            <img src="uploads/<?=$image?>" class="header__nav-full-img">
                                         </a>
                                     </div>
-                                    <a href="#" class="header__nav-full-link-info">Sofa</a>
-                                    <span class="header__nav-full-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ornare urna. Suspendisse a lobortis ex, at efficitur</span>
+                                    <a href="#" class="header__nav-full-link-info"><?=$prodName?></a>
+                                    <span class="header__nav-full-info"><?=$prodDesc?></span>
                                 </ul>
-                                <ul class="header__nav-full-list">
+                                <?php
+                                    }
+                                ?>
+                                <!-- <ul class="header__nav-full-list">
                                     <div class="header__nav-full-hidden">
                                         <a href="#" class="header__nav-full-link-img">
                                             <img src="http://demo.snstheme.com/wp/simen/wp-content/uploads/2015/12/avant-garde-design-studios-furniture-250x150.jpg" class="header__nav-full-img">
@@ -417,7 +426,7 @@ init();
                                     </div>
                                     <a href="#" class="header__nav-full-link-info">Furniture chest</a>
                                     <span class="header__nav-full-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ornare urna. Suspendisse a lobortis ex, at efficitur</span>
-                                </ul>
+                                </ul> -->
                             </div>
                         </li>
                         <li class="header__nav-item header__nav-link-dad">

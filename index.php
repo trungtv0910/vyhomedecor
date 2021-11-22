@@ -12,9 +12,8 @@ include_once 'lib/format.php';
 ?>
 
 <?php
+  
 
-  
-  
 if (isset($_GET['act'])) {
     $path = $_GET['act'];
     switch ($path) {

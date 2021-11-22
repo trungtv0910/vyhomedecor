@@ -1,4 +1,9 @@
-
+<?php
+    $listproduct = loadAll_product_home();
+    $newproduct = load_new_product();
+    $topviewproduct = load_topview_product();
+    $topsellersproduct = load_top_sellers();
+?>
             <div class="grid wide">
                 <div class="row highlight">
                     <div class="col l-6 m-6 c-12">
@@ -41,10 +46,17 @@
                         <li class="products__category-item"></li>
                     </ul>       
                     <div class="row products__list">
+                    <?php
+                        foreach ($listproduct as $product) {
+                            extract($product);
+                    ?>
+                        <?php
+                            if($discount > 0) {
+                        ?>
                         <div class="col l-2-4 m-4 c-12">
                             <div class="products__item">
                                 <div class="products__item-link">
-                                  <a href="index.php?act=product">  <img src="./images/productList/sp1.jpg" class="products__item-img"></a>
+                                  <a href="index.php?act=product">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
                                     <div class="products__item-link-hover">
                                         <a href="index.php?act=product" class="products__item-link-hover-add">
                                             <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
@@ -66,10 +78,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
+                                <a href="#" class="products__item-name"><?=$prodName?></a>
                                 <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 3.00</span>
-                                    <span class="products__item-price-now">$ 2.00</span>
+                                    <span class="products__item-price-old"><?=$price - ($price * $discount)?> VNĐ</span>
+                                    <span class="products__item-price-now"><?=$price?> VNĐ</span>
                                 </div>
                                 <span class="products__item-rating">
                                     <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
@@ -78,387 +90,85 @@
                                     <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
                                     <i class="products__item-rating-icon fas fa-star"></i>
                                 </span>
-                                <span class="products__item-sale">SALE!</span>
+                                <span class="products__item-sale">SALE <?=$discount*100?>%</span>
                             </div>
                         </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp2.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
+                        <?php
+                            } else {
+                        ?>    
+                            <div class="col l-2-4 m-4 c-12">
+                                <div class="products__item">
+                                    <div class="products__item-link">
+                                        <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img">
+                                        <div class="products__item-link-hover">
+                                            <a href="#" class="products__item-link-hover-add">
+                                                <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
+                                                Thêm vào giỏ hàng
+                                            </a>
+                                            <div href="#" class="products__item-link-hover-info">
+                                                <div class="products__item-link-hover-info-item">
+                                                    <i class="products__item-link-hover-info-icon fas fa-heart"></i>
+                                                    <span class="products__item-link-hover-info-item-hover">Wishlist</span>
+                                                </div>
+                                                <div class="products__item-link-hover-info-item">
+                                                    <i class="products__item-link-hover-info-icon fas fa-random"></i>
+                                                    <span class="products__item-link-hover-info-item-hover">Compare</span>
+                                                </div>
+                                                <div class="products__item-link-hover-info-item">
+                                                    <i class="products__item-link-hover-info-icon fas fa-eye"></i>
+                                                    <span class="products__item-link-hover-info-item-hover">Quick View</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 10.00</span>
-                                    <span class="products__item-price-now">$ 8.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp3.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
+                                    <a href="#" class="products__item-name"><?=$prodName?></a>
+                                    <div class="products__item-price">
+                                        <span class="products__item-price-now"><?=$price?> VNĐ</span>
                                     </div>
+                                    <span class="products__item-rating">
+                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
+                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
+                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
+                                        <i class="products__item-rating-icon fas fa-star"></i>
+                                        <i class="products__item-rating-icon fas fa-star"></i>
+                                    </span>
                                 </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 3.00</span>
-                                    <span class="products__item-price-now">$ 2.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                                <span class="products__item-sale">SALE!</span>
                             </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp4.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 12.00</span>
-                                    <span class="products__item-price-now">$ 10.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp5.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 3.00</span>
-                                    <span class="products__item-price-now">$ 2.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                                <span class="products__item-sale">SALE!</span>
-                            </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp1.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 3.00</span>
-                                    <span class="products__item-price-now">$ 2.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                                <span class="products__item-sale">SALE!</span>
-                            </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp2.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 10.00</span>
-                                    <span class="products__item-price-now">$ 8.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp3.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 3.00</span>
-                                    <span class="products__item-price-now">$ 2.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                                <span class="products__item-sale">SALE!</span>
-                            </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp4.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 12.00</span>
-                                    <span class="products__item-price-now">$ 10.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp5.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 3.00</span>
-                                    <span class="products__item-price-now">$ 2.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                                <span class="products__item-sale">SALE!</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="products__control">
-                        <button class="products__control-btn">Load more items</button>
+                        <?php
+                            }
+                        ?> 
+                    <?php
+                        }
+                    ?>
                     </div>
                 </div>
+                <div class="products__control">
+                    <button class="products__control-btn">Load more items</button>
+                </div>
                 <div class="new-products">
-                    <div class="row">
+                <?php
+                    foreach ($newproduct as $product) {
+                        extract($product);
+                ?>
+                    <div class="row new-products__img-container">
                         <div class="col l-6 m-6 c-12">
-                            <div class="new-products__img-container">
-                                <img src="./images/newPrpduct/new-product.jpg" class="new-products__img">
+                            <div>
+                                <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="new-products__img">
                             </div>
                         </div>
                         <div class="col l-6 m-6 c-12">
                             <div class="new-products__info">
-                                <h3 class="new-products__heading">AXEL - STOOL</h3>
-                                <h4 class="new-products__sub-heading">NEW PRODUCTS</h4>
-                                <p class="new-products__about">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                                <h3 class="new-products__heading"><?=$prodName?></h3>
+                                <h4 class="new-products__sub-heading">SẢN PHẨM MỚI NHẤT</h4>
+                                <p class="new-products__about"><?=$prodDesc?></p>
                                 <button class="new-products__btn">Thêm vào giỏ hàng</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <?php
+                    }
+                ?>
                 <div class="suggest">
                     <div class="most-view__title">
                         <h3 class="most-view__heading">TOP SẢN PHẨM BÁN CHẠY NHẤT</h3>
@@ -470,7 +180,7 @@
                             </div>
                         </div>
                     </div>
-                    <ul class="suggest__category-list hide-on-mobile-tablet">
+                    <!-- <ul class="suggest__category-list hide-on-mobile-tablet">
                         <li class="suggest__category-item suggest__category-item--active">
                             <a href="#" class="suggest__category-link">
                                 <img src="./images/suggest/suggest1.jpg" class="suggest__category-img">
@@ -519,14 +229,21 @@
                                 <span class="suggest__category-name">Living Room</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="row products__list">
+                    <?php
+                        foreach ($topsellersproduct as $product) {
+                            extract($product);
+                    ?>
+                        <?php
+                            if($discount > 0) {
+                        ?>
                         <div class="col l-2-4 m-4 c-12">
                             <div class="products__item">
                                 <div class="products__item-link">
-                                    <img src="./images/productList/sp1.jpg" class="products__item-img">
+                                  <a href="index.php?act=product">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
                                     <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
+                                        <a href="index.php?act=product" class="products__item-link-hover-add">
                                             <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
                                             Thêm vào giỏ hàng
                                         </a>
@@ -546,10 +263,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
+                                <a href="#" class="products__item-name"><?=$prodName?></a>
                                 <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 3.00</span>
-                                    <span class="products__item-price-now">$ 2.00</span>
+                                    <span class="products__item-price-old"><?=$price - ($price * $discount)?> VNĐ</span>
+                                    <span class="products__item-price-now"><?=$price?> VNĐ</span>
                                 </div>
                                 <span class="products__item-rating">
                                     <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
@@ -558,168 +275,56 @@
                                     <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
                                     <i class="products__item-rating-icon fas fa-star"></i>
                                 </span>
-                                <span class="products__item-sale">SALE!</span>
+                                <span class="products__item-sale">SALE <?=$discount*100?>%</span>
                             </div>
                         </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp2.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
+                        <?php
+                            } else {
+                        ?>    
+                            <div class="col l-2-4 m-4 c-12">
+                                <div class="products__item">
+                                    <div class="products__item-link">
+                                        <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img">
+                                        <div class="products__item-link-hover">
+                                            <a href="#" class="products__item-link-hover-add">
+                                                <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
+                                                Thêm vào giỏ hàng
+                                            </a>
+                                            <div href="#" class="products__item-link-hover-info">
+                                                <div class="products__item-link-hover-info-item">
+                                                    <i class="products__item-link-hover-info-icon fas fa-heart"></i>
+                                                    <span class="products__item-link-hover-info-item-hover">Wishlist</span>
+                                                </div>
+                                                <div class="products__item-link-hover-info-item">
+                                                    <i class="products__item-link-hover-info-icon fas fa-random"></i>
+                                                    <span class="products__item-link-hover-info-item-hover">Compare</span>
+                                                </div>
+                                                <div class="products__item-link-hover-info-item">
+                                                    <i class="products__item-link-hover-info-icon fas fa-eye"></i>
+                                                    <span class="products__item-link-hover-info-item-hover">Quick View</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 10.00</span>
-                                    <span class="products__item-price-now">$ 8.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp3.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
+                                    <a href="#" class="products__item-name"><?=$prodName?></a>
+                                    <div class="products__item-price">
+                                        <span class="products__item-price-now"><?=$price?> VNĐ</span>
                                     </div>
+                                    <span class="products__item-rating">
+                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
+                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
+                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
+                                        <i class="products__item-rating-icon fas fa-star"></i>
+                                        <i class="products__item-rating-icon fas fa-star"></i>
+                                    </span>
                                 </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 3.00</span>
-                                    <span class="products__item-price-now">$ 2.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                                <span class="products__item-sale">SALE!</span>
                             </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp4.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 12.00</span>
-                                    <span class="products__item-price-now">$ 10.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon  fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col l-2-4 m-4 c-12">
-                            <div class="products__item">
-                                <div class="products__item-link">
-                                    <img src="./images/productList/sp5.jpg" class="products__item-img">
-                                    <div class="products__item-link-hover">
-                                        <a href="#" class="products__item-link-hover-add">
-                                            <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
-                                        </a>
-                                        <div href="#" class="products__item-link-hover-info">
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-heart"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Wishlist</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-random"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Compare</span>
-                                            </div>
-                                            <div class="products__item-link-hover-info-item">
-                                                <i class="products__item-link-hover-info-icon fas fa-eye"></i>
-                                                <span class="products__item-link-hover-info-item-hover">Quick View</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="products__item-name">Modular Modern</a>
-                                <div class="products__item-price">
-                                    <span class="products__item-price-old">$ 3.00</span>
-                                    <span class="products__item-price-now">$ 2.00</span>
-                                </div>
-                                <span class="products__item-rating">
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                    <i class="products__item-rating-icon fas fa-star"></i>
-                                </span>
-                                <span class="products__item-sale">SALE!</span>
-                            </div>
-                        </div>
-                    </div>
+                        <?php
+                            }
+                        ?> 
+                    <?php
+                        }
+                    ?>
                 </div>
                 <div class="banner">
                     <div class="row">
@@ -752,16 +357,26 @@
                         </div>
                     </div>
                     <div class="row products__list">
+                    <?php
+                        foreach ($topviewproduct as $product) {
+                            extract($product);
+                    ?>
                         <div class="col l-3 m-6 c-12">
                             <div class="products__item most-view__item">
                                 <div class="products__item-link most-view__item-link">
-                                    <img src="./images/productList/sp1.jpg" class="products__item-img">
+                                    <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img most-view__item-img">
                                 </div>
                                 <div class="most-view__item-info">
-                                    <a href="#" class="products__item-name">Modular Modern</a>
+                                    <a href="#" class="products__item-name most-view__item-name"><?=$prodName?></a>
                                     <div class="products__item-price">
-                                        <span class="products__item-price-old">$ 3.00</span>
-                                        <span class="products__item-price-now">$ 2.00</span>
+                                        <?php
+                                            if($discount > 0) {
+                                        ?>
+                                            <span style="padding-left: 4px;" class="products__item-price-old"><?=$price - ($price * $discount)?> VNĐ</span> <br>
+                                        <?php
+                                            }
+                                        ?>
+                                        <span class="products__item-price-now"><?=$price?> VNĐ</span>
                                     </div>
                                     <span class="products__item-rating">
                                         <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
@@ -777,181 +392,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col l-3 m-6 c-12">
-                            <div class="products__item most-view__item">
-                                <div class="products__item-link most-view__item-link">
-                                    <img src="./images/productList/sp2.jpg" class="products__item-img">
-                                </div>
-                                <div class="most-view__item-info">
-                                    <a href="#" class="products__item-name">Modular Modern</a>
-                                    <div class="products__item-price">
-                                        <span class="products__item-price-old">$ 10.00</span>
-                                        <span class="products__item-price-now">$ 2.00</span>
-                                    </div>
-                                    <span class="products__item-rating">
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                    </span>
-                                    <a href="#" class="most-view__item-btn"> 
-                                        <i class="fas fa-shopping-cart"></i>    
-                                        Thêm vào giỏ hàng
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-6 c-12">
-                            <div class="products__item most-view__item">
-                                <div class="products__item-link most-view__item-link">
-                                    <img src="./images/productList/sp5.jpg" class="products__item-img">
-                                </div>
-                                <div class="most-view__item-info">
-                                    <a href="#" class="products__item-name">Modular Modern</a>
-                                    <div class="products__item-price">
-                                        <span class="products__item-price-old">$ 8.00</span>
-                                        <span class="products__item-price-now">$ 6.00</span>
-                                    </div>
-                                    <span class="products__item-rating">
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                    </span>
-                                    <a href="#" class="most-view__item-btn"> 
-                                        <i class="fas fa-shopping-cart"></i>    
-                                        Thêm vào giỏ hàng
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-6 c-12">
-                            <div class="products__item most-view__item">
-                                <div class="products__item-link most-view__item-link">
-                                    <img src="./images/productList/sp3.jpg" class="products__item-img">
-                                </div>
-                                <div class="most-view__item-info">
-                                    <a href="#" class="products__item-name">Modular Modern</a>
-                                    <div class="products__item-price">
-                                        <span class="products__item-price-old">$ 7.00</span>
-                                        <span class="products__item-price-now">$ 5.00</span>
-                                    </div>
-                                    <span class="products__item-rating">
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                    </span>
-                                    <a href="#" class="most-view__item-btn"> 
-                                        <i class="fas fa-shopping-cart"></i>    
-                                        Select options
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-6 c-12">
-                            <div class="products__item most-view__item">
-                                <div class="products__item-link most-view__item-link">
-                                    <img src="./images/productList/sp1.jpg" class="products__item-img">
-                                </div>
-                                <div class="most-view__item-info">
-                                    <a href="#" class="products__item-name">Modular Modern</a>
-                                    <div class="products__item-price">
-                                        <span class="products__item-price-old">$ 3.00</span>
-                                        <span class="products__item-price-now">$ 2.00</span>
-                                    </div>
-                                    <span class="products__item-rating">
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                    </span>
-                                    <a href="#" class="most-view__item-btn"> 
-                                        <i class="fas fa-shopping-cart"></i>    
-                                        Thêm vào giỏ hàng
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-6 c-12">
-                            <div class="products__item most-view__item">
-                                <div class="products__item-link most-view__item-link">
-                                    <img src="./images/productList/sp2.jpg" class="products__item-img">
-                                </div>
-                                <div class="most-view__item-info">
-                                    <a href="#" class="products__item-name">Modular Modern</a>
-                                    <div class="products__item-price">
-                                        <span class="products__item-price-old">$ 10.00</span>
-                                        <span class="products__item-price-now">$ 2.00</span>
-                                    </div>
-                                    <span class="products__item-rating">
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                    </span>
-                                    <a href="#" class="most-view__item-btn"> 
-                                        <i class="fas fa-shopping-cart"></i>    
-                                        Thêm vào giỏ hàng
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-6 c-12">
-                            <div class="products__item most-view__item">
-                                <div class="products__item-link most-view__item-link">
-                                    <img src="./images/productList/sp5.jpg" class="products__item-img">
-                                </div>
-                                <div class="most-view__item-info">
-                                    <a href="#" class="products__item-name">Modular Modern</a>
-                                    <div class="products__item-price">
-                                        <span class="products__item-price-old">$ 8.00</span>
-                                        <span class="products__item-price-now">$ 6.00</span>
-                                    </div>
-                                    <span class="products__item-rating">
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                    </span>
-                                    <a href="#" class="most-view__item-btn"> 
-                                        <i class="fas fa-shopping-cart"></i>    
-                                        Thêm vào giỏ hàng
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-6 c-12">
-                            <div class="products__item most-view__item">
-                                <div class="products__item-link most-view__item-link">
-                                    <img src="./images/productList/sp3.jpg" class="products__item-img">
-                                </div>
-                                <div class="most-view__item-info">
-                                    <a href="#" class="products__item-name">Modular Modern</a>
-                                    <div class="products__item-price">
-                                        <span class="products__item-price-old">$ 7.00</span>
-                                        <span class="products__item-price-now">$ 5.00</span>
-                                    </div>
-                                    <span class="products__item-rating">
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                        <i class="products__item-rating-icon fas fa-star"></i>
-                                    </span>
-                                    <a href="#" class="most-view__item-btn"> 
-                                        <i class="fas fa-shopping-cart"></i>    
-                                        Select options
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <?php
+                        }
+                    ?>
                     </div>
                 </div>
                 <div class="most-view">
