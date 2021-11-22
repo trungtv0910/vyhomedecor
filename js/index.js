@@ -54,7 +54,7 @@ if(openChangePass) {
 // Model
 var modelControls = $$('.model-control')
 if(modelControls) {
-    $('.js-login').onclick = function() {
+    if($('.js-login')) $('.js-login').onclick = function() {
         $('.model').style.display = 'flex';
     }
     $('.js-login-mb').onclick = function() {
@@ -81,7 +81,7 @@ if(modelControls) {
 var imgProductBlock = $('.product-block')
 if(imgProductBlock) {
     var imgsSmall = $$('.product-small-block')
-    imgsSmall.forEach((imgSmall, index) => {
+    imgsSmall.forEach(imgSmall => {
         imgSmall.onclick = function() {
             if($('.product-small-block.active')) $('.product-small-block.active').classList.remove('active') 
             var imgSrc = this.querySelector('.product-img-small').getAttribute('src')

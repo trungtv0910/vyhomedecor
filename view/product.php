@@ -9,16 +9,16 @@
                             </div>
                             <div class="show-anh">
                                 <div class="img-sp product-small-block mr">
-                                    <img src="images/productList/sp1.jpg" alt="" class="product-img-small">
+                                    <img src="images/productList/sp1.jpg" class="product-img-small">
                                 </div>
                                 <div class="img-sp product-small-block mr">
-                                    <img src="images/productList/sp2.jpg" alt="" class="product-img-small">
+                                    <img src="images/productList/sp2.jpg" class="product-img-small">
                                 </div>
                                 <div class="img-sp product-small-block mr">
-                                    <img src="images/productList/sp4.jpg" alt="" class="product-img-small">
+                                    <img src="images/productList/sp4.jpg" class="product-img-small">
                                 </div>
                                 <div class="img-sp product-small-block mr">
-                                    <img src="images/productList/sp5.jpg" alt="" class="product-img-small">
+                                    <img src="images/productList/sp5.jpg" class="product-img-small">
                                 </div>
                             </div>
                         </div>
