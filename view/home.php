@@ -47,7 +47,7 @@
                     </ul>       
                     <div class="row products__list">
                     <?php
-                        foreach ($topsellersproduct as $product) {
+                        foreach ($listproduct as $product) {
                             extract($product);
                     ?>
                         
