@@ -12,7 +12,7 @@ include_once 'lib/format.php';
 ?>
 
 <?php
-  
+
 
 if (isset($_GET['act'])) {
     $path = $_GET['act'];
@@ -113,11 +113,11 @@ if (isset($_GET['act'])) {
                     // echo $_POST['email'];
                     if (checkEmail_customer($_POST['email'])) {
                         $res = checkEmail_customer($_POST['email']);
-                        $password=$res['password'];
-                        $email=$res['email'];
-                        $username=$res['username'];
-                       if(sendEmail($email,$password,$username)==1) {
-                        echo "<script>
+                        $password = $res['password'];
+                        $email = $res['email'];
+                        $username = $res['username'];
+                        if (sendEmail($email, $password, $username) == 1) {
+                            echo "<script>
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -127,79 +127,85 @@ if (isset($_GET['act'])) {
                           })
                         </script>";
                             include 'view/home.php';
-                       }else{
-                           echo 'Thất bại';
-                           include 'view/home.php';
-                       }
+                        } else {
+                            echo 'Thất bại';
+                            include 'view/home.php';
+                        }
                     }
                 }
             }
             break;
-            
+
         case "logout": {
                 checkLogout();
                 echo '<script>window.location="index.php" </script>';
             }
             break;
         case "product": {
-            if(isset($_GET['cateId'])){
-                $cateId=$_GET['cateId'];
-                $loadOne=loadOne_product($prodId);
-                include 'view/product.php';
-            }else{
-                include 'view/product.php';
-            }
+                if (isset($_GET['cateId'])) {
+                    $cateId = $_GET['cateId'];
+                    $loadOne = loadOne_product($prodId);
+                    include 'view/product.php';
+                } else {
+                    include 'view/product.php';
+                }
                 include 'view/home.php';
             }
             break;
         case "list-product": {
-          
-            if(isset($_GET['cateId'])){
-                $cateId =$_GET['cateId'];
-               if(isset($_GET['cateChildId'])){
-                    $cateChildId=$_GET['cateChildId'];
-               }else{
-                   $cateChildId=0;
-               }
-               $limit=10;
-                $listproduct = load_product_condition(0,$limit,0,$cateId,$cateChildId);
-            }
-            // if(isset($_GET['search-prod-home'])){
-            //     $key =$_GET['key'];
-            //     $limit=5;
-            //     if(isset($_GET['page'])){
-            //         $page =$_GET['page'];
-            //         $start =($page-1)*$limit +1 ;
-            //         $listproduct = load_product_condition($start,15,0,0,0,$key);
-            //     }else{
-            //         $start=0;
-            //         $listproduct = load_product_condition($start,15,0,0,0,$key);
-            //     }
-            //     $listproduct = load_product_condition($start,15,0,0,0,$key);
-            // }
-            include 'view/list-product.php';
+
+                if (isset($_GET['cateId'])) {
+                    $cateId = $_GET['cateId'];
+                  
+                    $limit = 20;
+                    $start = 0;
+                    if (isset($_GET['page'])) {
+                        $page = $_GET['page'];
+                        $start = ($page - 1) * $limit;
+                    }
+                    if (isset($_GET['cateChildId'])) {
+                        $cateChildId = $_GET['cateChildId'];
+                    } else {
+                        $cateChildId = 0;
+                    }
+                    $countProduct = count(load_product_condition(0, 1000, 0, $cateId, $cateChildId));
+                    $listproduct = load_product_condition($start, $limit, 0, $cateId, $cateChildId);
+                }
+                // if(isset($_GET['search-prod-home'])){
+                //     $key =$_GET['key'];
+                //     $limit=5;
+                //     if(isset($_GET['page'])){
+                //         $page =$_GET['page'];
+                //         $start =($page-1)*$limit +1 ;
+                //         $listproduct = load_product_condition($start,15,0,0,0,$key);
+                //     }else{
+                //         $start=0;
+                //         $listproduct = load_product_condition($start,15,0,0,0,$key);
+                //     }
+                //     $listproduct = load_product_condition($start,15,0,0,0,$key);
+                // }
+                include 'view/list-product.php';
             }
             break;
         default:
             include 'view/home.php';
             break;
     }
-}else if(isset($_GET['key_search'])){
-    $key=$_GET['key_search'];
-    echo     $countProduct =count(load_product_condition(0,1000,0,0,0,$key));
-         $limit=5;
-         $start=0;
-        if(isset($_GET['page'])){
-            $page=$_GET['page'];
-            $start= ($page-1)*$limit +1 ;
-        }
+} else if (isset($_GET['key_search'])) {
+    $key = $_GET['key_search'];
+    $countProduct = count(load_product_condition(0, 1000, 0, 0, 0, $key));
+    $limit = 20;
+    $start = 0;
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+        $start = ($page - 1) * $limit;
+    }
 
-         $listproduct = load_product_condition($start,$limit,0,0,0,$key);
+    $listproduct = load_product_condition($start, $limit, 0, 0, 0, $key);
 
-         include 'view/list-product.php';
-    
-}else {
- 
+    include 'view/list-product.php';
+} else {
+
     include 'view/home.php';
 }
 ?>

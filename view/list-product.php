@@ -81,10 +81,14 @@
             } 
             $count=1;
             for($i=1;$i<=$countpage;$i++){
+            if(isset($_GET['key_search'])){
             ?>
             <li class=<?= $page==$count?"active":""; ?>><a href="index.php?key_search=<?=$key?>&page=<?=$count?>"><?=$count++?></a></li>
-            <!-- <li class="active"><a href="#">2</a></li> -->
-            <?php 
+            <?php }else if(isset($_GET['cateId']) && !isset($_GET['cateChildId'])){ ?>
+                <li class=<?= $page==$count?"active":""; ?>><a href="index.php?act=list-product&cateId=<?=$cateId ?>&page=<?=$count?>"><?=$count++?></a></li>
+            <?php }else{?>
+                <li class=<?= $page==$count?"active":""; ?>><a href="index.php?act=list-product&cateId=<?=$cateId ?>&cateChildId=<?=$cateChildId?>&page=<?=$count?>"><?=$count++?></a></li>
+         <?php   }
         } 
         ?>
         </ul>
