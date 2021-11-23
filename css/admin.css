@@ -222,3 +222,6 @@ border-radius: 5px;
     -moz-appearance: none;
     appearance: none;
 }
+.jc-end{
+    justify-content: flex-end;
+}

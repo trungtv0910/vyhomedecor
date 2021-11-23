@@ -67,26 +67,30 @@ if (isset($_GET['act'])) {
             break;
         case 'product': {
                 $listCate = loadAll_category();
-                // $listChildCate=loadAll_categorychild(1);
+            
                 if (isset($_GET['list'])) {
-
-                    $listcategory = loadAll_category();
-                    $listProduct = list_Product();
+                   
+                $listcategory = loadAll_category();
+                    $countProduct=count(list_Product());
+                   $start =0; 
+                   $limit =10;
+                   if(isset($_GET['page'])){
+                        $page=$_GET['page'];
+                        $start =($page-1)*$limit;
+                    }else{
+                        $page=1;
+                    }
+                    
+                    $listProduct =  load_product_condition($start,$limit);
                     include 'product/list.php';
                 }
                 else if (isset($_POST['search'])){
-                    $search=$_POST['search'];
-                    echo $_POST['$id_cat'];
-                    echo $_POST['$key_search'];
-                    if (empty($search)) {
-                        $key_search=$_POST['key_search'];
-                        $id_cat=$_POST['id_cat'];
-                    } else {
-                        $key_search='';
-                        $id_cat=0;  
-                    }
-                    
-                    $listcategory = loadProduct_category($id_cat);
+
+                    $key_search=$_POST['key_search'];
+                    $cateId=$_POST['cateId'];
+                 
+                    $listcategory = loadAll_category();
+                    $listProduct= load_product_condition(0,1000,0,$cateId,0,$key_search);
                     include 'product/list.php';
                 } else if (isset($_GET['add'])) {
                     $listcategory = loadAll_category();
@@ -123,25 +127,11 @@ if (isset($_GET['act'])) {
                     include 'product/edit.php';
                 } else if (isset($_POST['insertProduct'])) {
                     if (insert_product($_POST, $_FILES)) {
-                        echo "<script>
-                       Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Sản Phẩm Đã Được Thêm',
-                        showConfirmButton: false,
-                        timer: 2000
-                      })</script>";
+                        include 'product/sucess_add.php';
                     } else {
-                        echo "<script>
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Lỗi không thể thêm sản phẩm!',
-                          });
-                        </script>";
+                        include 'product/error_add.php';
                     }
-
-                    $listProduct = list_Product();
+                    $listProduct = load_product_condition();
                     include 'product/list.php';
                 } else if (isset($_GET['imageSmall'])) {
 
@@ -168,9 +158,8 @@ if (isset($_GET['act'])) {
                 }else if(isset($_GET['delete'])){
                     $prodId =$_GET['delete'];
                     delete_product($prodId);
-                    $listProduct = list_Product();
-                    include 'product/list.php';
-                    
+                    include 'product/sucess_delete.php';
+
                 }else {
                     $listProduct = list_Product();
                     include 'product/list.php';

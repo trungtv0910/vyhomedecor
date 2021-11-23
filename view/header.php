@@ -186,18 +186,7 @@ init();
                             ?>
                             <ul class="header__top-right-list hide-on-mobile">
 
-                                <!-- <li class="header__top-right-item">
-                            <i class="header__top-right-icon far fa-user"></i>
-                            <a href="#" class="header__top-right-link">Tài khoản của tôi</a>
-                        </li> -->
-                                <!-- <li class="header__top-right-item">
-                                    <i class="header__top-right-icon far fa-heart"></i>
-                                    <a href="#" class="header__top-right-link">Yêu thích</a>
-                                </li>
-                                <li class="header__top-right-item">
-                                    <i class="header__top-right-icon far fa-check-square"></i>
-                                    <a href="#" class="header__top-right-link">Giỏ hàng</a>
-                                </li> -->
+                     
                                 <li class="header__top-right-item js-login">
                                     <i class="header__top-right-icon fas fa-sign-in-alt"></i>
                                     <a href="#" class="header__top-right-link">Đăng nhập</a>
@@ -206,18 +195,7 @@ init();
                             <div class="mobile-top-nav l-0 m-0">
                                 <i class="mobile-top-nav__icon fas fa-anchor"></i>
                                 <ul class="moblie-top-nav__list">
-                                    <!-- <li class="moblie-top-nav__item">
-                                        <i class="moblie-top-nav__icon far fa-user"></i>
-                                        <a href="#" class="moblie-top-nav__link">Tài khoản của tôi</a>
-                                    </li>
-                                    <li class="moblie-top-nav__item">
-                                        <i class="moblie-top-nav__icon far fa-heart"></i>
-                                        <a href="#" class="moblie-top-nav__link">Yêu thích</a>
-                                    </li>
-                                    <li class="moblie-top-nav__item">
-                                        <i class="moblie-top-nav__icon far fa-check-square"></i>
-                                        <a href="#" class="moblie-top-nav__link">Giỏ hàng</a>
-                                    </li> -->
+                               
                                     <li class="moblie-top-nav__item js-login-mb">
                                         <i class="moblie-top-nav__icon fas fa-sign-in-alt"></i>
                                         <a href="#" class="moblie-top-nav__link">Đăng nhập</a>
@@ -307,78 +285,7 @@ init();
                                 }
                             ?>
                                     
-                                <!-- <ul class="header__nav-full-list">
-                                    <h3 class="header__nav-full-heading">TABLE</h3>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Living Room Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Sofa Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">End Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Coffee Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Pedestal Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Home Office Desks</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Kids Furniture</a>
-                                    </li>
-                                </ul>
-                                <ul class="header__nav-full-list">
-                                    <h3 class="header__nav-full-heading">TABLE</h3>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Kitchen & Dining Room Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Folding Table</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Living Room Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Sofa Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">End Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Coffee Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Home Office Desks</a>
-                                    </li>
-                                </ul>
-                                <ul class="header__nav-full-list">
-                                    <h3 class="header__nav-full-heading">TABLE</h3>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Dining Room Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Folding Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Living Room Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Sofa Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">End Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Coffee Tables</a>
-                                    </li>
-                                    <li class="header__nav-full-item">
-                                        <a href="#" class="header__nav-full-link">Pedestal Tables</a>
-                                    </li>
-                                </ul> -->
+               
                             </div>
                         </li>
                         <li class="header__nav-item">
@@ -400,33 +307,7 @@ init();
                                 <?php
                                     }
                                 ?>
-                                <!-- <ul class="header__nav-full-list">
-                                    <div class="header__nav-full-hidden">
-                                        <a href="#" class="header__nav-full-link-img">
-                                            <img src="http://demo.snstheme.com/wp/simen/wp-content/uploads/2015/12/avant-garde-design-studios-furniture-250x150.jpg" class="header__nav-full-img">
-                                        </a>
-                                    </div>
-                                    <a href="#" class="header__nav-full-link-info">Chair</a>
-                                    <span class="header__nav-full-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ornare urna. Suspendisse a lobortis ex, at efficitur</span>
-                                </ul>
-                                <ul class="header__nav-full-list">
-                                    <div class="header__nav-full-hidden">
-                                        <a href="#" class="header__nav-full-link-img">
-                                            <img src="http://demo.snstheme.com/wp/simen/wp-content/uploads/2015/11/furniture-bad-250x150.jpg" class="header__nav-full-img">
-                                        </a>
-                                    </div>
-                                    <a href="#" class="header__nav-full-link-info">Bad</a>
-                                    <span class="header__nav-full-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ornare urna. Suspendisse a lobortis ex, at efficitur</span>
-                                </ul>
-                                <ul class="header__nav-full-list">
-                                    <div class="header__nav-full-hidden">
-                                        <a href="#" class="header__nav-full-link-img">
-                                            <img src="http://demo.snstheme.com/wp/simen/wp-content/uploads/2015/12/furniture-chest-250x150.jpg" class="header__nav-full-img">
-                                        </a>
-                                    </div>
-                                    <a href="#" class="header__nav-full-link-info">Furniture chest</a>
-                                    <span class="header__nav-full-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ornare urna. Suspendisse a lobortis ex, at efficitur</span>
-                                </ul> -->
+                             
                             </div>
                         </li>
                         <li class="header__nav-item header__nav-link-dad">
