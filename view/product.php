@@ -8,7 +8,7 @@
                         ?>
                         <div class="box-trai mr">
                             <div class="img product-block">
-                                <img src="<?=$image?>" alt="">
+                                <img src="<?=BASE_URL ?>uploads/<?=$image ?>" alt="">
                             </div>
                         </div>
                         <div class="box-phai">
@@ -62,7 +62,7 @@
                             ?>
                             <div class="sanpham">
                                 <div class="sanpham-img">
-                                    <img src="images/productList/sp2.jpg" alt="">
+                                    <img src="<?=BASE_URL ?>uploads/<?=$image ?>" alt="">
                                 </div>
                                 <div class="addCart">
                                     <a href="<?=$link_product?>"><?=$prodName?></a><br>
@@ -70,7 +70,9 @@
                                     <a href="#"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
                                 </div>
                             </div>
-                        <? }?>
+                        <?php
+                         }
+                        ?>
                         </div>
                         <div class="from-binhluan">
                             <div class="from">
