@@ -6,7 +6,7 @@
         return $listproduct;
     }
 
-    function load_product_condition($limit=10,$type=0,$cateId=0,$cateChildId=0){
+    function load_product_condition($start=0,$limit=10,$type=0,$cateId=0,$cateChildId=0,$key=""){
         $sql = "SELECT * FROM tbl_product where 1 ";
         if($cateId>0){
             $sql .=" And cateId=$cateId ";
@@ -14,7 +14,10 @@
         if($cateChildId>0){
             $sql .=" And cateChildId=$cateChildId ";
         }
-        $sql .= " order by prodId desc limit $limit";
+        if(!empty($key)){
+            $sql .=" And prodName like '%$key%' ";
+        }
+        $sql .= " order by prodId desc limit $start,$limit";
         $listproduct = pdo_query($sql);
         return $listproduct;
     }

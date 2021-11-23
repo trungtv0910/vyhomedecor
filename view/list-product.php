@@ -1,3 +1,7 @@
+<style>
+    .active{background-color: red;
+    }
+</style>
 <div class="grid wide">
 
     <div class="products">
@@ -66,11 +70,23 @@
     </div>
     <div class="products__control">
         <ul class="pagination">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <?php 
+              
+            $countpage=ceil( $countProduct/$limit) ;
+            if(!isset($_GET['page'])){
+                $page =1;
+            }
+            else{
+                $page;
+            } 
+            $count=1;
+            for($i=1;$i<=$countpage;$i++){
+            ?>
+            <li class=<?= $page==$count?"active":""; ?>><a href="index.php?key_search=<?=$key?>&page=<?=$count?>"><?=$count++?></a></li>
+            <!-- <li class="active"><a href="#">2</a></li> -->
+            <?php 
+        } 
+        ?>
         </ul>
         <!-- <button class="products__control-btn">Load more items</button> -->
     </div>

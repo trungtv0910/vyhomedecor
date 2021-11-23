@@ -467,10 +467,12 @@ init();
                     <div class="header__nav-control">
                         <div class="header__nav-control-search">
                             <i class="header__nav-control-search-icon fas fa-search"></i>
-                            <div class="header__nav-control-search-container">
-                                <input type="text" class="header__nav-control-search-input" placeholder="Bạn muốn tìm kiếm gì ...">
-                                <div class="header__nav-control-search-btn">SEARCH</div>
+                            <form action="index.php?act=search" method="GET">
+                            <div class="header__nav-control-search-container">       
+                                <input type="text" name="key_search" class="header__nav-control-search-input" placeholder="Bạn muốn tìm kiếm gì ...">
+                                <button type="submit"class="header__nav-control-search-btn" style="cursor:pointer">SEARCH</button>
                             </div>
+                            </form>
                         </div>
                         <a href="#" class="header__nav-control-cart">
                             <i class="header__nav-control-cart-ion fas fa-shopping-cart"></i>
