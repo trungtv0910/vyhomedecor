@@ -70,8 +70,7 @@
                                     <a href="#"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
                                 </div>
                             </div>
-                            <? }?>
-                            
+                        <? }?>
                         </div>
                         <div class="from-binhluan">
                             <div class="from">
