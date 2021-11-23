@@ -143,13 +143,14 @@ if (isset($_GET['act'])) {
             break;
         case "product": {
                 if (isset($_GET['prodId'])) {
-                  echo  $prodId = $_GET['prodId'];
+                    $prodId = $_GET['prodId'];
                     $loadOne = loadOne_product($prodId);
+                    extract($loadOne);
+                    $product_similar = loadOne_product_similar($prodId,$cateId);
                     include 'view/product.php';
                 } else {
-                    include 'view/product.php';
+                    include 'view/home.php';
                 }
-                include 'view/home.php';
             }
             break;
         case "list-product": {

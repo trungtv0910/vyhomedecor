@@ -3,25 +3,24 @@
                 <div class="product">
                     <!--thông tin-->
                     <div class="content-1">
-                        
+                        <?php
+                           extract($loadOne);
+                        ?>
                         <div class="box-trai mr">
                             <div class="img product-block">
-                                <img src="images/productList/sp3.jpg" alt="">
+                                <img src="<?=$image?>" alt="">
                             </div>
                         </div>
                         <div class="box-phai">
                             <div class="title">
-                                <h1>Bàn Ăn</h1>
-                                <span>$ 10.00</span>
-                                <del>$ 20.00</del>
+                                <h1><?=$prodName?></h1>
+                                <span><?=number_format($price - ($price * $discount),0,',','.')?>đ</span>
+                                <del><?=number_format($price,0,',','.');?>đ</del>
                             </div>
                             
                             <div class="size">
-                                <strong>Kích Thước:</strong><br>
-                                <span>Đường kính 45cm, cao 50cm<br>
-                                Đường kính 60cm, cao 45cm<br>
-                                </span>
-                                <strong>Chất liệu: </strong>da cao cấp, chân ghế nhôm không gỉ<br>
+                                <span><?=$prodDesc?></span><br>
+        
                                 <div class="buttons_added">
                                     <strong>Số Lượng</strong>
                                     <input class="minus is-form" type="button" value="-">
@@ -42,7 +41,7 @@
                                 <div class="img-sp product-small-block ">
                                     <img src="images/productList/sp5.jpg" class="product-img-small">
                                 </div>
-                            </div>
+                            </div> 
                             <div class="mua-hang">
                                 <input type="submit" value="Thêm vào giỏ hàng" > <input type="submit" value="Mua ngay">
                             </div>
@@ -55,46 +54,24 @@
                             <div class="tieu-de">
                                 <h2>Sản Phẩm Cùng Loại</h2>
                             </div>
+                            <?php
+                                foreach ($product_similar as $value) {
+                                    extract($value);
+                                    $link_product="index.php?act=product&prodId=".$prodId;
+                                
+                            ?>
                             <div class="sanpham">
                                 <div class="sanpham-img">
                                     <img src="images/productList/sp2.jpg" alt="">
                                 </div>
                                 <div class="addCart">
-                                    <a href="#">Donec cursus</a><br>
-                                    <strong>$15.00</strong><br>
+                                    <a href="<?=$link_product?>"><?=$prodName?></a><br>
+                                    <strong><?=number_format($price - ($price * $discount),0,',','.')?>đ</strong><br>
                                     <a href="#"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
                                 </div>
                             </div>
-                            <div class="sanpham">
-                                <div class="sanpham-img">
-                                    <img src="images/productList/sp3.jpg" alt="">
-                                </div>
-                                <div class="addCart">
-                                    <a href="#">Donec cursus</a><br>
-                                    <strong>$15.00</strong><br>
-                                    <a href="#"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
-                                </div>
-                            </div>
-                            <div class="sanpham">
-                                <div class="sanpham-img">
-                                    <img src="images/productList/sp4.jpg" alt="">
-                                </div>
-                                <div class="addCart">
-                                    <a href="#">Donec cursus</a><br>
-                                    <strong>$15.00</strong><br>
-                                    <a href="#"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
-                                </div>
-                            </div>
-                            <div class="sanpham">
-                                <div class="sanpham-img">
-                                    <img src="images/productList/sp5.jpg" alt="">
-                                </div>
-                                <div class="addCart">
-                                    <a href="#">Donec cursus</a><br>
-                                    <strong>$15.00</strong><br>
-                                    <a href="#"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
-                                </div>
-                            </div>
+                            <? }?>
+                            
                         </div>
                         <div class="from-binhluan">
                             <div class="from">

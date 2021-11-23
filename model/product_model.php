@@ -63,6 +63,12 @@
         $res =pdo_query_one($sql);
         return $res;
     }
+    function loadOne_product_similar($prodId,$cateId)
+    {
+        $sql ="SELECT * FROM tbl_product where cateId=".$cateId." AND prodId <> $prodId";
+        $res =pdo_query($sql);
+        return $res;
+    }
     function insert_product($data,$file)
     {
         $prodName =$data['prodName'];
