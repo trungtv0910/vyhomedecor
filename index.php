@@ -142,8 +142,8 @@ if (isset($_GET['act'])) {
             }
             break;
         case "product": {
-                if (isset($_GET['cateId'])) {
-                    $cateId = $_GET['cateId'];
+                if (isset($_GET['prodId'])) {
+                  echo  $prodId = $_GET['prodId'];
                     $loadOne = loadOne_product($prodId);
                     include 'view/product.php';
                 } else {
@@ -171,19 +171,7 @@ if (isset($_GET['act'])) {
                     $countProduct = count(load_product_condition(0, 1000, 0, $cateId, $cateChildId));
                     $listproduct = load_product_condition($start, $limit, 0, $cateId, $cateChildId);
                 }
-                // if(isset($_GET['search-prod-home'])){
-                //     $key =$_GET['key'];
-                //     $limit=5;
-                //     if(isset($_GET['page'])){
-                //         $page =$_GET['page'];
-                //         $start =($page-1)*$limit +1 ;
-                //         $listproduct = load_product_condition($start,15,0,0,0,$key);
-                //     }else{
-                //         $start=0;
-                //         $listproduct = load_product_condition($start,15,0,0,0,$key);
-                //     }
-                //     $listproduct = load_product_condition($start,15,0,0,0,$key);
-                // }
+           
                 include 'view/list-product.php';
             }
             break;

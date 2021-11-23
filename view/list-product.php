@@ -1,5 +1,6 @@
 <style>
-    .active{background-color: red;
+    .active {
+        background-color: red;
     }
 </style>
 <div class="grid wide">
@@ -20,9 +21,9 @@
                 <div class="col l-2-4 m-4 c-12">
                     <div class="products__item">
                         <div class="products__item-link">
-                            <a href="index.php?act=product=<?=$cateId?>"> <img src="<?= BASE_URL ?>uploads/<?= $image ?>" class="products__item-img"></a>
+                            <a href="index.php?act=product&prodId=<?= $prodId ?>"> <img src="<?= BASE_URL ?>uploads/<?= $image ?>" class="products__item-img"></a>
                             <div class="products__item-link-hover">
-                                <a href="index.php?act=product" class="products__item-link-hover-add">
+                                <a href="index.php?act=product&prodId=<?= $prodId ?>" class="products__item-link-hover-add">
                                     <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
                                     Thêm vào giỏ hàng
                                 </a>
@@ -42,10 +43,16 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="products__item-name"><?= $prodName ?></a>
+                        <a href="index.php?act=product&prodId=<?= $prodId ?>" class="products__item-name"><?= $prodName ?></a>
                         <div class="products__item-price">
-                            <span class="products__item-price-old"><?= number_format( $price - ($price * $discount),0,',','.') ?> đ</span>
-                            <span class="products__item-price-now"><?= number_format($price,0,',','.') ?> đ</span>
+                            <?php
+                            if ($discount > 0) {
+                            ?>
+                                <span class="products__item-price-old"><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</span>
+                            <?php
+                            }
+                            ?>
+                            <span class="products__item-price-now"><?= number_format($price, 0, ',', '.'); ?>đ</span>
                         </div>
                         <span class="products__item-rating">
                             <i class="products__item-rating-icon products__item-rating-icon--liked fas fa-star"></i>
@@ -70,29 +77,28 @@
     </div>
     <div class="products__control">
         <ul class="pagination">
-            <?php 
-              
-            $countpage=ceil( $countProduct/$limit) ;
-            if(!isset($_GET['page'])){
-                $page =1;
-            }
-            else{
+            <?php
+
+            $countpage = ceil($countProduct / $limit);
+            if (!isset($_GET['page'])) {
+                $page = 1;
+            } else {
                 $page;
-            } 
-            $count=1;
-            for($i=1;$i<=$countpage;$i++){
-            if(isset($_GET['key_search'])){
+            }
+            $count = 1;
+            for ($i = 1; $i <= $countpage; $i++) {
+                if (isset($_GET['key_search'])) {
             ?>
-            <li class=<?= $page==$count?"active":""; ?>><a href="index.php?key_search=<?=$key?>&page=<?=$count?>"><?=$count++?></a></li>
-            <?php }else if(isset($_GET['cateId']) && !isset($_GET['cateChildId'])){ ?>
-                <li class=<?= $page==$count?"active":""; ?>><a href="index.php?act=list-product&cateId=<?=$cateId ?>&page=<?=$count?>"><?=$count++?></a></li>
-            <?php }else{?>
-                <li class=<?= $page==$count?"active":""; ?>><a href="index.php?act=list-product&cateId=<?=$cateId ?>&cateChildId=<?=$cateChildId?>&page=<?=$count?>"><?=$count++?></a></li>
-         <?php   }
-        } 
-        ?>
+                    <li class=<?= $page == $count ? "active" : ""; ?>><a href="index.php?key_search=<?= $key ?>&page=<?= $count ?>"><?= $count++ ?></a></li>
+                <?php } else if (isset($_GET['cateId']) && !isset($_GET['cateChildId'])) { ?>
+                    <li class=<?= $page == $count ? "active" : ""; ?>><a href="index.php?act=list-product&cateId=<?= $cateId ?>&page=<?= $count ?>"><?= $count++ ?></a></li>
+                <?php } else { ?>
+                    <li class=<?= $page == $count ? "active" : ""; ?>><a href="index.php?act=list-product&cateId=<?= $cateId ?>&cateChildId=<?= $cateChildId ?>&page=<?= $count ?>"><?= $count++ ?></a></li>
+            <?php   }
+            }
+            ?>
         </ul>
         <!-- <button class="products__control-btn">Load more items</button> -->
     </div>
-<br>
+    <br>
     <br>

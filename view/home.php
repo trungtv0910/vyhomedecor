@@ -54,9 +54,9 @@
                         <div class="col l-2-4 m-4 c-12">
                             <div class="products__item">
                                 <div class="products__item-link">
-                                  <a href="index.php?act=product=<?=$cateId?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
+                                  <a href="index.php?act=product&prodId=<?=$prodId?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
                                     <div class="products__item-link-hover">
-                                        <a href="index.php?act=product" class="products__item-link-hover-add">
+                                        <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-link-hover-add">
                                             <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
                                             Thêm vào giỏ hàng
                                         </a>
@@ -76,7 +76,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="products__item-name"><?=$prodName?></a>
+                                <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-name"><?=$prodName?></a>
                                 <div class="products__item-price">
                                 <?php
                                     if($discount > 0) {
@@ -205,9 +205,9 @@
                         <div class="col l-2-4 m-4 c-12">
                             <div class="products__item">
                                 <div class="products__item-link">
-                                  <a href="index.php?act=product=<?=$cateId?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
+                                  <a href="index.php?act=product&prodId=<?=$prodId?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
                                     <div class="products__item-link-hover">
-                                        <a href="index.php?act=product" class="products__item-link-hover-add">
+                                        <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-link-hover-add">
                                             <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
                                             Thêm vào giỏ hàng
                                         </a>
@@ -227,7 +227,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="products__item-name"><?=$prodName?></a>
+                                <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-name"><?=$prodName?></a>
                                 <div class="products__item-price">
                                 <?php
                                     if($discount > 0) {
@@ -296,10 +296,11 @@
                         <div class="col l-3 m-6 c-12">
                             <div class="products__item most-view__item">
                                 <div class="products__item-link most-view__item-link">
-                                    <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img most-view__item-img">
+                                    <a href="index.php?act=product&prodId=<?=$prodId?>">   <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img most-view__item-img"></a>
+                                    <!-- <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img most-view__item-img"> -->
                                 </div>
                                 <div class="most-view__item-info">
-                                    <a href="#" class="products__item-name most-view__item-name"><?=$prodName?></a>
+                                    <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-name most-view__item-name"><?=$prodName?></a>
                                     <div class="products__item-price">
                                     <?php
                                     if($discount > 0) {
