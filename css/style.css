@@ -470,14 +470,19 @@
     padding: 4px 24px;
     outline: none;
     flex: 1;
+    border-right: 1px solid #ccc;
 }
 .header__nav-control-search-btn{
+    border: none;
+    outline: none;
     padding: 0 16px;
+    height: 100%;
     font-size: 1.2rem;
     font-weight: 900;
     color: var(--hover-color);
     padding-left: 24px;
-    border-left: 1px solid #ccc;
+    background-color: transparent;
+    /* border-left: 1px solid #ccc; */
 }
 .header__nav-control-search-icon{
     padding: 0 16px;
