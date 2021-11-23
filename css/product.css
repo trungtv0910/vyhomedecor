@@ -9,9 +9,11 @@
     font-family: myfont;
     src: url(../Poppins/Poppins-BlackItalic.ttf);
   } */
-.content-1{
-    min-height: 560px;
-    width: 100%;
+
+.product__left{
+    margin-top: 18px;
+    padding: 24px;
+    border: 1px solid var(--border-color);
 }
 .box-trai{
     display: flex;
@@ -29,22 +31,25 @@
 }
 .show-anh{
     width: 100%;
-    margin-top: 18px;
+    margin-top: 20px;
     display: flex;
+    justify-content: space-between;
 }
 .img-sp{
+   width: 22%;
     /* width: 22%; */
     border: solid 1px #ccc;
     /* float: left; */
     /* margin-right: 14px; */
-  
+    margin: 0 8px;
 }
 .product-img-small{
-    justify-content: space-between;
-    padding: 0 8px;
+    display: block;
+    
 }
 .img-sp img{
     width: 100%;
+    display: block;
 }
 .img-sp:hover{
     border: solid 1px red;
@@ -65,10 +70,11 @@
     /* margin: 0; */
     font-size: 2.6rem;
     color: var(--primary-color);
+    /* margin-bottom: 8px; */
 }
 .title del{
-    padding-left: 6px;
-    font-size: 1.2rem;
+    margin-left: 16px;
+    font-size: 1.4rem;
 }
 .title span{
     font-size: 2rem;
@@ -110,7 +116,7 @@ div.stars {
 
   /*end*/
 .buttons_added {
-    margin-top: 10px;
+    margin: 24px 0;
     opacity:1;
     display:inline-block;
     display:-ms-inline-flexbox;
@@ -161,7 +167,7 @@ div.stars {
 .size{
     margin-top: 15px;
     width: 100%;
-    min-height: 145px;
+    /* min-height: 145px; */
     border-bottom: solid #ccc 1px;
     font-size: 1.4rem;
     line-height: 23px;
@@ -188,7 +194,7 @@ div.stars {
     border: none;
     color: var(--white-color);
     border-radius: 2px;
-    font-size: 1rem;
+    font-size: 1.4rem;
     transition: all 0.3s linear;
     outline: none;
 }
@@ -197,72 +203,99 @@ div.stars {
     color: var(--white-color);
     background-color: var(--hover-color);
 }
+.mua-hang input[type="submit"] {
+    margin-right: 16px;
+}
 /* css content-2*/
+.product__right{
+    margin: 32px 0;
+}
 .content-2{
-    width: 100%;
-    min-height: 700px;
+    margin: 24px 0  ;
+    /* width: 100%; */
+    /* min-height: 700px; */
 }
 .top-yeu-thich{
-    width: 28%;
-    float: left;
+    width: 100%;
+    /* float: left; */
     border: solid 1px #ccc;
-    min-height: 660px;
+    /* min-height: 660px; */
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
 }
 .tieu-de{
+    text-align: center;
     color: #333;
-    min-height: 40px;
-    margin: 0 auto;
-    width: 80%;
+    font-size: 1.2rem;  
+    /* min-height: 40px; */
+    /* margin: 0 auto; */
+    margin: 8px 0;
+    /* width: 80%; */
     border-bottom: solid 1px #ccc;
-    padding-top: 10px;
-}
+}   
 .sanpham{
-    width: 80%;
-    color: black;
-    min-height: 130px;
-    margin: 0 auto;
-    margin-top: 15px;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin: 8px 0;  
+    /* width: 80%; */
+    /* color: black; */
+    /* min-height: 130px; */
+    /* margin: 0 auto; */
+    /* margin-top: 15px; */
 }
 .sanpham-img{
     border: solid 1px #ccc;
-    width: 40%;
+    width: 48%;
     min-height: 50px;
     text-align: left;
     float: left;
 }
 .sanpham-img img{
     width: 100%;
+    display: block;
 }
 .addCart{
-    width: 50%;
-    float: right;
+    margin-left: 8px;
+    width: 50;
+    /* float: right; */
     line-height: 25px;
 }
 .addCart strong{
     font-size: 1.4rem;
 }
-.addCart a{
+.addCart-name{
+    font-size: 1.8rem;
     text-decoration: none;
     color: #333;
-    font-size: 1.4rem;
+
 }
+.addCart-text {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+}
+
 .addCart a:hover{
     color: red;
 }
 .from-binhluan{
     border: solid 1px #ccc;
-    float: right;
-    width: 70%;
-    min-height: 500px;
+    /* float: right; */
+    /* width: 70%; */
+    /* min-height: 500px; */
+    padding: 24px;
 }
 .from{
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    /* margin: 0 auto; */
 }
 .reveiws{
-    min-height: 40px;
+    /* min-height: 40px; */
     border-bottom: solid 1px #ccc;
-    padding-top: 10px;
+    /* padding-top: 10px; */
+    font-size: 1.4rem;
 }
 .reveiws h2{
     color: #333;
@@ -273,8 +306,8 @@ div.stars {
     min-height: 200px;
 }
 .binhluan{
-    width: 90%;
-    min-height: 90px;
+    width: 100%;
+    /* min-height: 90px; */
 }
 .noi-dung-bl{
     min-height: 80px;
@@ -306,12 +339,12 @@ div.stars {
     padding-top: 5px;
 }
 .addemail{
-    width: 90%;
+    width: 100%;
     min-height: 50px;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }
 .binh-luan{
-    width: 90%;
+    width: 100%;
     font-size: 1.4rem;
 }
 
