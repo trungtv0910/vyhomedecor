@@ -73,21 +73,26 @@ if (isset($_GET['act'])) {
                     $listcategory = loadAll_category();
                     $listProduct = list_Product();
                     include 'product/list.php';
-                } else if (isset($_GET['add'])) {
-                    $listcategory = loadAll_category();
-                    $listProduct = list_Product();
-                    include 'product/add.php';
-                }else if (isset($_POST['search'])){
+                }
+                else if (isset($_POST['search'])){
                     $search=$_POST['search'];
+                    echo $_POST['$id_cat'];
+                    echo $_POST['$key_search'];
                     if (empty($search)) {
                         $key_search=$_POST['key_search'];
-                        $id_cat=$_POST['cateId'];
+                        $id_cat=$_POST['id_cat'];
                     } else {
                         $key_search='';
                         $id_cat=0;  
                     }
+                    
+                    $listcategory = loadProduct_category($id_cat);
+                    include 'product/list.php';
+                } else if (isset($_GET['add'])) {
                     $listcategory = loadAll_category();
                     $listProduct = list_Product();
+                    include 'product/add.php';
+                
                 } else if (isset($_GET['edit'])) {
                     $one_product = loadOne_product($_GET['edit']);
                     $listChildCate = loadAll_categorychild($one_product['cateId']);

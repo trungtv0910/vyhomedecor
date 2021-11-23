@@ -22,6 +22,12 @@
                                 Đường kính 60cm, cao 45cm<br>
                                 </span>
                                 <strong>Chất liệu: </strong>da cao cấp, chân ghế nhôm không gỉ<br>
+                                <div class="buttons_added">
+                                    <strong>Số Lượng</strong>
+                                    <input class="minus is-form" type="button" value="-">
+                                    <input aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="">
+                                    <input class="plus is-form" type="button" value="+">
+                                </div>
                             </div>
                             <div class="show-anh">
                                 <div class="img-sp product-small-block ">

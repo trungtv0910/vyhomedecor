@@ -112,7 +112,54 @@ div.stars {
   }
 
   /*end*/
+  .buttons_added {
+      margin-top: 10px;
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    vertical-align:top;
+}
+.buttons_added strong{
+    color: #333;
+    font-size: 1.5rem;
+    padding-right: 10px;
+    margin-top: 20px;
+}
 
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#f9f9f9;
+    height:3rem;
+    width:4rem;
+    padding:0;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+}
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+
+.input-qty {
+    background-color:#fff;
+    height:3rem;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right:0;
+    padding:0;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
 
 .size{
     margin-top: 15px;
@@ -129,7 +176,7 @@ div.stars {
     font-size: 1.5rem;
 }
 .size span{
-    color: #666;
+    color: #333;
     font-size: 1.2;
 }
 .mua-hang{

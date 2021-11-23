@@ -192,6 +192,15 @@
     return pdo_execute($sql);
     }
 
+    function loadProduct_category($cateId){
+        $sql="SELECT * FROM tbl_product where 1 ";
+        if(isset($cateId)){
+            $sql.= " AND cateId=$cateId ";
+        }
+        $sql.= " ORDER BY prodId DESC";
+        return pdo_query($sql);
+    }
+    
 
 
 

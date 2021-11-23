@@ -15,7 +15,7 @@
 
                     <div class=" col-md-6 text-right">
                         <!-- thực hiện form tìm kiếm sản phẩm theo tên và danh mục -->
-                        <form action="index.php?act=product&list" method="post" style="display:flex;gap:20px">
+                        <form action="index.php?act=product" method="post" style="display:flex;gap:20px">
                             <input type="text" style='width:250px' name="key_search">
                             <select style="width:200px" name="id_cat">
                                 <option value="0">Tất Cả </option>
