@@ -2,50 +2,54 @@
             <div class="grid wide">
                 <div class="product">
                     <!--thông tin-->
-                    <div class="content-1">
+                    <div class="row content-1">
                         <?php
                            extract($loadOne);
                         ?>
-                        <div class="box-trai mr">
-                            <div class="img product-block">
-                                <img src="<?=BASE_URL ?>uploads/<?=$image ?>" alt="">
+                        <div class="col l-5">
+                            <div class="box-trai mr">
+                                <div class="img product-block">
+                                    <img src="<?=BASE_URL ?>uploads/<?=$image ?>" alt="">
+                                </div>
                             </div>
                         </div>
-                        <div class="box-phai">
-                            <div class="title">
-                                <h1><?=$prodName?></h1>
-                                <span><?=number_format($price - ($price * $discount),0,',','.')?>đ</span>
-                                <del><?=number_format($price,0,',','.');?>đ</del>
-                            </div>
+                        <div class="col l-7">
+                            <div class="box-phai">
+                                <div class="title">
+                                    <h1><?=$prodName?></h1>
+                                    <span><?=number_format($price - ($price * $discount),0,',','.')?>đ</span>
+                                    <del><?=number_format($price,0,',','.');?>đ</del>
+                                </div>
+                                
+                                <div class="size">
+                                    <span><?=$prodDesc?></span><br>
+            
+                                    <div class="buttons_added">
+                                        <strong>Số Lượng</strong>
+                                        <input class="minus is-form" type="button" value="-">
+                                        <input aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="">
+                                        <input class="plus is-form" type="button" value="+">
+                                    </div>
+                                </div>
+                                <div class="show-anh">
+                                    <div class="img-sp product-small-block ">
+                                        <img src="images/productList/sp1.jpg" class="product-img-small">
+                                    </div>
+                                    <div class="img-sp product-small-block ">
+                                        <img src="images/productList/sp2.jpg" class="product-img-small">
+                                    </div>
+                                    <div class="img-sp product-small-block ">
+                                        <img src="images/productList/sp4.jpg" class="product-img-small">
+                                    </div>
+                                    <div class="img-sp product-small-block ">
+                                        <img src="images/productList/sp5.jpg" class="product-img-small">
+                                    </div>
+                                </div> 
+                                <div class="mua-hang">
+                                    <input type="submit" value="Thêm vào giỏ hàng" > <input type="submit" value="Mua ngay">
+                                </div>
                             
-                            <div class="size">
-                                <span><?=$prodDesc?></span><br>
-        
-                                <div class="buttons_added">
-                                    <strong>Số Lượng</strong>
-                                    <input class="minus is-form" type="button" value="-">
-                                    <input aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="">
-                                    <input class="plus is-form" type="button" value="+">
-                                </div>
                             </div>
-                            <div class="show-anh">
-                                <div class="img-sp product-small-block ">
-                                    <img src="images/productList/sp1.jpg" class="product-img-small">
-                                </div>
-                                <div class="img-sp product-small-block ">
-                                    <img src="images/productList/sp2.jpg" class="product-img-small">
-                                </div>
-                                <div class="img-sp product-small-block ">
-                                    <img src="images/productList/sp4.jpg" class="product-img-small">
-                                </div>
-                                <div class="img-sp product-small-block ">
-                                    <img src="images/productList/sp5.jpg" class="product-img-small">
-                                </div>
-                            </div> 
-                            <div class="mua-hang">
-                                <input type="submit" value="Thêm vào giỏ hàng" > <input type="submit" value="Mua ngay">
-                            </div>
-                        
                         </div>
                     </div> 
                     <!--sản phẩm liên quan và bình luận-->   

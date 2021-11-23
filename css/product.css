@@ -5,46 +5,43 @@
 .mr{
     margin-right: 2%;
 }
-@font-face {
+/* @font-face {
     font-family: myfont;
     src: url(../Poppins/Poppins-BlackItalic.ttf);
-  }
+  } */
 .content-1{
     min-height: 560px;
     width: 100%;
 }
 .box-trai{
-    min-height: 530px;
-    width: 35%;
-    float: left;
+    display: flex;
+    align-items: space-between;
 }
 .img{
     width: 100%;
-    min-height: 520px;
-    border: 1px solid #ccc;
+    /* min-height   : 520px; */
+    border: 1px solid var(--background-color);
 }
 .img img{
     left: 20px;
-    width: 97%;
+    width: 100%;
+    display: block;
 }
 .show-anh{
     width: 100%;
-    margin: 0 auto;
-    margin-top: 10px;
-    min-height: 200px;
+    margin-top: 18px;
+    display: flex;
 }
 .img-sp{
-    width: 22%;
+    /* width: 22%; */
     border: solid 1px #ccc;
-    float: left;
-    margin-right: 14px;
+    /* float: left; */
+    /* margin-right: 14px; */
   
 }
-.product-img-small:first-child{
-    margin-left: 0;
-}
-.product-img-small:last-child{
-    margin-right: 0;
+.product-img-small{
+    justify-content: space-between;
+    padding: 0 8px;
 }
 .img-sp img{
     width: 100%;
@@ -52,22 +49,22 @@
 .img-sp:hover{
     border: solid 1px red;
 }
-.box-phai{
+/* .box-phai{
     min-height: 530px;
     width: 60%;
     font-family: myfont;
     font-size: 1rem;
     float: left;
-}
+} */
 .title{
     min-height: 80px;
     color: #666;
     border-bottom: solid 1px #ccc;
 }
 .title h1{
-    margin: 0;
-    font-size: 2.2rem;
-    color: #333;
+    /* margin: 0; */
+    font-size: 2.6rem;
+    color: var(--primary-color);
 }
 .title del{
     padding-left: 6px;
@@ -112,8 +109,8 @@ div.stars {
   }
 
   /*end*/
-  .buttons_added {
-      margin-top: 10px;
+.buttons_added {
+    margin-top: 10px;
     opacity:1;
     display:inline-block;
     display:-ms-inline-flexbox;
