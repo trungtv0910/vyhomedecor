@@ -106,7 +106,7 @@
                                 <h2>Bình Luận</h2>
                             </div>
                             <div class="nguoi-reveiws">
-                            <div class="noi-dung-bl">
+                             <div class="noi-dung-bl">
                                     <div class="anh">
                                         <i class="fas fa-user"></i>
                                     </div>
