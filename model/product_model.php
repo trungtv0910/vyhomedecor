@@ -89,6 +89,7 @@
         $view=0;
         $dateInput =date("Y-m-d");
         $path = "../uploads/";
+        $time=time();
     
             if($uploadOk==1){
                 $uploadToManyImage=$_FILES['images']['name'];
@@ -98,8 +99,8 @@
                 $imageFileType = strtolower(pathinfo($_FILES['images']['name'][$i],PATHINFO_EXTENSION));
                     if($imageFileType == "jpg" || $imageFileType =="png" || $imageFileType =="jpeg" || $imageFileType == "gif" ){
                         $dem++;
-                        move_uploaded_file($_FILES["images"]["tmp_name"][$i], $path.$_FILES['images']['name'][$i]);
-                        $newArray = array('id'=>$dem,'image'=>$_FILES['images']['name'][$i]);
+                        move_uploaded_file($_FILES["images"]["tmp_name"][$i], $path.$time.$_FILES['images']['name'][$i]);
+                        $newArray = array('id'=>$dem,'image'=>$time.$_FILES['images']['name'][$i]);
                         array_push($dataImage,$newArray);
                     }
                 }
@@ -171,6 +172,7 @@
         $dataOld;
         $dataOld =json_decode($dataOld,true);
         $path = "../uploads/";
+        $time=time();
         if(isset($_FILES['images']['name'])){
             $newData= $_FILES['images']['name'];
             
@@ -180,9 +182,9 @@
                 if(!empty($newData[$i])){
                     $temp+=1;
                     
-                    $newArray = array('id'=>$temp,'image'=>$newData[$i] );
+                    $newArray = array('id'=>$temp,'image'=>$time.$newData[$i] );
                     array_push($dataOld,$newArray);
-                    move_uploaded_file($_FILES['images']['tmp_name'][$i],$path.$_FILES['images']['name'][$i]);
+                    move_uploaded_file($_FILES['images']['tmp_name'][$i],$path.$time.$_FILES['images']['name'][$i]);
                 }
             }
         }
