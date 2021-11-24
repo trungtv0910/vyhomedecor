@@ -192,6 +192,12 @@ if (isset($_GET['act'])) {
                     include 'comment/list.php';
                 } else if (isset($_GET['comment_detail'])) {
                     $prodId = ($_GET['comment_detail']);
+                    if(isset($_POST['adminReply'])&& !empty($_POST['contentReply'])&& !empty($_POST['idComment'])){            
+                         $content=$_POST['contentReply'];
+                         $commId=$_POST['idComment'];
+                         $adminID=$account['custId'];
+                        admin_reply_comment($adminID,$content,$commId,$prodId);
+                    }
                     $listcomment = loadAll_comment_product($prodId);
                     include 'comment/comment_detail.php';
                 } else if (isset($_GET['reply'])) {

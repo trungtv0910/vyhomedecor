@@ -24,5 +24,16 @@
         $sql="DELETE FROM tbl_comment where commId=$commId";
         pdo_execute($sql);
     }
-    
+    function load_commentByIdProd($prodId)
+    {
+        $sql ="SELECT * From tbl_comment where prodId =$prodId";
+        return pdo_query($sql);
+    }
+
+    function admin_reply_comment($custId,$content,$commId,$prodId){
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $date = date('h:i:s a d/m/Y');
+        $sql ="INSERT INTO tbl_comment(custId,content,replyId,prodId,date)values('$custId','$content','$commId','$prodId','$date')";
+        return pdo_execute($sql);
+    }
 ?>

@@ -225,3 +225,6 @@ border-radius: 5px;
 .jc-end{
     justify-content: flex-end;
 }
+.model_comment{
+    top:200px;
+}
