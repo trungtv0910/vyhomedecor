@@ -48,7 +48,7 @@
         <div id="collapseBill" class="collapse" aria-labelledby="headingCategory" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Quản Lý Đơn Hàng:</h6>
-                <a class="collapse-item" href="index.php?act=bill">Danh Sách Đơn Hàng</a>
+                <a class="collapse-item" href="index.php?act=bill&list">Danh Sách Đơn Hàng</a>
 
 
             </div>

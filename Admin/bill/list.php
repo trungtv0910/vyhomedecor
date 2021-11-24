@@ -30,50 +30,56 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <?php 
+                           $STT = 1;
+                           foreach ($listBill as $value) {
+                               extract($value);
+                            
+                        ?>
                             <tr>
-                                <td>1</td>
-                                <td><i class="fas fa-barcode"> </i>13241 </td>
-                                <td><i class="ni ni-single-02"></i>Nguyễn Thị Thanh Vi</td>
-                                <td><i class="ni ni-time-alarm"></i>06/11/2021</td>
+                                <td><?=$STT++?></td>
+                                <td><i class="fas fa-barcode"> </i><?=$billId?></td>
+                                <td><i class="ni ni-single-02"></i>
+                                   <?php
+                                       $nameCust = loadOne_customer($custId);
+                                       echo $nameCust['custName'];
+                                   ?>
+                                </td>
+                                <td><i class="ni ni-time-alarm"></i><?=$date?></td>
                                 <td>
-                                    <span class="text-primary"> Chưa Thanh Toán</span>
+                                    <span class="text-primary">
+                                      <?php
+                                         if($billStatus==0){
+                                            echo " Thanh Toán Khi Nhận Hàng ";
+                                        }else if($billStatus==1){
+                                            echo " Thanh Toán Qua MoMo";
+                                        }else{
+                                            echo "Thanh Toán Qua Ví";
+                                        }
+                                      ?>
+                                    </span>
+                                    
                                     <!-- <span class="text-success">Đã Thanh Toán</span>
                                          <span class="text-danger">Huỷ Đơn</span> -->
                                 </td>
-                                <td>4.000.000 VNĐ</td>
-                                <td><i class="fas fa-money-check-alt"></i>Thanh Toán Khi Nhận Hàng</td>
-                                <td><a class="btn btn-primary" href="index.php?act=bill&edit">Xem Chi tiết</a></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><i class="fas fa-barcode"> </i>13221 </td>
-                                <td><i class="ni ni-single-02"></i>Nguyễn Từ Huy</td>
-                                <td><i class="ni ni-time-alarm"></i>06/11/2021</td>
-                                <td>
-                                    <!-- <span class="text-primary"> Chưa Thanh Toán</span> -->
-                                     <span class="text-success">Đã Thanh Toán</span>
-                                       <!--  <span class="text-danger">Huỷ Đơn</span> -->
+                                <td><?=$billTotal?></td>
+                                <td><i class="fas fa-money-check-alt"></i>
+                                <?php
+                                         if($payMethod==0){
+                                             echo 'Chưa Thanh Toán';
+                                         }else if($payMethod==1){
+                                             echo 'Đã Thanh Toán';
+                                         }else{
+                                             echo 'Huỷ Đơn';
+                                         }
+                                      ?>
                                 </td>
-                                <td>4.000.000 VNĐ</td>
-                                <td><i class="fas fa-money-check-alt"></i>Thanh Toán paypal</td>
-                                <td><a class="btn btn-primary" href="index.php?act=bill&edit">Xem Chi tiết</a></td>
+                                <td><a class="btn btn-primary" href="index.php?act=bill&edit=<?=$billId?>&custId=<?=$custId?>">Xem Chi tiết</a></td>
                             </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><i class="fas fa-barcode"> </i>13241 </td>
-                                <td><i class="ni ni-single-02"></i>Nguyễn Thị Thanh Vi</td>
-                                <td><i class="ni ni-time-alarm"></i>06/11/2021</td>
-                                <td>
-                                    <!-- <span class="text-primary"> Chưa Thanh Toán</span> -->
-                                    <!-- <span class="text-success">Đã Thanh Toán</span>-->
-                                          <span class="text-danger">Huỷ Đơn</span> 
-                                </td>
-                                <td>4.000.000 VNĐ</td>
-                                <td><i class="fas fa-money-check-alt"></i>Thanh Toán momo</td>
-                                <td><a class="btn btn-primary" href="index.php?act=bill&edit">Xem Chi tiết</a></td>
-                            </tr>
-
-
+                        <?php
+                        }
+                        ?>
+                          
                         </tbody>
                     </table>
                 </form>

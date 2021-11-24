@@ -9,6 +9,8 @@ include_once '../lib/format.php';
 
 include_once '../model/category.php';
 
+include_once '../model/bill.php';
+
 ?>
 
 <?php
@@ -169,8 +171,15 @@ if (isset($_GET['act'])) {
             break;
         case 'bill': {
                 if (isset($_GET['list'])) {
+                    $listBill = loadAll_bill();
                     include 'bill/list.php';
                 } else if (isset($_GET['edit'])) {
+                    $billId=$_GET['edit'];
+                    $custId = $_GET['custId'];
+                    $loadOne_cust = loadOne_customer($custId);
+                    // var_dump( $loadOne_cust);
+                    $loadOne_bill = loadOne_bill($billId);
+                    // var_dump($loadOne_bill);
                     include 'bill/edit.php';
                 } else {
                     include 'bill/list.php';
