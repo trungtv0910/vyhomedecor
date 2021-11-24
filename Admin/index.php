@@ -182,11 +182,15 @@ if (isset($_GET['act'])) {
                 if (isset($_GET['list'])) {
                     include 'comment/list.php';
                 } else if (isset($_GET['comment_detail'])) {
+                    $prodId = ($_GET['comment_detail']);
+                    $listcomment = loadAll_comment_product($prodId);
                     include 'comment/comment_detail.php';
                 } else if (isset($_GET['reply'])) {
                     include 'comment/reply.php';
                 } else if (isset($_GET['delete'])) {
-                    include 'comment/delete.php';
+                    $commId =$_GET['delete'];
+                    delete_comment($commId);
+                    include 'comment/comment_detail.php';
                 } else {
                     include 'comment/list.php';
                 }

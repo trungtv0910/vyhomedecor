@@ -52,18 +52,27 @@
                         </thead>
                         <tbody>
                             <?php
+                                $i = 1;
                                 foreach ($list_comments_product as $value) {
                                     extract($value);
                             ?>
 
                             <tr>
-                                <td>1</td>
+                                <td><?=$i?></td>
                                 <td><?=$prodId?></td>
                                 <td class="sup_parent"><img width="100" src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
                                     <!-- sup -->
                                     <!-- <span class="sup_nomal sup_title">Thường</span>
                                     <span class="sup_new sup_title">Mới</span> -->
-                                    <span class="sup_bestsale sup_title">Bán Chạy</span>
+                                    <?php 
+                                        if ($type == 0) {
+                                            echo ' <span class=" sup_new sup_title rotate-15">Mới</span>';
+                                        } else if ($type == 1) {
+                                            echo ' <span class=" sup_nomal sup_title rotate-15">Thường</span>';
+                                        } else {
+                                            echo ' <span class="sup_bestsale  sup_title rotate-15">Bán Chạy</span>';
+                                        } 
+                                    ?>
                                     <!-- end sup -->
                                 </td>
                                 <td class="text-left" ><?=$prodName?>
@@ -78,10 +87,10 @@
                                 <td>
                                     <?=$lastDate?>
                                 </td>
-                                <td><a class="btn btn-primary" href="index.php?act=comment&comment_detail">Xem toàn bộ</a>
+                                <td><a class="btn btn-primary" href="index.php?act=comment&comment_detail=<?=$prodId?>">Xem toàn bộ</a>
                                 </td>
                             </tr>
-                            <?php } ?>
+                            <?php $i++; } ?>
                         </tbody>
                     </table>
                 </form>

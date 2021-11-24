@@ -95,20 +95,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                                $i = 1;
+                                foreach ($listcomment as $value) {
+                                    extract($value);
+                            ?>
                             <tr>
-                                <td>1</td>
+                                <td><?=$i?></td>
 
                                 <td class="reply">
                                     <div class="reply_img">
                                         <img width="50" src="img_tam/anhavatar.png" alt="">
                                     </div>
                                     <div class="reply_content">
-                                        <span class="name">Nguyễn Thị Thanh Vi</span> From <span class="from"><a href="index.php?act=product&id_edit=">Ghế Xoay 2018- Akia (View Post )</a></span>
-                                        <p class="time">Lúc: 20:10 20/10/2021</p>
-                                        <p class="comment">Sản Phẩm này còn không ạ ??</p>
+                                        <span class="name"><?=$custName?></span> From <span class="from"><a href="index.php?act=product&id_edit="><?=$prodName?></a></span>
+                                        <p class="time">Lúc: <?=$date?></p>
+                                        <p class="comment"><?=$content?></p>
 
 
-                                        <div class="reply_child">
+                                        <!-- <div class="reply_child">
                                             <div class="reply_img">
                                                 <img width="50" src="img_tam/anhavatar.png" alt="">
                                             </div>
@@ -118,7 +123,7 @@
                                                     <p class="time">Lúc: 23:10 20/10/2021</p>
                                                     <p class="comment">Sản phẩm vẫn còn nhé, bên em sẽ liên hệ cho chị</p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                                 <!-- <td><a class="btn btn-default" href="index.php?act=comment&reply">Trả lời</a></td> -->
@@ -126,13 +131,13 @@
                                     <span class="text">Trả lời</span></a></td>
                                 <td>
 
-                                    <a href="" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
+                                    <a href="index.php?act=comment&delete=<?=$commId?>" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
                                         <span class="text">Xoá</span></a>
                                 </td>
 
                             </tr>
 
-
+                            <?php $i++; } ?>
 
                         </tbody>
                     </table>
