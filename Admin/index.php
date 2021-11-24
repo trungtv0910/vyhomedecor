@@ -3,6 +3,7 @@ include '../model/customer.php';
 include_once '../model/pdo.php';
 include_once '../model/global.php';
 include_once '../model/product_model.php';
+include_once '../model/comment.php';
 
 include_once '../lib/format.php';
 
@@ -177,6 +178,7 @@ if (isset($_GET['act'])) {
             }
             break;
         case 'comment': {
+                $list_comments_product = statistical_comments_product();
                 if (isset($_GET['list'])) {
                     include 'comment/list.php';
                 } else if (isset($_GET['comment_detail'])) {

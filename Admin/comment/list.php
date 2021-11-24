@@ -51,59 +51,37 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                            <?php
+                                foreach ($list_comments_product as $value) {
+                                    extract($value);
+                            ?>
 
                             <tr>
                                 <td>1</td>
-                                <td>12314</td>
-                                <td class="sup_parent"><img width="100" src="img_tam/26-120x120.jpg" alt="">
+                                <td><?=$prodId?></td>
+                                <td class="sup_parent"><img width="100" src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
                                     <!-- sup -->
                                     <!-- <span class="sup_nomal sup_title">Thường</span>
                                     <span class="sup_new sup_title">Mới</span> -->
                                     <span class="sup_bestsale sup_title">Bán Chạy</span>
                                     <!-- end sup -->
                                 </td>
-                                <td class="text-left" >Ghế Xoay
+                                <td class="text-left" ><?=$prodName?>
                                     <br>
-                                    <b>Số lượng còn lại:200</b>
+                                    <b>Số lượng còn lại: <?=$quantity?></b>
                                     <br>
-                                    <b>Giá Bán: </b>400.000 <b>VNĐ</b>
+                                    <b>Giá bán hiện tại: </b><?= number_format($price, 0, ',', '.') ?> <b>đ</b>
                                 </td>
                                 <td>
-                                    20 <b>Bình luận</b>
+                                    <?=$countComm?> <b>Bình luận</b>
                                 </td>
                                 <td>
-                                    05/11/2021
+                                    <?=$lastDate?>
                                 </td>
                                 <td><a class="btn btn-primary" href="index.php?act=comment&comment_detail">Xem toàn bộ</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>12314</td>
-                                <td class="sup_parent"><img width="100" src="img_tam/26-120x120.jpg" alt="">
-                                    <!-- sup -->
-                                    <!-- <span class="sup_nomal sup_title">Thường</span>-->
-                                     <span class="sup_new sup_title">Mới</span>
-                                    <!-- <span class="sup_bestsale sup_title">Bán Chạy</span> -->
-                                    <!-- end sup -->
-                                </td>
-                                <td class="text-left" >Ghế Xoay
-                                    <br>
-                                    <b>Số lượng còn lại:200</b>
-                                    <br>
-                                    <b>Giá Bán: </b>400.000 <b>VNĐ</b>
-                                </td>
-                                <td>
-                                    20 <b>Bình luận</b>
-                                </td>
-                                <td>
-                                    05/11/2021
-                                </td>
-                                <td><a class="btn btn-primary" href="index.php?act=comment&comment_detail">Xem toàn bộ</a>
-                                </td>
-                            </tr>
-
+                            <?php } ?>
                         </tbody>
                     </table>
                 </form>
