@@ -4,9 +4,9 @@
         <!--thông tin-->
         <div class="product__left">
             <div class="row content-1">
-                <?php
+            <?php
                 extract($loadOne);
-                ?>
+            ?>
                 <div class="col l-5">
                     <div class="box-trai mr">
                         <div class="img product-block">
@@ -100,60 +100,17 @@
                     </div>
                 </div>
                 <div class="col l-9">
-                    <div class="from-binhluan">
-                        <div class="from">
-                            <div class="reveiws">
-                                <h2>Bình Luận</h2>
-                            </div>
-                            <div class="nguoi-reveiws">
-                             <div class="noi-dung-bl">
-                                    <div class="anh">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <div class="bl">
-                                        <p><strong>James Koster</strong> - <strong class="comment-time">June 7, 2013</strong></p>
-                                        <p>Giá cả phẳng chăng</p>
-                                    </div>
-                                </div>
-                                <div class="noi-dung-bl">
-                                    <div class="anh">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <div class="bl">
-                                        <p><strong>James Koster</strong> - <strong class="comment-time">June 7, 2013</strong></p>
-                                        <p>Sản phẩm Ok</p>
-                                    </div>
-                                </div>
-                                <div class="noi-dung-bl">
-                                    <div class="anh">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <div class="bl">
-                                        <p><strong>James Koster</strong> - <strong class="comment-time">June 7, 2013</strong></p>
-                                        <p>Giá quá đẹp</p>
-                                    </div>
-                                </div>
-                                <div class="noi-dung-bl">
-                                    <div class="anh">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <div class="bl">
-                                        <p><strong>James Koster</strong> - <strong class="comment-time">June 7, 2013</strong></p>
-                                        <p>Ủng hộ shop</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="addemail">
-                                <p>Thêm bình luận</p>
-                            </div>
-                            <div class="binh-luan">
-                                <form>
-                                    <textarea class="form-text" name="message" style="width:100%; height:100px;border-radius: 4px;" placeholder="Nhập bình luận ở đây..."></textarea>
-                                    <br>
-                                    <input type="submit" value="Gửi bình luận">
-                                </form>
-                            </div>
-                        </div>
+                    <?php
+                        extract($loadOne);
+                    ?>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script>
+                        $(document).ready(function(){
+                           $('#form-comment').load('view/form-comment.php', {prodId: <?=$prodId?>});
+                        });
+                    </script>
+                    <div class="from-binhluan" id="form-comment">
+                        
                     </div>
                 </div>
             </div>
