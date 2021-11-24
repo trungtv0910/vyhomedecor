@@ -6,6 +6,7 @@
     session_start();
     include_once '../model/pdo.php';
     include_once '../model/comment.php';
+    include_once '../model/comment_Trung_Test.php';
     $prodId = $_REQUEST['prodId'];
 
 ?>

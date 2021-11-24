@@ -10,4 +10,5 @@
         $list_comments_product = pdo_query($sql);
         return $list_comments_product;
     }
+
 ?>
