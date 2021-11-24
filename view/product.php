@@ -4,9 +4,9 @@
         <!--thông tin-->
         <div class="product__left">
             <div class="row content-1">
-            <?php
+                <?php
                 extract($loadOne);
-            ?>
+                ?>
                 <div class="col l-5">
                     <div class="box-trai mr">
                         <div class="img product-block">
@@ -19,10 +19,10 @@
                         <div class="title">
                             <h1><?= $prodName ?></h1>
                             <span><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</span>
-                            <?php 
-                                if($discount > 0) {
+                            <?php
+                            if ($discount > 0) {
                             ?>
-                            <del><?= number_format($price, 0, ',', '.'); ?>đ</del>
+                                <del><?= number_format($price, 0, ',', '.'); ?>đ</del>
                             <?php } ?>
                         </div>
 
@@ -43,7 +43,7 @@
                             foreach ($data as $valueIgm) {
                             ?>
                                 <div class="img-sp product-small-block ">
-                                    <img src="<?=BASE_URL?>uploads/<?=$valueIgm['image'] ?>" class="product-img-small">
+                                    <img src="<?= BASE_URL ?>uploads/<?= $valueIgm['image'] ?>" class="product-img-small">
                                 </div>
                             <?php
                             }
@@ -53,7 +53,7 @@
                                         </div>
                                         
                                         <div class="size">
-                                            <span><?=$prodDesc?></span><br>
+                                            <span><?= $prodDesc ?></span><br>
                     
                                             <div class="buttons_added">
                                                 <strong>Số Lượng</strong>
@@ -89,7 +89,7 @@
 
                         ?>
                             <div class="sanpham">
-                                <a href="<?=$link_product?>"class="sanpham-img">
+                                <a href="<?= $link_product ?>" class="sanpham-img">
                                     <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
                                 </a>
                                 <div class="addCart">
@@ -104,17 +104,74 @@
                     </div>
                 </div>
                 <div class="col l-9">
+
+
+
+
                     <?php
-                        extract($loadOne);
+                    extract($loadOne);
                     ?>
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+                    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script>
                         $(document).ready(function(){
-                           $('#form-comment').load('view/form-comment.php', {prodId: <?=$prodId?>});
+                           $('#form-comment').load('view/form-comment.php', {prodId: <?= $prodId ?>});
                         });
-                    </script>
+                    </script> -->
                     <div class="from-binhluan" id="form-comment">
-                        
+                        <div class="from">
+                            <div class="reveiws">
+                                <h2>Bình Luận</h2>
+                            </div>
+                            <div class="nguoi-reveiws">
+                                <?php
+                                $load_comment = load_commentByIdProd($prodId);
+                                // echo '<pre>';
+                                // echo print_r($load_comment);
+                                // echo '</pre>';
+                                foreach ($load_comment as $value) {
+                                    extract($value);
+                                    $loadCust = loadOne_customer($custId);
+                                ?>
+                                    <div class="noi-dung-bl">
+                                        <div class="anh">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="bl">
+                                            <p><strong><?= $loadCust['custName'] ?></strong> - <strong class="comment-time"><?= $date ?></strong></p>
+                                            <p><?= $content ?></p>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                            </div>
+                            <?php
+                            if (isset($_SESSION['login']['login']) == true) {
+                                $account = $_SESSION['login'];
+                            ?>
+                                <div class="addemail">
+                                    <p>Thêm bình luận</p>
+                                </div>
+                                <div class="binh-luan">
+                                    <!-- <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post"> -->
+
+                                    <input type="text" id="comm_content" class="form-text" name="content" style="width:100%; height:80px;border-radius: 4px;" placeholder="Nhập bình luận ở đây..." required></input>
+                                    <br>
+                                    <input type="hidden" id="prodId" name="prodId" value="<?= $prodId ?>">
+                                    <input type="hidden" id="custId" name="custId" value="<?=$account['custId']?>">
+                                    <input type="submit" id="send" name="send-comment" value="Gửi bình luận">
+                                    <!-- </form> -->
+                                </div>
+                            <?php } else { ?>
+                                <div class="addemail">
+                                    <p>Vui lòng đăng nhập để có thể bình luận !</p>
+                                </div>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,3 +179,29 @@
     </div>
 </div>
 <!-- </div> -->
+<script src="js/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#send').click(function() {
+            var prodId = $('#prodId').val();
+            var custId = $('#custId').val();
+            var content = $('#comm_content').val();
+            console.log(prodId, content);
+            if (prodId != "" && content != "") {
+                $.post("view/form-comment.php", {
+                    prodId: prodId,
+                    content: content,
+                    custId: custId
+                }, function(data) {
+                    $('.nguoi-reveiws').html(data);
+                    document.querySelector("#comm_content").value = "";
+
+                });
+              
+            } else {
+                alert("Bạn chưa nhập nội dung!");
+            }
+
+        });
+    });
+</script>

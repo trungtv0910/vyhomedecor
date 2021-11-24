@@ -9,7 +9,7 @@ include_once 'model/global.php';
 include_once 'model/customer.php';
 include_once 'model/comment.php';
 include_once 'lib/format.php';
-
+include_once 'model/comment_Trung_Test.php';
 ?>
 
 <?php
