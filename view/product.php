@@ -89,7 +89,7 @@
                                     <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
                                 </div>
                                 <div class="addCart">
-                                    <a class="addCart-name" href="<?= $link_product ?>"><?= $prodName ?></a><br>
+                                    <a class="addCart-name" href="<?= $link_product ?>"><?= $prodName ?></a>
                                     <strong><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</strong><br>
                                     <a class="addCart-text" href="#"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
                                 </div>
@@ -111,8 +111,8 @@
                                         <i class="fas fa-user"></i>
                                     </div>
                                     <div class="bl">
-                                        <p><strong>James Koster</strong> - <em>June 7, 2013</em></p>
-                                        <p>Sản phẩm đẹp</p>
+                                        <p><strong>James Koster</strong> - <strong class="comment-time">June 7, 2013</strong></p>
+                                        <p>Giá cả phẳng chăng</p>
                                     </div>
                                 </div>
                                 <div class="noi-dung-bl">
@@ -120,19 +120,35 @@
                                         <i class="fas fa-user"></i>
                                     </div>
                                     <div class="bl">
-                                        <p><strong>James Koster</strong> - <em>June 7, 2013</em></p>
-                                        <p>Sản phẩm tốt</p>
+                                        <p><strong>James Koster</strong> - <strong class="comment-time">June 7, 2013</strong></p>
+                                        <p>Sản phẩm Ok</p>
+                                    </div>
+                                </div>
+                                <div class="noi-dung-bl">
+                                    <div class="anh">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="bl">
+                                        <p><strong>James Koster</strong> - <strong class="comment-time">June 7, 2013</strong></p>
+                                        <p>Giá quá đẹp</p>
+                                    </div>
+                                </div>
+                                <div class="noi-dung-bl">
+                                    <div class="anh">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="bl">
+                                        <p><strong>James Koster</strong> - <strong class="comment-time">June 7, 2013</strong></p>
+                                        <p>Ủng hộ shop</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="addemail">
-                                <p>Thêm Bình Luận<br>
-                                    Các trường bắt buộc đã được đánh giá bằng dấu *.
-                                </p>
+                                <p>Thêm bình luận</p>
                             </div>
                             <div class="binh-luan">
                                 <form>
-                                    <textarea name="message" style="width:100%; height:100px;border-radius: 5px;"></textarea>
+                                    <textarea class="form-text" name="message" style="width:100%; height:100px;border-radius: 4px;" placeholder="Nhập bình luận ở đây..."></textarea>
                                     <br>
                                     <input type="submit" value="Gửi bình luận">
                                 </form>
