@@ -19,7 +19,11 @@
                         <div class="title">
                             <h1><?= $prodName ?></h1>
                             <span><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</span>
+                            <?php 
+                                if($discount > 0) {
+                            ?>
                             <del><?= number_format($price, 0, ',', '.'); ?>đ</del>
+                            <?php } ?>
                         </div>
 
                         <div class="size">
@@ -85,9 +89,9 @@
 
                         ?>
                             <div class="sanpham">
-                                <div class="sanpham-img">
+                                <a href="<?=$link_product?>"class="sanpham-img">
                                     <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
-                                </div>
+                                </a>
                                 <div class="addCart">
                                     <a class="addCart-name" href="<?= $link_product ?>"><?= $prodName ?></a>
                                     <strong><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</strong><br>

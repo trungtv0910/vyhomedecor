@@ -199,7 +199,7 @@ div.stars {
     outline: none;
 }
 .binh-luan input[type="submit"]{
-    margin-top: 8px;
+    margin-top: 16px;
 }
 .binh-luan input[type="submit"]:hover,
 .mua-hang input[type="submit"]:hover{
