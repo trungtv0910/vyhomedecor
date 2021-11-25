@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 21, 2021 lúc 11:43 AM
+-- Thời gian đã tạo: Th10 25, 2021 lúc 06:59 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 7.4.22
 
@@ -36,6 +36,13 @@ CREATE TABLE `tbl_bill` (
   `billTotal` float NOT NULL,
   `billStatus` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_bill`
+--
+
+INSERT INTO `tbl_bill` (`billId`, `prodId`, `custId`, `date`, `payMethod`, `billTotal`, `billStatus`) VALUES
+(1, 7, 3, '2021-11-02', '0', 20000, '0');
 
 -- --------------------------------------------------------
 
@@ -125,11 +132,67 @@ INSERT INTO `tbl_category_child` (`cateChildId`, `cateChildName`, `cateId`) VALU
 
 CREATE TABLE `tbl_comment` (
   `commId` int(10) NOT NULL,
+  `replyId` int(10) DEFAULT 0,
   `prodId` int(10) NOT NULL,
   `custId` int(10) NOT NULL,
   `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `date` date NOT NULL
+  `date` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_comment`
+--
+
+INSERT INTO `tbl_comment` (`commId`, `replyId`, `prodId`, `custId`, `content`, `date`) VALUES
+(4, 0, 25, 3, 'sản phẩm oke không a ?', '03:37:18 pm 24/11/2021'),
+(5, 0, 25, 3, 'alo sản phẩm hay quá AE', '03:38:28 pm 24/11/2021'),
+(6, 0, 25, 3, 'sản phẩm oke không a ?', '03:40:11 pm 24/11/2021'),
+(15, 0, 27, 3, 'hay quá', '04:22:01 pm 24/11/2021'),
+(20, 0, 20, 3, 'hay quá', '04:28:07 pm 24/11/2021'),
+(23, 0, 20, 3, 'còn', '04:28:30 pm 24/11/2021'),
+(26, 0, 20, 3, 'oke bạn', '04:32:43 pm 24/11/2021'),
+(27, 0, 18, 3, 'san pham', '04:33:15 pm 24/11/2021'),
+(28, 0, 18, 3, 'sản phẩm này hết', '04:33:25 pm 24/11/2021'),
+(29, 0, 18, 3, 'còn không người ả', '04:33:39 pm 24/11/2021'),
+(30, 0, 18, 3, 'dập chết cụ', '04:33:47 pm 24/11/2021'),
+(31, 0, 18, 3, 'ok', '04:37:26 pm 24/11/2021'),
+(32, 0, 18, 3, 'oke bạn', '04:37:31 pm 24/11/2021'),
+(33, 0, 18, 3, 'sản phẩm oke không a ?', '04:37:35 pm 24/11/2021'),
+(34, 0, 18, 3, 'còn', '04:37:41 pm 24/11/2021'),
+(35, 0, 18, 3, 'oke bạn', '04:39:43 pm 24/11/2021'),
+(36, 0, 18, 3, 'oke bạn', '04:49:10 pm 24/11/2021'),
+(37, 0, 18, 3, 'hay quá', '04:49:17 pm 24/11/2021'),
+(39, 0, 27, 3, 'alo sản phẩm hay quá AE', '04:49:42 pm 24/11/2021'),
+(46, 0, 21, 3, 'sản phẩm oke không a ?', '06:14:58 pm 24/11/2021'),
+(47, 0, 21, 3, 'alo sản phẩm hay quá AE', '06:15:01 pm 24/11/2021'),
+(48, 0, 21, 3, 'hay quá', '06:15:03 pm 24/11/2021'),
+(49, 0, 21, 3, 'còn', '06:15:06 pm 24/11/2021'),
+(50, 0, 21, 3, 'alo sản phẩm hay quá AE', '06:15:08 pm 24/11/2021'),
+(57, 0, 24, 3, 'không có thời gian', '07:55:42 pm 24/11/2021'),
+(59, 56, 26, 3, 'ok Chia Tay', ''),
+(60, 57, 24, 3, 'sản phẩm này hết hàng rồi ạ', '11:26:02 pm 24/11/2021'),
+(61, 57, 24, 3, 'Muốn Mua cũng không được đâu ạ\r\n', '11:26:37 pm 24/11/2021'),
+(62, 1, 26, 3, 'hay quá man', '11:46:07 pm 24/11/2021'),
+(63, 62, 26, 3, 'ok', '09:26:04 am 25/11/2021'),
+(64, 62, 26, 3, 'ok', '09:34:33 am 25/11/2021'),
+(65, 62, 26, 3, 'ok', '09:34:49 am 25/11/2021'),
+(66, 65, 26, 3, 'Admin : Het roi ban aj\r\n', '10:41:22 am 25/11/2021'),
+(67, 0, 21, 3, 'con hang k aj', '10:55:57 am 25/11/2021'),
+(68, 61, 24, 3, 'xin chao quy khach', '11:00:28 am 25/11/2021'),
+(69, 60, 24, 3, 'tooi  xin cam on\r\n', '11:01:07 am 25/11/2021'),
+(72, 57, 24, 3, 'hello', '11:42:43 am 25/11/2021'),
+(73, 57, 24, 3, 'hello', '11:43:16 am 25/11/2021'),
+(74, 57, 24, 3, 'hello', '11:43:32 am 25/11/2021'),
+(75, 1, 26, 3, 'ok chị nha\r\n', '11:52:59 am 25/11/2021'),
+(76, 1, 26, 3, 'ok chị nha\r\n', '11:54:32 am 25/11/2021'),
+(77, 5, 25, 3, 'Hay quá quý khách', '12:00:31 pm 25/11/2021'),
+(78, 22, 20, 3, 'oke nhế ', '12:23:22 pm 25/11/2021'),
+(80, 0, 25, 3, 'Xin chào ạ', '12:43:11 pm 25/11/2021'),
+(81, 80, 25, 3, 'hết hàng rồi bạn trẻ', '12:43:34 pm 25/11/2021'),
+(82, 0, 27, 1, 'Tôi muốn mua thì phải làm thế nào ?', '12:54:53 pm 25/11/2021'),
+(84, 0, 20, 1, 'Quá Đẹp', '12:55:27 pm 25/11/2021'),
+(85, 84, 20, 3, 'Xin cảm ơn quý khách chúng tôi sẽ liên lạc với quý khách', '12:56:59 pm 25/11/2021'),
+(86, 0, 20, 1, 'Vâng cảm ơn', '12:58:37 pm 25/11/2021');
 
 -- --------------------------------------------------------
 
@@ -200,7 +263,7 @@ INSERT INTO `tbl_product` (`prodId`, `prodName`, `prodDesc`, `quantity`, `price`
 (24, 'Ghế ăn, ghế làm việc', 'Màu sắc: Trắng, đen, chân gỗ\r\n\r\nKích thước: H77/44 x D57 x R49.\r\n\r\nKhối lượng thực tế: 6kg.\r\n\r\nChất liệu: Chân gỗ, mặt ghế bằng nhựa PP cao cấp.', 200, 1152000, 'tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg', '[{\"id\":1,\"image\":\"dengo-2_77ed848ae8be45bca47bc61693a47515_568c3feee43e4fc3971111d5327acf9c_master.jpg\"},{\"id\":2,\"image\":\"tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg\"},{\"id\":3,\"image\":\"tranggo-2_9782fb69e4d44bc9829df4962e7dadba_c3c205c153ed414b9741e6efe80c05ea_master.jpg\"},{\"id\":4,\"image\":\"tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg\"}]', '2021-11-21', 0, 0, 29, 2, 0.05),
 (25, 'Ghế làm việc', 'Màu sắc: Chân đen, mặt xám\r\n\r\nKích thước: D47 x R52 x C86 (cm)\r\n\r\nKhối lượng thực tế: 7.5kg\r\n\r\nChất liệu:\r\n\r\nVải bố bọc nệm\r\n\r\nChân thép sơn tĩnh điện', 100, 1660000, 'xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png', '[{\"id\":1,\"image\":\"xam_6_8334f40d22cf448e9cccfdedc7a5dd81_84fd3039f3c34a5980f1cbb471245a50_master.jpg\"},{\"id\":2,\"image\":\"vahi_fc1717779a6d439fb213f58a1de515ce_master.jpg\"},{\"id\":3,\"image\":\"xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png\"},{\"id\":4,\"image\":\"11_e6d31c1b73604e9283bee86d25e3e3f4_master.png\"}]', '2021-11-21', 0, 2, 22, 4, 0.05),
 (26, 'Bàn làm việc', 'Kích thước: H75 x D120 x R60.\r\n\r\nKhối lượng thực tế: 11,5kg.\r\n\r\nChất liệu:\r\n\r\nMặt bàn: Gỗ MFC.\r\n\r\nChân bàn: Sắt sơn tĩnh điện.', 22, 1547000, 'denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg', '[{\"id\":1,\"image\":\"denden_2_24bb65d6d4d04054b12dc6665b839bdb_master.jpg\"},{\"id\":2,\"image\":\"denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg\"},{\"id\":3,\"image\":\"xamtrang_2_32d0acecafc2416780a0f04233f1af48_6528de879f2145ed846c0385e827dd0c_master.png\"}]', '2021-11-21', 0, 0, 21, 4, 0.1),
-(27, 'Kệ đẩy, bàn góc', 'Màu sắc: Trắng, Đen, Xám nhạt\r\n\r\nKích thước: D50 x R40 x C65 (cm).\r\n\r\nKhối lượng thực tế: 8,5kg.\r\n\r\nChất liệu: Sắt sơn tĩnh điện.', 100, 1431000, 'den_1_c05811e91ae448df995372854aba6291_master.png', '[{\"id\":1,\"image\":\"den_1_c05811e91ae448df995372854aba6291_master.png\"},{\"id\":2,\"image\":\"den_5_2cf2e128226f4535a4d37eee21be0e3f_master.png\"},{\"id\":3,\"image\":\"den_2_018cade37a68419a9bb9009f895a561f_master.png\"},{\"id\":4,\"image\":\"xam_1_3ee73adc805041678bf9c5994b924dda_e4a5540f80b044e0969413f0482dfa2b_master.png\"}]', '2021-11-21', 0, 2, 2, 1, 0);
+(27, 'Kệ đẩy, bàn góc', '    Màu sắc: Trắng, Đen, Xám nhạt\r\n\r\nKích thước: D50 x R40 x C65 (cm).\r\n\r\nKhối lượng thực tế: 8,5kg.\r\n\r\nChất liệu: Sắt sơn tĩnh điện.', 100, 1431000, 'den_1_c05811e91ae448df995372854aba6291_master.png', '[{\"id\":0,\"image\":\"den_1_c05811e91ae448df995372854aba6291_master.png\"},{\"id\":1,\"image\":\"den_5_2cf2e128226f4535a4d37eee21be0e3f_master.png\"},{\"id\":2,\"image\":\"den_2_018cade37a68419a9bb9009f895a561f_master.png\"}]', '2021-11-21', 0, 2, 2, 1, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -261,7 +324,7 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT cho bảng `tbl_bill`
 --
 ALTER TABLE `tbl_bill`
-  MODIFY `billId` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `billId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_category`
@@ -279,7 +342,7 @@ ALTER TABLE `tbl_category_child`
 -- AUTO_INCREMENT cho bảng `tbl_comment`
 --
 ALTER TABLE `tbl_comment`
-  MODIFY `commId` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `commId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_customer`
@@ -291,7 +354,7 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `prodId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `prodId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

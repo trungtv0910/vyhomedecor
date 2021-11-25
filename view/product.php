@@ -143,6 +143,21 @@
                                         <div class="bl">
                                             <p><strong><?= $loadCust['custName'] ?></strong> - <strong class="comment-time"><?= $date ?></strong></p>
                                             <p><?= $content ?></p>
+                                            <?php
+                                           $replyAdmin= loadReply_Comment($commId);
+                                           foreach($replyAdmin as $valueRep){
+                                             ?>
+                                            <div class="noi-dung-bl">
+                                                <div class="anh">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="bl">
+                                                    <p><strong style="color:red">AD: <?= $valueRep['custName'] ?></strong> - <strong class="comment-time"><?= $valueRep['date'] ?></strong></p>
+                                                    <p><?= $valueRep['content'] ?></p>
+
+                                                </div>
+                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 <?php
@@ -162,7 +177,7 @@
                                     <input type="text" id="comm_content" class="form-text" name="content" style="width:100%; height:80px;border-radius: 4px;" placeholder="Nhập bình luận ở đây..." required></input>
                                     <br>
                                     <input type="hidden" id="prodId" name="prodId" value="<?= $prodId ?>">
-                                    <input type="hidden" id="custId" name="custId" value="<?=$account['custId']?>">
+                                    <input type="hidden" id="custId" name="custId" value="<?= $account['custId'] ?>">
                                     <input type="submit" id="send" name="send-comment" value="Gửi bình luận">
                                     <!-- </form> -->
                                 </div>
@@ -197,7 +212,7 @@
                     document.querySelector("#comm_content").value = "";
 
                 });
-              
+
             } else {
                 alert("Bạn chưa nhập nội dung!");
             }

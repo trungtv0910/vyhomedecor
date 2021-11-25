@@ -329,7 +329,7 @@ div.stars {
     width: 8%;
     border: 1px solid #ccc;
     /* float: left; */
-    /* min-height: 55px; */
+    max-height: 64px;
     font-size: 40px;
     text-align: center;
     border-radius: 4px;

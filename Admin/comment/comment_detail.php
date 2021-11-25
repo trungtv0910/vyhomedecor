@@ -115,25 +115,36 @@
                                             <p class="comment"><?= $content ?></p>
 
 
-                                            <!-- <div class="reply_child">
-                                            <div class="reply_img">
-                                                <img width="50" src="img_tam/anhavatar.png" alt="">
-                                            </div>
-                                            <div class="reply_content">
-                                                <span class="name">
-                                                    Admin : Nguyễn Từ Trần
-                                                    <p class="time">Lúc: 23:10 20/10/2021</p>
-                                                    <p class="comment">Sản phẩm vẫn còn nhé, bên em sẽ liên hệ cho chị</p>
-                                            </div>
-                                        </div> -->
-                                        </div>
+
+                                            <?php
+                                            $showReplyComment = loadReply_Comment($commId);
+                                            foreach ($showReplyComment as $valueRep) {
+                                            ?>
+                                                <div class="reply_child">
+
+                                                    <div class="reply_img">
+                                                        <img width="50" src="img_tam/anhavatar.png" alt="">
+                                                    </div>
+                                                    <div class="reply_content">
+                                                        <span class="name">
+                                                            Admin : <?=$valueRep['custName']?>
+                                                            <p class="time"><?=$valueRep['date'] ?></p>
+                                                            <p class="comment"><?=$valueRep['content'] ?></p>
+                                                    </div>
+                                                    <br>
+
+
+
+                                                </div>
+                                            <?php } ?>
+                                            <!-- </div> -->
                                     </td>
                                     <!-- <td><a class="btn btn-default" href="index.php?act=comment&reply">Trả lời</a></td> -->
                                     <td><a href="index.php?act=comment&reply" class="btn btn-info btn-icon-split btn-reply" data-info="<?= $commId ?>" data-toggle="modal" data-target="#replyModal"> <span class="icon text-white-50"><i class="far fa-edit"></i></span>
                                             <span class="text">Trả lời</span></a></td>
                                     <td>
 
-                                        <a href="index.php?act=comment&delete=<?= $commId ?>" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
+                                        <a href="index.php?act=comment&delete=<?= $commId ?>&prodId=<?=$prodId?>" class="btn btn-danger btn-icon-split "><span class="icon text-white-50"><i class="fas fa-trash"></i></span>
                                             <span class="text">Xoá</span></a>
                                     </td>
 
@@ -167,13 +178,13 @@
                         $('.btn-reply').click(function(e) {
                             e.preventDefault();
                             thisdata = $(this).attr('data-info');
-                           document.querySelector('#macomment').value=thisdata;
+                            document.querySelector('#macomment').value = thisdata;
 
                         });
                     </script>
-                    <input type="hidden" id="macomment" name="idComment"  value="">
-                 
-                   
+                    <input type="hidden" id="macomment" name="idComment" value="">
+
+
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ bỏ</button>

@@ -198,14 +198,21 @@ if (isset($_GET['act'])) {
                          $adminID=$account['custId'];
                         admin_reply_comment($adminID,$content,$commId,$prodId);
                     }
+                  
                     $listcomment = loadAll_comment_product($prodId);
+                    
                     include 'comment/comment_detail.php';
                 } else if (isset($_GET['reply'])) {
                     include 'comment/reply.php';
                 } else if (isset($_GET['delete'])) {
+
                     $commId =$_GET['delete'];
                     delete_comment($commId);
-                    include 'comment/comment_detail.php';
+                    $prodId =$_GET['prodId'];
+                    $listcomment = loadAll_comment_product($prodId);
+                    include 'comment/success_delete.php';
+                  
+                    // include 'comment/comment_detail.php';
                 } else {
                     include 'comment/list.php';
                 }
