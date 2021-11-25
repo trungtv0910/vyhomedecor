@@ -62,8 +62,8 @@
         <div id="collapseComment" class="collapse" aria-labelledby="headingCategory" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Quản Lý Bình Luận:</h6>
-                <a class="collapse-item" href="index.php?act=comment&list_statistics">Thống Kê Bình Luận</a>
-                <a class="collapse-item" href="index.php?act=comment&list">Trả Lời Bình Luận</a>
+                <a class="collapse-item" href="index.php?act=comment&list_statistics">Quản lý Bình Luận</a>
+                <!-- <a class="collapse-item" href="index.php?act=comment&list">Trả Lời Bình Luận</a> -->
 
 
             </div>

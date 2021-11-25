@@ -1,13 +1,12 @@
-
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col ">
-                    <h4 class="page-header-title">
-                        Thống kê sản phẩm theo danh mục
-                    </h4>
+                        <h4 class="page-header-title">
+                            Thống kê sản phẩm theo danh mục
+                        </h4>
                     </div>
                     <div class="col text-end">
                         <a href="index.php?act=statistical&chart"> <button class="btn btn-success float_right">Biểu Đồ Chart</button></a>
@@ -30,34 +29,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="text-left">Phòng ngủ
-                                        <br>
-                                        <b>Số lượng: 20 Sản Phẩm</b>
-                                    </td>
-                                    <!-- giá tiền cao nhất -->
-                                    <td>400.000 <b>VNĐ</b></td>
-                                    <!-- giá tiền thấp nhất -->
-                                    <td>80.000<b>VNĐ</b></td>
-                                    <!-- giá tiền trung bình -->
-                                    <td>120.000 <b>VNĐ</b></td>
-                                    <td> Chưa cập nhập ????</td>
-                                </tr>     
-                                <tr>
-                                    <td>2</td>
-                                    <td class="text-left">Phòng Tắm
-                                        <br>
-                                        <b>Số lượng: 20 Sản Phẩm</b>
-                                    </td>
-                                    <!-- giá tiền cao nhất -->
-                                    <td>400.000 <b>VNĐ</b></td>
-                                    <!-- giá tiền thấp nhất -->
-                                    <td>80.000<b>VNĐ</b></td>
-                                    <!-- giá tiền trung bình -->
-                                    <td>120.000 <b>VNĐ</b></td>
-                                    <td> Chưa cập nhập ????</td>
-                                </tr>         
+                            <tr>
+                                <td>1</td>
+                                <td class="text-left">Phòng ngủ
+                                    <br>
+                                    <b>Số lượng: 20 Sản Phẩm</b>
+                                </td>
+                                <!-- giá tiền cao nhất -->
+                                <td>400.000 <b>VNĐ</b></td>
+                                <!-- giá tiền thấp nhất -->
+                                <td>80.000<b>VNĐ</b></td>
+                                <!-- giá tiền trung bình -->
+                                <td>120.000 <b>VNĐ</b></td>
+                                <td> Chưa cập nhập ????</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="text-left">Phòng Tắm
+                                    <br>
+                                    <b>Số lượng: 20 Sản Phẩm</b>
+                                </td>
+                                <!-- giá tiền cao nhất -->
+                                <td>400.000 <b>VNĐ</b></td>
+                                <!-- giá tiền thấp nhất -->
+                                <td>80.000<b>VNĐ</b></td>
+                                <!-- giá tiền trung bình -->
+                                <td>120.000 <b>VNĐ</b></td>
+                                <td> Chưa cập nhập ????</td>
+                            </tr>
                         </tbody>
                     </table>
                 </form>

@@ -97,7 +97,12 @@
                                             ?>
                                         </b>
                                     </td>
-                                    <td><?= textShorten($prodDesc,  100) ?></td>
+                                    <td><?php
+                                    $des=json_decode($prodDesc,true)?>
+                                  <b>  màu sắc:</b><?=$des['color']?><br>
+                                  <!-- <b>  Khối lượng:</b><?=$des['mass']?><br>
+                                  <b>  chất liệu:</b><?=$des['material']?><br> -->
+                                  <b>  Mô tả:</b> <?= textShorten($des['des'],  100) ?></td>
                                     <td><?= $view ?></td>
                                     <td><?=
                                         formatDate($dateInput);

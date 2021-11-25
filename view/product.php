@@ -1,5 +1,9 @@
 <!-- <div class="container"> -->
 <div class="grid wide">
+    <div class="directional">
+    <a href="index.php">Trang Chủ</a>  <i class="fas fa-chevron-right"></i>  <a href="index.php?act=list-product&cateId=<?=$cate['cateId']?>"><?=$cate['cateName']?></a>  <i class="fas fa-chevron-right"></i>  <a href="index.php?act=list-product&cateId=<?=$cate['cateId']?>&cateChildId=<?=$cateChild['cateChildId']?>"><?=$cateChild['cateChildName']?></a>
+    </div>
+  
     <div class="product">
         <!--thông tin-->
         <div class="product__left">
@@ -27,7 +31,16 @@
                         </div>
 
                         <div class="size">
-                            <span><?= $prodDesc ?></span><br>
+                            <span>
+                                <p>Thông tin sản phẩm</p>
+                                <?php   $des =json_decode($prodDesc,true);?>
+                           
+                                <b>Kích thước:</b> <?=$des['size'] ?> <br>
+                                <b>Khối lượng:</b> <?=$des['mass']?>   <br>
+                                <b>Chất liệu:</b> <?=$des['material']?>   <br>
+                                <b>Màu sắc:</b> <?=$des['color']?>   <br>
+                                <b>Mô tả:</b>  <?=$des['des']?> 
+                            </span><br>
 
                             <div class="buttons_added">
                                 <strong>Số Lượng</strong>
@@ -48,6 +61,7 @@
                             <?php
                             }
                             ?>
+                
                             <!-- <div class="img-sp product-small-block ">
                                             <img src="images/productList/sp2.jpg" class="product-img-small">
                                         </div>

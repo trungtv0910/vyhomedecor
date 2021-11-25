@@ -109,24 +109,26 @@ border-radius: 5px;
 }
 
 .reply {
+    width: 100%;
     display: flex;
     gap: 0px;
-    width: 960px;
+
 }
 
 .reply_img {
-    width: 100%;
+    width: 100px;
 }
 
 .reply_img img {
-    margin-top: 10px;
+
+    margin: 10px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
 
 .reply_content {
-    width: 90%;
+    width:100%;
     text-align: left;
     background-color: #f9f9f9;
     border-radius: 2%;
@@ -152,11 +154,22 @@ border-radius: 5px;
     margin-bottom: 5px;
 }
 
-.reply_content .comment {
-    /* font-weight:inherit; */
+/* .reply_content .comment {
+    font-weight:inherit;
     color: red;
-    /* font-size: 12px; */
+    font-size: 12px;
+} */
+.reply_child {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
 }
+.reply_child .reply_content {
+    background-color: white;
+    border-radius: 0 2%;
+}
+
 .text-end{text-align: end;}
 .fa-green {
     color: green;
@@ -227,4 +240,8 @@ border-radius: 5px;
 }
 .model_comment{
     top:200px;
+}
+
+.table{
+    color: rgb(86 84 84) !important;
 }

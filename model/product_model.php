@@ -79,6 +79,24 @@
         $type =$data['type'];
         $prodDesc =$data['prodDesc'];
         $price =$data['price'];
+         $size =$data['size'];
+          $material=$data['material'];
+        $color=$data['color'];
+        $mass=$data['mass'];
+
+        $prodDesc = trim($prodDesc);
+        $des_array=array(
+        'color'=>$color,
+        'mass'=>$mass,
+        'size'=>$size,
+        'material'=>$material,
+        'des'=>$prodDesc
+
+        );
+        
+        $des_array=json_encode($des_array,JSON_UNESCAPED_UNICODE);
+       
+
         if(isset($data['image'])){
             $imageName =$data['image'];
             $uploadOk =1;
@@ -106,9 +124,9 @@
                 }
                 $dataImage=json_encode($dataImage);
                     $sql ="INSERT tbl_product(prodName,prodDesc,quantity,price,image,imageSmall,dateInput,view,type,cateChildId,cateId,discount) 
-                    values('$prodName','$prodDesc',$quantity,$price,'$imageName','$dataImage','$dateInput',$view,$type,$cateChildId,$cateId,$discount)";
+                    values('$prodName','$des_array',$quantity,$price,'$imageName','$dataImage','$dateInput',$view,$type,$cateChildId,$cateId,$discount)";
                     $res =pdo_execute($sql);
-                    // echo $sql;
+                //    echo $res=$sql;
                     return $res;
             }else
             {
@@ -123,11 +141,27 @@
     $quantity =$data['quantity'];
     $discount =$data['discount'];
     $type =$data['type'];
-    $prodDesc =$data['prodDesc'];
+   $prodDesc =$data['prodDesc'];
     $price =$data['price'];
+   $size =$data['size'];
+  $material=$data['material'];
+  $color=$data['color'];
+    $mass=$data['mass'];
+   $prodDesc = trim($prodDesc);
+
+  $des_array=array(
+  'color'=>$color,
+  'mass'=>$mass,
+  'size'=>$size,
+  'material'=>$material,
+  'des'=>$prodDesc
+
+  );
+
+  $des_array=json_encode($des_array,JSON_UNESCAPED_UNICODE);
 
     
-        $sql= "UPDATE tbl_product SET prodName='$prodName',prodDesc='$prodDesc',quantity=$quantity,discount=$discount,type=$type ,price =$price,cateId=$cateId,cateChildId=$cateChildId";
+       $sql= "UPDATE tbl_product SET prodName='$prodName',prodDesc='$des_array',quantity=$quantity,discount=$discount,type=$type ,price =$price,cateId=$cateId,cateChildId=$cateChildId";
         if(isset($data['imageSmall'])){
             $imageSmall =$data['imageSmall'];
             $sql .=", imageSmall ='$imageSmall' ";
@@ -212,8 +246,3 @@
         $sql.= " ORDER BY prodId DESC";
         return pdo_query($sql);
     }
-    
-
-
-
-?>

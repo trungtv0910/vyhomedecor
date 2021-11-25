@@ -27,10 +27,18 @@
             <div class="card-header border-0">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="mb-0">Sửa Tài Khoản khách hàng</h3>
+                        <h4 class="page-header-title">
+                            Thông tin khách hành
+                        </h4>
                     </div>
-                    <div class="col text-right">
-
+                    <div class="col-12 col-xl-auto ">
+                        <a class="btn btn-sm btn-light text-primary" href="index.php?act=customer&list">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left me-1">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                            Quay về
+                        </a>
                     </div>
                 </div>
             </div>
@@ -42,7 +50,7 @@
 
                         <tbody>
                             <tr>
-                              
+
                                 <td width="170"> Tên khách hàng</td>
                                 <td width="800">
                                     <input type="text" id="name" name='custName' value="<?= $oneCustomer['custName'] ?>">

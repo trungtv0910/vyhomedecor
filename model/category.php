@@ -13,6 +13,11 @@
         $res =pdo_query_one($sql);
         return $res;
     }
+    function loadOne_ChildCategory($cateChildId){
+        $sql="SELECT * FROM tbl_category_child where cateChildId= $cateChildId";
+        $res =pdo_query_one($sql);
+        return $res;
+    }
 
     function loadAll_categorychild($cateId){
         $sql = "SELECT * FROM tbl_category_child where cateId = $cateId";
@@ -52,4 +57,8 @@
         $sql="DELETE FROM tbl_category_child where cateChildId=$cateChildId";
         pdo_execute($sql);
     }
+    // function loadCategoryByProduct($prodId){
+    //    $sql=" SELECT * FROM tbl_category where cateId = $cateId";
+    //     return  pdo_query($sql);
+    // }
 ?>

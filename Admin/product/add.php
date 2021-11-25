@@ -32,25 +32,25 @@
                 <!-- Profile picture card-->
                 <div class="card mb-4 mb-xl-0">
                     <div class="card-header">Ảnh sản phẩm</div>
-                    <div class="card-body text-center">      
+                    <div class="card-body text-center">
                         <label for="">Upload ảnh sản phẩm</label>
-                            <div class="form-group">
-                               
-                                <input id="file" type="file"  name="file" >
-                                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> 
-                            </div>
+                        <div class="form-group">
+
+                            <input id="file" type="file" name="file">
+                            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                        </div>
                         <div class="status"></div>
                     </div>
                 </div>
                 <div class="card mt-4 mb-xl-0">
                     <div class="card-header">Tải Lên Nhiều Ảnh </div>
                     <div class="card-body text-center">
-                            <div class="form-group">
-                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >
-                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >  
-                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >
-                                <input id="smallImage" class="smallImage" type="file"  name="images[]" >
-                            </div>
+                        <div class="form-group">
+                            <input id="smallImage" class="smallImage" type="file" name="images[]">
+                            <input id="smallImage" class="smallImage" type="file" name="images[]">
+                            <input id="smallImage" class="smallImage" type="file" name="images[]">
+                            <input id="smallImage" class="smallImage" type="file" name="images[]">
+                        </div>
                         <!-- <div class="status"></div> -->
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                                 <label class="small mb-1" for="inputCategoryChild">Danh mục con</label>
                                 <select class="form-select" id="cateChild" aria-label="Default select example" name="cateChildId" required>
                                     <option value="">--Chọn Danh Mục Con--</option>
-                                    
+
                                 </select>
                             </div>
                         </div>
@@ -129,9 +129,31 @@
                             </div>
                         </div>
                         <!-- Form Group (email address)-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (phone number)-->
+                            <div class="col-md-6">
+                                <!-- <label class="small mb-1" for="inputPhone">Màu sắc</label> -->
+
+                                <label class="small mb-1">Màu sắc</label>
+                                <input class="form-control" type="text" placeholder="Vd: Màu trắng" name="color" value="">
+                                
+                                <label class="small mb-1">Khối lượng</label>
+                                <input class="form-control" type="text" placeholder="Vd: 30kg" name="mass" value="">
+
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Kích Thước</label>
+                                <input class="form-control" type="text" placeholder="VD :D40 x R35 x C45 cm" name="size" value="">
+                                <!-- <br> -->
+                                <label class="small mb-1" for="inputPhone">Chất Liệu</label>
+                                <input class="form-control" type="text" placeholder="VD :Gỗ" name="material" value="">
+                            </div>
+                          
+                        </div>
                         <div class="mb-3">
                             <label class="small mb-1" for="inputdes">Mô Tả</label>
                             <textarea class="lh-base form-control" type="text" name="prodDesc" placeholder="Nhập vào mô tả sản phẩm..." rows="4" required></textarea>
+
                         </div>
                         <!-- Form Row-->
                         <!-- <input type="file" name="anh"> -->
@@ -162,7 +184,7 @@
 </script>
 <script>
     //xử lý khi có sự kiện click
-    $('#file').change( function () {
+    $('#file').change(function() {
         //Lấy ra files
         var file_data = $('#file').prop('files')[0];
         console.log(file_data);
@@ -170,7 +192,7 @@
         var type = file_data.type;
         console.log(type);
         //Xét kiểu file được upload
-        var match = ["image/gif", "image/png", "image/jpg","image/jpeg"];
+        var match = ["image/gif", "image/png", "image/jpg", "image/jpeg"];
         //kiểm tra kiểu file
         if (type == match[0] || type == match[1] || type == match[2] || type == match[3]) {
             //khởi tạo đối tượng form data
@@ -186,7 +208,7 @@
                 processData: false,
                 data: form_data,
                 type: 'post',
-                success: function (res) {
+                success: function(res) {
                     // $('.status').text(res);
                     $('.status').html(res);
                     $('#file').val('');

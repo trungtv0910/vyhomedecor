@@ -196,10 +196,39 @@
                                 </select>
                             </div>
                         </div>
+
+                        <div class="row gx-3 mb-3">
+                           <?php
+                           $prodDesc= $one_product['prodDesc'];
+                           $prodDesc =json_decode($prodDesc,true);
+                           ?>                                                     
+                            <div class="col-md-6">
+                            <label class="small mb-1">Màu sắc</label>
+                                <input class="form-control" type="text"  name="color" value="<?=$prodDesc['color'] ?>">
+                                
+                                <label class="small mb-1">Khối lượng</label>
+                                <input class="form-control" type="text" placeholder="Vd: 30kg" name="mass" value="<?=$prodDesc['mass'] ?>">
+ 
+
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Kích Thước</label>
+                                <input class="form-control" type="text"  name="size" value="<?=$prodDesc['size'] ?>">
+                                <!-- <br> -->
+                                <label class="small mb-1" for="inputPhone">Chất Liệu</label>
+                                <input class="form-control" type="text" placeholder="VD :Gỗ" name="material" value="<?=$prodDesc['material'] ?>">
+                            </div>
+                          
+                        </div>
+
+
+
+
+
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputdes">Mô Tả</label>
-                            <textarea class="lh-base form-control" type="text" name="prodDesc" placeholder="Nhập vào mô tả sản phẩm..." rows="4" required> <?= $one_product['prodDesc'] ?></textarea>
+                            <textarea class="lh-base form-control" type="text" name="prodDesc" placeholder="Nhập vào mô tả sản phẩm..." rows="4" required> <?= $prodDesc['des'] ?></textarea>
                         </div>
                         <!-- Form Row-->
                         <!-- <input type="file" name="anh"> -->

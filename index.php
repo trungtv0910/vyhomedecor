@@ -146,6 +146,8 @@ if (isset($_GET['act'])) {
                 if (isset($_GET['prodId'])) {
                     $prodId = $_GET['prodId'];
                     $loadOne = loadOne_product($prodId);
+                    $cate= loadOne_category($loadOne['cateId']);
+                    $cateChild =loadOne_ChildCategory($loadOne['cateChildId']);
                     extract($loadOne);
                     $product_similar = loadOne_product_similar($prodId,$cateId);
                     include 'view/product.php';
