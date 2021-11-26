@@ -179,6 +179,10 @@ if (isset($_GET['act'])) {
                 include 'view/list-product.php';
             }
             break;
+        case "shoppingcart":{
+            include 'view/shoppingcart.php';
+        }
+        break;
         default:
             include 'view/home.php';
             break;
