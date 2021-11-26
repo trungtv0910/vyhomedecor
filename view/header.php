@@ -105,7 +105,7 @@ init();
                                         </li>
                                         <li class="account-control__item">
                                             <i class="header__top-right-icon fas fa-box"></i>
-                                            <a href="index.php?act=shoppingcart" class="header__top-right-link">Đơn hàng của tôi</a>
+                                            <a href="#" class="header__top-right-link">Đơn hàng của tôi</a>
                                         </li> 
                                         <?php
                                         if( $account['role']==1){
@@ -362,7 +362,7 @@ init();
                             </div>
                             </form>
                         </div>
-                        <a href="#" class="header__nav-control-cart">
+                        <a href="index.php?act=shoppingcart" class="header__nav-control-cart">
                             <i class="header__nav-control-cart-ion fas fa-shopping-cart"></i>
                             <p class="header__nav-control-cart-about">
                                 <span class="header__nav-control-cart-quantity">0</span>
