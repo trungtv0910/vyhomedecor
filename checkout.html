@@ -366,68 +366,83 @@
         <div class="container">
             <div class="grid wide">
                 <div class="checkout">
-                    <h1>THỦ TỤC THANH TOÁN</h1>
-                    <div class="billing-details">
-                        <div class="from-thong-tin">
-                            <div class="title">
-                                <h2>Chi Tiết Hoá Đơn</h2>
-                            </div>
-                            <div class="thong-tin">
-                                <form>
-                                    <label for="fname">Người Đặt Hàng</label><br>
-                                    <input type="text"><br>
-                                    <label for="dress">Số Điện Thoại</label><br>
-                                    <input type="text"><br>
-                                    <label for="dress">Email</label><br>
-                                    <input type="text"><br>
-                                    <label for="dress">Địa Chỉ</label><br>
-                                    <input type="text">
-                                </form>
-                            </div>
-                            <div class="ghi-chu">
-                                <label for="dress">Ghi chú đơn hàng</label><br>
-                                    <input type="text">
+                    <div class="row">
+                        <div class="col l-6">
+                            <div class="checkout-info">
+                                <form action="" method="POST" id="checkout__form">
+                                    <h3 class="checkout__heading">Thông tin vận chuyển</h3>
+                                    <div class="form-group">
+                                      <label for="fullname" class="form-label">Họ và tên</label>
+                                      <input id="fullname" type="text" placeholder="Enter here ..." class="form-control">
+                                      <span class="form-message"></span>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="fullname" class="form-label">Số điện thoại</label>
+                                      <input id="phone" name="fullname" type="text" placeholder="Enter here ..." class="form-control">
+                                      <span class="form-message"></span>
+                                    </div>
+                              
+                                    <div class="form-group">
+                                      <label for="email" class="form-label">Email</label>
+                                      <input id="email" name="email" type="text" placeholder="example@gmail.com" class="form-control">
+                                      <span class="form-message"></span>
+                                    </div>
+                              
+                                    <div class="form-group">
+                                      <label for="password" class="form-label">Địa chỉ</label>
+                                      <input id="address" name="address" type="text" placeholder="Enter here ..." class="form-control">
+                                      <span class="form-message"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="password" class="form-label">Phương thức thanh toán</label>
+                                      <div class="checkout__payment">
+                                        <input name="payment" type="radio" class="form-control"><img src="./images/pay/atm.svg" alt="" class="checkout__payment-img"><span class="checkout__payment-desc">Thanh toán khi giao hàng (COD)</span>
+                                      </div>
+                                      <div class="checkout__payment">
+                                        <input name="payment" type="radio" class="form-control"><img src="./images/pay/cod.svg" alt="" class="checkout__payment-img"><span class="checkout__payment-desc">Thanh toán online</span>
+                                      </div>
+                                      <span class="form-message"></span>
+                                    </div>
+                              
+                                    <div class="checkout__control">
+                                        <a href="#" class="checkout__control-back"><i class="fas fa-arrow-left"></i> Quay lại giỏ hàng</a>
+                                        <button class="form-submit">Đồng ý thanh toán</button>
+                                    </div>
+                                  </form>
                             </div>
                         </div>
-                        <div class="your-oder">
-                            <div class="title">
-                                <h2>Đơn Hàng Của Bạn</h2>
-                            </div>
-                            <div class="bill">
-                                <div class="sp">
-                                    <div class="Subtotal">
-                                        <strong>Sản Phẩm</strong>
+                        <div class="col l-6">
+                            <div class="checkout-cart">
+                                <h3 class="checkout__heading">Thông tin giỏ hàng</h3>
+                                <ul class="checkout-cart__list">
+                                    <li class="checkout-cart__item">
+                                        <div class="checkout-cart__product">
+                                            <img src="./uploads/1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png" alt="" class="checkout-cart__img">
+                                            <div class="checkout-cart__quantity">1</div>
+                                        </div>
+                                        <span class="checkout-cart_name">Bộ bàn ăn LUKI-EIRA</span>
+                                        <span class="checkout-cart__price">2,850,000₫</span>
+                                    </li>
+                                    <li class="checkout-cart__item">
+                                        <div class="checkout-cart__product">
+                                            <img src="./uploads/1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png" alt="" class="checkout-cart__img">
+                                            <div class="checkout-cart__quantity">1</div>
+                                        </div>
+                                        <span class="checkout-cart_name">Bộ bàn ăn LUKI-EIRA</span>
+                                        <span class="checkout-cart__price">2,850,000₫</span>
+                                    </li>
+                                </ul>
+                                <div class="checkout-cart__about">
+                                    <div class="checkout-cart__info">
+                                        <span>Tạm tính</span><span class="checkout-cart__info-total">5,718,000đ</span>
                                     </div>
-                                    <div class="gia">Modular Modern</div>
-                                </div>
-                                <div class="tong-gio-hang">
-                                    <div class="Subtotal">
-                                        <strong>Số lượng</strong>
-                                    </div>
-                                    <div class="gia">
-                                        <strong>x 1</strong>
-                                    </div>
-                                </div>
-                                <div class="shipping">
-                                    <div class="shipping1">
-                                        <strong>Phương Thức Thanh Toán</strong>
-                                    </div>
-                                    <div class="ship">
-                                        <form>
-                                            <input name="gender" type="radio" value="Nam" /> Thanh Toán Khi Nhận Hàng<br>
-                                            <input name="gender" type="radio" value="Nữ" /> Thanh Toán Ví <br>
-                                            <input name="gender" type="radio" value="Khác" /> Thanh Toán Thẻ Tín Dụng
-                                        </form>
-                                        Vận CHuyển Trên <strong>Toàn Quốc.</strong><br>
-                                        <a href="#">Thay Đổi Địa Chỉ</a>
+                                    <div class="checkout-cart__info">
+                                        <span>Phí vận chuyển</span><span class="checkout-cart__info-total">-</span>
                                     </div>
                                 </div>
-                                <div class="total">
-                                    <div class="total1"><strong>Tổng Tiền</strong></div>
-                                    <div class="gia1">
-                                        <strong>$10.00</strong>
-                                    </div><br>
-                                    <input type="submit" value="ĐẶT HÀNG">
+                                <div class="checkout-cart__info">
+                                    <span class="checkout-cart__title">Tổng</span><span class="checkout-cart__total">5,718,000đ</span>
                                 </div>
                             </div>
                         </div>
@@ -542,7 +557,7 @@
     <div class="model">
         <div class="model-overlay"></div>
         <div class="model-container">
-            <form action="#" method="post">
+            <form action="" method="post">
                 <div class="model-header">
                     <a href="#" class="model-control active">Đăng nhập</a>
                     <a href="#" class="model-control">Đăng ký</a>
@@ -571,6 +586,27 @@
         </div>
     </div>
     <script src="./js/index.js"></script>
+    <script src="./js/validator.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Mong muốn của chúng ta
+          Validator({
+            form: '#checkout__form',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+              Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn !'),
+              Validator.isRequired('#phone', 'Vui lòng nhập số điện thoại của bạn !'),
+              Validator.isRequired('#email', 'Vui lòng nhập email của bạn !'),
+              Validator.isRequired('#address', 'Vui lòng nhập địa chỉ của bạn !'),
+              Validator.isRequired('input[name="payment"]', 'Vui lòng chọn phương thức thanh toán !'),
+              Validator.isEmail('#email'),
+              Validator.isPhone('#phone')
+            ],
+          });
+        });
+    
+    </script>
 </body>
 </html>
 
