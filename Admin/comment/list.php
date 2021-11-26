@@ -79,7 +79,7 @@
                                     <br>
                                     <b>Số lượng còn lại: <?=$quantity?></b>
                                     <br>
-                                    <b>Giá bán hiện tại: </b><?= number_format($price, 0, ',', '.') ?> <b>đ</b>
+                                    <b>Giá bán hiện tại: </b><?= number_format($price,0, ',', '.') ?> <b>đ</b>
                                 </td>
                                 <td>
                                     <?=$countComm?> <b>Bình luận</b>

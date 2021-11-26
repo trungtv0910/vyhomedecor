@@ -62,7 +62,7 @@
                                     <!-- <span class="text-success">Đã Thanh Toán</span>
                                          <span class="text-danger">Huỷ Đơn</span> -->
                                 </td>
-                                <td><?=$billTotal?></td>
+                                <td><?= number_format($billTotal ,0, ',', '.') ?>đ</td>
                                 <td><i class="fas fa-money-check-alt"></i>
                                 <?php
                                          if($payMethod==0){
