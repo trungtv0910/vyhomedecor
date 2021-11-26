@@ -38,7 +38,7 @@
                         ?>
                             <tr>
                                 <td><?=$STT++?></td>
-                                <td><i class="fas fa-barcode"> </i><?=$billId?></td>
+                                <td><i class="fas fa-barcode"> </i><?=number_format ($billTotal, 0, ',', '.')?></td>
                                 <td><i class="ni ni-single-02"></i>
                                    <?php
                                        $nameCust = loadOne_customer($custId);
