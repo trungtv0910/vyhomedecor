@@ -5,7 +5,7 @@
     }
 
     function loadOne_bill($billId){
-        $sql="SELECT * FROM tbl_bill_detail where billId =$billId";
+        $sql="SELECT tbl_bill_detail.*,tbl_product.prodName,tbl_product.image FROM tbl_bill_detail,tbl_product where tbl_product.prodId=tbl_bill_detail.prodId and billId=$billId";
         return pdo_query($sql);
     }
     
