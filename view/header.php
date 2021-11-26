@@ -5,6 +5,7 @@ include_once 'model/pdo.php';
 include_once 'model/account_model.php';
 include_once 'model/category.php';
 include_once 'model/product_model.php';
+include_once 'lib/format.php';
 $listcategory = loadAll_category();
 $tophighlightsproduct = load_top_highligth();
 init();
@@ -297,12 +298,17 @@ init();
                                 ?>
                                 <ul class="header__nav-full-list">
                                     <div class="header__nav-full-hidden">
-                                        <a href="#" class="header__nav-full-link-img">
+                                        <a href="index.php?act=product&prodId=<?=$prodId?>" class="header__nav-full-link-img">
                                             <img src="uploads/<?=$image?>" class="header__nav-full-img">
                                         </a>
                                     </div>
-                                    <a href="#" class="header__nav-full-link-info"><?=$prodName?></a>
-                                    <span class="header__nav-full-info"><?=$prodDesc?></span>
+                                    <a href="index.php?act=product&prodId=<?=$prodId?>" class="header__nav-full-link-info"><?=$prodName?></a>
+                                    <span class="header__nav-full-info">
+                                        <?php
+                                        $des =json_decode($prodDesc,true);
+                                         echo  textShorten($des['des'], 100);
+                                        ?>
+                                    </span>
                                 </ul>
                                 <?php
                                     }

@@ -126,7 +126,12 @@
                             <div class="new-products__info">
                                 <h3 class="new-products__heading"><?=$prodName?></h3>
                                 <h4 class="new-products__sub-heading">SẢN PHẨM MỚI NHẤT</h4>
-                                <p class="new-products__about"><?=$prodDesc?></p>
+                                <p class="new-products__about">
+                                    <?php 
+                                    $des= json_decode($prodDesc,true);
+                                    echo  textShorten($des['des'], 300);
+                                    ?>
+                            </p>
                                 <button class="new-products__btn">Thêm vào giỏ hàng</button>
                             </div>
                         </div>
