@@ -356,7 +356,7 @@
                             <ul class="header__nav-control-cart-list header__nav-control-cart-list--no-item">
                                 <li class="header__nav-control-cart-item">
                                     <span class="header__nav-control-cart-item-name">No products in the cart.</span>
-                                </li>
+                                </li>   
                             </ul>
                         </a>
                     </div>
@@ -366,62 +366,64 @@
         </header>
         <div class="container">
             <div class="grid wide">
-                <div class="shoppingCart">
-                    <div class="cart">
-                        <div class="tieude">
-                            <h1>SHOPPING CART</h1>
-                        </div>
-                        <div class="cart">
-                            <table cellpadding="0" cellspacing="0">
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th>SẢN PHẨM</th>
-                                    <th>GIÁ</th>
-                                    <th>SỐ LƯỢNG</th>
-                                    <th>TỔNG</th>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">Xoá</a></td>
-                                    <td><img src="images/productList/sp3.jpg" alt=""></td>
-                                    <td>Modular Modern</td>
-                                    <td>$ 10.00</td>
-                                    <td>1</td>
-                                    <td>$ 10.00</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="bill">
-                        <div class="tong-gio-hang">
-                            <div class="tieu-de">
-                                <h4>Tổng Giỏ Hàng</h4>
+                <div class="shopping-cart">
+                    <h3 class="cart__heading">Giỏ hàng của tôi</h3>
+                    <table class="cart__body">
+                        <thead class="cart__title">
+                            <th class="cart__title-method"></th>
+                            <th class="cart__title-info">Thông tin sản phẩm</th>
+                            <th class="cart__title-price">Giá</th>
+                            <th class="cart__title-quantity">Số lượng</th>
+                            <th class="cart__title-total">Tổng giá trị</th>
+                        </thead>
+                        <tbody class="cart__list">
+                            <tr style="border-bottom: 1px solid #ccc;" class="cart__item">
+                                <td class="cart__method">
+                                    <a href="#" class="cart__delete"><i class="fas fa-times-circle"></i></a>
+                                </td>
+                                <td class="cart__info">
+                                    <a href="#" class="cart__link">
+                                        <img src="./uploads/11__1024x768__b798322985f54db2a844f711d7242d27_master.png" alt="" class="cart__img">
+                                    </a>
+                                    <h4 class="cart__name">Bộ bàn ăn LUKI-EIRA</h4>
+                                </td>
+                                <td class="cart__price">2,850,000₫</td>
+                                <td class="cart__quantity">1</td>
+                                <td class="cart__total">2,850,000₫</td>
+                            </tr>
+                           
+                            <tr class="cart__item">
+                                <td class="cart__method">
+                                    <a href="#" class="cart__delete"><i class="fas fa-times-circle"></i></a>
+                                </td>
+                                <td class="cart__info">
+                                    <a href="#" class="cart__link">
+                                        <img src="./uploads/11__1024x768__b798322985f54db2a844f711d7242d27_master.png" alt="" class="cart__img">
+                                    </a>
+                                    <h4 class="cart__name">Bộ bàn ăn LUKI-EIRA</h4>
+                                </td>
+                                <td class="cart__price">2,850,000₫</td>
+                                <td class="cart__quantity">1</td>
+                                <td class="cart__total">2,850,000₫</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="cart__footer row">
+                        <div class="col l-6">
+                            <div class="cart__note">
+                                <p class="cart__note-heading">Ghi chú đơn hàng</p>
+                                <input type="text" class="cart__note-input">
                             </div>
-                            <div class="Subtotal">
-                                <strong>Tổng Phụ</strong>
-                            </div>
-                            <div class="gia">$10.00</div>
                         </div>
-                        <div class="shipping">
-                            <div class="shipping1">
-                                <strong>Phương Thức Thanh Toán</strong>
+                        <div class="col l-6">
+                            <div class="cart__control">
+                                <p class="cart__control-heading">Tất cả <span class="cart__control-price">5,718,000₫</span></p>
+                                <span class="cart__control-desc">(Chưa bao gồm phí vận chuyển)</span>
+                                <div class="cart__control-btn">
+                                    <a href="#" class="cart__control-link"><i class="fas fa-arrow-left"></i> Tiếp tục mua sắm</a>
+                                    <a href="#" class="cart__control-link">Thanh toán</a>
+                                </div>
                             </div>
-                            <div class="ship">
-                                <form>
-                                    <input name="gender" type="radio" value="Nam" /> Thanh Toán Khi Nhận Hàng<br>
-                                    <input name="gender" type="radio" value="Nữ" /> Thanh Toán Ví <br>
-                                    <input name="gender" type="radio" value="Khác" /> Thanh Toán Thẻ Tín Dụng
-                                </form>
-                                Vận Chuyển Trên <strong>Toàn Quốc.</strong><br>
-                                <a href="#">Thay Đổi Địa Chỉ</a>
-                            </div>
-                        </div>
-                        <div class="total">
-                            <div class="total1"><strong>Tổng Tiền</strong></div>
-                            <div class="gia1">
-                                <strong>$10.00</strong>
-                            </div><br>
-                            <input type="submit" value="ĐẶT HÀNG">
                         </div>
                     </div>
                 </div>
