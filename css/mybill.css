@@ -1,0 +1,109 @@
+.mybill {
+    margin-bottom: 36px;
+}
+.mybill--nobill {
+    display: flex;
+    min-height: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mybill--nobill__img {  
+    width: 150px;
+}
+.mybill--nobill__heading {
+    margin-top: 16px;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+.mybill__heading{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+.mybill__list{
+    list-style: none;
+    margin: 16px 24px;
+}
+.mybill__item{
+    margin-bottom: 36px;
+}
+.mybill__info{
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    border-top: 1px solid var(--border-color);
+}
+.mybill__status{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.mybill__status-info{
+    font-size:1.6rem;
+    color: var(--text-color);
+}
+.mybill__status-desc{
+    font-size: 1.6rem;
+    color: #26aa99;
+}
+.mybill__status-icon{
+    margin-right: 8px;
+}
+.mybill__link{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--border-color);
+    padding: 4px;
+}
+.mybill__img{
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+}
+.mybill__name{
+    margin-left: -280px;
+}
+.mybill__price{
+    font-weight: 600;
+}
+.mybill__control{
+    background-color: #fafafa;
+    border-top: 1px dotted var(--border-color);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.mybill__total{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.mybill__total{
+    font-size: 1.6rem;
+}
+.mybill__total-price{
+    font-size: 2.4rem;
+    margin-left: 16px;
+    color: var(--hover-color);
+}
+.mybill__control-btn{
+    text-decoration: none;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--white-color);
+    background-color: var(--text-color);
+    padding: 8px 16px;
+    transition:all linear 0.3s;
+    align-self: flex-end;
+    margin-top: 8px;
+}
+.mybill__control-btn:hover{
+    background-color: var(--hover-color);
+}
