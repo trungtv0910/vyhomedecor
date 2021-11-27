@@ -1,4 +1,11 @@
-
+<?php
+if(isset($_SESSION['login']['mycart']))
+{
+    $mycart=$_SESSION['login']['mycart'];
+}else{
+    echo 'Thoát';
+}
+?>
         <!-- <div class="container"> -->
             <div class="grid wide">
                 <div class="shopping-cart">
@@ -12,35 +19,28 @@
                             <th class="cart__title-total">Tổng giá trị</th>
                         </thead>
                         <tbody class="cart__list">
+                            <?php
+                            $total=0;
+                            foreach($mycart as $key => $value){
+                            $price_quantity=$value['price']*$value['quantity'];
+                            $total+= $price_quantity;
+                            ?>
                             <tr style="border-bottom: 1px solid #ccc;" class="cart__item">
                                 <td class="cart__method">
-                                    <a href="#" class="cart__delete"><i class="fas fa-times-circle"></i></a>
+                                    <a href="index.php?act=shoppingcart&remove_product=<?=$key?>" class="cart__delete"><i class="fas fa-times-circle"></i></a>
                                 </td>
                                 <td class="cart__info">
                                     <a href="#" class="cart__link">
-                                        <img src="./uploads/11__1024x768__b798322985f54db2a844f711d7242d27_master.png" alt="" class="cart__img">
+                                        <img src="<?=BASE_URL?>uploads/<?=$value['image']?>" alt="" class="cart__img">
                                     </a>
-                                    <h4 class="cart__name">Bộ bàn ăn LUKI-EIRA</h4>
+                                    <h4 class="cart__name"><?=$value['prodName']?></h4>
                                 </td>
-                                <td class="cart__price">2,850,000₫</td>
-                                <td class="cart__quantity">1</td>
-                                <td class="cart__total">2,850,000₫</td>
+                                <td class="cart__price"><?= number_format($value['price'],0,',','.')?>₫</td>
+                                <td class="cart__quantity"><?=$value['quantity']?></td>
+                                <td class="cart__total"><?=number_format($price_quantity,0,',','.'); ?>₫</td>
                             </tr>
+                           <?php } ?>
                            
-                            <tr class="cart__item">
-                                <td class="cart__method">
-                                    <a href="#" class="cart__delete"><i class="fas fa-times-circle"></i></a>
-                                </td>
-                                <td class="cart__info">
-                                    <a href="#" class="cart__link">
-                                        <img src="./uploads/11__1024x768__b798322985f54db2a844f711d7242d27_master.png" alt="" class="cart__img">
-                                    </a>
-                                    <h4 class="cart__name">Bộ bàn ăn LUKI-EIRA</h4>
-                                </td>
-                                <td class="cart__price">2,850,000₫</td>
-                                <td class="cart__quantity">1</td>
-                                <td class="cart__total">2,850,000₫</td>
-                            </tr>
                         </tbody>
                     </table>
                     <div class="cart__footer row">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="col l-6">
                             <div class="cart__control">
-                                <p class="cart__control-heading">Tất cả <span class="cart__control-price">5,718,000₫</span></p>
+                                <p class="cart__control-heading">Tất cả <span class="cart__control-price"><?=number_format($total ,0,',','.')?>₫</span></p>
                                 <span class="cart__control-desc">(Chưa bao gồm phí vận chuyển)</span>
                                 <div class="cart__control-btn">
                                     <a href="#" class="cart__control-link"><i class="fas fa-arrow-left"></i> Tiếp tục mua sắm</a>

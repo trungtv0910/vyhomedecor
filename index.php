@@ -9,7 +9,7 @@ include_once 'model/global.php';
 include_once 'model/customer.php';
 include_once 'model/comment.php';
 
-include_once 'model/comment_Trung_Test.php';
+include_once 'model/cart_model.php';
 ?>
 
 <?php
@@ -180,7 +180,46 @@ if (isset($_GET['act'])) {
             }
             break;
         case "shoppingcart":{
-            include 'view/shoppingcart.php';
+            if(isset($_POST['addToCart']) && isset($account['login'])==true){
+                 $image =$_POST['image'];
+                 $prodId =$_POST['prodId'];
+                 $price =$_POST['price'];
+                 $quantity= 1;
+                $get_prod =  loadOne_product($prodId);
+                 $addToCart=    addTocart($prodId,$price,$image,$quantity,$get_prod);
+
+                if($addToCart==true){
+                echo '<pre>';
+                print_r($_SESSION);
+                echo '</pre>';
+              
+                include 'view/shoppingcart.php';
+                }
+      
+            }else if(!isset($account['login'])){
+                echo "<div class='text-center pb-100 pt-100 text-danger'> Bạn chưa đăng nhập!<br> <a style='color:black;font-weight:bold' href='#'>Đăng nhập </a> để tiếp tục mua hàng</div>";
+            }
+            else{
+
+                if(!isset($_SESSION['login']['mycart']) || empty($_SESSION['login']['mycart']) ){
+                    echo "Giỏ Hàng Trống";
+                }else{
+                    if(isset($_GET['remove_product'])){
+                    $prodId =$_GET['remove_product'];  
+                    unset($_SESSION['login']['mycart'][$prodId]);
+                      echo '<script>window.location="index.php?act=shoppingcart"</script>';
+                    }
+                    // header('location:index.php?act=shoppingcart');
+                  
+                    // echo '<pre>';
+                    // print_r($_SESSION['login']['mycart']);
+                    // echo '</pre>';
+                    include 'view/shoppingcart.php';
+                }
+                
+
+            }
+          
         }
         break;
         default:

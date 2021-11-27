@@ -1,92 +1,89 @@
 <!-- <div class="container"> -->
 <div class="grid wide">
     <div class="directional">
-        <a href="index.php">Trang Chủ</a>  <i class="fas fa-chevron-right"></i>  <a href="index.php?act=list-product&cateId=<?=$cate['cateId']?>"><?=$cate['cateName']?></a>  <i class="fas fa-chevron-right"></i>  <a href="index.php?act=list-product&cateId=<?=$cate['cateId']?>&cateChildId=<?=$cateChild['cateChildId']?>"><?=$cateChild['cateChildName']?></a>
+        <a href="index.php">Trang Chủ</a> <i class="fas fa-chevron-right"></i> <a href="index.php?act=list-product&cateId=<?= $cate['cateId'] ?>"><?= $cate['cateName'] ?></a> <i class="fas fa-chevron-right"></i> <a href="index.php?act=list-product&cateId=<?= $cate['cateId'] ?>&cateChildId=<?= $cateChild['cateChildId'] ?>"><?= $cateChild['cateChildName'] ?></a>
     </div>
-  
+
     <div class="product">
         <!--thông tin-->
         <div class="product__left">
-            <div class="row content-1">
-                <?php
-                extract($loadOne);
-                ?>
-                <div class="col l-5">
-                    <div class="box-trai mr">
-                        <div class="img product-block">
-                            <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-7">
-                    <div class="box-phai">
-                        <div class="title">
-                            <h1><?= $prodName ?></h1>
-                            <span><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</span>
-                            <?php
-                            if ($discount > 0) {
-                            ?>
-                                <del><?= number_format($price, 0, ',', '.'); ?>đ</del>
-                            <?php } ?>
-                        </div>
+            <form action="index.php?act=shoppingcart" method="post">
+                <div class="row content-1">
 
-                        <div class="size">
-                            <span>
-                                <p>Thông tin sản phẩm</p>
-                                <?php   $des =json_decode($prodDesc,true);?>
-                           
-                                <b>Kích thước:</b> <?=$des['size'] ?> <br>
-                                <b>Khối lượng:</b> <?=$des['mass']?>   <br>
-                                <b>Chất liệu:</b> <?=$des['material']?>   <br>
-                                <b>Màu sắc:</b> <?=$des['color']?>   <br>
-                                <b>Mô tả:</b>  <?=$des['des']?> 
-                            </span><br>
+                    <?php
+                    extract($loadOne);
+                    ?>
 
-                            <div class="buttons_added">
-                                <strong>Số Lượng</strong>
-                                <input class="minus is-form" type="button" value="-">
-                                <input aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="">
-                                <input class="plus is-form" type="button" value="+">
+                    <div class="col l-5">
+                        <div class="box-trai mr">
+                            <div class="img product-block">
+                                <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
                             </div>
                         </div>
-                        <div class="show-anh">
-                            <?php
-                            $data = $imageSmall;
-                            $data = json_decode($data, true);
-                            foreach ($data as $valueIgm) {
-                            ?>
-                                <div class="img-sp product-small-block ">
-                                    <img src="<?= BASE_URL ?>uploads/<?= $valueIgm['image'] ?>" class="product-img-small">
+                    </div>
+                    <div class="col l-7">
+
+                        <div class="box-phai">
+
+                            <div class="title">
+                                <h1><?= $prodName ?></h1>
+                                <span><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</span>
+                                <?php
+                                if ($discount > 0) {
+                                ?>
+                                    <del><?= number_format($price, 0, ',', '.'); ?>đ</del>
+                                <?php } ?>
+                            </div>
+
+                            <div class="size">
+                                <span>
+                                    <p>Thông tin sản phẩm</p>
+                                    <?php $des = json_decode($prodDesc, true); ?>
+
+                                    <b>Kích thước:</b> <?= $des['size'] ?> <br>
+                                    <b>Khối lượng:</b> <?= $des['mass'] ?> <br>
+                                    <b>Chất liệu:</b> <?= $des['material'] ?> <br>
+                                    <b>Màu sắc:</b> <?= $des['color'] ?> <br>
+                                    <b>Mô tả:</b> <?= $des['des'] ?>
+                                </span><br>
+
+                                <div class="buttons_added">
+                                    <strong>Số Lượng</strong>
+                                    <input class="minus is-form" type="button" value="-">
+                                    <input aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="">
+                                    <input class="plus is-form" type="button" value="+">
                                 </div>
-                            <?php
-                            }
-                            ?>
-                
-                            <!-- <div class="img-sp product-small-block ">
-                                            <img src="images/productList/sp2.jpg" class="product-img-small">
-                                        </div>
-                                        
-                                        <div class="size">
-                                            <span><?= $prodDesc ?></span><br>
-                    
-                                            <div class="buttons_added">
-                                                <strong>Số Lượng</strong>
-                                                <input class="minus is-form" type="button" value="-">
-                                                <input aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="">
-                                                <input class="plus is-form" type="button" value="+">
-                                            </div>
-                                        </div>
-                                        <div class="img-sp product-small-block ">
-                                            <img src="images/productList/sp5.jpg" class="product-img-small">
-                                        </div> -->
-                        </div>
-                        <div class="mua-hang">
-                            <input type="submit" value="Thêm vào giỏ hàng"> <input type="submit" value="Mua ngay">
+                            </div>
+                            <div class="show-anh">
+                                <?php
+                                $data = $imageSmall;
+                                $data = json_decode($data, true);
+                                foreach ($data as $valueIgm) {
+                                ?>
+                                    <div class="img-sp product-small-block ">
+                                        <img src="<?= BASE_URL ?>uploads/<?= $valueIgm['image'] ?>" class="product-img-small">
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                            </div>
+                            <div class="info-hidden">
+                                <input type="hidden" value="<?=$prodId?>" name ="prodId">
+                                <input type="hidden" value="<?=$image?>" name ="image">
+                                <input type="hidden" value="<?=$price - ($price * $discount) ?>" name="price">
+
+                            </div>
+                            <div class="mua-hang">
+                                <input type="submit" name="addToCart" value="Thêm vào giỏ hàng">
+                                <input type="submit" name="buyNow" value="Mua ngay">
+                            </div>
+
                         </div>
 
                     </div>
+
                 </div>
-            </div>
+            </form>
         </div>
         <!--sản phẩm liên quan và bình luận-->
         <div class="product__right">
@@ -158,19 +155,19 @@
                                             <p><strong><?= $loadCust['custName'] ?></strong> - <strong class="comment-time"><?= $date ?></strong></p>
                                             <p><?= $content ?></p>
                                             <?php
-                                           $replyAdmin= loadReply_Comment($commId);
-                                           foreach($replyAdmin as $valueRep){
-                                             ?>
-                                            <div class="noi-dung-bl">
-                                                <div class="anh">
-                                                    <i class="fas fa-user"></i>
-                                                </div>
-                                                <div class="bl">
-                                                    <p><strong style="color:red">AD: <?= $valueRep['custName'] ?></strong> - <strong class="comment-time"><?= $valueRep['date'] ?></strong></p>
-                                                    <p><?= $valueRep['content'] ?></p>
+                                            $replyAdmin = loadReply_Comment($commId);
+                                            foreach ($replyAdmin as $valueRep) {
+                                            ?>
+                                                <div class="noi-dung-bl">
+                                                    <div class="anh">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div class="bl">
+                                                        <p><strong style="color:red">AD: <?= $valueRep['custName'] ?></strong> - <strong class="comment-time"><?= $valueRep['date'] ?></strong></p>
+                                                        <p><?= $valueRep['content'] ?></p>
 
+                                                    </div>
                                                 </div>
-                                            </div>
                                             <?php } ?>
                                         </div>
                                     </div>
