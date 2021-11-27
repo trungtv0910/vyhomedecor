@@ -222,6 +222,10 @@ if (isset($_GET['act'])) {
           
         }
         break;
+        case "mybill": {
+            include 'view/mybill.php';
+        }
+        break;
         default:
             include 'view/home.php';
             break;
