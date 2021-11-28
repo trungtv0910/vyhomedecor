@@ -49,7 +49,7 @@
 
                                 <div class="buttons_added">
                                     <strong>Số Lượng</strong>
-                                    <input onclick="var result = document.querySelector('.quantity'); var qty = result.value; if( !isNaN(qty) &amp; qty > 1 ) result.value--;return false;" type='button' value='-' class="quantity-control"/>                                
+                                    <input onclick="var result = document.querySelector('.quantity'); var qty = result.value; if( !isNaN(qty)  &&  qty > 1 ) result.value--;return false;" type='button' value='-' class="quantity-control"/>                                
                                     <input class='quantity' min='1' name='quantity' type='text' value='1' />
                                     <input onclick="var result = document.querySelector('.quantity'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' class="quantity-control"/>
                                 </div>
