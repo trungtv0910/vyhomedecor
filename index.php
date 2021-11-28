@@ -8,8 +8,8 @@ include_once 'model/account_model.php';
 include_once 'model/global.php';
 include_once 'model/customer.php';
 include_once 'model/comment.php';
-
 include_once 'model/cart_model.php';
+include_once 'model/bill.php';
 ?>
 
 <?php
