@@ -125,3 +125,10 @@ th, td{
 .cart__control-link:hover {
     background-color: var(--hover-color);
 }
+
+.cart__update button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

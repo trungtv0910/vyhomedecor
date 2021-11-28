@@ -145,7 +145,7 @@ div.stars {
     outline:none;
 }
 
-.input-qty {
+/* .input-qty {
     background-color:#fff;
     height:3rem;
     text-align:center;
@@ -162,7 +162,7 @@ div.stars {
 .input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
     -webkit-appearance:none;
     margin:0;
-}
+} */
 
 .size{
     margin-top: 15px;

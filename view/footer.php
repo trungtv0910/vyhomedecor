@@ -162,6 +162,27 @@
 
 </div>
 <script src="./js/index.js"></script>
+<script src="./js/validator.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Mong muốn của chúng ta
+          Validator({
+            form: '#checkout__form',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+              Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn !'),
+              Validator.isRequired('#phone', 'Vui lòng nhập số điện thoại của bạn !'),
+              Validator.isRequired('#email', 'Vui lòng nhập email của bạn !'),
+              Validator.isRequired('#address', 'Vui lòng nhập địa chỉ của bạn !'),
+              Validator.isRequired('input[name="payment"]', 'Vui lòng chọn phương thức thanh toán !'),
+              Validator.isEmail('#email'),
+              Validator.isPhone('#phone')
+            ],
+          });
+        });
+    
+    </script>
 </body>
 
 </html>

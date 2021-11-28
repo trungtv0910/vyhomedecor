@@ -1613,3 +1613,17 @@
     font-size: 1.6rem;
     text-transform: unset;
 }
+
+
+.quantity{
+    width: 40px;
+    padding: 0 4px;
+    border: 1px solid var(--border-color);
+}
+.quantity-control{
+    width: 30px;
+    outline: none;
+    border: none;
+    margin: 0 2px;
+    border-radius: 2px;
+}

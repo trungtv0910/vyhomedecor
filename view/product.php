@@ -49,9 +49,9 @@
 
                                 <div class="buttons_added">
                                     <strong>Số Lượng</strong>
-                                    <input class="minus is-form" type="button" value="-">
-                                    <input aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="">
-                                    <input class="plus is-form" type="button" value="+">
+                                    <input onclick="var result = document.querySelector('.quantity'); var qty = result.value; if( !isNaN(qty) &amp;&amp; qty > 1 ) result.value--;return false;" type='button' value='-' class="quantity-control"/>
+                                    <input class='quantity' min='1' name='quantity' type='text' value='1' />
+                                    <input onclick="var result = document.querySelector('.quantity'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' class="quantity-control"/>
                                 </div>
                             </div>
                             <div class="show-anh">
