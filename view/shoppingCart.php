@@ -63,7 +63,7 @@ if(isset($_SESSION['login']['mycart']))
                                 <p class="cart__control-heading">Tất cả <span class="cart__control-price"><?=number_format($total ,0,',','.')?>₫</span></p>
                                 <span class="cart__control-desc">(Chưa bao gồm phí vận chuyển)</span>
                                 <div class="cart__control-btn">
-                                    <a href="#" class="cart__control-link"><i class="fas fa-arrow-left"></i> Tiếp tục mua sắm</a>
+                                    <a href="index.php" class="cart__control-link"><i class="fas fa-arrow-left"></i> Tiếp tục mua sắm</a>
                                     <a href="index.php?act=bill-confirm" class="cart__control-link">Thanh toán</a>
                                 </div>
                             </div>
