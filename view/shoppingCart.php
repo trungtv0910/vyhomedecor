@@ -3,7 +3,7 @@ if(isset($_SESSION['login']['mycart']))
 {
     $mycart=$_SESSION['login']['mycart'];
 }else{
-    echo 'Thoát';
+    echo '<script>window.location="index.php"</script>';
 }
 ?>
         <!-- <div class="container"> -->

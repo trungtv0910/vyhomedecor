@@ -12,7 +12,7 @@
                         if (isset($_SESSION['login']['login']) == true) {
                             $account= $_SESSION['login'];
                             $listmybill = loadAll_bill_custId($account['custId']);
-                           
+                            
                         }
                     ?>
                     <?php

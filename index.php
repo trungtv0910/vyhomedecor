@@ -8,8 +8,9 @@ include_once 'model/account_model.php';
 include_once 'model/global.php';
 include_once 'model/customer.php';
 include_once 'model/comment.php';
-include_once 'model/cart_model.php';
 include_once 'model/bill.php';
+include_once 'model/cart_model.php';
+
 ?>
 
 <?php
@@ -146,10 +147,10 @@ if (isset($_GET['act'])) {
                 if (isset($_GET['prodId'])) {
                     $prodId = $_GET['prodId'];
                     $loadOne = loadOne_product($prodId);
-                    $cate= loadOne_category($loadOne['cateId']);
-                    $cateChild =loadOne_ChildCategory($loadOne['cateChildId']);
+                    $cate = loadOne_category($loadOne['cateId']);
+                    $cateChild = loadOne_ChildCategory($loadOne['cateChildId']);
                     extract($loadOne);
-                    $product_similar = loadOne_product_similar($prodId,$cateId);
+                    $product_similar = loadOne_product_similar($prodId, $cateId);
                     include 'view/product.php';
                 } else {
                     include 'view/home.php';
@@ -160,7 +161,7 @@ if (isset($_GET['act'])) {
 
                 if (isset($_GET['cateId'])) {
                     $cateId = $_GET['cateId'];
-                  
+
                     $limit = 20;
                     $start = 0;
                     if (isset($_GET['page'])) {
@@ -175,71 +176,66 @@ if (isset($_GET['act'])) {
                     $countProduct = count(load_product_condition(0, 1000, 0, $cateId, $cateChildId));
                     $listproduct = load_product_condition($start, $limit, 0, $cateId, $cateChildId);
                 }
-           
+
                 include 'view/list-product.php';
             }
             break;
-        case "shoppingcart":{
-            if(isset($_POST['addToCart']) && isset($account['login'])==true){
-                 $image =$_POST['image'];
-                 $prodId =$_POST['prodId'];
-                 $price =$_POST['price'];
-                 $quantity= 1;
-                $get_prod =  loadOne_product($prodId);
-                 $addToCart=    addTocart($prodId,$price,$image,$quantity,$get_prod);
-
-                if($addToCart==true){
-                echo '<pre>';
-                print_r($_SESSION);
-                echo '</pre>';
-              
-                include 'view/shoppingcart.php';
-                }
-      
-            }else if(!isset($account['login'])){
-                echo "<div class='text-center pb-100 pt-100 text-danger'> Bạn chưa đăng nhập!<br> <a style='color:black;font-weight:bold' href='#'>Đăng nhập </a> để tiếp tục mua hàng</div>";
-            }
-            else{
-
-                if(!isset($_SESSION['login']['mycart']) || empty($_SESSION['login']['mycart']) ){
-                    echo "Giỏ Hàng Trống";
-                }else{
-                    if(isset($_GET['remove_product'])){
-                    $prodId =$_GET['remove_product'];  
-                    unset($_SESSION['login']['mycart'][$prodId]);
-                      echo '<script>window.location="index.php?act=shoppingcart"</script>';
+        case "shoppingcart": {
+                if (isset($_SESSION['login']['login']) == true) {
+                    if (isset($_POST['addToCart'])) {
+                        $image = $_POST['image'];
+                        $prodId = $_POST['prodId'];
+                        $price = $_POST['price'];
+                        $quantity = 1;
+                        $get_prod =  loadOne_product($prodId);
+                        $addToCart =    addTocart($prodId, $price, $image, $quantity, $get_prod);
+                        if ($addToCart == true) {
+                            // echo '<pre>';
+                            // print_r($_SESSION);
+                            // echo '</pre>';
+                            include 'view/shoppingcart.php';
+                        }
+                    } else {
+                        if (!isset($_SESSION['login']['mycart']) || empty($_SESSION['login']['mycart'])) {
+                            include 'view/nullCart.php';
+                        } else {
+                            if (isset($_GET['remove_product'])) {
+                                $prodId = $_GET['remove_product'];
+                                unset($_SESSION['login']['mycart'][$prodId]);
+                                echo '<script>window.location="index.php?act=shoppingcart"</script>';
+                            }
+                            include 'view/shoppingcart.php';
+                        }
                     }
-                
-                  
-                    // echo '<pre>';
-                    // print_r($_SESSION['login']['mycart']);
-                    // echo '</pre>';
-                    include 'view/shoppingcart.php';
-                }
-                
-
-            }
-          
-        }
-        break;
-        case "mybill": {
-            include 'view/mybill.php';
-        }
-        break;
-        case "bill-confirm" :{
-            if(isset($_SESSION['login']) && !empty($_SESSION['login']['mycart'])){
-
+                } else {
+                    echo "<div class='text-center pb-100 pt-100 text-danger'> Bạn chưa đăng nhập!<br> <a style='color:black;font-weight:bold' href='#'>Đăng nhập </a> để tiếp tục mua hàng</div>";
+           
                
-                if(isset($_POST['acceptBill'])){
-                    echo 'có quần ssssssssssssssss';
                 }
-                include 'view/bill-Confirm.php';
-            }else{
-                include 'view/404notFound.php';
             }
-          
-
-        }break;
+            break;
+        case "mybill": {
+                include 'view/mybill.php';
+            }
+            break;
+        case "bill-confirm": {
+                if (isset($_SESSION['login']) && !empty($_SESSION['login']['mycart'])) {
+                    include 'view/bill-Confirm.php';
+                    if (isset($_POST['acceptBill'])) {
+                        $dataProduct = $_SESSION['login']['mycart'];
+                        if (insertToBill($_POST, $dataProduct)) {
+                            unset($_SESSION['login']['mycart']);
+                            echo "<script>Swal.fire({ position: 'top-end',icon: 'success',title: 'Đặt hàng Thành Công.',showConfirmButton: false,timer: 1500})
+                              var action = setTimeout(function(){window.location='index.php?act=mybill';}, 1500);</script>";
+                        } else {
+                            echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Đặt hàng Thất Bại'})</script>";
+                        }
+                    }
+                } else {
+                    echo '<script>window.location="index.php"</script>';
+                }
+            }
+            break;
         default:
             include 'view/home.php';
             break;
