@@ -38,7 +38,7 @@
                         ?>
                             <tr>
                                 <td><?=$STT++?></td>
-                                <td><i class="fas fa-barcode"> </i><?=number_format ($billTotal, 0, ',', '.')?></td>
+                                <td><i class="fas fa-barcode"> </i><?=$billId?></td>
                                 <td><i class="ni ni-single-02"></i>
                                    <?php
                                        $nameCust = loadOne_customer($custId);
@@ -48,15 +48,19 @@
                                 <td><i class="ni ni-time-alarm"></i><?=$date?></td>
                                 <td>
                                     <span class="text-primary">
-                                      <?php
-                                         if($billStatus==0){
-                                            echo " Thanh Toán Khi Nhận Hàng ";
-                                        }else if($billStatus==1){
-                                            echo " Thanh Toán Qua MoMo";
-                                        }else{
-                                            echo "Thanh Toán Qua Ví";
-                                        }
-                                      ?>
+                                        <?php
+                                            if($billStatus==0){
+                                                echo "Chờ xác nhận";
+                                            }else if($billStatus==1){
+                                                echo "Đang xử lý";
+                                            }else if($billStatus==2){
+                                                echo "Đang giao hàng";
+                                            }else if($billStatus==3){
+                                                echo "Giao hàng thành công";
+                                            }else{
+                                                echo "Đã bị huỷ";
+                                            }
+                                        ?>
                                     </span>
                                     
                                     <!-- <span class="text-success">Đã Thanh Toán</span>
@@ -64,15 +68,13 @@
                                 </td>
                                 <td><?= number_format($billTotal ,0, ',', '.') ?>đ</td>
                                 <td><i class="fas fa-money-check-alt"></i>
-                                <?php
-                                         if($payMethod==0){
-                                             echo 'Chưa Thanh Toán';
-                                         }else if($payMethod==1){
-                                             echo 'Đã Thanh Toán';
-                                         }else{
-                                             echo 'Huỷ Đơn';
-                                         }
-                                      ?>
+                                    <?php
+                                        if($payMethod==0){
+                                            echo 'Thanh toán khi nhận hàng COD';
+                                        }else if($payMethod==1){
+                                            echo 'Thanh toán Online ATM';
+                                        }
+                                    ?>
                                 </td>
                                 <td><a class="btn btn-primary" href="index.php?act=bill&edit=<?=$billId?>&custId=<?=$custId?>">Xem Chi tiết</a></td>
                             </tr>

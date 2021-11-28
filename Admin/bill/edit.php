@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive">  
                 <!-- Projects table -->
                 <table class="table align-items-center table-flush">
                 
@@ -112,14 +112,13 @@
                     </table>
                  
             </div>
-            <!--from-->
+                </form>
 
         </div>
     </div>
 
 
 </div>
-
 
 
 
@@ -141,10 +140,13 @@
 
 <br>
 <div class="dieu_khien">
-    <form action="" method="post">
-        <button class="btn btn-warning " onclick="return confirm('Xác nhận Đơn Hàng Chưa Thanh Toán ?')" type="submit" name="bill-status" value="0">Chưa Thanh Toán</button>
-        <button class="btn btn-success " onclick="return confirm('Xác nhận Đơn Hàng Đã Thanh Toán ?')" type="submit" name="bill-status" value="1">Đã Thanh Toán</button>
-        <button class="btn btn-danger " onclick="return confirm('Xác nhận Huỷ Đơn ?')" type="submit" name="bill-status" value="2">Huỷ Đơn </button>
+    <form action="index.php?act=bill&update" method="post">
+        <input type="hidden" name="billId" value="<?=$billId?>">
+        <button class="btn btn-primary " onclick="return confirm('Xác nhận Đơn Hàng Đang chờ xác nhận ?')" type="submit" name="billStatus" value="0">Đang chờ xác nhận</button>
+        <button class="btn btn-secondary " onclick="return confirm('Xác nhận Đơn Hàng Đang xử lý ?')" type="submit" name="billStatus" value="1">Đang xử lý</button>
+        <button class="btn btn-info " onclick="return confirm('Xác nhận Đơn Hàng Đang giao hàng ?')" type="submit" name="billStatus" value="2">Đang giao hàng</button>
+        <button class="btn btn-success " onclick="return confirm('Xác nhận Đơn Hàng Giao hàng thành công ?')" type="submit" name="billStatus" value="3">Giao hàng thành công</button>
+        <button class="btn btn-danger " onclick="return confirm('Xác nhận Đơn Hàng Đã bị huỷ ?')" type="submit" name="billStatus" value="4">Đã bị huỷ</button>
     </form>
 </div>
-<!-- điều khiển -->
+<!-- điều khiển

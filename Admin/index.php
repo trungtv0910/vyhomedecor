@@ -181,6 +181,12 @@ if (isset($_GET['act'])) {
                     $loadOne_bill = loadOne_bill($billId);
                     // var_dump($loadOne_bill);
                     include 'bill/edit.php';
+                } else if (isset($_GET['update'])) {
+                    $billId = $_POST['billId'];
+                    $billStatus = $_POST['billStatus'];
+                    update_status($billId, $billStatus);
+                    $listBill = loadAll_bill();
+                    include 'bill/list.php';
                 } else {
                     include 'bill/list.php';
                 }

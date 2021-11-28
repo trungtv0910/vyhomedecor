@@ -9,4 +9,9 @@
         return pdo_query($sql);
     }
     
+    function update_status($billId, $billStatus) {
+        $sql="UPDATE tbl_bill SET billStatus = '$billStatus' WHERE billId = $billId";
+        $res = pdo_execute($sql);
+        return $res; 
+    }
 ?>
