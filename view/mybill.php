@@ -6,7 +6,7 @@
                         <img src="./images/bill/no-bill.png" alt="" class="mybill--nobill__img">
                         <p class="mybill--nobill__heading">Chưa có đơn hàng</p>
                     </div> -->
-                    <h3 class="mybill__heading">Danh sách đơn hành của tôi</h3>
+                    <h3 class="mybill__heading">Danh sách đơn hàng của tôi</h3>
                     <ul class="mybill__list">
                         <li class="mybill__item">
                             <div class="mybill__status">
