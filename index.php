@@ -209,7 +209,7 @@ if (isset($_GET['act'])) {
                     unset($_SESSION['login']['mycart'][$prodId]);
                       echo '<script>window.location="index.php?act=shoppingcart"</script>';
                     }
-                    // header('location:index.php?act=shoppingcart');
+                
                   
                     // echo '<pre>';
                     // print_r($_SESSION['login']['mycart']);
@@ -226,6 +226,18 @@ if (isset($_GET['act'])) {
             include 'view/mybill.php';
         }
         break;
+        case "bill-confirm" :{
+            // echo '<pre>';
+            // print_r($_SESSION);
+            // echo '</pre>';
+            if(isset($_SESSION['login']) && !empty($_SESSION['login']['mycart'])){
+                include 'view/bill-Confirm.php';
+            }else{
+                include 'view/404notFound.php';
+            }
+          
+
+        }break;
         default:
             include 'view/home.php';
             break;

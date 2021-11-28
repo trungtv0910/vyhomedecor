@@ -15,7 +15,7 @@
     .notFound{
         width: 100%;
         text-align: center;
-        background-color: 
+        /* background-color:  */
     }
     .title{
         font: 5rem sans-serif;

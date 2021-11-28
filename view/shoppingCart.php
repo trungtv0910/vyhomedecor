@@ -56,7 +56,7 @@ if(isset($_SESSION['login']['mycart']))
                                 <span class="cart__control-desc">(Chưa bao gồm phí vận chuyển)</span>
                                 <div class="cart__control-btn">
                                     <a href="#" class="cart__control-link"><i class="fas fa-arrow-left"></i> Tiếp tục mua sắm</a>
-                                    <a href="#" class="cart__control-link">Thanh toán</a>
+                                    <a href="index.php?act=bill-confirm" class="cart__control-link">Thanh toán</a>
                                 </div>
                             </div>
                         </div>
