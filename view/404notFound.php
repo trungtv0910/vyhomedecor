@@ -15,21 +15,23 @@
     .notFound{
         width: 100%;
         text-align: center;
-        background-color: 
+        min-height: 500px;
+        color: #333;
+        /* background-color:  */
     }
-    .title{
-        font: 5rem sans-serif;
+    .titl{
+        font: 9rem sans-serif;
     }
     .page{
-        font: 1em sans-serif;
+        font: 1.7em sans-serif;
         margin-bottom: 20px;
     }
     .content{
-        font: 1em sans-serif;
+        font: 1.7em sans-serif;
         margin-bottom: 5px;
     }
     .a{
-        font: 1em sans-serif;
+        font: 1.7em sans-serif;
         
     }
     .a a{
@@ -42,7 +44,7 @@
 </style>
 <body>
     <div class="notFound">
-        <div class="title">404</div>
+        <div class="titl">404</div>
         <div class="page">Không Tìm Thấy Trang </div>
         <div class="content">Có vẻ như bạn tìm thấy một trục trặc trong ma trận...</div>
         <div class="a">
