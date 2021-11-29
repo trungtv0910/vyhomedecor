@@ -1,6 +1,3 @@
-
-
-
 <!-- <div class="container"> -->
 <div class="grid wide">
     <div class="directional">
@@ -10,84 +7,88 @@
     <div class="product">
         <!--thông tin-->
         <div class="product__left">
-            <form action="index.php?act=shoppingcart" method="post" id="shoppingCart">
-                <div class="row content-1">
+            <!-- <form action="index.php?act=shoppingcart" method="post" id="shoppingCart"> -->
 
-                    <?php
-                    extract($loadOne);
-                    ?>
+            <div class="row content-1" id="shoppingCart">
 
-                    <div class="col l-5">
-                        <div class="box-trai mr">
-                            <div class="img product-block">
-                                <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
-                            </div>
+                <?php
+                extract($loadOne);
+                ?>
+
+                <div class="col l-5">
+                    <div class="box-trai mr">
+                        <div class="img product-block">
+                            <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
                         </div>
                     </div>
-                    <div class="col l-7">
-                       
+                </div>
+                <div class="col l-7">
 
-                        <div class="box-phai">
 
-                            <div class="title">
-                                <h1><?= $prodName ?></h1>
-                                <span><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</span>
-                                <?php
-                                if ($discount > 0) {
-                                ?>
-                                    <del><?= number_format($price, 0, ',', '.'); ?>đ</del>
-                                <?php } ?>
+                    <div class="box-phai">
+
+                        <div class="title">
+                            <h1><?= $prodName ?></h1>
+                            <span><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</span>
+                            <?php
+                            if ($discount > 0) {
+                            ?>
+                                <del><?= number_format($price, 0, ',', '.'); ?>đ</del>
+                            <?php } ?>
+                        </div>
+
+                        <div class="size">
+                            <span>
+                                <p>Thông tin sản phẩm</p>
+                                <?php $des = json_decode($prodDesc, true); ?>
+
+                                <b>Kích thước:</b> <?= $des['size'] ?> <br>
+                                <b>Khối lượng:</b> <?= $des['mass'] ?> <br>
+                                <b>Chất liệu:</b> <?= $des['material'] ?> <br>
+                                <b>Màu sắc:</b> <?= $des['color'] ?> <br>
+                                <b>Mô tả:</b> <?= $des['des'] ?>
+                            </span><br>
+
+                            <div class="buttons_added">
+                                <strong>Số Lượng</strong>
+                                <input onclick="var result = document.querySelector('.quantity'); var qty = result.value; if( !isNaN(qty)  &&  qty > 1 ) result.value--;return false;" type='button' value='-' class="quantity-control" />
+                                <input id="getQuantity" class='quantity' min='1' name='quantity' type='text' value='1' />
+                                <input onclick="var result = document.querySelector('.quantity'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' class="quantity-control" />
                             </div>
-
-                            <div class="size">
-                                <span>
-                                    <p>Thông tin sản phẩm</p>
-                                    <?php $des = json_decode($prodDesc, true); ?>
-
-                                    <b>Kích thước:</b> <?= $des['size'] ?> <br>
-                                    <b>Khối lượng:</b> <?= $des['mass'] ?> <br>
-                                    <b>Chất liệu:</b> <?= $des['material'] ?> <br>
-                                    <b>Màu sắc:</b> <?= $des['color'] ?> <br>
-                                    <b>Mô tả:</b> <?= $des['des'] ?>
-                                </span><br>
-
-                                <div class="buttons_added">
-                                    <strong>Số Lượng</strong>
-                                    <input onclick="var result = document.querySelector('.quantity'); var qty = result.value; if( !isNaN(qty)  &&  qty > 1 ) result.value--;return false;" type='button' value='-' class="quantity-control"/>                                
-                                    <input class='quantity' min='1' name='quantity' type='text' value='1' />
-                                    <input onclick="var result = document.querySelector('.quantity'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' class="quantity-control"/>
+                        </div>
+                        <div class="show-anh">
+                            <?php
+                            $data = $imageSmall;
+                            $data = json_decode($data, true);
+                            foreach ($data as $valueIgm) {
+                            ?>
+                                <div class="img-sp product-small-block ">
+                                    <img src="<?= BASE_URL ?>uploads/<?= $valueIgm['image'] ?>" class="product-img-small">
                                 </div>
-                            </div>
-                            <div class="show-anh">
-                                <?php
-                                $data = $imageSmall;
-                                $data = json_decode($data, true);
-                                foreach ($data as $valueIgm) {
-                                ?>
-                                    <div class="img-sp product-small-block ">
-                                        <img src="<?= BASE_URL ?>uploads/<?= $valueIgm['image'] ?>" class="product-img-small">
-                                    </div>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                            <div class="info-hidden">
-                                <input type="hidden" value="<?=$prodId?>" name ="prodId">
-                                <input type="hidden" value="<?=$image?>" name ="image">
-                                <input type="hidden" value="<?=$price - ($price * $discount) ?>" name="price">
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="info-hidden">
+                            <input id="getProdId" type="hidden" value="<?= $prodId ?>" name="prodId">
+                            <input id="getImage" type="hidden" value="<?= $image ?>" name="image">
+                            <input id="getPrice" type="hidden" value="<?= $price - ($price * $discount) ?>" name="price">
 
-                            </div>
-                            <div class="mua-hang">
-                                <input type="submit" name="addToCart" id="addToCart" value="Thêm vào giỏ hàng">
-                                <input type="submit" name="buyNow" value="Mua ngay" id="buyNow">
-                            </div>
-
+                        </div>
+                        <div class="mua-hang">
+                            <input type="submit" name="addToCart" class="<?php if (isset($_SESSION['login'])) {
+                                                                                echo 'realTimeAddToCart';
+                                                                            } ?>" id="addToCart" value="Thêm vào giỏ hàng">
+                            <!-- <button   id="addToCart" >Thêm giỏ hàng</button> -->
+                            <input type="submit" name="buyNow" value="Mua ngay" id="buyNow">
                         </div>
 
                     </div>
 
                 </div>
-            </form>
+
+            </div>
+            <!-- </form> -->
         </div>
         <!--sản phẩm liên quan và bình luận-->
         <div class="product__right">
@@ -233,13 +234,41 @@
             }
 
         });
+
+        //sự kiện thêm giỏ hàng
+        $('.realTimeAddToCart').click(function() {
+            var prodId      =$('#getProdId').val();
+            var price       =$('#getPrice').val();
+            var quantity    =$('#getQuantity').val();
+            var image       =$('#getImage').val();
+            $.post('model/ajaxAddCart_model.php',{
+                prodId:prodId,
+                price:price,
+                quantity:quantity,
+                image:image
+            },function(data){
+                $('#show_count').html(data);
+            
+            });
+        });
+
+        $('.realTimeAddToCart').click(function() {
+            // document.documentElement.scrollTop = 170;
+            $('html, body').animate({scrollTop:170}, 50);
+        })
+
+
+
+
+
+
     });
     // const addToCart = document.querySelector('#addToCart')
     // const shoppingCart = document.querySelector('#shoppingCart')
     // // const login = document.querySelector('.js-login')
     // const buyNow = document.querySelector('#buyNow')
     // if(login)
-        
+
     //     addToCart.onclick = () => {
     //         shoppingCart.onsubmit = (e) => {
     //             e.preventDefault()
@@ -251,5 +280,5 @@
     //             e.preventDefault()
     //         }
     //         login.click()
-    //     }      
+    //     }   
 </script>

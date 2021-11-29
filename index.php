@@ -182,7 +182,7 @@ if (isset($_GET['act'])) {
             break;
         case "shoppingcart": {
                 if (isset($_SESSION['login']['login']) == true) {
-                    if (isset($_POST['addToCart'])) {
+                    if (isset($_POST['buyNow'])) {
                         $image = $_POST['image'];
                         $prodId = $_POST['prodId'];
                         $price = $_POST['price'];

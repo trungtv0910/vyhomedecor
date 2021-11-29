@@ -2,7 +2,6 @@
 
 include_once '../model/pdo.php';
 include_once '../model/comment.php';
-include_once '../model/comment_Trung_Test.php';
 include_once '../model/customer.php';
 ?>
 

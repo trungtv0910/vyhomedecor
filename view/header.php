@@ -368,22 +368,33 @@ init();
                         </div>
                         <a href="index.php?act=shoppingcart" class="header__nav-control-cart">
                             <i class="header__nav-control-cart-ion fas fa-shopping-cart"></i>
-                            <p class="header__nav-control-cart-about">
-                                <?php 
-                                if(isset($_SESSION['login']) && isset($_SESSION['login']['mycart'])){
-                                    $count_cart=count($_SESSION['login']['mycart']);
-                                }else{
-                                    $count_cart=0;
-                                }
-                                ?>
-                                <span class="header__nav-control-cart-quantity"><?=$count_cart?></span>
-                                ( items )
-                            </p>
-                            <!-- <ul class="header__nav-control-cart-list header__nav-control-cart-list--no-item">
-                                <li class="header__nav-control-cart-item">
-                                    <span class="header__nav-control-cart-item-name">No products in the cart.</span>
-                                </li>
-                            </ul> -->
+                            <div id="show_count">
+                                <p class="header__nav-control-cart-about">
+                                    <?php
+                                    if (isset($_SESSION['login']) && isset($_SESSION['login']['mycart'])) {
+                                        $count_cart = count($_SESSION['login']['mycart']);
+                                    } else {
+                                        $count_cart = 0;
+                                    }
+                                    ?>
+                                    <span id="show_quantity" class="header__nav-control-cart-quantity"><?= $count_cart; ?></span>
+                                    ( items )
+                                </p>
+                                <ul class="header__nav-control-cart-list header__nav-control-cart-list--no-item" >
+                                    <li class="header__nav-control-cart-item" style="width:100%">
+                                        <div class="header__nav-control-cart-item-name">
+                                            <div class="status" style="display:flex; gap:10px">
+                                                <img width="20px" src="images/cart-icon/Flat_tick_icon.svg" alt="">
+                                                <p class="text">Thêm vào giỏ hàng thành công!</p>
+                                            </div>
+                                            <div class="dieuhuong">
+                                                <button class="btn-view-cart" href="index.php?act=shoppingcart">Xem giỏ hàng và thanh toán</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </a>
                     </div>
                 </div>
