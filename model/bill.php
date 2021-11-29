@@ -22,6 +22,12 @@ function update_status($billId, $billStatus)
     $res = pdo_execute($sql);
     return $res;
 }
+function remove_bill($billId)
+{
+    $sql = "UPDATE tbl_bill SET billStatus = '4' WHERE billId = $billId";
+    $res = pdo_execute($sql);
+    return $res;
+}
 function insertToBill($data, $dataProduct)
 {
      $custId    =   $data['custId'];

@@ -52,6 +52,9 @@
     font-size: 1.6rem;
     color: #26aa99;
 }
+.mybill__status-desc.remove{
+    color: var(--hover-color);
+}
 .mybill__status-icon{
     margin-right: 8px;
 }

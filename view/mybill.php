@@ -32,6 +32,25 @@
                         <li class="mybill__item">
                             <div class="mybill__status">
                                 <p class="mybill__status-info">Mã đơn hàng: <?=$billId?></p>
+                                <?php
+                                    if($billStatus == 4) {
+                                ?>
+                                    <p class="mybill__status-desc remove"><i class="fas fa-truck mybill__status-icon"></i>
+                                    <?php
+                                        if($billStatus==0){
+                                            echo "Chờ xác nhận";
+                                        }else if($billStatus==1){
+                                            echo "Đang xử lý";
+                                        }else if($billStatus==2){
+                                            echo "Đang giao hàng";
+                                        }else if($billStatus==3){
+                                            echo "Giao hàng thành công";
+                                        }else{
+                                            echo "Đã bị huỷ";
+                                    }
+                                    ?>
+                                    </p>
+                                <?php } else {?>
                                 <p class="mybill__status-desc"><i class="fas fa-truck mybill__status-icon"></i>
                                 <?php
                                             if($billStatus==0){
@@ -47,6 +66,7 @@
                                             }
                                         ?>
                             </p>
+                            <?php } ?>
                             </div>
                             <?php
                                $totalOneBill = 0;
@@ -72,7 +92,7 @@
                                 <?php
                                     if($billStatus == 0) {
                                 ?>
-                                    <a href="#" class="mybill__control-btn">Huỷ đơn hàng</a>
+                                    <a href="index.php?act=mybill&remove&billId=<?=$billId?>" onclick="return confirm('Xác nhận Huỷ đơn hàng ? Mã đơn hàng:<?=$billId?>')" class="mybill__control-btn">Huỷ đơn hàng</a>
                                 <?php } ?>
                             </div>
                         </li>

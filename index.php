@@ -211,6 +211,10 @@ if (isset($_GET['act'])) {
             }
             break;
         case "mybill": {
+                if (isset($_GET['remove'])) {
+                    $billId = $_GET['billId'];
+                    remove_bill($billId);
+                }
                 include 'view/mybill.php';
             }
             break;
