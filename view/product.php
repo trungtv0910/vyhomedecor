@@ -10,7 +10,7 @@
     <div class="product">
         <!--thông tin-->
         <div class="product__left">
-            <form action="index.php?act=shoppingcart" method="post" >
+            <form action="index.php?act=shoppingcart" method="post" id="shoppingCart">
                 <div class="row content-1">
 
                     <?php
@@ -78,8 +78,8 @@
 
                             </div>
                             <div class="mua-hang">
-                                <input type="submit" name="addToCart" value="Thêm vào giỏ hàng">
-                                <input type="submit" name="buyNow" value="Mua ngay">
+                                <input type="submit" name="addToCart" id="addToCart" value="Thêm vào giỏ hàng">
+                                <input type="submit" name="buyNow" value="Mua ngay" id="buyNow">
                             </div>
 
                         </div>
@@ -234,4 +234,22 @@
 
         });
     });
+    // const addToCart = document.querySelector('#addToCart')
+    // const shoppingCart = document.querySelector('#shoppingCart')
+    // // const login = document.querySelector('.js-login')
+    // const buyNow = document.querySelector('#buyNow')
+    // if(login)
+        
+    //     addToCart.onclick = () => {
+    //         shoppingCart.onsubmit = (e) => {
+    //             e.preventDefault()
+    //         }
+    //         login.click()
+    //     }      
+    //     buyNow.onclick = () => {
+    //         shoppingCart.onsubmit = (e) => {
+    //             e.preventDefault()
+    //         }
+    //         login.click()
+    //     }      
 </script>

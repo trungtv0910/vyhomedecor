@@ -91,7 +91,32 @@ if (imgProductBlock) {
         }
     })
 }
-
+const addToCart = document.querySelector('#addToCart')
+const shoppingCart = document.querySelector('#shoppingCart')
+const login = document.querySelector('.js-login')
+const buyNow = document.querySelector('#buyNow')
+if(login)
+    if(addToCart)
+        addToCart.onclick = () => {
+            shoppingCart.onsubmit = (e) => {
+                e.preventDefault()
+            }
+            login.click()
+        }   
+    if(buyNow)   
+        buyNow.onclick = () => {
+            shoppingCart.onsubmit = (e) => {
+                e.preventDefault()
+            }
+            login.click()
+        }  
+const myCart = document.querySelector('.header__nav-control-cart')
+if(login)
+    if(myCart)
+        myCart.onclick = (e) => {
+            e.preventDefault()
+            login.click()
+        } 
 
 
 

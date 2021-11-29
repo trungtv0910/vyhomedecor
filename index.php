@@ -207,15 +207,6 @@ if (isset($_GET['act'])) {
                             include 'view/shoppingcart.php';
                         }
                     }
-                } else {
-                    
-                    echo "<div class='text-center pb-100 pt-100 text-danger'> Bạn chưa đăng nhập!<br> <a style='color:black;font-weight:bold' href='#'>Đăng nhập </a> để tiếp tục mua hàng</div>";
-                    echo "<script>
-                    var trung='oke';
-                    var 
-                    console.log(trung);
-                    </script>";
-               
                 }
             }
             break;

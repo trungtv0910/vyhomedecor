@@ -181,7 +181,13 @@
             ],
           });
         });
-    
+        // const myCart = document.querySelector('.header__nav-control-cart')
+        // const login = document.querySelector('.js-login')
+        // if(login)
+        //     myCart.onclick = (e) => {
+        //         e.preventDefault()
+        //         login.click()
+        //     }  
     </script>
 </body>
 
