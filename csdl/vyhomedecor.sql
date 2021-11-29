@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2021 lúc 05:35 PM
+-- Thời gian đã tạo: Th10 29, 2021 lúc 06:36 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 7.4.22
 
@@ -30,20 +30,46 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_bill` (
   `billId` int(10) NOT NULL,
   `custId` int(10) NOT NULL,
-  `date` date NOT NULL,
+  `date` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `payMethod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `billCustName` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `billTotal` float NOT NULL,
-  `billStatus` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `billStatus` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `billAddress` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `billPhone` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `billEmail` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `billTransportFee` float NOT NULL,
+  `billVAT` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_bill`
 --
 
-INSERT INTO `tbl_bill` (`billId`, `custId`, `date`, `payMethod`, `billTotal`, `billStatus`) VALUES
-(1, 3, '2021-11-02', '0', 20000, '0'),
-(2, 4, '0000-00-00', '0', 20000, '1'),
-(3, 3, '2021-11-18', '1', 500000, '1');
+INSERT INTO `tbl_bill` (`billId`, `custId`, `date`, `payMethod`, `billCustName`, `billTotal`, `billStatus`, `billAddress`, `billPhone`, `billEmail`, `billTransportFee`, `billVAT`) VALUES
+(12, 1, '09:18:13 pm 28/11/2021', '3', 'Nguyễn Tứ Khánh', 4815720, '0', 'Quảng Nam, Núi Thành', '09712444221', 'khanh123@gmail.com', 0, 0.05),
+(13, 1, '09:36:04 pm 28/11/2021', '3', 'Nguyễn Tứ Khánh', 4815720, '0', 'Quảng Nam, Núi Thành', '09712444221', 'khanh123@gmail.com', 0, 0.05),
+(14, 1, '09:36:43 pm 28/11/2021', '3', 'Nguyễn Tứ Khánh', 4815720, '0', 'Quảng Nam, Núi Thành', '09712444221', 'khanh123@gmail.com', 0, 0.05),
+(15, 1, '09:37:07 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 945000, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
+(16, 1, '09:37:19 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 945000, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
+(17, 1, '09:38:54 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 945000, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
+(18, 1, '09:39:58 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 945000, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
+(33, 4, '10:11:04 pm 28/11/2021', '0', 'tấn tài', 2231250, '0', 'Thừa Thiên Huế, Việt Nam', '0977123311', 'quynhtran@gmail.com', 0, 0.05),
+(34, 1, '10:21:19 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 2246370, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
+(35, 3, '10:22:33 pm 28/11/2021', '2', 'Nguyễn Tứ vy', 2231250, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(36, 3, '10:24:52 pm 28/11/2021', '0', 'Nguyễn Tứ vy', 2231250, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(37, 3, '10:28:57 pm 28/11/2021', '0', 'Nguyễn Tứ vy', 2231250, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(38, 3, '10:36:14 pm 28/11/2021', '0', 'Nguyễn Tứ vy', 2231250, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(39, 3, '10:38:23 pm 28/11/2021', '0', 'Nguyễn Tứ vy', 2246370, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(40, 3, '10:39:00 pm 28/11/2021', '0', 'Nguyễn Tứ vy', 1655850, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(41, 3, '11:05:18 pm 28/11/2021', '2', 'Nguyễn Tứ vy', 1612800, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(42, 3, '12:16:05 am 29/11/2021', '0', 'Nguyễn Tứ vy', 8719200, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(43, 3, '12:17:44 am 29/11/2021', '0', 'Nguyễn Tứ vy', 2500730, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(44, 4, '12:23:43 am 29/11/2021', '0', 'tấn tài', 1461920, '0', 'Thừa Thiên Huế, Việt Nam', '0977123311', 'quynhtran@gmail.com', 0, 0.05),
+(45, 4, '12:24:19 am 29/11/2021', '0', 'tấn tài', 2246370, '0', 'Thừa Thiên Huế, Việt Nam', '0977123311', 'quynhtran@gmail.com', 0, 0.05),
+(46, 4, '12:24:57 am 29/11/2021', '0', 'tấn tài', 5398730, '0', 'Thừa Thiên Huế, Việt Nam', '0977123311', 'quynhtran@gmail.com', 0, 0.05),
+(47, 3, '11:06:37 am 29/11/2021', '0', 'Nguyễn Tứ vy', 2231250, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
+(48, 3, '12:35:41 pm 29/11/2021', '0', 'Nguyễn Tứ vy', 2500730, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05);
 
 -- --------------------------------------------------------
 
@@ -54,6 +80,7 @@ INSERT INTO `tbl_bill` (`billId`, `custId`, `date`, `payMethod`, `billTotal`, `b
 CREATE TABLE `tbl_bill_detail` (
   `billId` int(10) NOT NULL,
   `prodId` int(10) NOT NULL,
+  `prodName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `quantity` int(10) NOT NULL,
   `price` float NOT NULL,
   `image` text COLLATE utf8_unicode_ci NOT NULL
@@ -63,13 +90,39 @@ CREATE TABLE `tbl_bill_detail` (
 -- Đang đổ dữ liệu cho bảng `tbl_bill_detail`
 --
 
-INSERT INTO `tbl_bill_detail` (`billId`, `prodId`, `quantity`, `price`, `image`) VALUES
-(3, 22, 20, 2250000, ''),
-(1, 27, 10, 2250000, ''),
-(3, 54, 1, 2250000, ''),
-(3, 53, 12, 3750000, ''),
-(3, 52, 10, 2250000, ''),
-(2, 54, 10, 2250000, '');
+INSERT INTO `tbl_bill_detail` (`billId`, `prodId`, `prodName`, `quantity`, `price`, `image`) VALUES
+(12, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
+(12, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
+(12, 26, 'Bàn làm việc ANTU', 1, 1547000, 'denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg'),
+(13, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
+(13, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
+(13, 26, 'Bàn làm việc ANTU', 1, 1547000, 'denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg'),
+(14, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
+(14, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
+(14, 26, 'Bàn làm việc ANTU', 1, 1547000, 'denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg'),
+(15, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
+(16, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
+(17, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
+(18, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
+(33, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
+(34, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
+(35, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
+(36, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
+(37, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
+(38, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
+(39, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
+(40, 25, 'Ghế làm việc TIMI', 1, 1577000, 'xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png'),
+(41, 20, 'Kệ giày, treo quần áo, kệ lưu trữ ANCO', 1, 1536000, 'dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg'),
+(42, 52, 'Sofa đơn ALICE', 2, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
+(42, 51, 'Kệ trưng bày SAGO đen xám', 1, 2507000, '2_770e04306f87478487e2d330fe004be6_master.png'),
+(42, 26, 'Bàn làm việc ANTU', 1, 1547000, 'denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg'),
+(43, 51, 'Kệ trưng bày SAGO đen xám', 1, 2381650, '2_770e04306f87478487e2d330fe004be6_master.png'),
+(44, 26, 'Bàn làm việc ANTU', 1, 1392300, 'denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg'),
+(45, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
+(46, 51, 'Kệ trưng bày SAGO đen xám', 1, 2381650, '2_770e04306f87478487e2d330fe004be6_master.png'),
+(46, 23, 'Ghế ăn TIMI', 1, 2760000, 'naunhat-1_b09957e970ea480d95d8c6186f7d34c4_7c20822ae5a941bea0dbf8b578a6aa5d_master.jpg'),
+(47, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
+(48, 51, 'Kệ trưng bày SAGO đen xám', 1, 2381650, '2_770e04306f87478487e2d330fe004be6_master.png');
 
 -- --------------------------------------------------------
 
@@ -198,7 +251,9 @@ INSERT INTO `tbl_comment` (`commId`, `replyId`, `prodId`, `custId`, `content`, `
 (99, 95, 53, 3, 'vâng bên em còn nhiều hàng lắm ạ', '09:29:28 pm 25/11/2021'),
 (101, 0, 23, 3, 'còn ghế loại này không ạ', '09:42:29 pm 25/11/2021'),
 (102, 49, 21, 3, 'xin chào ạ', '11:19:00 pm 25/11/2021'),
-(103, 49, 21, 3, 'xin chào ạ', '11:19:26 pm 25/11/2021');
+(103, 49, 21, 3, 'xin chào ạ', '11:19:26 pm 25/11/2021'),
+(104, 0, 20, 3, 'oke bạn', '10:54:47 am 26/11/2021'),
+(105, 101, 23, 3, 'oke', '10:55:39 am 26/11/2021');
 
 -- --------------------------------------------------------
 
@@ -333,7 +388,7 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT cho bảng `tbl_bill`
 --
 ALTER TABLE `tbl_bill`
-  MODIFY `billId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `billId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_category`
@@ -351,7 +406,7 @@ ALTER TABLE `tbl_category_child`
 -- AUTO_INCREMENT cho bảng `tbl_comment`
 --
 ALTER TABLE `tbl_comment`
-  MODIFY `commId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `commId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_customer`
