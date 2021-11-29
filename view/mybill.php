@@ -2,20 +2,26 @@
         <!-- <div class="container"> -->
             <div class="grid wide">
                 <div class="mybill">
-                    <!-- <div class="mybill--nobill">
-                        <img src="./images/bill/no-bill.png" alt="" class="mybill--nobill__img">
-                        <p class="mybill--nobill__heading">Chưa có đơn hàng</p>
-                    </div> -->
-                    <h3 class="mybill__heading">Danh sách đơn hàng của tôi</h3>
-                    <ul class="mybill__list">
                     <?php
                         $total = 0;
                         if (isset($_SESSION['login']['login']) == true) {
                             $account= $_SESSION['login'];
                             $listmybill = loadAll_bill_custId($account['custId']);
-                            
                         }
                     ?>
+                    <?php
+                        if(empty($listmybill)){
+                    ?>
+                    <div class="mybill--nobill">
+                        <img src="./images/bill/no-bill.png" alt="" class="mybill--nobill__img">
+                        <p class="mybill--nobill__heading">Chưa có đơn hàng nào</p>
+                    </div>
+                    <?php
+                        } else {
+                    ?>
+                    <h3 class="mybill__heading">Danh sách đơn hàng của tôi</h3>
+                    <ul class="mybill__list">
+                    
                     <?php
                        
                        foreach ($listmybill as $value) {
@@ -25,7 +31,7 @@
                     ?>
                         <li class="mybill__item">
                             <div class="mybill__status">
-                                <p class="mybill__status-info"><?=$custId?></p>
+                                <p class="mybill__status-info">Mã đơn hàng: <?=$billId?></p>
                                 <p class="mybill__status-desc"><i class="fas fa-truck mybill__status-icon"></i>
                                 <?php
                                             if($billStatus==0){
@@ -61,7 +67,7 @@
                             <div class="mybill__control">
                                 <div class="mybill__total">
                                     <p class="mybill__total-title">Tổng số tiền: </p>
-                                    <p class="mybill__total-price"><?=number_format ($totalOneBill, 0, ',', '.')?></p>
+                                    <p class="mybill__total-price"><?=number_format ($totalOneBill, 0, ',', '.')?>đ </p>
                                 </div>
                                 <?php
                                     if($billStatus == 0) {
@@ -71,6 +77,7 @@
                             </div>
                         </li>
                         <?php } ?>
+                    <?php } ?>
                         <!-- <li class="mybill__item">
                             <div class="mybill__status">
                                 <p class="mybill__status-info">Mã đơn hàng: 21</p>
