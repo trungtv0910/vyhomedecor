@@ -17,10 +17,11 @@
                         }
                     ?>
                     <?php
+                       
                        foreach ($listmybill as $value) {
                            extract($value);
                            $loadOne_mybill = loadOne_bill($billId);
-                           $total+= $price * $quantity;
+                           
                     ?>
                         <li class="mybill__item">
                             <div class="mybill__status">
@@ -42,8 +43,10 @@
                             </p>
                             </div>
                             <?php
+                               $totalOneBill = 0;
                                foreach ($loadOne_mybill as $mybill) {
                                    extract($mybill);
+                                   $totalOneBill+= $price * $quantity;
                                    
                             ?>
                             <div class="mybill__info">
@@ -52,13 +55,13 @@
                                 </a>
                                 <span class="mybill__name"><?=$prodName?></span>
                                 <span class="mybill__quantity">x<?=$quantity?></span>
-                                <span class="mybill__price"><?=number_format ($price, 0, ',', '.')?>đ</span>
+                                <span class="mybill__price"><?=number_format (($price * $quantity), 0, ',', '.')?>đ</span>
                             </div>
                             <?php } ?>
                             <div class="mybill__control">
                                 <div class="mybill__total">
                                     <p class="mybill__total-title">Tổng số tiền: </p>
-                                    <p class="mybill__total-price"><?=number_format ($total, 0, ',', '.')?></p>
+                                    <p class="mybill__total-price"><?=number_format ($totalOneBill, 0, ',', '.')?></p>
                                 </div>
                                 <?php
                                     if($billStatus == 0) {
