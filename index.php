@@ -186,7 +186,7 @@ if (isset($_GET['act'])) {
                         $image = $_POST['image'];
                         $prodId = $_POST['prodId'];
                         $price = $_POST['price'];
-                        $quantity = 1;
+                        $quantity = $_POST['quantity'];
                         $get_prod =  loadOne_product($prodId);
                         $addToCart =    addTocart($prodId, $price, $image, $quantity, $get_prod);
                         if ($addToCart == true) {
