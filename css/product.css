@@ -274,11 +274,14 @@ div.stars {
 }
 .addCart-name{
     font-size: 1.6rem;
-    line-height: 1.6rem;
+    line-height: 1.8rem;
     text-decoration: none;
     color: #333;
     margin-bottom: 8px;
-    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 .addCart-text {
     text-decoration: none;
