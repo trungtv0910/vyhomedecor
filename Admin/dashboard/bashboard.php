@@ -1,3 +1,17 @@
+<?php
+    $statiscalBill = statiscal_bill();
+    foreach ($statiscalBill as $value) {
+        extract($value);
+    }
+    $countCustomer = count_customer();
+    foreach ($countCustomer as $value) {
+        extract($value);
+    }
+    $countProduct = count_product();
+    foreach ($countProduct as $value) {
+        extract($value);
+    }
+?>
 <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
    
         <div class="page-header-content px-4 ">
@@ -31,7 +45,7 @@
                     <div class="col">
                         <h5 class="card-title text-uppercase text-muted mb-0">Đơn Hàng</h5>
                         <span class="h2 font-weight-bold mb-0">
-                            20
+                            <?=$countBill?>
                         </span>
                     </div>
                     <div class="col-auto">
@@ -41,7 +55,7 @@
                     </div>
                 </div>
                 <p class="mt-3 mb-0 text-sm">
-                    <span class="text-nowrap"><a href="index.php?act=manage-bill">Xem Chi Tiết</a></span>
+                    <span class="text-nowrap"><a href="index.php?act=bill&list">Xem Chi Tiết</a></span>
                 </p>
             </div>
         </div>
@@ -51,11 +65,11 @@
             <!-- Card body -->
             <div class="card-body">
                 <div class="row">
-
+                    
                     <div class="col">
                         <h5 class="card-title text-uppercase text-muted mb-0">Khách hàng</h5>
                         <span class="h2 font-weight-bold mb-0">
-                            25
+                                <?=$countCustomer?>
                         </span>
                     </div>
                     <div class="col-auto">
@@ -81,7 +95,7 @@
                     <div class="col">
                         <h5 class="card-title text-uppercase text-muted mb-0">Sản phẩm</h5>
                         <span class="h2 font-weight-bold mb-0">
-                            150
+                            <?=$countProduct?>
                         </span>
                     </div>
                     <div class="col-auto">
@@ -105,17 +119,17 @@
                     <div class="col">
                         <h5 class="card-title text-uppercase text-muted mb-0">Thu nhập</h5>
                         <span class="h2 font-weight-bold mb-0">
-                            14.600.000
-                            đ</span>
+                            <?=number_format($revenue ,0, ',', '.')?>đ
+                        </span>
                     </div>
                     <div class="col-auto">
-                        <div class="icon icon-shape bg-gradient-info rounded-circle shadow">
+                        <div class="icon icon-shape-rounded-circle shadow">
                         <i class="fas fa-wallet"></i>
                         </div>
                     </div>
                 </div>
                 <p class="mt-3 mb-0 text-sm">
-                    <span class="text-nowrap"><a href="index.php?act=manage-bill">Xem Chi Tiết</a></span>
+                    <span class="text-nowrap"><a href="index.php?act=bill&list">Xem Chi Tiết</a></span>
                 </p>
             </div>
         </div>
@@ -125,20 +139,23 @@
 <!--row-->
 <div class="row">
     <!-- Card Body -->
-    <div class="col-md-8">
+    <div class="col-md-6">
         <!-- Project Card Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Thống Kê Danh Mục</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Thống Kê Sản phẩm theo Danh mục</h6>
             </div>
             <div class="card-body">
-
-                <h4 class="small font-weight-bold">Phòng ngủ<span class="float-right">Sản Phẩm:29 </span></h4>
+            <?php
+                $statiscalCategoryProduct = statiscal_product_category();
+                foreach ($statiscalCategoryProduct as $value){
+                    extract($value);
+            ?>
+                <h4 class="small font-weight-bold"><?=$cateName?><span class="float-right">Sản Phẩm: <?=$products?> (<?=round(($products / $countProduct) * 100, 2)?>%)</span></h4>
                 <div class="progress mb-4">
-                    <div class="progress-bar bg-success" role="progressbar" style="width:60%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-info" role="progressbar" style="width:<?=($products / $countProduct) * 100?>%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-
-                <h4 class="small font-weight-bold">Phòng Khách <span class="float-right">Sản phẩm 30%</span></h4>
+                <!-- <h4 class="small font-weight-bold">Phòng Khách <span class="float-right">Sản phẩm 30%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
@@ -146,7 +163,7 @@
                 <div class="progress mb-4">
                     <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <!--   <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
+                  <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
@@ -154,15 +171,15 @@
                 <div class="progress">
                     <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div> -->
+            <?php } ?>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Biểu Đồ Chart:Danh mục</h6>
-
+                <!-- <h6 class="m-0 font-weight-bold text-primary">Biểu Đồ Thống kê Đơn hàng theo Sản phẩm</h6> -->
             </div>
             <!-- Card Body -->
             <div class="card-body">
@@ -197,18 +214,21 @@
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+            <?php
+                $statiscalChart = statiscal_bill_product();
+                foreach ($statiscalChart as $value) {
+                    extract($value);
+            ?>
+                ['<?=$prodName?>', <?=$countProduct?>],
+        //   ['Onions', 1],
+        //   ['Olives', 1],
+        //   ['Zucchini', 1],
+        //   ['Pepperoni', 2]
+            <?php } ?>
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':300,
-                       'height':250};
-
+        var options = {'title':'Biểu Đồ Thống kê Đơn hàng theo Sản phẩm','width':550,'height':250};
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);

@@ -1,4 +1,5 @@
 <?php include_once 'inc_admin/header.php';
+include_once '../model/statistical.php';
 include '../model/customer.php';
 include_once '../model/pdo.php';
 include_once '../model/global.php';
