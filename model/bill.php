@@ -6,7 +6,7 @@ function loadAll_bill()
 }
 
 function loadAll_bill_custId($custId){
-    $sql="SELECT * FROM tbl_bill WHERE custId = $custId";
+    $sql="SELECT * FROM tbl_bill WHERE custId = $custId order by billId desc";
     return pdo_query($sql);
 }
 function loadOne_bill($billId)

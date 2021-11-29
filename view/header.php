@@ -376,14 +376,14 @@ init();
                                     $count_cart=0;
                                 }
                                 ?>
-                                <span class="header__nav-control-cart-quantity"><?=$count_cart;?></span>
+                                <span class="header__nav-control-cart-quantity"><?=$count_cart?></span>
                                 ( items )
                             </p>
-                            <ul class="header__nav-control-cart-list header__nav-control-cart-list--no-item">
+                            <!-- <ul class="header__nav-control-cart-list header__nav-control-cart-list--no-item">
                                 <li class="header__nav-control-cart-item">
                                     <span class="header__nav-control-cart-item-name">No products in the cart.</span>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </a>
                     </div>
                 </div>
