@@ -513,7 +513,10 @@
     padding: 0 8px;
 }
 .header__nav-control-cart-quantity{
-    color: var(--hover-color);
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    padding: 5px 8px;
+    border-radius: 15px;
 }
 .header__nav-control-cart-list--no-item{
     align-items: center;
