@@ -1,3 +1,6 @@
+
+
+
 <!-- <div class="container"> -->
 <div class="grid wide">
     <div class="directional">
@@ -7,7 +10,7 @@
     <div class="product">
         <!--thông tin-->
         <div class="product__left">
-            <form action="index.php?act=shoppingcart" method="post">
+            <form action="index.php?act=shoppingcart" method="post" >
                 <div class="row content-1">
 
                     <?php

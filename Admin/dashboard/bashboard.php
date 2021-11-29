@@ -135,7 +135,7 @@
 
                 <h4 class="small font-weight-bold">Phòng ngủ<span class="float-right">Sản Phẩm:29 </span></h4>
                 <div class="progress mb-4">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-success" role="progressbar" style="width:60%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
 
                 <h4 class="small font-weight-bold">Phòng Khách <span class="float-right">Sản phẩm 30%</span></h4>
