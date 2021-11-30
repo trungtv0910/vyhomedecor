@@ -30,6 +30,15 @@
         $statiscal = pdo_query($sql);
         return $statiscal;
     }
+
+    function statiscal_bill_customer(){
+        $sql = "SELECT tbl_customer.custName AS custName, count(tbl_bill.billId) AS countBill";
+        $sql.=" FROM tbl_bill left join tbl_customer on tbl_bill.custId = tbl_customer.custId";
+        $sql.=" group by tbl_customer.custId order by tbl_customer.custName asc";
+        $statiscal = pdo_query($sql);
+        return $statiscal;
+    }
+
     function new_bill(){
         $sql = "SELECT tbl_bill.billId AS newBill FROM tbl_bill order by billId desc limit 0,5";
         $statiscal = pdo_query($sql);
