@@ -47,12 +47,6 @@
     }
 
     function list_Product() {
-        // $sql="SELECT tbl_product.* ,tbl_category_child.cateChildName, tbl_category.cateName
-        // FROM tbl_product 
-        // INNER JOIN tbl_category_child on tbl_category_child.cateChildId =tbl_product.cateChildId
-        // INNER JOIN tbl_category on tbl_category.cateId = tbl_product.cateId
-        // Order by prodId DESC
-        // ";
         $sql="SELECT * FROM tbl_product ORDER BY prodId DESC";
         $res = pdo_query($sql);
         return $res;
@@ -246,3 +240,7 @@
         $sql.= " ORDER BY prodId DESC";
         return pdo_query($sql);
     }
+function    update_view_product($prodId){
+    $sql="UPDATE tbl_product SET view=view+1 where prodId = $prodId ";
+    return pdo_execute($sql);
+}

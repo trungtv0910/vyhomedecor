@@ -177,10 +177,10 @@ if (isset($_GET['act'])) {
                 } else if (isset($_GET['edit'])) {
                     $billId=$_GET['edit'];
                     $custId = $_GET['custId'];
-                    $loadOne_cust = loadOne_customer($custId);
-                    // var_dump( $loadOne_cust);
+                    // $loadOne_cust = loadOne_customer($custId);
+                    $bill_info=loadBillByBillId($billId);
+                   
                     $loadOne_bill = loadOne_bill($billId);
-                    // var_dump($loadOne_bill);
                     include 'bill/edit.php';
                 } else if (isset($_GET['update'])) {
                     $billId = $_POST['billId'];

@@ -51,7 +51,7 @@ if (isset($_SESSION['login'])) {
                                 <input name="payment" type="radio" id="viettelpay" value="2" class="form-control"><img src="./images/pay/viettelpay.png" alt="" class="checkout__payment-img"><label for="viettelpay" class="checkout__payment-desc">Thanh toán bằng viettel Pay</label>
                             </div>
                             <div class="checkout__payment">
-                                <input name="payment" type="radio" id="zalo" value="3" class="form-control"><img src="./images/pay/zalo.svg" alt="" class="checkout__payment-img"><label for="zalo" class="checkout__payment-desc">Thanh toán bằng Zalo</lable>
+                                <input name="payment" type="radio" id="zalo" value="3" class="form-control"><img src="./images/pay/zalo.svg" alt="" class="checkout__payment-img"><label for="zalo" class="checkout__payment-desc">Thanh toán bằng ZaloPay</lable>
                             </div>
                             <span class="form-message"></span>
                         </div>

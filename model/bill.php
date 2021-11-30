@@ -4,6 +4,11 @@ function loadAll_bill()
     $sql = "SELECT * FROM tbl_bill ORDER BY billId DESC";
     return pdo_query($sql);
 }
+function loadBillByBillId($billId)
+{
+    $sql = "SELECT * FROM tbl_bill where billId=$billId";
+    return pdo_query($sql);
+}
 
 function loadAll_bill_custId($custId){
     $sql="SELECT * FROM tbl_bill WHERE custId = $custId order by billId desc";

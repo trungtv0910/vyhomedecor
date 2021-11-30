@@ -41,8 +41,9 @@
                                 <td><i class="fas fa-barcode"> </i><?=$billId?></td>
                                 <td><i class="ni ni-single-02"></i>
                                    <?php
-                                       $nameCust = loadOne_customer($custId);
-                                       echo $nameCust['custName'];
+                                    //    $nameCust = loadOne_customer($custId);
+                                    //    echo $nameCust['custName'];
+                                    echo $billCustName;
                                    ?>
                                 </td>
                                 <td><i class="ni ni-time-alarm"></i><?=$date?></td>
@@ -52,13 +53,13 @@
                                             if($billStatus==0){
                                                 echo "Chờ xác nhận";
                                             }else if($billStatus==1){
-                                                echo "Đang xử lý";
+                                                echo "<div class='mess_waiting'>Đang xử lý</div>";
                                             }else if($billStatus==2){
-                                                echo "Đang giao hàng";
+                                                echo "<div class='mess_delivery'>Đang giao hàng</div>";
                                             }else if($billStatus==3){
-                                                echo "Giao hàng thành công";
+                                                echo "<div class='mess_success'>Giao hàng thành công</div>";
                                             }else{
-                                                echo "Đã bị huỷ";
+                                                echo "<div class='mess_cancel'>Đã bị huỷ</div>";
                                             }
                                         ?>
                                     </span>
@@ -72,7 +73,11 @@
                                         if($payMethod==0){
                                             echo 'Thanh toán khi nhận hàng COD';
                                         }else if($payMethod==1){
-                                            echo 'Thanh toán Online ATM';
+                                            echo 'Thanh toán bằng MoMo';
+                                        }else if($payMethod==2){
+                                            echo 'Thanh toán bằng ViettelPay';
+                                        }else if($payMethod==3){
+                                            echo 'Thanh toán bằng ZaloPay';
                                         }
                                     ?>
                                 </td>

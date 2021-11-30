@@ -245,3 +245,15 @@ border-radius: 5px;
 .table{
     color: rgb(86 84 84) !important;
 }
+.mess_cancel{
+    color:#e81500;
+}
+.mess_success{
+    color:#00ac69;
+}
+.mess_waiting{
+    color:#f4a100;
+}
+.mess_delivery{
+    color: #00cfd5;;
+}

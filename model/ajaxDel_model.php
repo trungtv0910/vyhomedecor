@@ -11,7 +11,7 @@ $count = 1;
 $mycartAjax = $_SESSION['login']['mycart'];
 foreach ($mycartAjax as $key => $value) {
     if ($prodIdAjax == $key) {
-        $_SESSION['login']['mycart'][$key]['quantity'] += 1;
+        unset($_SESSION['login']['mycart'][$key]);
         break;
     }
 }
@@ -38,6 +38,7 @@ $mycart = $_SESSION['login']['mycart'];
             $price_quantity = $value['price'] * $value['quantity'];
             $total += $price_quantity;
         ?>
+            <!-- <form action="" method="post"> -->
             <tr style="border-bottom: 1px solid #ccc;" class="cart__item">
                 <td class="cart__method">
                     <button class="cart__delete btn-delete" value="<?= $key ?>"><i class="fas fa-times-circle"></i></button>
@@ -57,6 +58,7 @@ $mycart = $_SESSION['login']['mycart'];
                 <td class="cart__total"><?= number_format($price_quantity, 0, ',', '.'); ?>₫</td>
                 <td class="cart__update"><button type="submit"><i class="fas fa-redo"></i></button></td>
             </tr>
+            <!-- </form> -->
         <?php $i++;
         } ?>
     </tbody>

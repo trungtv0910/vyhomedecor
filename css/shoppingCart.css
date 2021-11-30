@@ -132,3 +132,9 @@ th, td{
     background-color: transparent;
     cursor: pointer;
 }
+.btn-delete{
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}

@@ -91,8 +91,9 @@
                             <div class="mybill__control">
                                 <div class="mybill__total">
                                     <p class="mybill__total-title">Tổng số tiền: </p>
-                                    <p class="mybill__total-price"><?=number_format ($totalOneBill, 0, ',', '.')?>đ </p>
+                                    <p class="mybill__total-price"><?=number_format ($billTotal, 0, ',', '.')?>đ </p>
                                 </div>
+                                <p class="mess_total">(Đã bao gồm VAT và phí vận chuyển)</p>
                                 <?php
                                     if($billStatus == 0) {
                                 ?>

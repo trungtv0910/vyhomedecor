@@ -146,6 +146,8 @@ if (isset($_GET['act'])) {
         case "product": {
                 if (isset($_GET['prodId'])) {
                     $prodId = $_GET['prodId'];
+                     // tăng hệ lượt view
+                     update_view_product($prodId);
                     $loadOne = loadOne_product($prodId);
                     $cate = loadOne_category($loadOne['cateId']);
                     $cateChild = loadOne_ChildCategory($loadOne['cateChildId']);

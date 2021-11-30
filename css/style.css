@@ -1655,3 +1655,6 @@
     outline: none;
     border: none;
 }
+.mess_total{
+    text-align: end;
+}

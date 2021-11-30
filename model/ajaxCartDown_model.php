@@ -11,8 +11,10 @@ $count = 1;
 $mycartAjax = $_SESSION['login']['mycart'];
 foreach ($mycartAjax as $key => $value) {
     if ($prodIdAjax == $key) {
-        $_SESSION['login']['mycart'][$key]['quantity'] += 1;
-        break;
+        if ($_SESSION['login']['mycart'][$key]['quantity'] > 1) {
+            $_SESSION['login']['mycart'][$key]['quantity'] -= 1;
+            break;
+        }
     }
 }
 $mycart = $_SESSION['login']['mycart'];

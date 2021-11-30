@@ -1,4 +1,4 @@
-<!-- <div class="container"> -->
+
 <div class="grid wide">
     <div class="directional">
         <a href="index.php">Trang Chủ</a> <i class="fas fa-chevron-right"></i> <a href="index.php?act=list-product&cateId=<?= $cate['cateId'] ?>"><?= $cate['cateName'] ?></a> <i class="fas fa-chevron-right"></i> <a href="index.php?act=list-product&cateId=<?= $cate['cateId'] ?>&cateChildId=<?= $cateChild['cateChildId'] ?>"><?= $cateChild['cateChildName'] ?></a>
@@ -211,7 +211,7 @@
         </div>
     </div>
 </div>
-<!-- </div> -->
+
 <script src="js/jquery.js"></script>
 <script>
     $(document).ready(function() {

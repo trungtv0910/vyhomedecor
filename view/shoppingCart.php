@@ -26,12 +26,9 @@ if (isset($_SESSION['login']['mycart'])) {
                     $price_quantity = $value['price'] * $value['quantity'];
                     $total += $price_quantity;
                 ?>
-                    <!-- <form action="" method="post"> -->
                     <tr style="border-bottom: 1px solid #ccc;" class="cart__item">
                         <td class="cart__method">
-                            <a href="index.php?act=shoppingcart&remove_product=<?= $key ?>" class="cart__delete"><i class="fas fa-times-circle"></i></a>
-                            <!-- <button class="cart__delete" value="<?= $key ?>" ><i class="fas fa-times-circle"></i></button> -->
-
+                            <button class="cart__delete btn-delete" value="<?= $key ?>" ><i class="fas fa-times-circle"></i></button>
                         </td>
                         <td class="cart__info">
                             <a href="#" class="cart__link">
@@ -41,18 +38,13 @@ if (isset($_SESSION['login']['mycart'])) {
                         </td>
                         <td class="cart__price"><?= number_format($value['price'], 0, ',', '.') ?>₫</td>
                         <td class="cart__quantity<?= $i ?>">
-                            <!-- <input onclick="var result = document.querySelector('.quantity<?= $i ?>'); var qty = result.value; if( !isNaN(qty) &amp;&amp; qty > 1 ) result.value--;return false;" type='button' value='-' class="quantity-control downQuality"/> -->
                             <button onclick="var result = document.querySelector('.quantity<?= $i ?>'); var qty = result.value; if( !isNaN(qty) &amp;&amp; qty > 1 ) result.value--;return false;" type='button' value='<?= $key ?>' class="quantity-control downQuality">-</button>
-
                             <input class='quantity quantity<?= $i ?>' min='1' name='quantity' type='text' value='<?= $value['quantity'] ?>' />
-                            <!-- <input onclick="var result = document.querySelector('.quantity<?= $i ?>'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' class="quantity-control upQuality"/> -->
                             <button onclick="var result = document.querySelector('.quantity<?= $i ?>'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='<?= $key ?>' class="quantity-control upQuality">+</button>
-
                         </td>
                         <td class="cart__total"><?= number_format($price_quantity, 0, ',', '.'); ?>₫</td>
                         <td class="cart__update"><button type="submit"><i class="fas fa-redo"></i></button></td>
                     </tr>
-                    <!-- </form> -->
                 <?php $i++;
                 } ?>
             </tbody>
@@ -77,32 +69,29 @@ if (isset($_SESSION['login']['mycart'])) {
         </div>
         <script src="js/jquery.js"></script>
         <script>
-    $(document).ready(function() {
+            $(document).ready(function() {
 
-        $('.upQuality').click(function() {
-            console.log($(this).val());
-            var prodId = $(this).val();
-            // $.post("model/ajaxCartUp_model.php",{prodId:prodId},function(data){
-            //     $('body').html(data);
-            // });
-            // $.post("model/ajaxCartUp_model.php",{prodId:prodId});
-            $('#shopping-cart').load("model/ajaxCartUp_model.php", {
-                prodId: prodId
+                $('.upQuality').click(function() {
+                    var prodId = $(this).val();
+                    $('#shopping-cart').load("model/ajaxCartUp_model.php", {
+                        prodId: prodId
+                    });
+
+                });
+                $('.downQuality').click(function() {
+                    var prodId = $(this).val();
+                    $('#shopping-cart').load("model/ajaxCartDown_model.php", {
+                        prodId: prodId
+                    });
+                });
+                $('.cart__delete').click(function(){
+                    var prodId= $(this).val();
+                    $('#shopping-cart').load("model/ajaxDel_model.php",{
+                        prodId:prodId
+                    })
+                });
+
             });
-
-        });
-        $('.downQuality').click(function() {
-            //  alert($(this).val()); 
-            console.log($(this).val());
-            var count = 0;
-            console.log(count);
-        });
-
-
-
-
-    });
-</script>
+        </script>
     </div>
 </div>
-
