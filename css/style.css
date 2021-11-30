@@ -1625,6 +1625,7 @@
 }
 .quantity-control{
     width: 30px;
+    cursor: pointer;
     outline: none;
     border: none;
     margin: 0 2px;
