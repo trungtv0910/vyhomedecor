@@ -80,7 +80,9 @@
                                                                                 echo 'realTimeAddToCart';
                                                                             } ?>" id="addToCart" value="Thêm vào giỏ hàng">
                             <!-- <button   id="addToCart" >Thêm giỏ hàng</button> -->
-                            <input type="submit" name="buyNow" value="Mua ngay" id="buyNow">
+                            <input type="submit" name="buyNow" class="<?php if (isset($_SESSION['login'])) {
+                                                                                echo 'realTimeBuyNow';
+                                                                            } ?>" value="Mua ngay" id="buyNow">
                         </div>
 
                     </div>
@@ -251,13 +253,28 @@
             
             });
         });
-
+        // sự kiện khi thêm vào giỏ hàng scroll về top
         $('.realTimeAddToCart').click(function() {
             // document.documentElement.scrollTop = 170;
             $('html, body').animate({scrollTop:170}, 50);
         })
 
-
+        //sự kiện mua hàng ngay
+        $('.realTimeBuyNow').click(function() {
+            var prodId      =$('#getProdId').val();
+            var price       =$('#getPrice').val();
+            var quantity    =$('#getQuantity').val();
+            var image       =$('#getImage').val();
+            $.post('model/ajaxBuyNow_model.php',{
+                prodId:prodId,
+                price:price,
+                quantity:quantity,
+                image:image
+            },function(data){
+                $('#show_count').html(data);
+            
+            });
+        });
 
 
 
