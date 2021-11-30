@@ -165,7 +165,6 @@
 <script src="./js/validator.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-          // Mong muốn của chúng ta
           Validator({
             form: '#checkout__form',
             formGroupSelector: '.form-group',
@@ -181,13 +180,6 @@
             ],
           });
         });
-        // const myCart = document.querySelector('.header__nav-control-cart')
-        // const login = document.querySelector('.js-login')
-        // if(login)
-        //     myCart.onclick = (e) => {
-        //         e.preventDefault()
-        //         login.click()
-        //     }  
     </script>
 </body>
 

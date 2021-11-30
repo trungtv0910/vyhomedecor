@@ -7,7 +7,7 @@ if (isset($_SESSION['login'])) {
 ?>
 <div class="grid wide">
     <div class="checkout">
-        <form action="index.php?act=bill-confirm" method="post">
+        <form action="index.php?act=bill-confirm" method="post" id="checkout__form">
 
             <div class="row">
 
