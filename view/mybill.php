@@ -76,12 +76,16 @@
                                    
                             ?>
                             <div class="mybill__info">
-                                <a href="#" class="mybill__link">
-                                    <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="" class="mybill__img">
-                                </a>
-                                <span class="mybill__name"><?=$prodName?></span>
-                                <span class="mybill__quantity">x<?=$quantity?></span>
-                                <span class="mybill__price"><?=number_format (($price * $quantity), 0, ',', '.')?>đ</span>
+                                <div class="mybill__info-product">
+                                    <a href="#" class="mybill__link">
+                                        <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="" class="mybill__img">
+                                    </a>
+                                    <span class="mybill__name"><?=$prodName?></span>
+                                </div>
+                                <div class="mybill__info-price">
+                                    <span class="mybill__quantity">x<?=$quantity?></span>
+                                    <span class="mybill__price"><?=number_format (($price * $quantity), 0, ',', '.')?>đ</span>
+                                </div>
                             </div>
                             <?php } ?>
                             <div class="mybill__control">

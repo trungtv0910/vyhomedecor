@@ -7,7 +7,7 @@ if (isset($_SESSION['login'])) {
 ?>
 <div class="grid wide">
     <div class="checkout">
-        <form action="index.php?act=bill-confirm" method="post" id="checkout__form">
+        <form action="index.php?act=bill-confirm" method="post">
 
             <div class="row">
 
@@ -17,25 +17,25 @@ if (isset($_SESSION['login'])) {
                         <h3 class="checkout__heading">Thông tin vận chuyển</h3>
                         <div class="form-group">
                             <label for="fullname" class="form-label">Họ và tên</label>
-                            <input id="fullname" type="text" value="<?= $billConfirm['custName'] ?>" class="form-control" name="custName">
+                            <input id="fullname" type="text" value="<?= $billConfirm['custName'] ?>" class="form-control" name="custName" required>
                             <input id="" type="hidden" value="<?= $billConfirm['custId'] ?>" class="form-control" name="custId">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="fullname" class="form-label">Số điện thoại</label>
-                            <input id="phone" type="text" value="<?= $billConfirm['phone'] ?>" class="form-control" name="phone">
+                            <input id="phone" type="text" value="<?= $billConfirm['phone'] ?>" class="form-control" name="phone" required>
                             <span class="form-message"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="email" class="form-label">Email</label>
-                            <input id="email" type="text" value="<?= $billConfirm['email'] ?>" class="form-control" name="email">
+                            <input id="email" type="text" value="<?= $billConfirm['email'] ?>" class="form-control" name="email" required>
                             <span class="form-message"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="password" class="form-label">Địa chỉ</label>
-                            <input id="address" type="text" value="<?= $billConfirm['address'] ?>" class="form-control" name="address">
+                            <input id="address" type="text" value="<?= $billConfirm['address'] ?>" class="form-control" name="address" required>
                             <span class="form-message"></span>
                         </div>
 

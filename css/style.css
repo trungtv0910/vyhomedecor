@@ -714,6 +714,10 @@
     text-transform: uppercase;
     text-decoration: none;
     color: var(--primary-color);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 .header__nav-full-link-info:hover{
     color: var(--hover-color);
@@ -726,7 +730,7 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 2;
 }
 .header__nav-full-hidden{
     border-radius: 2px;
@@ -1223,8 +1227,10 @@
     text-align: justify;
 }
 .new-products__btn{
+    display:inline-block;
     margin-top: 16px;
-    padding: 10px 28px;
+    padding: 10px 32px;
+    text-decoration: none;
     outline: none;
     border: none;
     background-color: var(--primary-color);

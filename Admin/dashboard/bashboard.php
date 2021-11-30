@@ -36,6 +36,132 @@
 </header>
 
 <div class="row">
+    
+    <div class="col-xl-3 col-md-6">
+        <div class="card card-stats">
+            <!-- Card body -->
+            <div class="card-body">
+                <div class="row">
+                    
+                    <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-2">Khách hàng mới</h5>
+                        <?php
+                            $newCustomer = new_customer();
+                            foreach ($newCustomer as $value) {
+                                extract($value);
+                        ?>
+                        <span class="text-info font-weight-light mb-0">
+                                <li><?=$newCustomer?></li>
+                        </span>
+                        <?php } ?>
+                    </div>
+                    <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-orange  rounded-circle shadow">
+                        <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-3 mb-0 text-sm">
+
+                    <span class="text-nowrap"><a href="index.php?act=customer&list">Xem Chi Tiết</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-3 col-md-6">
+        <div class="card card-stats">
+            <!-- Card body -->
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-2">Bình luận mới</h5>
+                        <?php
+                            $newComment = new_comment();
+                            foreach ($newComment as $value) {
+                                extract($value);
+                        ?>
+                        <span class="text-warning font-weight-light mb-0 new-comment">
+                            <li><?=$newComment?></li>
+                        </span>
+                        <?php } ?>
+                    </div>
+                    <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-green rounded-circle shadow">
+                       
+                        <i class="fas fa-box-open"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-3 mb-0 text-sm">
+                    <span class="text-nowrap"><a href="index.php?act=comment&list">Xem Chi Tiết</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card card-stats">
+            <!-- Card body -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-2">Sản phẩm mới</h5>
+                        <?php
+                            $newProduct = new_product();
+                            foreach ($newProduct as $value) {
+                                extract($value);
+                        ?>
+                        <span class="text-success font-weight-light mb-0 new-comment">
+                            <li> <?=$newProduct?></li>
+                        </span> 
+                        <?php } ?>
+                    </div>
+                    <div class="col-auto">
+                        <div class="icon icon-shape-rounded-circle shadow">
+                        <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-3 mb-0 text-sm">
+                    <span class="text-nowrap"><a href="index.php?act=product&list">Xem Chi Tiết</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card card-stats">
+            <!-- Card body -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="card-title text-uppercase text-muted mb-2">Đơn hàng mới</h5>
+                        <?php
+                            $newBill = new_bill();
+                            foreach ($newBill as $value) {
+                                extract($value);
+                        ?>
+                        <span class="text-danger font-weight-light mb-0">
+                            <li> Mã đơn hàng: <?=$newBill?></li>
+                        </span>
+                        <?php } ?>
+                    </div>
+                    <div class="col-auto">
+                        <div class="icon icon-shape bg-gradient-red  rounded-circle shadow">
+                        <i class="fas fa-archive"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-3 mb-0 text-sm">
+                    <span class="text-nowrap"><a href="index.php?act=bill&list">Xem Chi Tiết</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="row">
     <div class="col-xl-3 col-md-6">
         <div class="card card-stats">
             <!-- Card body -->

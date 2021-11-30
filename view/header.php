@@ -311,7 +311,8 @@ init();
                                         <span class="header__nav-full-info">
                                             <?php
                                             $des = json_decode($prodDesc, true);
-                                            echo  textShorten($des['des'], 100);
+                                            // echo  textShorten($des['des'], 100);
+                                            echo $des['des'];
                                             ?>
                                         </span>
                                     </ul>

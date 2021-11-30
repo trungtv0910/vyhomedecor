@@ -64,24 +64,27 @@
     height: 100px;
     border: 1px solid var(--border-color);
     padding: 4px;
-    margin-right: 100px;
 }
 .mybill__img{
     display: block;
     width: 100%;
     border-radius: 2px;
 }
-.mybill__name{
-    margin-left: -260px;
-    /* width: 30%; */
-    flex: .4 1 100px;
+.mybill__info-product{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
-.mybill__quantity{
-    flex: 0 1 100px;
+.mybill__name{
+    margin-left: 16px;
+}
+.mybill__info-price{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
 }
 .mybill__price{
     font-weight: 600;
-    
 }
 .mybill__control{
     background-color: #fafafa;

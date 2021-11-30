@@ -58,7 +58,7 @@
                                     <div class="products__item-link-hover">
                                         <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-link-hover-add">
                                             <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
+                                            Xem ngay
                                         </a>
                                         <div href="#" class="products__item-link-hover-info">
                                             <div class="products__item-link-hover-info-item">
@@ -129,10 +129,10 @@
                                 <p class="new-products__about">
                                     <?php 
                                     $des= json_decode($prodDesc,true);
-                                    echo  textShorten($des['des'], 300);
+                                    echo  $des['des'];
                                     ?>
-                            </p>
-                                <button class="new-products__btn">Thêm vào giỏ hàng</button>
+                                </p>
+                                <a href="index.php?act=product&prodId=<?=$prodId?>" class="new-products__btn">Xem ngay</a>
                             </div>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                                     <div class="products__item-link-hover">
                                         <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-link-hover-add">
                                             <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
-                                            Thêm vào giỏ hàng
+                                            Xem ngay
                                         </a>
                                         <div href="#" class="products__item-link-hover-info">
                                             <div class="products__item-link-hover-info-item">
@@ -325,7 +325,7 @@
                                     </span>
                                     <a href="#" class="most-view__item-btn"> 
                                         <i class="fas fa-shopping-cart"></i>    
-                                        Thêm vào giỏ hàng
+                                        Xem ngay
                                     </a>
                                 </div>
                             </div>
