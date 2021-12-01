@@ -28,7 +28,7 @@ if (isset($_SESSION['login']['mycart'])) {
                 ?>
                     <tr style="border-bottom: 1px solid #ccc;" class="cart__item">
                         <td class="cart__method">
-                            <button class="cart__delete btn-delete" value="<?= $key ?>" ><i class="fas fa-times-circle"></i></button>
+                            <button class="cart__delete btn-delete" value="<?= $key ?>"><i class="fas fa-times-circle"></i></button>
                         </td>
                         <td class="cart__info">
                             <a href="#" class="cart__link">
@@ -84,10 +84,10 @@ if (isset($_SESSION['login']['mycart'])) {
                         prodId: prodId
                     });
                 });
-                $('.cart__delete').click(function(){
-                    var prodId= $(this).val();
-                    $('#shopping-cart').load("model/ajaxDel_model.php",{
-                        prodId:prodId
+                $('.cart__delete').click(function() {
+                    var prodId = $(this).val();
+                    $('#shopping-cart').load("model/ajaxDel_model.php", {
+                        prodId: prodId
                     })
                 });
 
