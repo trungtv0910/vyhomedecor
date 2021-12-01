@@ -138,16 +138,16 @@ if (isset($_GET['act'])) {
             }
             break;
 
-        case "logout": {
-                checkLogout();
-                echo '<script>window.location="index.php" </script>';
+        case "logout": {            
+                    checkLogout();
+                    echo '<script>window.location="index.php" </script>';           
             }
             break;
         case "product": {
                 if (isset($_GET['prodId'])) {
                     $prodId = $_GET['prodId'];
-                     // tăng hệ lượt view
-                     update_view_product($prodId);
+                    // tăng hệ lượt view
+                    update_view_product($prodId);
                     $loadOne = loadOne_product($prodId);
                     $cate = loadOne_category($loadOne['cateId']);
                     $cateChild = loadOne_ChildCategory($loadOne['cateChildId']);
@@ -183,7 +183,7 @@ if (isset($_GET['act'])) {
             }
             break;
         case "shoppingcart": {
-                if (isset($_SESSION['login']['login']) == true) {
+                if (isset($_SESSION['login']['login']) == true) {                  
                     if (isset($_POST['buyNow'])) {
                         $image = $_POST['image'];
                         $prodId = $_POST['prodId'];
@@ -192,9 +192,6 @@ if (isset($_GET['act'])) {
                         $get_prod =  loadOne_product($prodId);
                         $addToCart =    addTocart($prodId, $price, $image, $quantity, $get_prod);
                         if ($addToCart == true) {
-                            // echo '<pre>';
-                            // print_r($_SESSION);
-                            // echo '</pre>';
                             include 'view/shoppingcart.php';
                         }
                     } else {
