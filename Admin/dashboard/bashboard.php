@@ -1,3 +1,11 @@
+<style>
+    .new-comment{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+</style>
 <?php
     $statiscalBill = statiscal_bill();
     foreach ($statiscalBill as $value) {

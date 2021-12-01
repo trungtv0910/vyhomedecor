@@ -1,11 +1,4 @@
-<style>
-    .new-comment{
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-    }
-</style>
+
 
 <div class="row">
     <div class="col-xl-12">
