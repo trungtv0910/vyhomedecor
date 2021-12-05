@@ -15,7 +15,6 @@ include_once 'model/cart_model.php';
 
 <?php
 
-
 if (isset($_GET['act'])) {
     $path = $_GET['act'];
     switch ($path) {
@@ -25,7 +24,6 @@ if (isset($_GET['act'])) {
                     $password = $_POST['password'];
                     $res = checkLogin($username, $password);
                     if ($res == 1) {
-
                         echo '<script>window.location="index.php" </script>';
                     } else {
                         echo "<script>Swal.fire({icon: 'error', title: 'Đăng nhập thất bại',text: 'Bạn nhập sai mật khẩu hoặc tài khoản!' })</script>";
@@ -96,7 +94,11 @@ if (isset($_GET['act'])) {
                     $email = $_POST['email'];
                     $address = $_POST['address'];
                     edit_customer($custId, $username, $password, $custName, $phone, $email, $address);
-                    $_SESSION['login'] = checkLogin($username, $password);
+                    // $_SESSION['login'] = checkLogin($username, $password);
+                    
+
+
+
                     echo "<script>
                                 Swal.fire({
                                 position: 'top-end',
@@ -224,8 +226,9 @@ if (isset($_GET['act'])) {
                         $dataProduct = $_SESSION['login']['mycart'];
                         if (insertToBill($_POST, $dataProduct)) {
                             unset($_SESSION['login']['mycart']);
-                            echo "<script>Swal.fire({ position: 'top-end',icon: 'success',title: 'Đặt hàng Thành Công.',showConfirmButton: false,timer: 1500})
-                              var action = setTimeout(function(){window.location='index.php?act=mybill';}, 1500);</script>";
+                            // echo "<script>Swal.fire({ position: 'top-end',icon: 'success',title: 'Đặt hàng Thành Công.',showConfirmButton: false,timer: 1500})
+                            //   var action = setTimeout(function(){window.location='index.php?act=mybill';}, 1500);</script>";
+                            
                         } else {
                             echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Đặt hàng Thất Bại'})</script>";
                         }

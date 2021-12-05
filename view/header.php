@@ -33,6 +33,7 @@ init();
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/jquery.js"></script>
 </head>
 
 <body>
@@ -89,7 +90,7 @@ init();
                         <?php
 
                         if (isset($_SESSION['login']['login']) == true) {
-                            $account = $_SESSION['login'];
+  
                         ?>
                             <ul class="header__top-right-list hide-on-mobile">
 
@@ -97,7 +98,7 @@ init();
 
                                 <li class="header__top-right-item">
                                     <i class="header__top-right-icon fas fa-user"></i>
-                                    <a href="#" class="header__top-right-link">Xin chào: <?= $account['custName']  ?></a>
+                                    <a href="#" class="header__top-right-link">Xin chào: <?= $_SESSION['login']['custName']  ?></a>
                                     <ul class="account-control__list">
                                         <li class="account-control__item edit-customer__open">
                                             <i class="header__top-right-icon fas fa-user"></i>
@@ -112,7 +113,7 @@ init();
                                             <a href="index.php?act=mybill" class="header__top-right-link">Đơn hàng của tôi</a>
                                         </li>
                                         <?php
-                                        if ($account['role'] == 1) {
+                                        if ($_SESSION['login']['role'] == 1) {
                                         ?>
                                             <li class="account-control__item">
                                                 <i class="header__top-right-icon far fas fa-users-cog"></i>
@@ -125,26 +126,27 @@ init();
                                         </li>
                                     </ul>
                                 </li>
-                                <div class="edit-customer">
-                                    <form action="index.php?act=edit-customer" method="post">
-                                        <div class="edit-customer__control">
-                                            <h4 class="edit-customer__heading">cập nhật tài khoản</h4>
-                                            <span class="edit-customer__close"><i class="fas fa-times"></i></span>
-                                        </div>
+                                <div class="edit-customer" id="edit-customer">
+                                    <!-- <form action="index.php?act=edit-customer" method="post"> -->
+                                    <div class="edit-customer__control">
+                                        <h4 class="edit-customer__heading">cập nhật tài khoản</h4>
+                                        <span class="edit-customer__close"><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="divInput">
                                         <label for="enter-name" class="model-label"><i class="fas fa-user"></i> Họ và Tên</label>
-                                        <input type="text" name="custName" class="model-input" id="enter-name" value="<?= $account['custName'] ?>">
+                                        <input type="text" name="custName" class="model-input" id="enter-name" value="<?= $_SESSION['login']['custName'] ?>">
                                         <label for="enter-phone" class="model-label"><i class="fas fa-phone"></i> Số điện thoại</label>
-                                        <input type="text" name="phone" class="model-input" id="enter-phone" value="<?= $account['phone'] ?>">
+                                        <input type="text" name="phone" class="model-input" id="enter-phone" value="<?= $_SESSION['login']['phone'] ?>">
                                         <label for="enter-email" class="model-label"><i class="fas fa-envelope"></i> Email</label>
-                                        <input type="text" name="email" class="model-input" id="enter-email" value="<?= $account['email'] ?>">
+                                        <input type="text" name="email" class="model-input" id="enter-email" value="<?= $_SESSION['login']['email'] ?>">
                                         <label for="enter-address" class="model-label"><i class="fas fa-address-card"></i> Địa chỉ</label>
-                                        <input type="text" name="address" class="model-input" id="enter-address" value="<?= $account['address'] ?>">
-                                        <input type="hidden" name="custId" value="<?= $account['custId'] ?>">
-                                        <input type="hidden" name="username" value="<?= $account['username'] ?>">
-                                        <input type="hidden" name="password" value="<?= $account['password'] ?>">
+                                        <input type="text" name="address" class="model-input" id="enter-address" value="<?= $_SESSION['login']['address'] ?>">
+                                        <input type="hidden" id="custId" name="custId" value="<?= $_SESSION['login']['custId'] ?>">
+                                    
+                                        <input type="submit" name="edit-customer" id="info" class="model-btn model-btn-login" value="Cập nhật">
+                                    </div>
 
-                                        <input type="submit" name="edit-customer" class="model-btn model-btn-login" value="Cập nhật">
-                                    </form>
+                                    <!-- </form> -->
                                 </div>
                                 <div class="changepass">
                                     <form action="index.php?act=change-pass" method="post">
@@ -156,8 +158,8 @@ init();
                                         <input type="password" name="password" class="model-input" id="enter-email">
                                         <label for="enter-address" class="model-label"><i class="fas fa-unlock-alt"></i> Nhập lại mật khẩu mới</label>
                                         <input type="password" name="passwordCheck" class="model-input" id="enter-address">
-                                        <input type="hidden" name="custId" value="<?= $account['custId'] ?>">
-                                        <input type="hidden" name="username" value="<?= $account['username'] ?>">
+                                        <input type="hidden" name="custId" value="<?= $_SESSION['login']['custId'] ?>">
+                                        <input type="hidden" name="username" value="<?=  $_SESSION['login']['username'] ?>">
 
                                         <input type="submit" name="changepass" class="model-btn model-btn-login" value="Đổi mật khẩu">
                                     </form>
@@ -170,7 +172,7 @@ init();
                                 <ul class="moblie-top-nav__list">
                                     <li class="moblie-top-nav__item">
                                         <i class="moblie-top-nav__icon far fa-user"></i>
-                                        <a href="#" class="moblie-top-nav__link">Xin chào: <?= $account['custName']  ?></a>
+                                        <a href="#" id="header_username" class="moblie-top-nav__link">Xin chào: <?= $_SESSION['login']['custName']  ?></a>
                                     </li>
                                     <li class="moblie-top-nav__item">
                                         <i class="moblie-top-nav__icon far fa-heart"></i>
@@ -381,7 +383,7 @@ init();
                                     <span id="show_quantity" class="header__nav-control-cart-quantity"><?= $count_cart; ?></span>
                                     ( items )
                                 </p>
-                                <ul class="header__nav-control-cart-list header__nav-control-cart-list--no-item" >
+                                <ul class="header__nav-control-cart-list header__nav-control-cart-list--no-item">
                                     <li class="header__nav-control-cart-item" style="width:100%">
                                         <div class="header__nav-control-cart-item-name">
                                             <div class="status" style="display:flex; gap:10px">
@@ -402,3 +404,26 @@ init();
             </div>
         </header>
         <div class="container">
+
+           
+            <script>
+                $(document).ready(function() {
+                    $('#info').click(function() {
+
+                        var custId = $('#custId').val();
+                        var custName = $('#enter-name').val();
+                        var phone = $('#enter-phone').val();
+                        var email = $('#enter-email').val();
+                        var address = $('#enter-address').val();
+                        $("#divInput").load("model/ajaxUpdateAcc_model.php", {
+                            custId: custId,
+                            custName: custName,
+                            phone: phone,
+                            email: email,
+                            address: address
+                        });
+                        location.reload();
+                    });
+                });
+            </script>
+
