@@ -220,14 +220,15 @@ if (isset($_GET['act'])) {
             }
             break;
         case "bill-confirm": {
+
                 if (isset($_SESSION['login']) && !empty($_SESSION['login']['mycart'])) {
                     include 'view/bill-Confirm.php';
                     if (isset($_POST['acceptBill'])) {
                         $dataProduct = $_SESSION['login']['mycart'];
                         if (insertToBill($_POST, $dataProduct)) {
                             unset($_SESSION['login']['mycart']);
-                            // echo "<script>Swal.fire({ position: 'top-end',icon: 'success',title: 'Đặt hàng Thành Công.',showConfirmButton: false,timer: 1500})
-                            //   var action = setTimeout(function(){window.location='index.php?act=mybill';}, 1500);</script>";
+                            echo "<script>Swal.fire({ position: 'top-end',icon: 'success',title: 'Đặt hàng Thành Công.',showConfirmButton: false,timer: 1500})
+                              var action = setTimeout(function(){window.location='index.php?act=mybill';}, 1500);</script>";
                             
                         } else {
                             echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: 'Đặt hàng Thất Bại'})</script>";

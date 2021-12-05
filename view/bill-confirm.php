@@ -7,7 +7,8 @@ if (isset($_SESSION['login'])) {
 ?>
 <div class="grid wide">
     <div class="checkout">
-        <form action="index.php?act=bill-confirm" method="post" id="checkout__form">
+        <form action="index.php?act=bill-confirm" method="post">
+      
             <div class="row">
                 <div class="col l-6">
                     <div class="checkout-info">
@@ -56,7 +57,9 @@ if (isset($_SESSION['login'])) {
 
                         <div class="checkout__control">
                             <a href="index.php?act=shoppingcart" class="checkout__control-back"><i class="fas fa-arrow-left"></i> Quay lại giỏ hàng</a>
-                            <button type="submit" name="acceptBill" class="form-submit" onclick="return confirm('Xác Nhận Đặt Hàng')">Đồng ý thanh toán</button>
+                            <button type="submit" name="acceptBill" class="form-submit"   >Đồng ý thanh toán</button>
+                            <!-- onclick="return confirm('Xác Nhận Đặt Hàng')" -->
+                           
                         </div>
 
                     </div>

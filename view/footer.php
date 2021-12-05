@@ -124,11 +124,11 @@
         <div class="model-body">
 
             <div class="model-body-form active">
-                <form action="index.php?act=login" method="post">
+                <form action="index.php?act=login" method="post" id='form__login'>
                     <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Tên đăng nhâp</label>
-                    <input type="text" name="username" class="model-input" id="enter-user" required>
+                    <input type="text" name="username" class="model-input" id="enter-user">
                     <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu</label>
-                    <input type="password" name ="password" class="model-input" id="enter-pass" required>
+                    <input type="password" name="password" class="model-input" id="enter-pass" required>
                     <input type="submit" name="login" class="model-btn model-btn-login" value="Đăng nhập">
                 </form>
             </div>
@@ -154,7 +154,7 @@
                     <input type="submit" name="forget-pass" class="model-btn model-btn-login" value="Gửi">
                 </form>
             </div>
-            
+
         </div>
 
         <!-- </form> -->
@@ -162,25 +162,27 @@
 
 </div>
 <script src="./js/index.js"></script>
-<script src="./js/validator.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          Validator({
+<script src="js/validator.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Validator({
             form: '#checkout__form',
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
-              Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn !'),
-              Validator.isRequired('#phone', 'Vui lòng nhập số điện thoại của bạn !'),
-              Validator.isRequired('#email', 'Vui lòng nhập email của bạn !'),
-              Validator.isRequired('#address', 'Vui lòng nhập địa chỉ của bạn !'),
-              Validator.isRequired('input[name="payment"]', 'Vui lòng chọn phương thức thanh toán !'),
-              Validator.isEmail('#email'),
-              Validator.isPhone('#phone')
-            ],
-          });
+                Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn !'),
+                Validator.isRequired('#phone', 'Vui lòng nhập số điện thoại của bạn !'),
+                Validator.isRequired('#email', 'Vui lòng nhập email của bạn !'),
+                Validator.isRequired('#address', 'Vui lòng nhập địa chỉ của bạn !'),
+                Validator.isRequired('input[name="payment"]', 'Vui lòng chọn phương thức thanh toán !'),
+                Validator.isEmail('#email'),
+                Validator.isPhone('#phone')
+            ],  
         });
-    </script>
+    });
+</script>
+
+
 </body>
 
 </html>
