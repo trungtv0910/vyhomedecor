@@ -95,7 +95,7 @@
         <!--sản phẩm liên quan và bình luận-->
         <div class="product__right">
             <div class="row content-2">
-                <div class="col l-3">
+                <div class="col l-4">
                     <div class="top-yeu-thich">
                         <div class="tieu-de">
                             <h2>Sản Phẩm Cùng Loại</h2>
@@ -121,7 +121,7 @@
                         ?>
                     </div>
                 </div>
-                <div class="col l-9">
+                <div class="col l-8">
 
 
 

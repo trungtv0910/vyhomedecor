@@ -66,11 +66,7 @@ function insertToBill($data, $dataProduct)
     }else{
         return false;
     }
-
-
-    
 }
 
 
-  
 ?>
