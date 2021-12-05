@@ -219,6 +219,13 @@ if (isset($_GET['act'])) {
                 include 'view/mybill.php';
             }
             break;
+        case "mybill-showInfoBill":{
+            if(isset($_GET['billId'])){
+                $billId=$_GET['billId'];
+               $infoBill= loadBillByBillId($billId);
+               include 'view/bill_info.php';
+            }
+        }break;
         case "bill-confirm": {
 
                 if (isset($_SESSION['login']) && !empty($_SESSION['login']['mycart'])) {
