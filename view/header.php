@@ -341,7 +341,7 @@ init();
                             </div>
                         </li>
                         <li class="header__nav-item header__nav-link-dad">
-                            <a href="#" class="header__nav-link">Liên hệ</a>
+                            <a href="index.php?act=contact" class="header__nav-link">Liên hệ</a>
                         </li>
                         <li class="header__nav-item">
                             <a href="#" class="header__nav-link">Góp ý</a>

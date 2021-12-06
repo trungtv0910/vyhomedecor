@@ -250,6 +250,10 @@ if (isset($_GET['act'])) {
             include 'view/introduce.php';
         }
         break;
+        case "contact": {
+            include 'view/contact.php';
+        }
+        break;
         default:
             include 'view/home.php';
             break;
