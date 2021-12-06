@@ -95,12 +95,12 @@
 
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputQuantity">Số lượng</label>
-                                <input class="form-control" id="inputQuantity" type="number" placeholder="Nhập số lượng sản phẩm" name="quantity" value="">
+                                <input class="form-control" id="inputQuantity" type="number" placeholder="Nhập số lượng sản phẩm" name="quantity" value="" required>
                             </div>
                             <!-- Form Group (location)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLocation">Giá Bán (VNĐ)</label>
-                                <input class="form-control" id="inputLocation" type="text" placeholder="VD :5.530.000đ" name="price" value="">
+                                <input class="form-control" id="inputLocation" type="text" placeholder="VD :5.530.000đ" name="price" value="" required>
                             </div>
                         </div>
                         <div class="row gx-3 mb-3">

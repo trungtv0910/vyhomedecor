@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 01, 2021 lúc 03:37 AM
+-- Thời gian đã tạo: Th12 06, 2021 lúc 09:09 AM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 7.4.22
 
@@ -53,22 +53,10 @@ INSERT INTO `tbl_bill` (`billId`, `custId`, `date`, `payMethod`, `billCustName`,
 (15, 1, '09:37:07 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 945000, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
 (16, 1, '09:37:19 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 945000, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
 (17, 1, '09:38:54 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 945000, '3', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
-(18, 1, '09:39:58 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 945000, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
-(33, 4, '10:11:04 pm 28/11/2021', '0', 'tấn tài', 2231250, '0', 'Thừa Thiên Huế, Việt Nam', '0977123311', 'quynhtran@gmail.com', 0, 0.05),
-(34, 1, '10:21:19 pm 28/11/2021', '0', 'Nguyễn Tứ Khánh', 2246370, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
-(35, 3, '10:22:33 pm 28/11/2021', '2', 'Nguyễn Tứ vy', 2231250, '4', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
-(36, 3, '10:24:52 pm 28/11/2021', '0', 'Nguyễn Tứ vy', 2231250, '4', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
-(51, 3, '04:21:42 pm 29/11/2021', '0', 'Nguyễn Tứ vy', 3191370, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
-(52, 12, '08:49:57 am 30/11/2021', '0', 'trung văn A', 15981000, '4', '', '', 'hue@gmail.com', 0, 0.05),
-(53, 12, '12:10:33 pm 30/11/2021', '2', 'trung văn A', 935550, '0', '', '', 'hue@gmail.com', 0, 0.05),
-(54, 3, '08:11:37 pm 30/11/2021', '0', 'Nguyễn Tứ vy', 16341500, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
-(55, 12, '10:04:04 pm 30/11/2021', '0', 'trung văn A', 38594800, '2', '', '', 'hue@gmail.com', 0, 0.05),
-(56, 3, '10:32:46 pm 30/11/2021', '2', 'Nguyễn Tứ vy', 3191370, '3', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
-(57, 1, '10:35:07 pm 30/11/2021', '0', 'Nguyễn Tứ Khánh', 8284500, '0', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', '09712444221', 'khanh123@gmail.com', 0, 0.05),
-(58, 3, '10:47:52 pm 30/11/2021', '2', 'Nguyễn Tứ vy', 7502200, '0', 'Hoà khánh ', '0971245611', 'maode123@gmail.com', 0, 0.05),
-(59, 3, '11:00:09 pm 30/11/2021', '0', 'Nguyễn Tứ vy', 16347700, '0', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05),
-(60, 3, '11:03:08 pm 30/11/2021', '3', 'Nguyễn Đình Tùng', 2231250, '0', 'Hà nội', '097127008', 'Nguyendinhtung10092@gmail.com', 0, 0.05),
-(61, 3, '11:08:14 pm 30/11/2021', '0', 'Nguyễn Tứ vy', 3307970, '4', 'Thôn 1,Lai Đông, Hoà Khánh, AM', '0971245611', 'maode123@gmail.com', 0, 0.05);
+(82, 3, '10:03:55 pm 05/12/2021', '0', 'Trần Đức Tài', 3947370, '0', 'Quảng Xương Điền Hương Thừa Thiên Huế', '0973127008', 'maode123@gmail.com', 0, 0.05),
+(83, 3, '10:04:28 pm 05/12/2021', '2', 'Trần Đức Tài', 17362800, '4', 'Quảng Xương Điền Hương Thừa Thiên Huế', '0973127008', 'maode123@gmail.com', 0, 0.05),
+(84, 3, '11:52:47 pm 05/12/2021', '1', 'Trần Đức Tài', 30907100, '0', 'Quảng Nam, Núi Thành', '0973127008', 'maode123@gmail.com', 0, 0.05),
+(85, 3, '09:22:25 am 06/12/2021', '2', 'Nguyễn Thanh Tài', 3440270, '0', 'Quảng Nam, Núi Thành', '0973127008', 'maode123@gmail.com', 0, 0.05);
 
 -- --------------------------------------------------------
 
@@ -102,32 +90,15 @@ INSERT INTO `tbl_bill_detail` (`billId`, `prodId`, `prodName`, `quantity`, `pric
 (15, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
 (16, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
 (17, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
-(18, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
-(33, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
-(34, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
-(35, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
-(36, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
-(51, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
-(51, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
-(52, 22, 'Giường 1m6 LULLABY Outlet', 2, 6230000, 'bed_lullaby_49e1b2eb34eb4e9da55654386ea17556_master.png'),
-(52, 23, 'Ghế ăn TIMI', 1, 2760000, 'naunhat-1_b09957e970ea480d95d8c6186f7d34c4_7c20822ae5a941bea0dbf8b578a6aa5d_master.jpg'),
-(53, 54, 'Bàn sofa, bàn góc CHIN', 1, 891000, '1637848355chin_trang_fffc394c178f4f48ba0f346d5f51bbee_master.png'),
-(54, 7, 'Sản Phẩm Bàn banan honey', 3, 3600000, 'banan-honey-den-3_5c632ea1fc81430e9508d92f85c25c88_149b24fcab3e4790a6387d921ae0af46_master.jpg'),
-(54, 51, 'Kệ trưng bày SAGO đen xám', 2, 2381650, '2_770e04306f87478487e2d330fe004be6_master.png'),
-(55, 52, 'Sofa đơn ALICE', 2, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
-(55, 21, 'Kệ trưng bày Phòng khách', 1, 2507000, '1637853176den_02_c501bfe05a534ca08f97c4a6935eb945_master.png'),
-(55, 19, 'Sofa băng 2 seaters', 2, 15000000, 'a013_01_b1d607fb63d64ad080076030048ddc6a_master.jpg'),
-(56, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
-(56, 11, 'Ra Nệm xanh chiều dài 2m2', 1, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
-(57, 22, 'Giường 1m6 LULLABY Outlet', 1, 6230000, 'bed_lullaby_49e1b2eb34eb4e9da55654386ea17556_master.png'),
-(57, 25, 'Ghế làm việc TIMI', 1, 1660000, 'xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png'),
-(58, 51, 'Kệ trưng bày SAGO đen xám', 3, 2381650, '2_770e04306f87478487e2d330fe004be6_master.png'),
-(59, 51, 'Kệ trưng bày SAGO đen xám', 5, 2381650, '2_770e04306f87478487e2d330fe004be6_master.png'),
-(59, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
-(59, 20, 'Kệ giày, treo quần áo, kệ lưu trữ ANCO', 1, 1536000, 'dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg'),
-(60, 52, 'Sofa đơn ALICE', 1, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png'),
-(61, 54, 'Bàn sofa, bàn góc CHIN', 1, 846450, '1637848355chin_trang_fffc394c178f4f48ba0f346d5f51bbee_master.png'),
-(61, 24, 'Ghế ăn, ghế làm việc DAISY', 2, 1152000, 'tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg');
+(82, 53, 'Giường đen 1m2 SAGO', 1, 2139400, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png'),
+(82, 11, 'Ra Nệm xanh chiều dài 2m2', 2, 810000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png'),
+(83, 20, 'Kệ giày, treo quần áo, kệ lưu trữ ANCO', 1, 1536000, 'dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg'),
+(83, 19, 'Sofa băng 2 seaters', 1, 15000000, 'a013_01_b1d607fb63d64ad080076030048ddc6a_master.jpg'),
+(84, 51, 'Kệ trưng bày SAGO đen xám', 2, 2381650, '2_770e04306f87478487e2d330fe004be6_master.png'),
+(84, 18, 'Sofa băng 2 seaters ,sofa phòng khách', 2, 10800000, 'a023_01_9c30702c846747ac89ed9fe6c4984cf8_master.jpg'),
+(84, 20, 'Kệ giày, treo quần áo, kệ lưu trữ ANCO', 2, 1536000, 'dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg'),
+(85, 54, 'Bàn sofa, bàn góc CHIN', 1, 846450, '1637848355chin_trang_fffc394c178f4f48ba0f346d5f51bbee_master.png'),
+(85, 11, 'Ra Nệm xanh chiều dài 2m2', 3, 810000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png');
 
 -- --------------------------------------------------------
 
@@ -137,20 +108,21 @@ INSERT INTO `tbl_bill_detail` (`billId`, `prodId`, `prodName`, `quantity`, `pric
 
 CREATE TABLE `tbl_category` (
   `cateId` int(10) NOT NULL,
-  `cateName` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `cateName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `cateName_unsigned` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_category`
 --
 
-INSERT INTO `tbl_category` (`cateId`, `cateName`) VALUES
-(1, 'Phòng Khách'),
-(2, 'Phòng Ăn'),
-(3, 'Phòng Ngủ'),
-(4, 'Phòng Làm Việc'),
-(5, 'Hàng Trang Trí'),
-(6, 'Ngoại Thất');
+INSERT INTO `tbl_category` (`cateId`, `cateName`, `cateName_unsigned`) VALUES
+(1, 'Phòng Khách', 'Phong-Khach'),
+(2, 'Phòng Ăn', 'Phong-An'),
+(3, 'Phòng Ngủ', 'Phong-Ngu'),
+(4, 'Phòng Làm Việc', 'Phong-Lam-Viec'),
+(5, 'Hàng Trang Trí', 'Hang-Trang-Tri'),
+(6, 'Ngoại Thất', 'Ngoai-That');
 
 -- --------------------------------------------------------
 
@@ -161,6 +133,7 @@ INSERT INTO `tbl_category` (`cateId`, `cateName`) VALUES
 CREATE TABLE `tbl_category_child` (
   `cateChildId` int(10) NOT NULL,
   `cateChildName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `cateChildName_unsigned` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cateId` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -168,31 +141,31 @@ CREATE TABLE `tbl_category_child` (
 -- Đang đổ dữ liệu cho bảng `tbl_category_child`
 --
 
-INSERT INTO `tbl_category_child` (`cateChildId`, `cateChildName`, `cateId`) VALUES
-(1, 'Sofa Tròn', 1),
-(2, 'Kệ/ Tủ Giày', 1),
-(4, 'Ghế & Đôn', 1),
-(5, 'Bàn nước', 1),
-(7, 'Bàn Console', 1),
-(8, 'Tủ Tivi', 1),
-(14, 'Giường ngủ', 3),
-(15, 'Bàn đầu giường', 3),
-(17, 'Tủ âm tường', 3),
-(18, 'Tủ hộc kéo', 3),
-(19, 'Bàn trang điểm', 3),
-(20, 'Nệm', 3),
-(21, 'Bàn làm việc', 4),
-(22, 'Ghế làm việc', 4),
-(23, 'Kệ sách', 4),
-(24, 'Đèn trang trí', 5),
-(25, 'Thảm trang trí', 5),
-(26, 'Gương', 5),
-(27, 'Hoa và Cây', 5),
-(28, 'Kệ Bếp', 2),
-(29, 'Bàn ăn', 2),
-(30, 'Bàn Ghế', 2),
-(32, 'Thảm Bếp', 2),
-(34, 'Gối Trang Trí', 1);
+INSERT INTO `tbl_category_child` (`cateChildId`, `cateChildName`, `cateChildName_unsigned`, `cateId`) VALUES
+(1, 'Sofa Tròn', 'Sofa-Tron', 1),
+(2, 'Kệ/ Tủ Giày', 'Ke--Tu-Giay', 1),
+(4, 'Ghế & Đôn', 'Ghe---Don', 1),
+(5, 'Bàn nước', 'Ban-nuoc', 1),
+(7, 'Bàn Console', 'Ban-Console', 1),
+(8, 'Tủ Tivi', 'Tu-Tivi', 1),
+(14, 'Giường Ngủ', 'Giuong-Ngu', 3),
+(15, 'Bàn Đầu Giường', 'Ban-Dau-Giuong', 3),
+(17, 'Tủ Âm Tường', 'Tu-Am-Tuong', 3),
+(18, 'Tủ Hộc Kéo', 'Tu-Hoc-Keo', 3),
+(19, 'Bàn Trang Điểm', 'Ban-Trang-Diem', 3),
+(20, 'Nệm', 'Nem', 3),
+(21, 'Bàn làm việc', 'Ban-lam-viec', 4),
+(22, 'Ghế làm việc', 'Ghe-lam-viec', 4),
+(23, 'Kệ sách', 'Ke-sach', 4),
+(24, 'Đèn trang trí', 'Den-trang-tri', 5),
+(25, 'Thảm trang trí', 'Tham-trang-tri', 5),
+(26, 'Gương', 'Guong', 5),
+(27, 'Hoa và Cây', 'Hoa-va-Cay', 5),
+(28, 'Kệ Bếp', 'Ke-Bep', 2),
+(29, 'Bàn ăn', 'Ban-an', 2),
+(30, 'Bàn Ghế', 'Ban-Ghe', 2),
+(32, 'Thảm Bếp', 'Tham-Bep', 2),
+(34, 'Gối Trang Trí', 'Goi-Trang-Tri', 1);
 
 -- --------------------------------------------------------
 
@@ -262,7 +235,8 @@ INSERT INTO `tbl_comment` (`commId`, `replyId`, `prodId`, `custId`, `content`, `
 (106, 0, 53, 12, 'đẹp quá', '08:21:34 pm 29/11/2021'),
 (107, 0, 51, 3, 'mới nhập về hả ?', '12:08:19 am 30/11/2021'),
 (108, 0, 51, 3, 'tôi muốn mua thì làm sao vậy?', '12:09:46 am 30/11/2021'),
-(109, 0, 26, 3, 'ok', '12:16:48 am 30/11/2021');
+(109, 0, 26, 3, 'ok', '12:16:48 am 30/11/2021'),
+(110, 0, 52, 3, 'Còn ghế dành cho trẻ con thì sao ?', '01:10:31 pm 05/12/2021');
 
 -- --------------------------------------------------------
 
@@ -290,11 +264,13 @@ CREATE TABLE `tbl_customer` (
 INSERT INTO `tbl_customer` (`custId`, `username`, `password`, `custName`, `image`, `phone`, `email`, `address`, `status`, `role`) VALUES
 (1, 'khanh123', '123456', 'Nguyễn Tứ Khánh', '', '09712444221', 'khanh123@gmail.com', 'Thôn 1,Lai Đông, Hoà Khánh, Đà Nẵng', 0, 0),
 (2, 'khanhvy123', '123456', 'Nguyễn Tứ vy', '', '0971245611', 'khanhvy123@gmail.com', 'Thôn 1,Lai Đông, Hoà Khánh, Quảng Nam', 1, 0),
-(3, 'maode123', '123456', 'Nguyễn Tứ vy', '', '0971245611', 'maode123@gmail.com', 'Thôn 1,Lai Đông, Hoà Khánh, AM', 1, 1),
+(3, 'maode123', '123456', 'Nguyễn Thanh Vi', '', '0973127008', 'maode123@gmail.com', 'Quảng Nam, Núi Thành', 1, 1),
 (4, 'tranquynh', '123456', 'tấn tài', '', '0977123311', 'quynhtran@gmail.com', 'Thừa Thiên Huế, Việt Nam', 1, 0),
 (5, 'tuhuy', '123456', 'Trần Vinh Hồng0', '', '0971245611', 'tuhuy123@gmail.com', 'Thôn 1,Nghệ Tinh,Dài Loan s', 1, 0),
 (11, 'trungtv0910', 'Vantrung1', 'Trần Văn Trung', NULL, NULL, 'trungtv0910@gmail.com', NULL, 1, 0),
-(12, 'khanh1234', '123456', 'trung văn A', NULL, NULL, 'hue@gmail.com', NULL, 1, 0);
+(12, 'khanh1234', '123456', 'trung văn A', NULL, NULL, 'hue@gmail.com', NULL, 1, 0),
+(13, 'tu', '123456', 'trung văn A', NULL, NULL, 'trungtv0910@gmail.com', NULL, 1, 0),
+(14, 'aaaa', 'qưe', 'trung', NULL, NULL, 'trungtv09102@gmail.com', NULL, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -305,6 +281,7 @@ INSERT INTO `tbl_customer` (`custId`, `username`, `password`, `custName`, `image
 CREATE TABLE `tbl_product` (
   `prodId` int(10) NOT NULL,
   `prodName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `prodName_unsigned` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `prodDesc` text COLLATE utf8_unicode_ci NOT NULL,
   `quantity` int(10) NOT NULL,
   `price` float NOT NULL,
@@ -322,22 +299,22 @@ CREATE TABLE `tbl_product` (
 -- Đang đổ dữ liệu cho bảng `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`prodId`, `prodName`, `prodDesc`, `quantity`, `price`, `image`, `imageSmall`, `dateInput`, `view`, `type`, `cateChildId`, `cateId`, `discount`) VALUES
-(7, 'Sản Phẩm Bàn banan honey', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 16, 4000000, 'banan-honey-den-3_5c632ea1fc81430e9508d92f85c25c88_149b24fcab3e4790a6387d921ae0af46_master.jpg', '[{\"id\":1,\"image\":\"banan-honey-den-1_a2253f979dd647948629d355dfe8192d_master.jpg\"},{\"id\":2,\"image\":\"banan-honey-den-2_42a7bc0a76c94a309a7a892b1414d5bf_c5db7537aa3742ec8615056f16087c3d_master.jpg\"},{\"id\":3,\"image\":\"banan-honey-den-3_5c632ea1fc81430e9508d92f85c25c88_149b24fcab3e4790a6387d921ae0af46_master.jpg\"},{\"id\":4,\"image\":\"banan-honey-den-1_4547d64c84af45b3802744814923fa3b_master.jpg\"}]', '2021-11-19', 0, 0, 21, 4, 0.1),
-(11, 'Ra Nệm xanh chiều dài 2m2', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 2, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png', '[{\"id\":1,\"image\":\"11__1024x768__b798322985f54db2a844f711d7242d27_master.png\"},{\"id\":2,\"image\":\"12__1024x768__d57227a64d8043768289f7bfbbdc3fde_master.png\"},{\"id\":3,\"image\":\"p1__1024x768__115293c283eb4566831210a00637bfab_master.png\"},{\"id\":4,\"image\":\"xanhreu__1024x768__b0f6fbb537d944f684ac7ea4bf3c1a6d_master.png\"}]', '2021-11-19', 2, 2, 20, 3, 0.1),
-(18, 'Sofa băng 2 seaters ,sofa phòng khách', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 200, 10800000, 'a023_01_9c30702c846747ac89ed9fe6c4984cf8_master.jpg', '[{\"id\":1,\"image\":\"a023_32_78039ce86ced4ba194869982bdb3382b_master.jpg\"},{\"id\":2,\"image\":\"a023_34_231a5a13b7184570bb6e9a320ab38df3_master.jpg\"},{\"id\":3,\"image\":\"a023_37_9c0ea8193aa847cab87a398796b7baaf_master.jpg\"},{\"id\":4,\"image\":\"a023_01_9c30702c846747ac89ed9fe6c4984cf8_master.jpg\"}]', '2021-11-21', 1, 0, 4, 1, 0),
-(19, 'Sofa băng 2 seaters', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 200, 15000000, 'a013_01_b1d607fb63d64ad080076030048ddc6a_master.jpg', '[{\"id\":1,\"image\":\"a013_32_95ee4d41d2a34705a5e704faf2ea3c9b_master.jpg\"},{\"id\":2,\"image\":\"a013_34_095f955546ed4b99a35d25a112a78e2b_master.jpg\"},{\"id\":3,\"image\":\"a013_37_565498802d5140e7abed3bf7ae22922f_master.jpg\"},{\"id\":4,\"image\":\"a013_01_b1d607fb63d64ad080076030048ddc6a_master.jpg\"}]', '2021-11-21', 2, 0, 4, 1, 0),
-(20, 'Kệ giày, treo quần áo, kệ lưu trữ ANCO', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 2170, 1536000, 'dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg', '[{\"id\":1,\"image\":\"dengo_1_5a37360928274cc6ae3d713a1e1aafde_master.jpg\"},{\"id\":2,\"image\":\"dengo_1_07ebe1801bdc497ba3c788da110a1c66_master.jpg\"},{\"id\":3,\"image\":\"dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg\"},{\"id\":4,\"image\":\"dentrang_2_60cba9ab3c64432ba936069e59b1bd38_master.jpg\"}]', '2021-11-21', 2, 2, 2, 1, 0),
-(21, 'Kệ trưng bày Phòng khách', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 200, 2507000, '1637853176den_02_c501bfe05a534ca08f97c4a6935eb945_master.png', '[{\"id\":1,\"image\":\"1_51827adcca00489ababc1263f160e608_master.png\"},{\"id\":2,\"image\":\"2_770e04306f87478487e2d330fe004be6_master.png\"},{\"id\":3,\"image\":\"den_02_c501bfe05a534ca08f97c4a6935eb945_master.png\"},{\"id\":4,\"image\":\"den_07_3441f16e43ee42d9a9b41630e19a702e_master.png\"}]', '2021-11-21', 1, 0, 2, 1, 0.05),
-(22, 'Giường 1m6 LULLABY Outlet', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 200, 6230000, 'bed_lullaby_49e1b2eb34eb4e9da55654386ea17556_master.png', '[{\"id\":1,\"image\":\"bed_lullaby_49e1b2eb34eb4e9da55654386ea17556_master.png\"},{\"id\":2,\"image\":\"lullaby_876c0899045e4b78a614498af2cc5021_master.jpg\"}]', '2021-11-21', 2, 0, 14, 3, 0),
-(23, 'Ghế ăn TIMI', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 22, 2760000, 'naunhat-1_b09957e970ea480d95d8c6186f7d34c4_7c20822ae5a941bea0dbf8b578a6aa5d_master.jpg', '[{\"id\":1,\"image\":\"46_426fd81239914e468a209e29967a74bd_master.png\"},{\"id\":2,\"image\":\"naunhat-1_b09957e970ea480d95d8c6186f7d34c4_7c20822ae5a941bea0dbf8b578a6aa5d_master.jpg\"},{\"id\":3,\"image\":\"nice-dark_3_5871cfb7b58d4334928fd149d77e13de_64f0e62150bc4cf182a948221978c181_master.jpg\"},{\"id\":4,\"image\":\"nice-dark_2_b59fdff4a7354f09aaf530f8933a3e2e_master.jpg\"}]', '2021-11-21', 3, 2, 30, 2, 0.05),
-(24, 'Ghế ăn, ghế làm việc DAISY', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 200, 1152000, 'tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg', '[{\"id\":1,\"image\":\"dengo-2_77ed848ae8be45bca47bc61693a47515_568c3feee43e4fc3971111d5327acf9c_master.jpg\"},{\"id\":2,\"image\":\"tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg\"},{\"id\":3,\"image\":\"tranggo-2_9782fb69e4d44bc9829df4962e7dadba_c3c205c153ed414b9741e6efe80c05ea_master.jpg\"},{\"id\":4,\"image\":\"tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg\"}]', '2021-11-21', 2, 0, 29, 2, 0.05),
-(25, 'Ghế làm việc TIMI', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 100, 1660000, 'xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png', '[{\"id\":1,\"image\":\"xam_6_8334f40d22cf448e9cccfdedc7a5dd81_84fd3039f3c34a5980f1cbb471245a50_master.jpg\"},{\"id\":2,\"image\":\"vahi_fc1717779a6d439fb213f58a1de515ce_master.jpg\"},{\"id\":3,\"image\":\"xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png\"},{\"id\":4,\"image\":\"11_e6d31c1b73604e9283bee86d25e3e3f4_master.png\"}]', '2021-11-21', 1, 2, 22, 4, 0.05),
-(26, 'Bàn làm việc ANTU', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 22, 1547000, 'denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg', '[{\"id\":1,\"image\":\"denden_2_24bb65d6d4d04054b12dc6665b839bdb_master.jpg\"},{\"id\":2,\"image\":\"denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg\"},{\"id\":3,\"image\":\"xamtrang_2_32d0acecafc2416780a0f04233f1af48_6528de879f2145ed846c0385e827dd0c_master.png\"}]', '2021-11-21', 1, 0, 21, 4, 0.1),
-(51, 'Kệ trưng bày SAGO đen xám', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 200, 2507000, '2_770e04306f87478487e2d330fe004be6_master.png', '[{\"id\":1,\"image\":\"1_51827adcca00489ababc1263f160e608_master.png\"},{\"id\":2,\"image\":\"2_770e04306f87478487e2d330fe004be6_master.png\"},{\"id\":3,\"image\":\"den_02_c501bfe05a534ca08f97c4a6935eb945_master.png\"},{\"id\":4,\"image\":\"den_07_3441f16e43ee42d9a9b41630e19a702e_master.png\"}]', '2021-11-21', 3, 0, 2, 1, 0.05),
-(52, 'Sofa đơn ALICE', '{\"color\":\"Xám\",\"mass\":\"\",\"size\":\"D65*R63*C82 cm\",\"material\":\"Vải Polyester, khung gỗ tần bì\",\"des\":\"GHẾ BÀNH, GHẾ THƯ GIÃN - Armchairs & chaises\"}', 200, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png', '[{\"id\":1,\"image\":\"1637847758xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png\"},{\"id\":2,\"image\":\"1637847758xamnhat_4_90d783aa73574c3bb7afa723eafbdd17_dc680da3955c42c28ae8df65a16dfd1c_master.png\"},{\"id\":3,\"image\":\"1637847758xamnhat_4_8611f2d762a74f0b9f6666394895fe37_2814998ce22a493781b308848d9e78a8_master.png\"},{\"id\":4,\"image\":\"1637847758xamnhat_6_5cbd5e18da34478fbf00d8f580f4b5b0_1c60ea1454364f4b9c071145f99a4eea_master.png\"}]', '2021-11-25', 8, 2, 4, 1, 0),
-(53, 'Giường đen 1m2 SAGO', '{\"color\":\"Đen/Trắng\",\"mass\":\"\",\"size\":\"Size 1m2: D208  x R126.5 x C100 cm\",\"material\":\"Thép sơn tĩnh điện\",\"des\":\"Dùng khăn ẩm với nước sạch hoặc dung dịch tẩy rửa nhẹ để làm sạch sản phẩm. Sau đó, lau khô sản phẩm bằng khăn mềm.\"}', 2222, 2252000, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png', '[{\"id\":1,\"image\":\"1637848204den-sago__2__b6459e9749d3499799b4e9d27d3953d0_master.png\"},{\"id\":2,\"image\":\"1637848204den-sago__3__da06158435ce4da1b2da57462814721c_master.png\"},{\"id\":3,\"image\":\"16378482044_47b5193aeb1b42828007ff7ef30e3b0d_master.png\"},{\"id\":4,\"image\":\"1637848204den-sago__4__ac006f7516674911859816f5d8f92f3c_master.png\"}]', '2021-11-25', 3, 0, 14, 3, 0.05),
-(54, 'Bàn sofa, bàn góc CHIN', '{\"color\":\"Trắng/ đen\",\"mass\":\"\",\"size\":\"Đường kính 45cm, cao 50cm\",\"material\":\"Mặt gỗ cao su sơn PU, chân gỗ tự nhiên\",\"des\":\"Đơn giản nhưng không hề kém phần tinh tế, mang lại sự trang nhã, hiện đại cho căn nhà của bạn.\"}', 200, 891000, '1637848355chin_trang_fffc394c178f4f48ba0f346d5f51bbee_master.png', '[{\"id\":1,\"image\":\"1637848388chin_trang_fffc394c178f4f48ba0f346d5f51bbee_master.png\"},{\"id\":2,\"image\":\"1637848388chin_s_trang__4__b096863bdbf34de99ed53d230c6f928b_master.png\"},{\"id\":3,\"image\":\"1637848388chin_trang_fffc394c178f4f48ba0f346d5f51bbee_master.png\"},{\"id\":4,\"image\":\"1637848388chin_s_den__1__813954d384f440dbb5db666b56b04c03_master.png\"}]', '2021-11-25', 1, 2, 15, 3, 0.05);
+INSERT INTO `tbl_product` (`prodId`, `prodName`, `prodName_unsigned`, `prodDesc`, `quantity`, `price`, `image`, `imageSmall`, `dateInput`, `view`, `type`, `cateChildId`, `cateId`, `discount`) VALUES
+(7, 'Sản Phẩm Bàn banan honey', 'San-Pham-Ban-banan-honey', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 16, 4000000, 'banan-honey-den-3_5c632ea1fc81430e9508d92f85c25c88_149b24fcab3e4790a6387d921ae0af46_master.jpg', '[{\"id\":1,\"image\":\"banan-honey-den-1_a2253f979dd647948629d355dfe8192d_master.jpg\"},{\"id\":2,\"image\":\"banan-honey-den-2_42a7bc0a76c94a309a7a892b1414d5bf_c5db7537aa3742ec8615056f16087c3d_master.jpg\"},{\"id\":3,\"image\":\"banan-honey-den-3_5c632ea1fc81430e9508d92f85c25c88_149b24fcab3e4790a6387d921ae0af46_master.jpg\"},{\"id\":4,\"image\":\"banan-honey-den-1_4547d64c84af45b3802744814923fa3b_master.jpg\"}]', '2021-11-19', 26, 0, 21, 4, 0.1),
+(11, 'Ra Nệm xanh chiều dài 2m2', 'Ra-Nem-xanh-chieu-dai-2m2', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 2, 900000, 'p1__1024x768__115293c283eb4566831210a00637bfab_master.png', '[{\"id\":1,\"image\":\"11__1024x768__b798322985f54db2a844f711d7242d27_master.png\"},{\"id\":2,\"image\":\"12__1024x768__d57227a64d8043768289f7bfbbdc3fde_master.png\"},{\"id\":3,\"image\":\"p1__1024x768__115293c283eb4566831210a00637bfab_master.png\"},{\"id\":4,\"image\":\"xanhreu__1024x768__b0f6fbb537d944f684ac7ea4bf3c1a6d_master.png\"}]', '2021-11-19', 14, 2, 20, 3, 0.1),
+(18, 'Sofa băng 2 seaters ,sofa phòng khách', 'Sofa-bang-2-seaters--sofa-phong-khach', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 200, 10800000, 'a023_01_9c30702c846747ac89ed9fe6c4984cf8_master.jpg', '[{\"id\":1,\"image\":\"a023_32_78039ce86ced4ba194869982bdb3382b_master.jpg\"},{\"id\":2,\"image\":\"a023_34_231a5a13b7184570bb6e9a320ab38df3_master.jpg\"},{\"id\":3,\"image\":\"a023_37_9c0ea8193aa847cab87a398796b7baaf_master.jpg\"},{\"id\":4,\"image\":\"a023_01_9c30702c846747ac89ed9fe6c4984cf8_master.jpg\"}]', '2021-11-21', 7, 0, 4, 1, 0),
+(19, 'Sofa băng 2 seaters', 'Sofa-bang-2-seaters', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 200, 15000000, 'a013_01_b1d607fb63d64ad080076030048ddc6a_master.jpg', '[{\"id\":1,\"image\":\"a013_32_95ee4d41d2a34705a5e704faf2ea3c9b_master.jpg\"},{\"id\":2,\"image\":\"a013_34_095f955546ed4b99a35d25a112a78e2b_master.jpg\"},{\"id\":3,\"image\":\"a013_37_565498802d5140e7abed3bf7ae22922f_master.jpg\"},{\"id\":4,\"image\":\"a013_01_b1d607fb63d64ad080076030048ddc6a_master.jpg\"}]', '2021-11-21', 6, 0, 4, 1, 0),
+(20, 'Kệ giày, treo quần áo, kệ lưu trữ ANCO', 'Ke-giay--treo-quan-ao--ke-luu-tru-ANCO', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 2170, 1536000, 'dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg', '[{\"id\":1,\"image\":\"dengo_1_5a37360928274cc6ae3d713a1e1aafde_master.jpg\"},{\"id\":2,\"image\":\"dengo_1_07ebe1801bdc497ba3c788da110a1c66_master.jpg\"},{\"id\":3,\"image\":\"dengo_2_13e40ae76f2e4a249606c8c9f0777890_master.jpg\"},{\"id\":4,\"image\":\"dentrang_2_60cba9ab3c64432ba936069e59b1bd38_master.jpg\"}]', '2021-11-21', 12, 2, 2, 1, 0),
+(21, 'Kệ trưng bày Phòng khách', 'Ke-trung-bay-Phong-khach', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 200, 2507000, '1637853176den_02_c501bfe05a534ca08f97c4a6935eb945_master.png', '[{\"id\":1,\"image\":\"1_51827adcca00489ababc1263f160e608_master.png\"},{\"id\":2,\"image\":\"2_770e04306f87478487e2d330fe004be6_master.png\"},{\"id\":3,\"image\":\"den_02_c501bfe05a534ca08f97c4a6935eb945_master.png\"},{\"id\":4,\"image\":\"den_07_3441f16e43ee42d9a9b41630e19a702e_master.png\"}]', '2021-11-21', 6, 0, 2, 1, 0.05),
+(22, 'Giường 1m6 LULLABY Outlet', 'Giuong-1m6-LULLABY-Outlet', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Điểm đặc biệt của dòng sản phẩm sofa của Make My Home chính là việc bạn có thể tuỳ chọn vải trong bộ sưu tập chất liệu dành cho sofa. Với hơn 45 mẫu vải cùng sự đa dạng về giá và phong cách, khám phá ngay để sở hữu chiếc sofa hoàn hảo dành riêng cho bạn\"}', 200, 6230000, 'bed_lullaby_49e1b2eb34eb4e9da55654386ea17556_master.png', '[{\"id\":1,\"image\":\"bed_lullaby_49e1b2eb34eb4e9da55654386ea17556_master.png\"},{\"id\":2,\"image\":\"lullaby_876c0899045e4b78a614498af2cc5021_master.jpg\"}]', '2021-11-21', 9, 0, 14, 3, 0),
+(23, 'Ghế ăn TIMI', 'Ghe-an-TIMI', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 22, 2760000, 'naunhat-1_b09957e970ea480d95d8c6186f7d34c4_7c20822ae5a941bea0dbf8b578a6aa5d_master.jpg', '[{\"id\":1,\"image\":\"46_426fd81239914e468a209e29967a74bd_master.png\"},{\"id\":2,\"image\":\"naunhat-1_b09957e970ea480d95d8c6186f7d34c4_7c20822ae5a941bea0dbf8b578a6aa5d_master.jpg\"},{\"id\":3,\"image\":\"nice-dark_3_5871cfb7b58d4334928fd149d77e13de_64f0e62150bc4cf182a948221978c181_master.jpg\"},{\"id\":4,\"image\":\"nice-dark_2_b59fdff4a7354f09aaf530f8933a3e2e_master.jpg\"}]', '2021-11-21', 21, 2, 30, 2, 0.05),
+(24, 'Ghế ăn, ghế làm việc DAISY', 'Ghe-an--ghe-lam-viec-DAISY', '{\"color\":\"Trắng, đen, chân gỗ\",\"mass\":\"6kg\",\"size\":\"H77/44 x D57 x R49\",\"material\":\" Chân gỗ, mặt ghế bằng nhựa PP cao cấp.\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 200, 1152000, 'tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg', '[{\"id\":1,\"image\":\"dengo-2_77ed848ae8be45bca47bc61693a47515_568c3feee43e4fc3971111d5327acf9c_master.jpg\"},{\"id\":2,\"image\":\"tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg\"},{\"id\":3,\"image\":\"tranggo-2_9782fb69e4d44bc9829df4962e7dadba_c3c205c153ed414b9741e6efe80c05ea_master.jpg\"},{\"id\":4,\"image\":\"tranggo-2_9314ec16b8d64e05a082a84fb8dcfe6c_master.jpg\"}]', '2021-11-21', 8, 0, 29, 2, 0.05),
+(25, 'Ghế làm việc TIMI', 'Ghe-lam-viec-TIMI', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 100, 1660000, 'xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png', '[{\"id\":1,\"image\":\"xam_6_8334f40d22cf448e9cccfdedc7a5dd81_84fd3039f3c34a5980f1cbb471245a50_master.jpg\"},{\"id\":2,\"image\":\"vahi_fc1717779a6d439fb213f58a1de515ce_master.jpg\"},{\"id\":3,\"image\":\"xam_xam_1_de7b60eecc594bf4a3539dbe375d064e_master.png\"},{\"id\":4,\"image\":\"11_e6d31c1b73604e9283bee86d25e3e3f4_master.png\"}]', '2021-11-21', 15, 2, 22, 4, 0.05),
+(26, 'Bàn làm việc ANTU', 'Ban-lam-viec-ANTU', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 22, 1547000, 'denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg', '[{\"id\":1,\"image\":\"denden_2_24bb65d6d4d04054b12dc6665b839bdb_master.jpg\"},{\"id\":2,\"image\":\"denden_1_6d38be30b9a54e6db3267de51c4cd62a_master.jpg\"},{\"id\":3,\"image\":\"xamtrang_2_32d0acecafc2416780a0f04233f1af48_6528de879f2145ed846c0385e827dd0c_master.png\"}]', '2021-11-21', 20, 0, 21, 4, 0.1),
+(51, 'Kệ trưng bày SAGO đen xám', 'Ke-trung-bay-SAGO-den-xam', '{\"color\":\"Đen\",\"mass\":\"30kg\",\"size\":\"D58xR38xC58.6 cm\",\"material\":\"Gỗ cao su sơn phủ\",\"des\":\"Sản phẩm an Toàn và tốt cho người sử dụng\"}', 200, 2507000, '2_770e04306f87478487e2d330fe004be6_master.png', '[{\"id\":1,\"image\":\"1_51827adcca00489ababc1263f160e608_master.png\"},{\"id\":2,\"image\":\"2_770e04306f87478487e2d330fe004be6_master.png\"},{\"id\":3,\"image\":\"den_02_c501bfe05a534ca08f97c4a6935eb945_master.png\"},{\"id\":4,\"image\":\"den_07_3441f16e43ee42d9a9b41630e19a702e_master.png\"}]', '2021-11-21', 21, 0, 2, 1, 0.05),
+(52, 'Sofa đơn ALICE', 'Sofa-don-ALICE', '{\"color\":\"Xám\",\"mass\":\"\",\"size\":\"D65*R63*C82 cm\",\"material\":\"Vải Polyester, khung gỗ tần bì\",\"des\":\"GHẾ BÀNH, GHẾ THƯ GIÃN - Armchairs & chaises\"}', 200, 2125000, '1637847684xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png', '[{\"id\":1,\"image\":\"1637847758xamnhat_3_c4e2eb411d0b4faea89abf900c277937_master (1).png\"},{\"id\":2,\"image\":\"1637847758xamnhat_4_90d783aa73574c3bb7afa723eafbdd17_dc680da3955c42c28ae8df65a16dfd1c_master.png\"},{\"id\":3,\"image\":\"1637847758xamnhat_4_8611f2d762a74f0b9f6666394895fe37_2814998ce22a493781b308848d9e78a8_master.png\"},{\"id\":4,\"image\":\"1637847758xamnhat_6_5cbd5e18da34478fbf00d8f580f4b5b0_1c60ea1454364f4b9c071145f99a4eea_master.png\"}]', '2021-11-25', 39, 2, 4, 1, 0),
+(53, 'Giường đen 1m2 SAGO', 'Giuong-den-1m2-SAGO', '{\"color\":\"Đen/Trắng\",\"mass\":\"\",\"size\":\"Size 1m2: D208  x R126.5 x C100 cm\",\"material\":\"Thép sơn tĩnh điện\",\"des\":\"Dùng khăn ẩm với nước sạch hoặc dung dịch tẩy rửa nhẹ để làm sạch sản phẩm. Sau đó, lau khô sản phẩm bằng khăn mềm.\"}', 2222, 2252000, '1637848146den-sago__3__da06158435ce4da1b2da57462814721c_master.png', '[{\"id\":1,\"image\":\"1637848204den-sago__2__b6459e9749d3499799b4e9d27d3953d0_master.png\"},{\"id\":2,\"image\":\"1637848204den-sago__3__da06158435ce4da1b2da57462814721c_master.png\"},{\"id\":3,\"image\":\"16378482044_47b5193aeb1b42828007ff7ef30e3b0d_master.png\"},{\"id\":4,\"image\":\"1637848204den-sago__4__ac006f7516674911859816f5d8f92f3c_master.png\"}]', '2021-11-25', 42, 0, 14, 3, 0.05),
+(54, 'Bàn sofa, bàn góc CHIN', 'Ban-sofa--ban-goc-CHIN', '{\"color\":\"Trắng/ đen\",\"mass\":\"\",\"size\":\"Đường kính 45cm, cao 50cm\",\"material\":\"Mặt gỗ cao su sơn PU, chân gỗ tự nhiên\",\"des\":\"Đơn giản nhưng không hề kém phần tinh tế, mang lại sự trang nhã, hiện đại cho căn nhà của bạn.\"}', 200, 891000, '1637848355chin_trang_fffc394c178f4f48ba0f346d5f51bbee_master.png', '[{\"id\":1,\"image\":\"1637848388chin_trang_fffc394c178f4f48ba0f346d5f51bbee_master.png\"},{\"id\":2,\"image\":\"1637848388chin_s_trang__4__b096863bdbf34de99ed53d230c6f928b_master.png\"},{\"id\":3,\"image\":\"1637848388chin_trang_fffc394c178f4f48ba0f346d5f51bbee_master.png\"},{\"id\":4,\"image\":\"1637848388chin_s_den__1__813954d384f440dbb5db666b56b04c03_master.png\"}]', '2021-11-25', 37, 2, 15, 3, 0.05);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -398,7 +375,7 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT cho bảng `tbl_bill`
 --
 ALTER TABLE `tbl_bill`
-  MODIFY `billId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `billId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_category`
@@ -416,19 +393,19 @@ ALTER TABLE `tbl_category_child`
 -- AUTO_INCREMENT cho bảng `tbl_comment`
 --
 ALTER TABLE `tbl_comment`
-  MODIFY `commId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `commId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `custId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `custId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `prodId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `prodId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
