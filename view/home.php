@@ -54,9 +54,10 @@
                         <div class="col l-2-4 m-4 c-12">
                             <div class="products__item">
                                 <div class="products__item-link">
-                                  <a href="index.php?act=product&prodId=<?=$prodId?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
+                                  <!-- <a href="index.php?act=product&prodId=<?=$prodId?>&title=<?=$prodName_unsigned?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a> -->
+                                  <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
                                     <div class="products__item-link-hover">
-                                        <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-link-hover-add">
+                                        <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="products__item-link-hover-add">
                                             <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
                                             Xem ngay
                                         </a>
@@ -151,56 +152,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <ul class="suggest__category-list hide-on-mobile-tablet">
-                        <li class="suggest__category-item suggest__category-item--active">
-                            <a href="#" class="suggest__category-link">
-                                <img src="./images/suggest/suggest1.jpg" class="suggest__category-img">
-                                <span class="suggest__category-name">Office chair</span>
-                            </a>
-                        </li>
-                        <li class="suggest__category-item">
-                            <a href="#" class="suggest__category-link">
-                                <img src="./images/suggest/suggest9.jpg" class="suggest__category-img">
-                                <span class="suggest__category-name">Good chair</span>
-                            </a>
-                        </li>
-                        <li class="suggest__category-item">
-                            <a href="#" class="suggest__category-link">
-                                <img src="./images/suggest/suggest3.jpg" class="suggest__category-img">
-                                <span class="suggest__category-name">Coffee chair</span>
-                            </a>
-                        </li>
-                        <li class="suggest__category-item">
-                            <a href="#" class="suggest__category-link">
-                                <img src="./images/suggest/suggest4.jpg" class="suggest__category-img">
-                                <span class="suggest__category-name">Ourdoor table</span>
-                            </a>
-                        </li>
-                        <li class="suggest__category-item">
-                            <a href="#" class="suggest__category-link">
-                                <img src="./images/suggest/suggest5.jpg" class="suggest__category-img">
-                                <span class="suggest__category-name">Ipsum Chair</span>
-                            </a>
-                        </li>
-                        <li class="suggest__category-item">
-                            <a href="#" class="suggest__category-link">
-                                <img src="./images/suggest/suggest6.jpg" class="suggest__category-img">
-                                <span class="suggest__category-name">Wood Chair</span>
-                            </a>
-                        </li>
-                        <li class="suggest__category-item">
-                            <a href="#" class="suggest__category-link">
-                                <img src="./images/suggest/suggest7.jpg" class="suggest__category-img">
-                                <span class="suggest__category-name">Coffee Tables</span>
-                            </a>
-                        </li>
-                        <li class="suggest__category-item">
-                            <a href="#" class="suggest__category-link">
-                                <img src="./images/suggest/suggest8.jpg" class="suggest__category-img">
-                                <span class="suggest__category-name">Living Room</span>
-                            </a>
-                        </li>
-                    </ul> -->
+                  
                     <div class="row products__list">
                     <?php
                         foreach ($topsellersproduct as $product) {
@@ -210,9 +162,9 @@
                         <div class="col l-2-4 m-4 c-12">
                             <div class="products__item">
                                 <div class="products__item-link">
-                                  <a href="index.php?act=product&prodId=<?=$prodId?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
+                                  <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
                                     <div class="products__item-link-hover">
-                                        <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-link-hover-add">
+                                        <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="products__item-link-hover-add">
                                             <i class="products__item-link-hover-add-icon fas fa-shopping-cart"></i>
                                             Xem ngay
                                         </a>
@@ -301,11 +253,11 @@
                         <div class="col l-3 m-6 c-12">
                             <div class="products__item most-view__item">
                                 <div class="products__item-link most-view__item-link">
-                                    <a href="index.php?act=product&prodId=<?=$prodId?>">   <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img most-view__item-img"></a>
-                                    <!-- <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img most-view__item-img"> -->
+                                    <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>">   <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img most-view__item-img"></a>
+                                 
                                 </div>
                                 <div class="most-view__item-info">
-                                    <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-name most-view__item-name"><?=$prodName?></a>
+                                    <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="products__item-name most-view__item-name"><?=$prodName?></a>
                                     <div class="products__item-price">
                                     <?php
                                     if($discount > 0) {

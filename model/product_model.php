@@ -1,5 +1,5 @@
 <?php
-
+    // include_once 'lib/format.php';
     function loadAll_product_home() {
         $sql = "SELECT * FROM tbl_product where 1 order by prodId desc";
         $listproduct = pdo_query($sql);
@@ -66,6 +66,7 @@
     function insert_product($data,$file)
     {
         $prodName =$data['prodName'];
+        $prodName_unsigned=convert_name($prodName);
         $cateId =$data['cateId'];
         $cateChildId =$data['cateChildId'];
         $quantity =$data['quantity'];
@@ -117,8 +118,8 @@
                     }
                 }
                 $dataImage=json_encode($dataImage);
-                    $sql ="INSERT tbl_product(prodName,prodDesc,quantity,price,image,imageSmall,dateInput,view,type,cateChildId,cateId,discount) 
-                    values('$prodName','$des_array',$quantity,$price,'$imageName','$dataImage','$dateInput',$view,$type,$cateChildId,$cateId,$discount)";
+                    $sql ="INSERT tbl_product(prodName,prodName_unsigned,prodDesc,quantity,price,image,imageSmall,dateInput,view,type,cateChildId,cateId,discount) 
+                    values('$prodName','$prodName_unsigned','$des_array',$quantity,$price,'$imageName','$dataImage','$dateInput',$view,$type,$cateChildId,$cateId,$discount)";
                     $res =pdo_execute($sql);
                 //    echo $res=$sql;
                     return $res;
@@ -130,6 +131,7 @@
     function update_product($data,$file){
         $prodId= $data['prodId'];
     $prodName =$data['prodName'];
+    $prodName_unsigned=convert_name($prodName);
     $cateId =$data['cateId'];
     $cateChildId =$data['cateChildId'];
     $quantity =$data['quantity'];
@@ -155,7 +157,7 @@
   $des_array=json_encode($des_array,JSON_UNESCAPED_UNICODE);
 
     
-       $sql= "UPDATE tbl_product SET prodName='$prodName',prodDesc='$des_array',quantity=$quantity,discount=$discount,type=$type ,price =$price,cateId=$cateId,cateChildId=$cateChildId";
+       $sql= "UPDATE tbl_product SET prodName='$prodName',  prodName_unsigned='$prodName_unsigned',prodDesc='$des_array',quantity=$quantity,discount=$discount,type=$type ,price =$price,cateId=$cateId,cateChildId=$cateChildId";
         if(isset($data['imageSmall'])){
             $imageSmall =$data['imageSmall'];
             $sql .=", imageSmall ='$imageSmall' ";

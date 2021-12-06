@@ -103,15 +103,13 @@
                         <?php
                         foreach ($product_similar as $value) {
                             extract($value);
-                            $link_product = "index.php?act=product&prodId=" . $prodId;
-
                         ?>
                             <div class="sanpham">
-                                <a href="<?= $link_product ?>" class="sanpham-img">
+                                <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="sanpham-img">
                                     <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
                                 </a>
                                 <div class="addCart">
-                                    <a class="addCart-name" href="<?= $link_product ?>"><?= $prodName ?></a>
+                                    <a class="addCart-name" href="<?=$prodName_unsigned?>_id=<?=$prodId?>"><?= $prodName ?></a>
                                     <strong><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</strong><br>
                                     <a class="addCart-text" href="#"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
                                 </div>

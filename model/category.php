@@ -26,24 +26,28 @@
     }
 
     function insert_category($cateName){
-        $sql="INSERT INTO tbl_category(cateName) values('$cateName')";
+        $cateName_unsigned =convert_name($cateName);
+        $sql="INSERT INTO tbl_category(cateName,cateName_unsigned) values('$cateName','$cateName_unsigned')";
         pdo_execute($sql);
     }
 
     function update_cateChild($cateChildId, $cateChildName) {
-        $sql="UPDATE tbl_category_child SET cateChildName = '$cateChildName' WHERE cateChildId = $cateChildId";
+        $cateChildName_unsigned =convert_name($cateChildName);
+        $sql="UPDATE tbl_category_child SET cateChildName = '$cateChildName', cateChildName_unsigned='$cateChildName_unsigned' WHERE cateChildId = $cateChildId";
         $res = pdo_execute($sql);
         return $res; 
     }
 
 
     function insert_categorychild($cateChildName,$cateId){
-        $sql="INSERT INTO tbl_category_child(cateChildName,cateId) values('$cateChildName','$cateId')";
+        $cateChildName_unsigned =convert_name($cateChildName);
+        $sql="INSERT INTO tbl_category_child(cateChildName,cateId,cateChildName_unsigned) values('$cateChildName','$cateId','$cateChildName_unsigned')";
         $res = pdo_execute($sql);
         return $res; 
     }
     function update_category($cateId, $cateName) {
-        $sql="UPDATE tbl_category SET cateName = '$cateName' WHERE cateId = $cateId";
+        $cateName_unsigned =convert_name($cateName);
+        $sql="UPDATE tbl_category SET cateName = '$cateName',cateName_unsigned='$cateName_unsigned' WHERE cateId = $cateId";
         $res = pdo_execute($sql);
         return $res; 
     }

@@ -111,7 +111,7 @@ init();
                                         </li>
                                         <li class="account-control__item">
                                             <i class="header__top-right-icon fas fa-box"></i>
-                                            <a href="index.php?act=mybill" class="header__top-right-link">Đơn hàng của tôi</a>
+                                            <a href="mybill" class="header__top-right-link">Đơn hàng của tôi</a>
                                         </li>
                                         <?php
                                         if ($_SESSION['login']['role'] == 1) {
@@ -285,7 +285,7 @@ init();
                             <a href="index.php?act=introduce" class="header__nav-link">Giới thiệu</a>
                         </li>
                         <li class="header__nav-item">
-                            <a href="index.php?act=category" class="header__nav-link ">Danh Mục Sản Phẩm</a>
+                            <a href="category" class="header__nav-link ">Danh Mục Sản Phẩm</a>
                             <div class="header__nav-full furniture">
                                 <?php
                                 foreach ($listcategory as $category) {
@@ -293,13 +293,13 @@ init();
                                     $listcategory_child = loadAll_categorychild($cateId);
                                 ?>
                                     <ul class="header__nav-full-list">
-                                        <h3 class="header__nav-full-heading"><a href="index.php?act=list-product&cateId=<?= $category['cateId'] ?>" style="text-decoration: none; color:grey"> <?= $cateName ?></a></h3>
+                                        <h3 class="header__nav-full-heading"><a href="cate=<?= $category['cateId'] ?>_<?=$cateName_unsigned?>" style="text-decoration: none; color:grey"> <?= $cateName ?></a></h3>
                                         <?php
                                         foreach ($listcategory_child as $category_child) {
                                             extract($category_child);
                                         ?>
                                             <li class="header__nav-full-item">
-                                                <a href="index.php?act=list-product&cateId=<?= $category['cateId'] ?>&cateChildId=<?= $category_child['cateChildId'] ?>" class="header__nav-full-link"><?= $cateChildName ?></a>
+                                                <a href="<?= $category['cateId'] ?>_<?= $category_child['cateChildId'] ?>_<?=$cateName_unsigned?>_<?=$cateChildName_unsigned?>" class="header__nav-full-link"><?= $cateChildName ?></a>
                                             </li>
                                         <?php
                                         }
@@ -321,11 +321,11 @@ init();
                                 ?>
                                     <ul class="header__nav-full-list">
                                         <div class="header__nav-full-hidden">
-                                            <a href="index.php?act=product&prodId=<?= $prodId ?>" class="header__nav-full-link-img">
+                                            <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="header__nav-full-link-img">
                                                 <img src="uploads/<?= $image ?>" class="header__nav-full-img">
                                             </a>
                                         </div>
-                                        <a href="index.php?act=product&prodId=<?= $prodId ?>" class="header__nav-full-link-info"><?= $prodName ?></a>
+                                        <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="header__nav-full-link-info"><?= $prodName ?></a>
                                         <span class="header__nav-full-info">
                                             <?php
                                             $des = json_decode($prodDesc, true);
@@ -385,7 +385,7 @@ init();
                                 </div>
                             </form>
                         </div>
-                        <a href="index.php?act=shoppingcart" class="header__nav-control-cart">
+                        <a href="shoppingcart" class="header__nav-control-cart">
                             <i class="header__nav-control-cart-ion fas fa-shopping-cart"></i>
                             <div id="show_count">
                                 <p class="header__nav-control-cart-about">
