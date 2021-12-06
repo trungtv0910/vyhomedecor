@@ -47,6 +47,12 @@
 .mybill__status-info{
     font-size:1.6rem;
     color: var(--text-color);
+    /* color: rgb(1, 11, 22); */
+    text-decoration: none;
+    font-weight: 600;
+}
+.mybill__status-info:hover {
+    color: var(--hover-color);
 }
 .mybill__status-desc{
     font-size: 1.6rem;
