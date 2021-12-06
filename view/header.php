@@ -282,7 +282,7 @@ init();
                             <a href="index.php" class="header__nav-link header__nav-link-icon"><i class="fas fa-home"></i></a>
                         </li>
                         <li class="header__nav-item">
-                            <a href="#" class="header__nav-link">Giới thiệu</a>
+                            <a href="index.php?act=introduce" class="header__nav-link">Giới thiệu</a>
                         </li>
                         <li class="header__nav-item">
                             <a href="index.php?act=category" class="header__nav-link ">Danh Mục Sản Phẩm</a>
