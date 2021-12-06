@@ -125,32 +125,56 @@
 
             <div class="model-body-form active">
                 <form action="index.php?act=login" method="post" id='form__login'>
-                    <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Tên đăng nhâp</label>
-                    <input type="text" name="username" class="model-input" id="enter-user">
-                    <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu</label>
-                    <input type="password" name="password" class="model-input" id="enter-pass" required>
+                    <div class="form-group">
+                        <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Tên đăng nhâp</label>
+                        <input type="text" name="username" class="model-input form-control" id="enter-user">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu</label>
+                        <input type="password" name="password" class="model-input form-control" id="enter-pass">
+                        <span class="form-message"></span>
+                    </div>
                     <input type="submit" name="login" class="model-btn model-btn-login" value="Đăng nhập">
                 </form>
             </div>
             <div class="model-body-form">
-                <form action="index.php?act=register" method="post">
-                    <label for="enter-email" class="model-label"><i class="fas fa-envelope"></i> Email</label>
-                    <input type="email" name="email" class="model-input" id="enter-email" required>
-                    <label for="enter-name" class="model-label"><i class="fas fa-user"></i> Họ và Tên</label>
-                    <input type="text" name="name" class="model-input" id="enter-name" required>
-                    <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Tên đăng nhâp</label>
-                    <input type="text" name="username" class="model-input" id="enter-user" required>
-                    <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu</label>
-                    <input type="password" name="password" class="model-input" id="enter-pass" required>
-                    <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Nhập lại mật khẩu</label>
-                    <input type="password" name="passwordCheck" class="model-input" id="enter-pass" required>
+                <form action="index.php?act=register" method="post" id='form__register'>
+                    <div class="form-group">
+                        <label for="enter-email" class="model-label"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="text" name="email" class="model-input" id="enter-email">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="enter-name" class="model-label"><i class="fas fa-user"></i> Họ và Tên</label>
+                        <input type="text" name="name" class="model-input" id="enter-name">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Tên đăng nhâp</label>
+                        <input type="text" name="username" class="model-input" id="enter-user">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu</label>
+                        <input type="password" name="password" class="model-input" id="enter-pass">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Nhập lại mật khẩu</label>
+                        <input type="password" name="passwordCheck" class="model-input" id="enter-passCheck">
+                        <span class="form-message"></span>
+                    </div>
                     <input type="submit" name="register" class="model-btn model-btn-regester" value="Đăng ký">
                 </form>
             </div>
             <div class="model-body-form">
-                <form action="index.php?act=forget-pass" method="post">
-                    <label for="enter-user" class="model-label"><i class="fas fa-user"></i> Nhập địa chỉ email của bạn</label>
-                    <input type="email" name="email" class="model-input" id="enter-user" required>
+                <form action="index.php?act=forget-pass" method="post" id="forget-pass">
+                    <div class="form-group">
+                        <label for="enter-email" class="model-label"><i class="fas fa-user"></i> Nhập địa chỉ email của bạn</label>
+                        <input type="text" name="email" class="model-input" id="enter-email">
+                        <span class="form-message"></span>
+                    </div>
                     <input type="submit" name="forget-pass" class="model-btn model-btn-login" value="Gửi">
                 </form>
             </div>
@@ -162,25 +186,83 @@
 
 </div>
 <script src="./js/index.js"></script>
-<script src="js/validator.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+
+    document.addEventListener('DOMContentLoaded', function () {
         Validator({
-            form: '#checkout__form',
+            form: '#form__register',
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn !'),
-                Validator.isRequired('#phone', 'Vui lòng nhập số điện thoại của bạn !'),
-                Validator.isRequired('#email', 'Vui lòng nhập email của bạn !'),
-                Validator.isRequired('#address', 'Vui lòng nhập địa chỉ của bạn !'),
-                Validator.isRequired('input[name="payment"]', 'Vui lòng chọn phương thức thanh toán !'),
+                Validator.isEmail('#enter-email'),
+                Validator.isRequired('#enter-name', 'Vui lòng nhập tên đầy đủ của bạn'),
+                Validator.minLength('#enter-pass', 6),
+                Validator.isRequired('#enter-passCheck'),
+                Validator.isConfirmed('#enter-passCheck', function () {
+                    return document.querySelector('#form__register #enter-pass').value;
+                }, 'Mật khẩu nhập lại không chính xác')
+            ],
+        });
+
+        Validator({
+            form: '#form__login',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#enter-user'),
+                Validator.isRequired('#enter-pass'),
+                Validator.minLength('#enter-pass', 6),
+            ],
+        });
+
+        Validator({
+            form: '#forget-pass',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isEmail('#enter-email'),
+            ],
+        });
+
+        Validator({
+            form: '#change-pass',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.minLength('#enter-pass', 6),
+                Validator.isRequired('#enter-passCheck'),
+                Validator.isConfirmed('#enter-passCheck', function () {
+                    return document.querySelector('#form__register #enter-pass').value;
+                }, 'Mật khẩu nhập lại không chính xác')
+            ],
+        });
+
+        Validator({
+            form: '#edit-customer',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#enter-name'),
+                Validator.isPhone('#enter-phone'),
+                Validator.isEmail('#enter-email'),
+            ],
+        });
+        Validator({
+            form: '#bill-confirm',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname'),
+                Validator.isPhone('#phone'),
                 Validator.isEmail('#email'),
-                Validator.isPhone('#phone')
-            ],  
+                Validator.isRequired('#address'),
+            ],
         });
     });
+
 </script>
+<script src="./js/validator.js"></script>
+
 
 
 </body>

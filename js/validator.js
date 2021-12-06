@@ -51,8 +51,6 @@ function Validator(options) {
     if (formElement) {
         // Khi submit form
         formElement.onsubmit = function (e) {
-            // console ("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-            e.preventDefault();
 
             var isFormValid = true;
 
@@ -62,11 +60,45 @@ function Validator(options) {
                 var isValid = validate(inputElement, rule);
                 if (!isValid) {
                     isFormValid = false;
+                    e.preventDefault();
                 }
             });
 
             if (isFormValid) {
-                formElement.submit();
+                // Trường hợp submit với javascript
+                if (typeof options.onSubmit === 'function') {
+                    var enableInputs = formElement.querySelectorAll('[name]');
+                    var formValues = Array.from(enableInputs).reduce(function (values, input) {
+                        
+                        switch(input.type) {
+                            case 'radio':
+                                values[input.name] = formElement.querySelector('input[name="' + input.name + '"]:checked').value;
+                                break;
+                            case 'checkbox':
+                                if (!input.matches(':checked')) {
+                                    values[input.name] = '';
+                                    return values;
+                                }
+                                if (!Array.isArray(values[input.name])) {
+                                    values[input.name] = [];
+                                }
+                                values[input.name].push(input.value);
+                                break;
+                            case 'file':
+                                values[input.name] = input.files;
+                                break;
+                            default:
+                                values[input.name] = input.value;
+                        }
+
+                        return values;
+                    }, {});
+                    options.onSubmit(formValues);
+                }
+                // Trường hợp submit với hành vi mặc định
+                else {
+                    formElement.submit();
+                }
             }
         }
 
@@ -124,6 +156,7 @@ Validator.isEmail = function (selector, message) {
         }
     };
 }
+
 Validator.isPhone = function (selector, message) {
     return {
         selector: selector,

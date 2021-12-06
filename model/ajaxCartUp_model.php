@@ -28,7 +28,6 @@ $mycart = $_SESSION['login']['mycart'];
         <th class="cart__title-price">Giá</th>
         <th class="cart__title-quantity">Số lượng</th>
         <th class="cart__title-total">Tổng giá trị</th>
-        <th class="cart__title-total"></th>
     </thead>
     <tbody class="cart__list" id="cart__list">
         <?php
@@ -55,7 +54,6 @@ $mycart = $_SESSION['login']['mycart'];
                     <button onclick="var result = document.querySelector('.quantity<?= $i ?>'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='<?= $key ?>' class="quantity-control upQuality">+</button>
                 </td>
                 <td class="cart__total"><?= number_format($price_quantity, 0, ',', '.'); ?>₫</td>
-                <td class="cart__update"><button type="submit"><i class="fas fa-redo"></i></button></td>
             </tr>
         <?php $i++;
         } ?>

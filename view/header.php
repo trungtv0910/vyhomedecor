@@ -128,37 +128,52 @@ init();
                                     </ul>
                                 </li>
                                 <div class="edit-customer" id="edit-customer">
-                                    <!-- <form action="index.php?act=edit-customer" method="post"> -->
-                                    <div class="edit-customer__control">
-                                        <h4 class="edit-customer__heading">cập nhật tài khoản</h4>
-                                        <span class="edit-customer__close"><i class="fas fa-times"></i></span>
-                                    </div>
-                                    <div id="divInput">
-                                        <label for="enter-name" class="model-label"><i class="fas fa-user"></i> Họ và Tên</label>
-                                        <input type="text" name="custName" class="model-input" id="enter-name" value="<?= $_SESSION['login']['custName'] ?>">
-                                        <label for="enter-phone" class="model-label"><i class="fas fa-phone"></i> Số điện thoại</label>
-                                        <input type="text" name="phone" class="model-input" id="enter-phone" value="<?= $_SESSION['login']['phone'] ?>">
-                                        <label for="enter-email" class="model-label"><i class="fas fa-envelope"></i> Email</label>
-                                        <input type="text" name="email" class="model-input" id="enter-email" value="<?= $_SESSION['login']['email'] ?>">
-                                        <label for="enter-address" class="model-label"><i class="fas fa-address-card"></i> Địa chỉ</label>
-                                        <input type="text" name="address" class="model-input" id="enter-address" value="<?= $_SESSION['login']['address'] ?>">
-                                        <input type="hidden" id="custId" name="custId" value="<?= $_SESSION['login']['custId'] ?>">
-                                    
-                                        <input type="submit" name="edit-customer" id="info" class="model-btn model-btn-login" value="Cập nhật">
-                                    </div>
+                                    <form action="" method="post" id="edit-customer">
+                                        <div class="edit-customer__control">
+                                            <h4 class="edit-customer__heading">cập nhật tài khoản</h4>
+                                            <span class="edit-customer__close"><i class="fas fa-times"></i></span>
+                                        </div>
+                                        <div id="divInput">
+                                            <div class="form-group">
+                                                <label for="enter-name" class="model-label"><i class="fas fa-user"></i> Họ và Tên</label>
+                                                <input type="text" name="custName" class="model-input" id="enter-name" value="<?= $_SESSION['login']['custName'] ?>">
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="enter-phone" class="model-label"><i class="fas fa-phone"></i> Số điện thoại</label>
+                                                <input type="text" name="phone" class="model-input" id="enter-phone" value="<?= $_SESSION['login']['phone'] ?>">
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="enter-email" class="model-label"><i class="fas fa-envelope"></i> Email</label>
+                                                <input type="text" name="email" class="model-input" id="enter-email" value="<?= $_SESSION['login']['email'] ?>">
+                                                <span class="form-message"></span>
+                                            </div>
+                                            <label for="enter-address" class="model-label"><i class="fas fa-address-card"></i> Địa chỉ</label>
+                                            <input type="text" name="address" class="model-input" id="enter-address" value="<?= $_SESSION['login']['address'] ?>">
+                                            <input type="hidden" id="custId" name="custId" value="<?= $_SESSION['login']['custId'] ?>">
+                                        
+                                            <input type="submit" name="edit-customer" id="info" class="model-btn model-btn-login" value="Cập nhật">
+                                        </div>
 
-                                    <!-- </form> -->
+                                    </form>
                                 </div>
                                 <div class="changepass">
-                                    <form action="index.php?act=change-pass" method="post">
+                                    <form action="index.php?act=change-pass" method="post" id="change-pass">
                                         <div class="edit-customer__control">
                                             <h4 class="edit-customer__heading">Đổi mật khẩu</h4>
                                             <span class="changepass__close"><i class="fas fa-times"></i></span>
                                         </div>
-                                        <label for="enter-email" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu mới</label>
-                                        <input type="password" name="password" class="model-input" id="enter-email">
-                                        <label for="enter-address" class="model-label"><i class="fas fa-unlock-alt"></i> Nhập lại mật khẩu mới</label>
-                                        <input type="password" name="passwordCheck" class="model-input" id="enter-address">
+                                        <div class="form-group">
+                                            <label for="enter-pass" class="model-label"><i class="fas fa-unlock-alt"></i> Mật khẩu mới</label>
+                                            <input type="password" name="password" class="model-input" id="enter-pass">
+                                            <span class="form-message"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="enter-passCheck" class="model-label"><i class="fas fa-unlock-alt"></i> Nhập lại mật khẩu mới</label>
+                                            <input type="password" name="passwordCheck" class="model-input" id="enter-passCheck">
+                                            <span class="form-message"></span>
+                                        </div>
                                         <input type="hidden" name="custId" value="<?= $_SESSION['login']['custId'] ?>">
                                         <input type="hidden" name="username" value="<?=  $_SESSION['login']['username'] ?>">
 

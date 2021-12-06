@@ -39,7 +39,6 @@ if(isset($_POST['prodId'])){
               
             </td>
             <td class="cart__total">'.$priceTotalQuantity .'₫</td>
-            <td class="cart__update"><button type="submit"><i class="fas fa-redo"></i></button></td>
         </tr>
    $i++; ';
     }
