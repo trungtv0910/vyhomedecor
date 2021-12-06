@@ -1,14 +1,15 @@
+
+
+
 RewriteEngine On
 RewriteRule "index.html" "index.php"
 
 RewriteRule "^(.*)_id=(.*)$" "index.php?act=product&prodId=$2&title=$1"
 RewriteRule "category" "index.php?act=category"
 
-RewriteRule "shoppingcart" "index.php?act=shoppingcart"
-RewriteRule "mybill" "index.php?act=mybill"
+RewriteRule "mycart" "index.php?act=shoppingcart"
+RewriteRule "mybills" "index.php?act=mybill"
 
 RewriteRule "^cate=(.*)_(.*)$" "index.php?act=list-product&cateId=$1&ctitle=$2"
 
 RewriteRule "^(.*)_(.*)_(.*)_(.*)$" "index.php?act=list-product&cateId=$1&cateChildId=$2&cate_unsigned=$3&catechild_unsigned=$4"
-
-

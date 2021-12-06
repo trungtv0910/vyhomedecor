@@ -20,13 +20,13 @@ init();
     <meta content="width=device-width, initial-scale=1.0">
     <title>VyHomeDecor</title>
     <link rel="icon" href="./images/logo/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./css/mybill.css">
-    <link rel="stylesheet" href="./css/shoppingCart.css">
-    <link rel="stylesheet" href="./css/product.css">
-    <link rel="stylesheet" href="./css/grid.css">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reponsive.css">
+    <link rel="stylesheet" href="css/mybill.css">
+    <link rel="stylesheet" href="css/shoppingCart.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reponsive.css">
     <link rel="stylesheet" href="css/checkout.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,7 +111,7 @@ init();
                                         </li>
                                         <li class="account-control__item">
                                             <i class="header__top-right-icon fas fa-box"></i>
-                                            <a href="mybill" class="header__top-right-link">Đơn hàng của tôi</a>
+                                            <a href="mybills" class="header__top-right-link">Đơn hàng của tôi</a>
                                         </li>
                                         <?php
                                         if ($_SESSION['login']['role'] == 1) {
@@ -385,7 +385,7 @@ init();
                                 </div>
                             </form>
                         </div>
-                        <a href="shoppingcart" class="header__nav-control-cart">
+                        <a href="mycart" class="header__nav-control-cart">
                             <i class="header__nav-control-cart-ion fas fa-shopping-cart"></i>
                             <div id="show_count">
                                 <p class="header__nav-control-cart-about">

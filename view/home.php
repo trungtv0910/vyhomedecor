@@ -1,5 +1,5 @@
 <?php
-    $listproduct = loadAll_product_home();
+    $listproduct = load_listNew_product_home();
     $newproduct = load_new_product();
     $topviewproduct = load_topview_product();
     $topsellersproduct = load_top_sellers();
@@ -54,7 +54,7 @@
                         <div class="col l-2-4 m-4 c-12">
                             <div class="products__item">
                                 <div class="products__item-link">
-                                  <!-- <a href="index.php?act=product&prodId=<?=$prodId?>&title=<?=$prodName_unsigned?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a> -->
+                          
                                   <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>">  <img src="<?=BASE_URL ?>uploads/<?=$image ?>" class="products__item-img"></a>
                                     <div class="products__item-link-hover">
                                         <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="products__item-link-hover-add">
@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-name"><?=$prodName?></a>
+                                <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="products__item-name"><?=$prodName?></a>
                                 <div class="products__item-price">
                                 <?php
                                     if($discount > 0) {
@@ -184,7 +184,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="index.php?act=product&prodId=<?=$prodId?>" class="products__item-name"><?=$prodName?></a>
+                                <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="products__item-name"><?=$prodName?></a>
                                 <div class="products__item-price">
                                 <?php
                                     if($discount > 0) {

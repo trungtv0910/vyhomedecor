@@ -5,6 +5,12 @@
         $listproduct = pdo_query($sql);
         return $listproduct;
     }
+    function load_listNew_product_home() {
+        $sql = "SELECT * FROM tbl_product where 1 order by prodId desc limit 15";
+        $listproduct = pdo_query($sql);
+        return $listproduct;
+    }
+
 
     function load_product_condition($start=0,$limit=10,$type=0,$cateId=0,$cateChildId=0,$key=""){
         $sql = "SELECT * FROM tbl_product where 1 ";

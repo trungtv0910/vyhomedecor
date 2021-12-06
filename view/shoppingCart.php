@@ -5,7 +5,6 @@ if (isset($_SESSION['login']['mycart'])) {
     echo '<script>window.location="index.php"</script>';
 }
 ?>
-<!-- <div class="container"> -->
 <div class="grid wide">
     <div class="shopping-cart" id="shopping-cart">
         <h3 class="cart__heading">Giỏ hàng của tôi</h3>

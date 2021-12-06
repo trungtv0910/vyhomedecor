@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="index.php?act=product&prodId=<?= $prodId ?>" class="products__item-name"><?= $prodName ?></a>
+                        <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="products__item-name"><?= $prodName ?></a>
                         <div class="products__item-price">
                             <?php
                             if ($discount > 0) {

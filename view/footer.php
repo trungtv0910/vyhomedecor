@@ -232,7 +232,7 @@
                 Validator.minLength('#enter-pass', 6),
                 Validator.isRequired('#enter-passCheck'),
                 Validator.isConfirmed('#enter-passCheck', function () {
-                    return document.querySelector('#form__register #enter-pass').value;
+                    return document.querySelector('#change-pass #enter-pass').value;
                 }, 'Mật khẩu nhập lại không chính xác')
             ],
         });

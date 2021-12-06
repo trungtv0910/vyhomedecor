@@ -205,7 +205,7 @@ if (isset($_GET['act'])) {
                                 unset($_SESSION['login']['mycart'][$prodId]);
                                 echo '<script>window.location="index.php?act=shoppingcart"</script>';
                             }
-                            include 'view/shoppingcart.php';
+                            include 'view/shoppingCart.php';
                         }
                     }
                 }
@@ -229,7 +229,7 @@ if (isset($_GET['act'])) {
         case "bill-confirm": {
 
                 if (isset($_SESSION['login']) && !empty($_SESSION['login']['mycart'])) {
-                    include 'view/bill-Confirm.php';
+                    include 'view/bill-confirm.php';
                     if (isset($_POST['acceptBill'])) {
                         $dataProduct = $_SESSION['login']['mycart'];
                         if (insertToBill($_POST, $dataProduct)) {
