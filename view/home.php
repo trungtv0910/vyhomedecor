@@ -20,18 +20,18 @@
                     </div>
                     <div class="col l-6 m-6 c-12">
                         <a href="#" class="highlights__item-top-link">
-                            <img src="http://demo.snstheme.com/wp/simen/wp-content/uploads/2011/05/5.png" class="highlights__item-top-img">
+                            <img src="./images/banner/banner4.png" class="highlights__item-top-img">
                         </a>
                         <div class="highlights__item-sub">
                             <div class="row">
                                 <div class="col l-6 m-6 c-12">
                                     <a href="" class="highlights__item-sub-link highlights__item-sub-link-1">
-                                        <img src="http://demo.snstheme.com/wp/simen/wp-content/uploads/2015/11/banner1-300x286.jpg" class="highlights__item-sub-img">
+                                        <img src="./images/banner/banner5.jpeg" class="highlights__item-sub-img">
                                     </a>
                                 </div>
                                 <div class="col l-6 m-6 c-12">
                                     <a href="" class="highlights__item-sub-link highlights__item-sub-link-2">
-                                        <img src="http://demo.snstheme.com/wp/simen/wp-content/uploads/2015/11/banner2-300x286.jpg" class="highlights__item-sub-img">
+                                        <img src="./images/banner/banner6.jpeg" class="highlights__item-sub-img">
                                     </a>
                                 </div>
                             </div>

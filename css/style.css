@@ -348,7 +348,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('http://demo.snstheme.com/wp/simen/wp-content/themes/snssimen/assets/img/double-dotted.png');
+    background-image: url('../images/double-dotted.png');
 }
 .header__nav::after{
     content: "";
@@ -358,7 +358,7 @@
     position: absolute;
     bottom: -3px;
     left: 0;
-    background-image: url('http://demo.snstheme.com/wp/simen/wp-content/themes/snssimen/assets/img/double-dotted.png');
+    background-image: url('../images/double-dotted.png');
 }
 .header__nav-list{
     display: flex;
