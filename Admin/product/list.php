@@ -3,20 +3,25 @@
         <div class="card">
             <div class="card-header border-0">
                 <div class="row align-items-center">
-                    <div class="col ">
+                    <div class="col-sm-6 col-md-3">
                         <h4 class="page-header-title">
                             Danh sách sản phẩm
                         </h4>
                     </div>
-                    <div class="col">
-                        <a href="index.php?act=product&add"> <button class="btn btn-success float_right">Thêm Sản Phẩm</button></a>
+                    <div class="col-3">
+                        <a href="index.php?act=product&add" class="btn btn-primary btn-icon-split">
+                                        <span class="icon text-white-50">
+                                        <i class="fas fa-plus"></i>
+                                        </span>
+                                        <span class="text">Thêm</span>
+                                    </a>
                     </div>
 
-                    <div class=" col-md-6 text-right">
+                    <div class=" col-12 col-lg-6 text-right">
                         <!-- thực hiện form tìm kiếm sản phẩm theo tên và danh mục -->
                         <form action="index.php?act=product" method="post" style="display:flex;gap:20px">
-                            <input type="text" style='width:250px' name="key_search">
-                            <select style="width:200px" name="cateId">
+                            <input type="text" style='width:50%' name="key_search">
+                            <select style="width:35%" name="cateId">
                                 <option value="0">Tất Cả </option>
                                 <?php
                                 foreach ($listcategory as $category) {
@@ -25,7 +30,7 @@
                                 <?php } ?>
 
                             </select>
-                            <button name="search" type="submit" class="btn btn-warning ">Tìm kiếm <i class="fas fa-search"></i></button>
+                            <button name="search" type="submit" class="btn btn-warning " style='width:10%' ><i class="fas fa-search"></i></button>
                         </form>
                     </div>
 

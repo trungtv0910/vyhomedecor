@@ -86,12 +86,12 @@ th, td{
     color: var(--text-color);
 }
 .cart__note-input {
-    width: 80%;
-    min-height: 80px;
+    width: 100%;
+    min-height: 50px;
     padding: 8px;
     outline: none;
     margin-top: 8px;
-    border: 1px solid var(--border-color);
+    border: 1px solid
 }
 .cart__control {
     text-align: right;
@@ -137,4 +137,7 @@ th, td{
     border: none;
     background: none;
     cursor: pointer;
+}
+.table_cart{
+    overflow-x:auto;
 }

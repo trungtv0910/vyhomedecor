@@ -1,7 +1,7 @@
 <style>
     /* a{display: block;text-decoration: none;} */
     .cart {
-       min-height: 600px;
+        min-height: 600px;
         /* margin: 0 auto; */
 
     }
@@ -55,10 +55,10 @@
         width: 20%;
     }
 </style>
-<div class="grid wide cart">
-    <div class="">
-        <div class="title">GIỎ HÀNG CỦA TÔI</div>
-        <div class="buy">
+<div class="grid wide cart ">
+    <div class="row">
+        <div class="title col l-12 m-12 s-12">GIỎ HÀNG CỦA TÔI</div>
+        <div class="buy col l-12 m-12 s-12">
             <img src="images/logo.png" alt=""><br>
             <span>Không có sản phẩm trong giỏ hàng</span><br><br>
             <a href="index.php">

@@ -1,6 +1,6 @@
 <!-- <div class="container"> -->
 <div class="grid wide">
-    <div class="mybill">
+    <div class="mybill row">
         <?php
         $total = 0;
         if (isset($_SESSION['login']['login']) == true) {
@@ -11,15 +11,15 @@
         <?php
         if (empty($listmybill)) {
         ?>
-            <div class="mybill--nobill">
-                <img src="./images/bill/no-bill.png" alt="" class="mybill--nobill__img">
+            <div class="mybill--nobill" style="margin: 0px auto">
+                <img src="./images/bill/no-bill.png"  alt="" class="mybill--nobill__img">
                 <p class="mybill--nobill__heading">Chưa có đơn hàng nào</p>
             </div>
         <?php
         } else {
         ?>
-            <h3 class="mybill__heading">Danh sách đơn hàng của tôi</h3>
-            <ul class="mybill__list">
+            <h3 class="mybill__heading col l-12 m-12 s-12">Danh sách đơn hàng của tôi</h3>
+            <ul class="mybill__list col l-12 m-12 s-12">
 
                 <?php
 
@@ -30,7 +30,7 @@
                 ?>
                     <li class="mybill__item">
                         <div class="mybill__status">
-                            <a href="index.php?act=mybill-showInfoBill&billId=<?=$billId?>" class="mybill__status-info">Mã đơn hàng: <?= $billId ?></a>
+                            <a href="index.php?act=mybill-showInfoBill&billId=<?= $billId ?>" class="mybill__status-info">Mã đơn hàng: <?= $billId ?></a>
                             <?php
                             if ($billStatus == 4) {
                             ?>
@@ -88,9 +88,9 @@
                             </div>
                         <?php } ?>
                         <div class="mybill__control">
-                           <!-- <a href="index.php?act=mybill&showBill" style="position:absolute; font-size:12px; text-decoration:none; color:black">Thông tin đơn hàng:</a> -->
-                         
-                           <div class="mybill__total">
+                            <!-- <a href="index.php?act=mybill&showBill" style="position:absolute; font-size:12px; text-decoration:none; color:black">Thông tin đơn hàng:</a> -->
+
+                            <div class="mybill__total">
                                 <p class="mybill__total-title">Tổng số tiền: </p>
                                 <p class="mybill__total-price"><?= number_format($billTotal, 0, ',', '.') ?>đ </p>
                             </div>

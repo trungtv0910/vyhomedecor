@@ -143,7 +143,7 @@
                 ?>
                 <div class="suggest">
                     <div class="most-view__title">
-                        <h3 class="most-view__heading">TOP SẢN PHẨM BÁN CHẠY NHẤT</h3>
+                        <h3 class="most-view__heading">TOP BÁN CHẠY </h3>
                         <span class="most-view__strike"></span>
                         <div class="most-view__control">
                             <div class="most-view__btn">
@@ -236,7 +236,7 @@
                 </div>
                 <div class="most-view">
                     <div class="most-view__title">
-                        <h3 class="most-view__heading">SẢN PHẨM ĐƯỢC XEM NHIỀU NHẤT</h3>
+                        <h3 class="most-view__heading">TOP XEM NHIỀU</h3>
                         <span class="most-view__strike"></span>
                         <div class="most-view__control">
                             <div class="most-view__btn">

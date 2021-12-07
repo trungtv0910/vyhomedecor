@@ -1,4 +1,3 @@
-
 <div class="grid wide">
     <div class="directional">
         <a href="index.php">Trang Chủ</a> <i class="fas fa-chevron-right"></i> <a href="index.php?act=list-product&cateId=<?= $cate['cateId'] ?>"><?= $cate['cateName'] ?></a> <i class="fas fa-chevron-right"></i> <a href="index.php?act=list-product&cateId=<?= $cate['cateId'] ?>&cateChildId=<?= $cateChild['cateChildId'] ?>"><?= $cateChild['cateChildName'] ?></a>
@@ -15,14 +14,14 @@
                 extract($loadOne);
                 ?>
 
-                <div class="col l-5">
+                <div class="col l-5 m-12">
                     <div class="box-trai mr">
                         <div class="img product-block">
                             <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="col l-7">
+                <div class="col l-7 m-12">
 
 
                     <div class="box-phai">
@@ -81,8 +80,8 @@
                                                                             } ?>" id="addToCart" value="Thêm vào giỏ hàng">
                             <!-- <button   id="addToCart" >Thêm giỏ hàng</button> -->
                             <input type="submit" name="buyNow" class="<?php if (isset($_SESSION['login'])) {
-                                                                                echo 'realTimeBuyNow';
-                                                                            } ?>" value="Mua ngay" id="buyNow">
+                                                                            echo 'realTimeBuyNow';
+                                                                        } ?>" value="Mua ngay" id="buyNow">
                         </div>
 
                     </div>
@@ -95,7 +94,7 @@
         <!--sản phẩm liên quan và bình luận-->
         <div class="product__right">
             <div class="row content-2">
-                <div class="col l-4">
+                <div class="col l-4 m-12 s-12">
                     <div class="top-yeu-thich">
                         <div class="tieu-de">
                             <h2>Sản Phẩm Cùng Loại</h2>
@@ -105,11 +104,11 @@
                             extract($value);
                         ?>
                             <div class="sanpham">
-                                <a href="<?=$prodName_unsigned?>_id=<?=$prodId?>" class="sanpham-img">
+                                <a href="<?= $prodName_unsigned ?>_id=<?= $prodId ?>" class="sanpham-img">
                                     <img src="<?= BASE_URL ?>uploads/<?= $image ?>" alt="">
                                 </a>
                                 <div class="addCart">
-                                    <a class="addCart-name" href="<?=$prodName_unsigned?>_id=<?=$prodId?>"><?= $prodName ?></a>
+                                    <a class="addCart-name" href="<?= $prodName_unsigned ?>_id=<?= $prodId ?>"><?= $prodName ?></a>
                                     <strong><?= number_format($price - ($price * $discount), 0, ',', '.') ?>đ</strong><br>
                                     <a class="addCart-text" href="#"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
                                 </div>
@@ -119,35 +118,21 @@
                         ?>
                     </div>
                 </div>
-                <div class="col l-8">
-
-
-
-
+                <div class="col l-8 m-12 s-12">
                     <?php
                     extract($loadOne);
                     ?>
-
-
-
-
-                    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                    <script>
-                        $(document).ready(function(){
-                           $('#form-comment').load('view/form-comment.php', {prodId: <?= $prodId ?>});
-                        });
-                    </script> -->
                     <div class="from-binhluan" id="form-comment">
                         <div class="from">
                             <div class="reveiws">
                                 <h2>Bình Luận</h2>
                             </div>
+
                             <div class="nguoi-reveiws">
                                 <?php
+
                                 $load_comment = load_commentByIdProd($prodId);
-                                // echo '<pre>';
-                                // echo print_r($load_comment);
-                                // echo '</pre>';
+
                                 foreach ($load_comment as $value) {
                                     extract($value);
                                     $loadCust = loadOne_customer($custId);
@@ -184,21 +169,27 @@
                             if (isset($_SESSION['login']['login']) == true) {
                                 $account = $_SESSION['login'];
                             ?>
-                                <div class="addemail">
-                                    <p>Thêm bình luận</p>
-                                </div>
-                                <div class="binh-luan">
-                                    <!-- <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post"> -->
+                                <?php if ($_SESSION['login']['status'] != 0) { ?>
+                                    <div class="addemail">
+                                        <p>Thêm bình luận</p>
+                                    </div>
+                                    <div class="binh-luan">
+                                        <!-- <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post"> -->
 
-                                    <input type="text" id="comm_content" class="form-text" name="content" style="width:100%; height:80px;border-radius: 4px;" placeholder="Nhập bình luận ở đây..." required></input>
-                                    <br>
-                                    <input type="hidden" id="prodId" name="prodId" value="<?= $prodId ?>">
-                                    <input type="hidden" id="custId" name="custId" value="<?= $account['custId'] ?>">
-                                    <input type="submit" id="send" name="send-comment" value="Gửi bình luận">
-                                    <!-- </form> -->
-                                </div>
+                                        <input type="text" id="comm_content" class="form-text" name="content" style="width:100%; height:80px;border-radius: 4px;" placeholder="Nhập bình luận ở đây..." required></input>
+                                        <br>
+                                        <input type="hidden" id="prodId" name="prodId" value="<?= $prodId ?>">
+                                        <input type="hidden" id="custId" name="custId" value="<?= $account['custId'] ?>">
+                                        <input type="submit" id="send" name="send-comment" value="Gửi bình luận">
+                                        <!-- </form> -->
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="alertComment">
+                                        <p>Tài khoản của bạn bị khoá chức năng Bình luận.</p>
+                                    </div>
+                                <?php } ?>
                             <?php } else { ?>
-                                <div class="addemail">
+                                <div class="alertComment">
                                     <p>Vui lòng đăng nhập để có thể bình luận !</p>
                                 </div>
                             <?php } ?>
@@ -236,40 +227,42 @@
 
         //sự kiện thêm giỏ hàng
         $('.realTimeAddToCart').click(function() {
-            var prodId      =$('#getProdId').val();
-            var price       =$('#getPrice').val();
-            var quantity    =$('#getQuantity').val();
-            var image       =$('#getImage').val();
-            $.post('model/ajaxAddCart_model.php',{
-                prodId:prodId,
-                price:price,
-                quantity:quantity,
-                image:image
-            },function(data){
+            var prodId = $('#getProdId').val();
+            var price = $('#getPrice').val();
+            var quantity = $('#getQuantity').val();
+            var image = $('#getImage').val();
+            $.post('model/ajaxAddCart_model.php', {
+                prodId: prodId,
+                price: price,
+                quantity: quantity,
+                image: image
+            }, function(data) {
                 $('#show_count').html(data);
-            
+
             });
         });
         // sự kiện khi thêm vào giỏ hàng scroll về top
         $('.realTimeAddToCart').click(function() {
             // document.documentElement.scrollTop = 170;
-            $('html, body').animate({scrollTop:170}, 50);
+            $('html, body').animate({
+                scrollTop: 170
+            }, 50);
         })
 
         //sự kiện mua hàng ngay
         $('.realTimeBuyNow').click(function() {
-            var prodId      =$('#getProdId').val();
-            var price       =$('#getPrice').val();
-            var quantity    =$('#getQuantity').val();
-            var image       =$('#getImage').val();
-            $.post('model/ajaxBuyNow_model.php',{
-                prodId:prodId,
-                price:price,
-                quantity:quantity,
-                image:image
-            },function(data){
+            var prodId = $('#getProdId').val();
+            var price = $('#getPrice').val();
+            var quantity = $('#getQuantity').val();
+            var image = $('#getImage').val();
+            $.post('model/ajaxBuyNow_model.php', {
+                prodId: prodId,
+                price: price,
+                quantity: quantity,
+                image: image
+            }, function(data) {
                 $('#show_count').html(data);
-            
+
             });
         });
 

@@ -10,7 +10,7 @@ if (isset($_SESSION['login'])) {
         <form action="index.php?act=bill-confirm" method="post" id="bill-confirm">
       
             <div class="row">
-                <div class="col l-6">
+                <div class="col l-6 ">
                     <div class="checkout-info">
 
                         <h3 class="checkout__heading">Thông tin vận chuyển</h3>

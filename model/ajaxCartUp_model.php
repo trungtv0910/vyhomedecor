@@ -98,6 +98,13 @@ $mycart = $_SESSION['login']['mycart'];
             var prodId = $(this).val();
             $('#shopping-cart').load("model/ajaxDel_model.php", {
                 prodId: prodId
+            });
+            var quantity = $('#show_quantity').text();
+            var y = Number(quantity);
+            $.get("model/ajaxCountCart_model.php", {
+                quantity: y
+            }, function(data) {
+                $("#show_quantity").html(data);
             })
         });
     });

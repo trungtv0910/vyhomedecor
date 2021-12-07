@@ -18,6 +18,7 @@ init();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VyHomeDecor</title>
     <link rel="icon" href="./images/logo/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/mybill.css">
@@ -189,18 +190,22 @@ init();
                                     <li class="moblie-top-nav__item">
                                         <i class="moblie-top-nav__icon far fa-user"></i>
                                         <a href="#" id="header_username" class="moblie-top-nav__link">Xin chào: <?= $_SESSION['login']['custName']  ?></a>
-                                    </li>
-                                    <li class="moblie-top-nav__item">
-                                        <i class="moblie-top-nav__icon far fa-heart"></i>
-                                        <a href="#" class="moblie-top-nav__link">Yêu thích</a>
-                                    </li>
+                                    </li>  
+                                    <?php
+                                        if ($_SESSION['login']['role'] == 1) {
+                                        ?>
+                                            <li class="moblie-top-nav__item">
+                                                <i class="moblie-top-nav__icon far fas fa-users-cog"></i>
+                                                <a href="admin/index.php" class="moblie-top-nav__link">Quản trị Admin</a>
+                                            </li>
+                                        <?php } ?>
                                     <li class="moblie-top-nav__item">
                                         <i class="moblie-top-nav__icon far fa-check-square"></i>
-                                        <a href="#" class="moblie-top-nav__link">Giỏ hàng</a>
+                                        <a href="mybills" class="moblie-top-nav__link">Đơn hàng của tôi</a>
                                     </li>
                                     <li class="moblie-top-nav__item js-login-mb">
                                         <i class="moblie-top-nav__icon fas fa-sign-in-alt"></i>
-                                        <a href="checkLogout()" class="moblie-top-nav__link">Đăng Xuất</a>
+                                        <a href="index.php?act=logout" class="moblie-top-nav__link">Đăng Xuất</a>
                                     </li>
                                 </ul>
                             </div>
@@ -357,10 +362,10 @@ init();
                     <label for="nav-mobile-input" class="nav-mobile__overlay"></label>
                     <ul class="nav-moiblie__list">
                         <li class="nav-mobile__item">
-                            <a href="#" class="nav-mobile__link">Trang chủ</a>
+                            <a href="index.html" class="nav-mobile__link">Trang chủ</a>
                         </li>
                         <li class="nav-mobile__item">
-                            <a href="#" class="nav-mobile__link">Danh mục sản phẩm</a>
+                            <a href="category" class="nav-mobile__link">Danh mục sản phẩm</a>
                         </li>
                         <li class="nav-mobile__item">
                             <a href="#" class="nav-mobile__link">Sản phẩm nổi bật</a>

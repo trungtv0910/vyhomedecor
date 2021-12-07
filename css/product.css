@@ -226,6 +226,7 @@ div.stars {
     padding: 24px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
 }
 .tieu-de{
     color: #333;
@@ -423,4 +424,8 @@ div.stars {
     text-decoration: none;
     font-size: 14px;
 
+}
+.alertComment{
+    font-size: 1.4rem;
+    font-weight: 600;
 }
