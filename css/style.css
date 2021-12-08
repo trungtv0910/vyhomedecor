@@ -1377,6 +1377,7 @@
 .most-view__item-info{
     /* margin-left: 24px; */
     text-align: left;
+    width: 50%;
 }
 .most-view__item-btn{
     display: block;
