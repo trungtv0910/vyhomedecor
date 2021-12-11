@@ -92,7 +92,11 @@
                                     </td>
                                     <td>
                                         <a class="btn  btn-primary" href="index.php?act=customer&edit=<?= $custId ?>"><span class="icon text-white-50"><i class="far fa-edit"></i></span></a>
+                                        <?php
+                                        if($_SESSION['login']['custId']!=$custId){
+                                        ?>
                                         <a class="btn btn_xoa btn-danger" onclick="return confirm('Bạn có chắc xóa khách hàng này')" href="index.php?act=customer&delete=<?= $custId ?>"><span class="icon text-white-50"><i class="fas fa-trash"></i></span></a>
+                                        <?php } ?>
                                     </td>
                                 </tr>
                             <?php  }
